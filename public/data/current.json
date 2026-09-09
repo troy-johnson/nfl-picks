@@ -1,0 +1,8 @@
+{
+  "season": 2026,
+  "week": 0,
+  "generatedAt": "",
+  "firstGame": null,
+  "model": {"trainingSeasons":[],"validationSeason":null,"marketWeight":0,"validationAccuracy":null,"validationBrier":null,"marketBrier":null},
+  "games": []
+}

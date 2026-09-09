@@ -1,0 +1,9 @@
+.next/
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.env*
+!.env.example
+model/artifacts/
+.DS_Store
