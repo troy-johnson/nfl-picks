@@ -6,9 +6,11 @@ import json
 import math
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from collections import defaultdict, deque
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
@@ -28,10 +30,12 @@ SCHEDULE_URL = "https://raw.githubusercontent.com/nflverse/nfldata/master/data/g
 PBP_URL = "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{season}.csv"
 STADIUMS_URL = "https://raw.githubusercontent.com/greerreNFL/Stadiums/main/data/stadiums.csv"
 OPEN_METEO = "https://api.open-meteo.com/v1/forecast"
+GOOGLE_NEWS = "https://news.google.com/rss/search"
 ROLLING_GAMES = 8
 START_SEASON = 2021
 METRICS = ["off_epa", "off_success", "pass_epa", "rush_epa", "def_epa_allowed", "def_success_allowed", "def_pass_epa_allowed", "def_rush_epa_allowed"]
 FEATURES = [f"diff_{m}" for m in METRICS] + ["rest_diff", "neutral_site"]
+TEAM_NAMES = {"ARI": "Arizona Cardinals", "ATL": "Atlanta Falcons", "BAL": "Baltimore Ravens", "BUF": "Buffalo Bills", "CAR": "Carolina Panthers", "CHI": "Chicago Bears", "CIN": "Cincinnati Bengals", "CLE": "Cleveland Browns", "DAL": "Dallas Cowboys", "DEN": "Denver Broncos", "DET": "Detroit Lions", "GB": "Green Bay Packers", "HOU": "Houston Texans", "IND": "Indianapolis Colts", "JAX": "Jacksonville Jaguars", "KC": "Kansas City Chiefs", "LAC": "Los Angeles Chargers", "LAR": "Los Angeles Rams", "LV": "Las Vegas Raiders", "MIA": "Miami Dolphins", "MIN": "Minnesota Vikings", "NE": "New England Patriots", "NO": "New Orleans Saints", "NYG": "New York Giants", "NYJ": "New York Jets", "PHI": "Philadelphia Eagles", "PIT": "Pittsburgh Steelers", "SEA": "Seattle Seahawks", "SF": "San Francisco 49ers", "TB": "Tampa Bay Buccaneers", "TEN": "Tennessee Titans", "WAS": "Washington Commanders"}
 
 
 def current_nfl_season(now: datetime | None = None) -> int:
@@ -217,6 +221,34 @@ def weather_for_game(game: pd.Series, stadiums: dict[str, dict[str, str]]) -> di
         return None
 
 
+def recent_team_news(team: str, now: datetime) -> list[dict[str, str]]:
+    query = f'{TEAM_NAMES.get(team, team)} NFL injury starter'
+    try:
+        url = f"{GOOGLE_NEWS}?{urllib.parse.urlencode({'q': query, 'hl': 'en-US', 'gl': 'US', 'ceid': 'US:en'})}"
+        request = urllib.request.Request(url, headers={"User-Agent": "nfl-picks/1.0"})
+        with urllib.request.urlopen(request, timeout=8) as response:
+            root = ET.fromstring(response.read())
+        recent = []
+        for item in root.findall("./channel/item"):
+            published = item.findtext("pubDate")
+            if not published or parsedate_to_datetime(published).astimezone(timezone.utc) < now - timedelta(days=7):
+                continue
+            title, url = item.findtext("title"), item.findtext("link")
+            if not title or not url:
+                continue
+            source = item.find("source")
+            recent.append({"title": title, "source": source.text if source is not None and source.text else "Google News", "url": url})
+            if len(recent) == 2:
+                break
+        return recent
+    except Exception:
+        return []
+
+
+def news_for_teams(teams: set[str], now: datetime) -> dict[str, list[dict[str, str]]]:
+    return {team: recent_team_news(team, now) for team in teams}
+
+
 def baseline_for(season: int, week: int) -> tuple[Path, dict[str, Any] | None]:
     path = SNAPSHOT_DIR / f"{season}-{week:02d}-initial.json"
     try:
@@ -254,47 +286,70 @@ def game_flags(game: dict[str, Any], baseline: dict[str, Any] | None) -> list[st
     return flags
 
 
-def first_week_and_kickoff(schedule: pd.DataFrame, season: int) -> tuple[int, datetime]:
+def kickoff_at(row: pd.Series) -> datetime:
+    eastern = datetime.fromisoformat(f"{row.gameday}T{row.get('gametime') or '13:00'}").replace(tzinfo=ZoneInfo("America/New_York"))
+    return eastern.astimezone(timezone.utc)
+
+
+def upcoming_week_and_kickoff(schedule: pd.DataFrame, season: int, now: datetime) -> tuple[int, datetime]:
     regular = schedule[(schedule.season == season) & (schedule.game_type == "REG")].copy()
-    unplayed = regular[regular.home_score.isna()]
-    if unplayed.empty:
-        raise RuntimeError(f"No unplayed regular-season games found for {season}")
-    week = int(unplayed.week.min())
+    regular["_kickoff"] = regular.apply(kickoff_at, axis=1)
+    upcoming = regular[regular._kickoff > now]
+    if upcoming.empty:
+        raise RuntimeError(f"No upcoming regular-season games found for {season}")
+    week = int(upcoming.sort_values("_kickoff").iloc[0].week)
     games = regular[regular.week == week]
-    kickoffs = []
-    for _, row in games.iterrows():
-        eastern = datetime.fromisoformat(f"{row.gameday}T{row.get('gametime') or '13:00'}").replace(tzinfo=ZoneInfo("America/New_York"))
-        kickoffs.append(eastern.astimezone(timezone.utc))
-    return week, min(kickoffs)
+    return week, min(games._kickoff)
 
 
-def preflight(force: bool) -> None:
+def refresh_stage(now: datetime, first_kickoff: datetime) -> str | None:
+    minutes_until_kickoff = (first_kickoff - now).total_seconds() / 60
+    if 60 <= minutes_until_kickoff <= 120:
+        return "final"
+    eastern = now.astimezone(ZoneInfo("America/New_York"))
+    if eastern.weekday() == 2 and 10 <= eastern.hour < 18:
+        return "initial"
+    return None
+
+
+def preflight(force: bool, now: datetime | None = None) -> str:
+    now = now or datetime.now(timezone.utc)
     season = current_nfl_season()
     schedule = load_schedule([season])
-    week, first = first_week_and_kickoff(schedule, season)
-    if datetime.now(timezone.utc) >= first and not force:
-        print(f"Week {week} has already kicked off; leaving published picks unchanged")
+    week, first = upcoming_week_and_kickoff(schedule, season, now)
+    if force:
+        return "forced"
+    stage = refresh_stage(now, first)
+    if stage is None:
+        if now >= first:
+            print(f"Week {week} has already kicked off; leaving published picks unchanged")
+        else:
+            print(f"Week {week} refresh is not due yet; leaving published picks unchanged")
         raise SystemExit(0)
+    return stage
 
 
-def generate(refresh_weather: bool) -> dict[str, Any]:
+def generate(refresh_weather: bool, refresh_news: bool, now: datetime | None = None) -> dict[str, Any]:
+    now = now or datetime.now(timezone.utc)
     season = current_nfl_season()
     seasons = list(range(START_SEASON, season + 1))
     schedule, pbp = load_inputs(seasons)
     features = build_game_features(schedule, aggregate_team_weeks(pbp))
     model = train_model(features, season)
-    current = features[(features.season == season) & features.home_win.isna()].copy()
-    week = int(current.week.min())
-    current = current[current.week == week].sort_values(["gameday", "gametime", "game_id"])
+    week, _ = upcoming_week_and_kickoff(schedule, season, now)
+    current = features[(features.season == season) & (features.week == week)].copy()
+    current["_kickoff"] = current.apply(kickoff_at, axis=1)
+    current = current[current._kickoff > now].sort_values(["gameday", "gametime", "game_id"])
     stat_probs = model.pipeline.predict_proba(current[FEATURES])[:, 1]
     stadiums = load_stadiums() if refresh_weather else {}
+    team_news = news_for_teams(set(current.home_team) | set(current.away_team), now) if refresh_news else {}
     snapshot_path, baseline = baseline_for(season, week)
     games = []
     for (_, row), stat_home in zip(current.iterrows(), stat_probs):
         market_home = None if pd.isna(row.get("market_home_prob")) else float(row.market_home_prob)
         final_home = float(stat_home) if market_home is None else model.market_weight * market_home + (1 - model.market_weight) * float(stat_home)
         pick = str(row.home_team) if final_home >= 0.5 else str(row.away_team)
-        game = {"gameId": str(row.game_id), "awayTeam": str(row.away_team), "homeTeam": str(row.home_team), "gameday": str(row.gameday), "gametime": None if pd.isna(row.get("gametime")) else str(row.gametime), "stadium": None if pd.isna(row.get("stadium")) else str(row.stadium), "roof": None if pd.isna(row.get("roof")) else str(row.roof), "pick": pick, "winProbability": round(max(final_home, 1 - final_home), 4), "homeWinProbability": round(final_home, 4), "statisticalHomeProbability": round(float(stat_home), 4), "marketHomeProbability": None if market_home is None else round(market_home, 4), "spreadLine": None if pd.isna(row.get("spread_line")) else float(row.spread_line), "confidence": confidence(final_home), "homeQb": None if pd.isna(row.get("home_qb_name")) else str(row.home_qb_name), "awayQb": None if pd.isna(row.get("away_qb_name")) else str(row.away_qb_name), "weather": weather_for_game(row, stadiums) if refresh_weather else None, "flags": []}
+        game = {"gameId": str(row.game_id), "awayTeam": str(row.away_team), "homeTeam": str(row.home_team), "gameday": str(row.gameday), "gametime": None if pd.isna(row.get("gametime")) else str(row.gametime), "stadium": None if pd.isna(row.get("stadium")) else str(row.stadium), "roof": None if pd.isna(row.get("roof")) else str(row.roof), "pick": pick, "winProbability": round(max(final_home, 1 - final_home), 4), "homeWinProbability": round(final_home, 4), "statisticalHomeProbability": round(float(stat_home), 4), "marketHomeProbability": None if market_home is None else round(market_home, 4), "spreadLine": None if pd.isna(row.get("spread_line")) else float(row.spread_line), "confidence": confidence(final_home), "homeQb": None if pd.isna(row.get("home_qb_name")) else str(row.home_qb_name), "awayQb": None if pd.isna(row.get("away_qb_name")) else str(row.away_qb_name), "weather": weather_for_game(row, stadiums) if refresh_weather else None, "news": (team_news.get(str(row.away_team), []) + team_news.get(str(row.home_team), []))[:2], "flags": []}
         game["flags"] = game_flags(game, baseline)
         games.append(game)
     payload = {"season": season, "week": week, "generatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"), "firstGame": min((g["gameday"] for g in games), default=None), "model": {"trainingSeasons": model.training_seasons, "validationSeason": model.validation_season, "marketWeight": round(model.market_weight, 2), "validationAccuracy": round(model.validation_accuracy, 4), "validationBrier": round(model.validation_brier, 4), "marketBrier": None if model.market_brier is None else round(model.market_brier, 4)}, "games": games}
@@ -311,8 +366,9 @@ def main() -> None:
     parser.add_argument("--no-weather", action="store_true")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
-    preflight(args.force)
-    payload = generate(not args.no_weather)
+    stage = preflight(args.force)
+    refresh_current_conditions = stage in {"final", "forced"}
+    payload = generate(refresh_current_conditions and not args.no_weather, refresh_current_conditions)
     print(f"Generated {len(payload['games'])} picks for {payload['season']} week {payload['week']}")
     print(f"Market weight: {payload['model']['marketWeight']:.0%}")
 
