@@ -74,6 +74,21 @@ def test_normalize_odds_snapshot_devigs_then_averages_books():
     assert len(snapshot["games"])==1
     assert len(snapshot["games"][0]["bookmakers"])==2
     assert round(snapshot["games"][0]["marketHomeProbability"],3)==0.511
+    assert snapshot["games"][0]["published"] is None
+
+
+def test_normalize_odds_snapshot_matches_rams_schedule_code_and_freezes_published_pick(tmp_path):
+    games=pd.DataFrame([{"game_id":"2026_01_SEA_LA", "gameday":"2026-09-13", "gametime":"16:05", "home_team":"LA", "away_team":"SEA"}])
+    events=[{"id":"event-2", "home_team":"Los Angeles Rams", "away_team":"Seattle Seahawks", "bookmakers":[
+        {"key":"book-a", "title":"Book A", "last_update":"2026-09-13T18:00:00Z", "markets":[{"key":"h2h", "outcomes":[{"name":"Los Angeles Rams", "price":-150}, {"name":"Seattle Seahawks", "price":130}]}]},
+    ]}]
+    output=tmp_path/"current.json"
+    output.write_text('{"season":2026,"week":1,"generatedAt":"2026-09-10T22:00:00Z","model":{"marketWeight":0.95},"games":[{"gameId":"2026_01_SEA_LA","pick":"LA","homeWinProbability":0.61,"statisticalHomeProbability":0.58,"marketHomeProbability":0.6116}]}')
+    published=predict.published_picks(2026, output)
+    snapshot=predict.normalize_odds_snapshot(events, games, 2026, "2026-09-13", datetime(2026,9,13,20,5,tzinfo=timezone.utc), datetime(2026,9,13,18,35,tzinfo=timezone.utc), published)
+    assert len(snapshot["games"])==1, "schedule uses LA for the Rams; the odds provider uses the full name"
+    assert snapshot["games"][0]["published"]=={"generatedAt":"2026-09-10T22:00:00Z", "pick":"LA", "homeWinProbability":0.61, "statisticalHomeProbability":0.58, "marketHomeProbability":0.6116, "marketWeight":0.95}
+    assert predict.published_picks(2025, output)=={}, "a stale week file must not be attached"
 
 
 def test_qb_features_use_prior_games_and_latest_completed_primary_passer():

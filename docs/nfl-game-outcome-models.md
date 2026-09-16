@@ -177,6 +177,17 @@ Random train/test splits are invalid for this use because they let later games a
 4. Re-run the selected model over all completed history before live use. Keep the original per-game forecasts and later outcomes for audit.
 5. Compare models on the identical games. Use paired score differences and season or week blocks for uncertainty intervals, rather than treating games as independent draws.
 
+### Same-time market evaluation
+
+The recorded closing lines in the replay tables above cannot prove market-beating value. They were set after the picks would have been made. The fair benchmark is the price available at prediction time. `model/snapshots.py` provides that test:
+
+- `predict.py --capture-odds` stores one multi-book snapshot per game day, 60-120 minutes before the first kickoff, in `data/odds-snapshots/<season>/<game-day>.json`. Each game carries the pick and probabilities that were published at that moment.
+- `snapshots.py` joins the archive to final scores and scores `sameTimeMarket`, `closingMarket`, `publishedPick`, `publishedStatistical`, and any `candidate:<name>` from the experiment queue on identical games. Unplayed games, ties, and games without a frozen pick are dropped.
+- Paired Brier and log-loss differences use week-block standard errors. The report also states how many games a 0.005 or 0.010 Brier difference would need at two standard errors, extrapolated from the observed variance.
+- Claim rule: a source beats the same-time market only after at least 250 completed games and a difference beyond two standard errors on both Brier and log loss. The report prints `insufficient games` until then.
+
+Status on 2026-09-15: the archive is empty. The first capture is due on 2026-09-17. The 2023-2025 gap between the best raw challenger and the closing market is 0.010 Brier; the same-time line should be slightly weaker than the closing line, so the true gap is expected to be smaller but not zero.
+
 ## Metrics
 
 Report probabilities, not only picks. Proper scoring rules reward accurate and honest probabilities; the formal treatment is [Gneiting and Raftery, 2007](https://doi.org/10.1198/016214506000001437).

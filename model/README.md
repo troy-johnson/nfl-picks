@@ -52,7 +52,23 @@ Create a The Odds API account and set `THE_ODDS_API_KEY` locally or as a GitHub 
 THE_ODDS_API_KEY=... uv run --project model python model/predict.py --capture-odds
 ```
 
-Snapshots are written to `data/odds-snapshots/<season>/<game-day>.json`. They preserve each available US sportsbook's de-vigged moneyline probability and their equal-weight average. Recording does not change live picks.
+Snapshots are written to `data/odds-snapshots/<season>/<game-day>.json`. They preserve each available US sportsbook's de-vigged moneyline probability and their equal-weight average. Each game also carries a `published` block copied from `public/data/current.json` at capture time: the pick, the blended and statistical home probabilities, and the market weight that users saw. Recording does not change live picks.
+
+### Same-time evaluation
+
+`model/snapshots.py` scores the published picks against the same-time market. It joins every snapshot game to its final score and the recorded closing line, then scores each probability source on identical games.
+
+```bash
+uv run --project model python model/snapshots.py
+uv run --project model python model/snapshots.py --experiments model/artifacts/experiments.json
+```
+
+- Sources: `sameTimeMarket` (snapshot average), `closingMarket` (nflverse recorded line), `publishedPick` (blended probability users saw), `publishedStatistical` (raw model), and `candidate:<name>` for each challenger when `--experiments` points at an experiment queue output.
+- Output `model/artifacts/snapshot-evaluation.json` holds per-source accuracy, Brier, log loss, and calibration; paired Brier and log-loss differences with week-block standard errors; per-season metrics; the same-time-versus-closing move; and every scored game.
+- A comparison reports `status`. A market-beating claim needs at least 250 completed games (`--min-games`) and a difference beyond two standard errors on both Brier and log loss. `gamesToDetect` extrapolates from the observed week-block standard error how many games a 0.005 or 0.010 Brier difference would need.
+- Games without a frozen `published` block, unplayed games, and ties are dropped from the paired comparison.
+
+Until the archive holds a season of completed games, the report says `insufficient games`. That is the intended answer.
 
 ## Crowd pick shares
 

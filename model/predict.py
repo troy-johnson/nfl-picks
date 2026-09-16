@@ -57,7 +57,7 @@ OPPONENT_METRICS = {
     "def_pass_epa_allowed": "pass_epa",
     "def_rush_epa_allowed": "rush_epa",
 }
-TEAM_NAMES = {"ARI": "Arizona Cardinals", "ATL": "Atlanta Falcons", "BAL": "Baltimore Ravens", "BUF": "Buffalo Bills", "CAR": "Carolina Panthers", "CHI": "Chicago Bears", "CIN": "Cincinnati Bengals", "CLE": "Cleveland Browns", "DAL": "Dallas Cowboys", "DEN": "Denver Broncos", "DET": "Detroit Lions", "GB": "Green Bay Packers", "HOU": "Houston Texans", "IND": "Indianapolis Colts", "JAX": "Jacksonville Jaguars", "KC": "Kansas City Chiefs", "LAC": "Los Angeles Chargers", "LAR": "Los Angeles Rams", "LV": "Las Vegas Raiders", "MIA": "Miami Dolphins", "MIN": "Minnesota Vikings", "NE": "New England Patriots", "NO": "New Orleans Saints", "NYG": "New York Giants", "NYJ": "New York Jets", "PHI": "Philadelphia Eagles", "PIT": "Pittsburgh Steelers", "SEA": "Seattle Seahawks", "SF": "San Francisco 49ers", "TB": "Tampa Bay Buccaneers", "TEN": "Tennessee Titans", "WAS": "Washington Commanders"}
+TEAM_NAMES = {"ARI": "Arizona Cardinals", "ATL": "Atlanta Falcons", "BAL": "Baltimore Ravens", "BUF": "Buffalo Bills", "CAR": "Carolina Panthers", "CHI": "Chicago Bears", "CIN": "Cincinnati Bengals", "CLE": "Cleveland Browns", "DAL": "Dallas Cowboys", "DEN": "Denver Broncos", "DET": "Detroit Lions", "GB": "Green Bay Packers", "HOU": "Houston Texans", "IND": "Indianapolis Colts", "JAX": "Jacksonville Jaguars", "KC": "Kansas City Chiefs", "LAC": "Los Angeles Chargers", "LA": "Los Angeles Rams", "LAR": "Los Angeles Rams", "LV": "Las Vegas Raiders", "MIA": "Miami Dolphins", "MIN": "Minnesota Vikings", "NE": "New England Patriots", "NO": "New Orleans Saints", "NYG": "New York Giants", "NYJ": "New York Jets", "PHI": "Philadelphia Eagles", "PIT": "Pittsburgh Steelers", "SEA": "Seattle Seahawks", "SF": "San Francisco 49ers", "TB": "Tampa Bay Buccaneers", "TEN": "Tennessee Titans", "WAS": "Washington Commanders"}
 
 
 def current_nfl_season(now: datetime | None = None) -> int:
@@ -121,8 +121,30 @@ def fetch_current_odds(api_key: str) -> list[dict[str, Any]]:
     return data
 
 
-def normalize_odds_snapshot(events: list[dict[str, Any]], games: pd.DataFrame, season: int, game_day: str, first_kickoff: datetime, captured_at: datetime) -> dict[str, Any]:
+def published_picks(season: int, output: Path = OUTPUT) -> dict[str, dict[str, Any]]:
+    """Live picks from the published week file, keyed by game id, so a snapshot freezes what users saw."""
+    if not output.exists():
+        return {}
+    payload = json.loads(output.read_text())
+    if int(payload.get("season", -1)) != season:
+        return {}
+    generated_at = payload.get("generatedAt")
+    return {
+        str(game["gameId"]): {
+            "generatedAt": generated_at,
+            "pick": game.get("pick"),
+            "homeWinProbability": game.get("homeWinProbability"),
+            "statisticalHomeProbability": game.get("statisticalHomeProbability"),
+            "marketHomeProbability": game.get("marketHomeProbability"),
+            "marketWeight": payload.get("model", {}).get("marketWeight"),
+        }
+        for game in payload.get("games", [])
+    }
+
+
+def normalize_odds_snapshot(events: list[dict[str, Any]], games: pd.DataFrame, season: int, game_day: str, first_kickoff: datetime, captured_at: datetime, published: dict[str, dict[str, Any]] | None = None) -> dict[str, Any]:
     events_by_teams = {(str(event.get("home_team")), str(event.get("away_team"))): event for event in events}
+    published = published or {}
     snapshot_games = []
     for _, row in games.sort_values(["gameday", "gametime", "game_id"]).iterrows():
         home_name, away_name = TEAM_NAMES.get(str(row.home_team)), TEAM_NAMES.get(str(row.away_team))
@@ -156,6 +178,7 @@ def normalize_odds_snapshot(events: list[dict[str, Any]], games: pd.DataFrame, s
             "awayTeam": str(row.away_team),
             "oddsEventId": event.get("id"),
             "marketHomeProbability": sum(book["homeProbability"] for book in bookmakers) / len(bookmakers),
+            "published": published.get(str(row.game_id)),
             "bookmakers": bookmakers,
         })
     if not snapshot_games:
@@ -188,7 +211,7 @@ def capture_odds(now: datetime | None = None, output_dir: Path = ODDS_SNAPSHOT_D
     api_key = os.environ.get("THE_ODDS_API_KEY")
     if not api_key:
         raise RuntimeError("Set THE_ODDS_API_KEY before capturing odds")
-    snapshot = normalize_odds_snapshot(fetch_current_odds(api_key), games, season, game_day, first_kickoff, now)
+    snapshot = normalize_odds_snapshot(fetch_current_odds(api_key), games, season, game_day, first_kickoff, now, published_picks(season))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(snapshot, indent=2) + "\n")
     print(f"Captured odds for {len(snapshot['games'])} games on {game_day}")
