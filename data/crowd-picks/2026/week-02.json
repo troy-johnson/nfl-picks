@@ -11,14 +11,14 @@
       "homeTeam": "BUF",
       "espnEventId": "401872932",
       "lockAt": "2026-09-18T00:15:00Z",
-      "entries": 424810,
-      "homeShare": 0.8525952778889386,
-      "awayShare": 0.14740472211106143,
+      "entries": 486697,
+      "homeShare": 0.8562473160919423,
+      "awayShare": 0.1437526839080578,
       "espnSpread": -4.5,
-      "espnHomeMoneyline": "-225",
-      "espnAwayMoneyline": "185",
+      "espnHomeMoneyline": "-230",
+      "espnAwayMoneyline": "190",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -27,14 +27,14 @@
       "homeTeam": "ATL",
       "espnEventId": "401872933",
       "lockAt": "2026-09-20T17:00:00Z",
-      "entries": 414687,
-      "homeShare": 0.17455333781864393,
-      "awayShare": 0.8254466621813561,
+      "entries": 475222,
+      "homeShare": 0.17219320654346812,
+      "awayShare": 0.8278067934565319,
       "espnSpread": 2.5,
-      "espnHomeMoneyline": "114",
-      "espnAwayMoneyline": "-135",
+      "espnHomeMoneyline": "124",
+      "espnAwayMoneyline": "-148",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -43,14 +43,14 @@
       "homeTeam": "HOU",
       "espnEventId": "401872934",
       "lockAt": "2026-09-20T17:00:00Z",
-      "entries": 407954,
-      "homeShare": 0.5760061183368713,
-      "awayShare": 0.4239938816631287,
+      "entries": 468077,
+      "homeShare": 0.573873529355213,
+      "awayShare": 0.4261264706447871,
       "espnSpread": -2.5,
-      "espnHomeMoneyline": "-142",
-      "espnAwayMoneyline": "120",
+      "espnHomeMoneyline": "-148",
+      "espnAwayMoneyline": "124",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -59,14 +59,14 @@
       "homeTeam": "TB",
       "espnEventId": "401872935",
       "lockAt": "2026-09-20T17:00:00Z",
-      "entries": 411130,
-      "homeShare": 0.9741030817502979,
-      "awayShare": 0.02589691824970204,
+      "entries": 471545,
+      "homeShare": 0.9748677220625815,
+      "awayShare": 0.025132277937418485,
       "espnSpread": -8.5,
       "espnHomeMoneyline": "-395",
       "espnAwayMoneyline": "310",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -75,14 +75,14 @@
       "homeTeam": "NYJ",
       "espnEventId": "401872936",
       "lockAt": "2026-09-20T17:00:00Z",
-      "entries": 410546,
-      "homeShare": 0.11918761843983378,
-      "awayShare": 0.8808123815601662,
+      "entries": 470845,
+      "homeShare": 0.12173857638925761,
+      "awayShare": 0.8782614236107424,
       "espnSpread": 4.5,
-      "espnHomeMoneyline": "170",
-      "espnAwayMoneyline": "-205",
+      "espnHomeMoneyline": "160",
+      "espnAwayMoneyline": "-192",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -91,14 +91,14 @@
       "homeTeam": "CHI",
       "espnEventId": "401872937",
       "lockAt": "2026-09-20T17:00:00Z",
-      "entries": 412527,
-      "homeShare": 0.8890157492721689,
-      "awayShare": 0.11098425072783115,
+      "entries": 472946,
+      "homeShare": 0.8892199109412068,
+      "awayShare": 0.11078008905879318,
       "espnSpread": -5.5,
-      "espnHomeMoneyline": "-230",
-      "espnAwayMoneyline": "190",
+      "espnHomeMoneyline": "-205",
+      "espnAwayMoneyline": "170",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -107,14 +107,14 @@
       "homeTeam": "BAL",
       "espnEventId": "401872938",
       "lockAt": "2026-09-20T17:00:00Z",
-      "entries": 410544,
-      "homeShare": 0.9575758018628941,
-      "awayShare": 0.042424198137105885,
+      "entries": 470872,
+      "homeShare": 0.9581839650690633,
+      "awayShare": 0.04181603493093664,
       "espnSpread": -8.5,
-      "espnHomeMoneyline": "-410",
-      "espnAwayMoneyline": "320",
+      "espnHomeMoneyline": "-395",
+      "espnAwayMoneyline": "310",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -123,14 +123,14 @@
       "homeTeam": "TEN",
       "espnEventId": "401872939",
       "lockAt": "2026-09-20T17:00:00Z",
-      "entries": 413897,
-      "homeShare": 0.014974740092341815,
-      "awayShare": 0.9850252599076582,
+      "entries": 474395,
+      "homeShare": 0.014631267192951021,
+      "awayShare": 0.985368732807049,
       "espnSpread": 6.5,
-      "espnHomeMoneyline": "250",
-      "espnAwayMoneyline": "-310",
+      "espnHomeMoneyline": "260",
+      "espnAwayMoneyline": "-325",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -139,14 +139,14 @@
       "homeTeam": "NE",
       "espnEventId": "401872946",
       "lockAt": "2026-09-20T17:00:00Z",
-      "entries": 410161,
-      "homeShare": 0.7117595285753643,
-      "awayShare": 0.2882404714246357,
+      "entries": 470508,
+      "homeShare": 0.7108954576755336,
+      "awayShare": 0.2891045423244663,
       "espnSpread": -5.5,
-      "espnHomeMoneyline": "-218",
-      "espnAwayMoneyline": "180",
+      "espnHomeMoneyline": "-225",
+      "espnAwayMoneyline": "185",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -155,14 +155,14 @@
       "homeTeam": "DEN",
       "espnEventId": "401872940",
       "lockAt": "2026-09-20T20:05:00Z",
-      "entries": 407105,
-      "homeShare": 0.5727834342491495,
-      "awayShare": 0.42721656575085054,
+      "entries": 467308,
+      "homeShare": 0.5614990541570014,
+      "awayShare": 0.43850094584299865,
       "espnSpread": -2.5,
-      "espnHomeMoneyline": "-155",
-      "espnAwayMoneyline": "130",
+      "espnHomeMoneyline": "-148",
+      "espnAwayMoneyline": "124",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -171,14 +171,14 @@
       "homeTeam": "LAC",
       "espnEventId": "401872941",
       "lockAt": "2026-09-20T20:05:00Z",
-      "entries": 407358,
-      "homeShare": 0.8098429391346187,
-      "awayShare": 0.1901570608653813,
+      "entries": 467494,
+      "homeShare": 0.8113644239284354,
+      "awayShare": 0.18863557607156456,
       "espnSpread": -6.5,
-      "espnHomeMoneyline": "-298",
-      "espnAwayMoneyline": "240",
+      "espnHomeMoneyline": "-305",
+      "espnAwayMoneyline": "245",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -187,14 +187,14 @@
       "homeTeam": "SF",
       "espnEventId": "401872942",
       "lockAt": "2026-09-20T20:25:00Z",
-      "entries": 408444,
-      "homeShare": 0.9846270235332139,
-      "awayShare": 0.015372976466786144,
+      "entries": 468674,
+      "homeShare": 0.9851325228196999,
+      "awayShare": 0.014867477180300166,
       "espnSpread": -12.5,
-      "espnHomeMoneyline": "-950",
-      "espnAwayMoneyline": "625",
+      "espnHomeMoneyline": "-1450",
+      "espnAwayMoneyline": "850",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -203,14 +203,14 @@
       "homeTeam": "ARI",
       "espnEventId": "401872943",
       "lockAt": "2026-09-20T20:25:00Z",
-      "entries": 407888,
-      "homeShare": 0.06927636998391716,
-      "awayShare": 0.9307236300160828,
+      "entries": 468029,
+      "homeShare": 0.07127122464633602,
+      "awayShare": 0.9287287753536639,
       "espnSpread": 4.5,
       "espnHomeMoneyline": "170",
       "espnAwayMoneyline": "-205",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -219,14 +219,14 @@
       "homeTeam": "DAL",
       "espnEventId": "401872944",
       "lockAt": "2026-09-20T20:25:00Z",
-      "entries": 406795,
-      "homeShare": 0.7794712324389435,
-      "awayShare": 0.22052876756105655,
+      "entries": 466937,
+      "homeShare": 0.7810154260639015,
+      "awayShare": 0.21898457393609844,
       "espnSpread": -3.5,
-      "espnHomeMoneyline": "-218",
-      "espnAwayMoneyline": "180",
+      "espnHomeMoneyline": "-225",
+      "espnAwayMoneyline": "185",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -235,14 +235,14 @@
       "homeTeam": "KC",
       "espnEventId": "401872945",
       "lockAt": "2026-09-21T00:20:00Z",
-      "entries": 406656,
-      "homeShare": 0.9280276203966006,
-      "awayShare": 0.07197237960339943,
+      "entries": 466912,
+      "homeShare": 0.9328031834692618,
+      "awayShare": 0.06719681653073813,
       "espnSpread": -6.5,
       "espnHomeMoneyline": "-285",
       "espnAwayMoneyline": "230",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     },
     {
       "season": 2026,
@@ -251,14 +251,14 @@
       "homeTeam": "LA",
       "espnEventId": "401872947",
       "lockAt": "2026-09-22T00:15:00Z",
-      "entries": 406120,
-      "homeShare": 0.7876785186644342,
-      "awayShare": 0.21232148133556583,
+      "entries": 466198,
+      "homeShare": 0.7866292862689244,
+      "awayShare": 0.21337071373107563,
       "espnSpread": -6.5,
       "espnHomeMoneyline": "-355",
       "espnAwayMoneyline": "280",
       "homeWin": null,
-      "capturedAt": "2026-09-16T04:37:56.539465Z"
+      "capturedAt": "2026-09-16T19:26:11.395594Z"
     }
   ]
 }
