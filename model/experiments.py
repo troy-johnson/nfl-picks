@@ -62,6 +62,17 @@ ELO_MOV2_FEATURES = tuple(predict.FEATURES) + (ELO_MOV2_COLUMN,)
 ELO_MOV2_INJURY_FEATURES = ELO_MOV2_FEATURES + ("diff_injury_load", "diff_qb_injury")
 ELO_TUNED_FEATURES = tuple(predict.FEATURES) + (ELO_TUNED_COLUMN,)
 ELO_TUNED_INJURY_FEATURES = ELO_TUNED_FEATURES + ("diff_injury_load", "diff_qb_injury")
+MARKET_RATING_COLUMN = "market_rating_diff"
+ELO_SEED_COLUMN = "elo_diff_market_seed"
+MARKET_RATING_RIDGE = 0.1
+MARKET_PREVIOUS_SEASON_WEIGHT = 0.5
+ELO_SEED_SPREAD_TO_ELO = 25.0
+ELO_SEED_K = 16.0
+ELO_SEED_HOME_ADVANTAGE = 48.0
+ELO_SEED_REGRESSION = 0.67
+MARKET_RATING_INJURY_FEATURES = tuple(predict.FEATURES) + (MARKET_RATING_COLUMN, "diff_injury_load", "diff_qb_injury")
+ELO_SEED_INJURY_FEATURES = tuple(predict.FEATURES) + (ELO_SEED_COLUMN, "diff_injury_load", "diff_qb_injury")
+ELO_SEED_MARKET_RATING_INJURY_FEATURES = tuple(predict.FEATURES) + (ELO_SEED_COLUMN, MARKET_RATING_COLUMN, "diff_injury_load", "diff_qb_injury")
 
 
 @dataclass(frozen=True)
@@ -164,6 +175,110 @@ def assert_elo_team_codes(schedule: pd.DataFrame, aliases: dict[str, str]) -> li
     return codes
 
 
+def fit_spread_ratings(
+    games: pd.DataFrame,
+    *,
+    ridge: float = MARKET_RATING_RIDGE,
+    weights: np.ndarray | None = None,
+) -> tuple[dict[str, float], float]:
+    """Least-squares team ratings and one shared home-field allowance from closing spreads.
+
+    The model is ``spread_line = rating_home - rating_away + hfa`` over the completed
+    games given. ``spread_line`` is positive when the home team is favoured; the sign
+    was verified against the recorded moneylines (99.5% agreement on the 2010-2025
+    schedule). Neutral-site games carry no home-field term. A small ridge penalty pulls
+    the ratings toward zero so the rating sum is identifiable; the home-field term is
+    not penalised. ``weights`` reweight rows, which the daily fit uses to discount the
+    previous season. Only completed games with a recorded spread are fitted; teams that
+    appear in no fitted game return no rating.
+    """
+    usable = games[games.spread_line.notna() & games.home_score.notna() & games.away_score.notna()]
+    teams = sorted(set(usable.home_team.astype(str)) | set(usable.away_team.astype(str)))
+    if usable.empty or not teams:
+        return {}, 0.0
+    positions = {team: position for position, team in enumerate(teams)}
+    count = len(usable)
+    design = np.zeros((count, len(teams) + 1))
+    rows = np.arange(count)
+    design[rows, usable.home_team.astype(str).map(positions).to_numpy(dtype=int)] = 1.0
+    design[rows, usable.away_team.astype(str).map(positions).to_numpy(dtype=int)] = -1.0
+    neutral = usable.get("location", pd.Series("Home", index=usable.index)).astype(str).str.lower().eq("neutral")
+    design[:, -1] = (~neutral.to_numpy()).astype(float)
+    row_weights = np.ones(count) if weights is None else np.asarray(weights, dtype=float)
+    normal = design.T @ (design * row_weights[:, None])
+    penalty = np.eye(len(teams) + 1) * ridge
+    penalty[-1, -1] = 0.0
+    target = design.T @ (row_weights * usable.spread_line.to_numpy(dtype=float))
+    solution = np.linalg.solve(normal + penalty, target)
+    ratings = {team: float(solution[positions[team]]) for team in teams}
+    return ratings, float(solution[-1])
+
+
+def market_rating_differences(
+    schedule: pd.DataFrame,
+    target_games: pd.DataFrame,
+    *,
+    previous_season_weight: float = MARKET_PREVIOUS_SEASON_WEIGHT,
+    ridge: float = MARKET_RATING_RIDGE,
+    aliases: dict[str, str] | None = None,
+) -> dict[str, float]:
+    """Spread-based power-rating difference for each target game, fitted once per game day.
+
+    Leakage rule: for a target game on day D, only completed games with ``gameday``
+    strictly before D contribute spreads. The trailing window is the current season's
+    earlier games at weight 1.0 plus the whole previous season, regular and postseason,
+    at weight ``previous_season_weight`` (0.5). All games on one day share one fit, so
+    no same-day or later spread can leak. ``aliases`` keep relocated franchises on one
+    rating; input frames are never modified. Returns game_id ->
+    ``rating_home - rating_away`` with no home-field term, because the logistic model
+    carries its own intercept and the neutral-site flag.
+    """
+    history = aliased_elo_schedule(schedule, aliases or {})
+    history["_date"] = pd.to_datetime(history.gameday, errors="coerce")
+    completed = history[history._date.notna() & history.spread_line.notna() & history.home_score.notna() & history.away_score.notna()]
+    targets = target_games[["game_id", "season", "gameday", "home_team", "away_team"]].copy()
+    targets["_date"] = pd.to_datetime(targets.gameday, errors="coerce")
+    mapping = aliases or {}
+    targets["home_code"] = targets.home_team.astype(str).map(lambda team: mapping.get(team, team))
+    targets["away_code"] = targets.away_team.astype(str).map(lambda team: mapping.get(team, team))
+    differences: dict[str, float] = {}
+    for (season, date), group in targets.groupby(["season", "_date"], sort=True):
+        window = completed[(completed._date < date) & completed.season.isin([season - 1, season])]
+        row_weights = np.where(window.season.to_numpy() == season, 1.0, previous_season_weight)
+        ratings, _ = fit_spread_ratings(window, ridge=ridge, weights=row_weights)
+        for row in group.to_dict("records"):
+            differences[str(row["game_id"])] = ratings.get(row["home_code"], 0.0) - ratings.get(row["away_code"], 0.0)
+    return differences
+
+
+def market_season_priors(
+    schedule: pd.DataFrame,
+    *,
+    spread_to_elo: float = ELO_SEED_SPREAD_TO_ELO,
+    ridge: float = MARKET_RATING_RIDGE,
+    aliases: dict[str, str] | None = None,
+) -> dict[tuple[int, str], float]:
+    """Elo season-start targets per ``(season, team)`` from the previous season's closing spreads.
+
+    For each season boundary after the first schedule season, one least-squares fit on
+    the previous season's completed regular and postseason games gives each team a
+    spread rating, and the Elo target is ``1500 + spread_to_elo * rating``. The
+    25-point scale is the FiveThirtyEight Elo-per-spread-point conversion. An NFL
+    season always completes before the next season's first kickoff, so no same-season
+    or later spread can enter a boundary fit. Keys use the post-alias team codes; the
+    first schedule season keeps the plain 1500 start.
+    """
+    history = aliased_elo_schedule(schedule, aliases or {})
+    completed = history[history.spread_line.notna() & history.home_score.notna() & history.away_score.notna()]
+    seasons = sorted(int(value) for value in completed.season.unique())
+    priors: dict[tuple[int, str], float] = {}
+    for season in seasons[1:]:
+        ratings, _ = fit_spread_ratings(completed[completed.season == season - 1], ridge=ridge)
+        for team, rating in ratings.items():
+            priors[(season, team)] = predict.ELO_INITIAL_RATING + spread_to_elo * rating
+    return priors
+
+
 def pregame_elo_v2(
     games: pd.DataFrame,
     *,
@@ -173,6 +288,7 @@ def pregame_elo_v2(
     mov_cap: float | None = None,
     signed_mov: bool = False,
     aliases: dict[str, str] | None = None,
+    season_prior: dict[tuple[int, str], float] | None = None,
 ) -> dict[str, float]:
     """Elo walk identical to ``predict.pregame_elo_differences`` plus an optional FiveThirtyEight margin-of-victory multiplier.
 
@@ -185,10 +301,16 @@ def pregame_elo_v2(
     FiveThirtyEight does: favourites that win get a smaller update and underdogs that win
     get a larger one. A tie moves no rating because that factor is zero at margin zero.
     ``aliases`` maps old franchise codes (for example ``OAK``) to current codes on a copy
-    of the frame; the input frame is never modified. Postseason games update ratings, but
-    their game ids never match a regular-season feature row, so they never appear as
-    prediction rows. The whole week is predicted first and updated after, so only games
-    strictly before the target week move ratings.
+    of the frame; the input frame is never modified. ``season_prior`` maps
+    ``(season, team)`` with post-alias team codes to an Elo target: at each season
+    boundary a rating regresses toward that target instead of toward 1500, as
+    ``target + season_regression * (rating - target)``. Teams without an entry for the
+    new season regress toward 1500, and the first walk season keeps the 1500 start.
+    The default ``season_prior=None`` reproduces the plain walk exactly, so the
+    ``elo_diff_warm`` / ``elo_diff_mov`` / ``elo_diff_mov2`` columns are unchanged.
+    Postseason games update ratings, but their game ids never match a regular-season
+    feature row, so they never appear as prediction rows. The whole week is predicted
+    first and updated after, so only games strictly before the target week move ratings.
     """
     if aliases:
         games = aliased_elo_schedule(games, aliases)
@@ -199,7 +321,10 @@ def pregame_elo_v2(
     for season, week in games[["season", "week"]].drop_duplicates().sort_values(["season", "week"]).itertuples(index=False):
         if previous_season is not None and season != previous_season:
             for team, rating in ratings.items():
-                ratings[team] = predict.ELO_INITIAL_RATING + season_regression * (rating - predict.ELO_INITIAL_RATING)
+                target = predict.ELO_INITIAL_RATING
+                if season_prior is not None:
+                    target = season_prior.get((int(season), team), predict.ELO_INITIAL_RATING)
+                ratings[team] = target + season_regression * (rating - target)
         week_games = games[(games.season == season) & (games.week == week)]
         week_predictions: list[tuple[pd.Series, float]] = []
         for _, game in week_games.iterrows():
@@ -344,6 +469,9 @@ CANDIDATES: dict[str, Candidate] = {
         Candidate("elo_mov2", "Baseline features plus aliased warm-up Elo with the signed FiveThirtyEight margin multiplier", ELO_MOV2_FEATURES, logistic_pipeline),
         Candidate("elo_mov2_injury", "Signed-margin warm-up Elo plus pregame injury-report load differences", ELO_MOV2_INJURY_FEATURES, logistic_pipeline),
         Candidate("elo_tuned_injury", "Per-week-tuned signed-margin warm-up Elo plus pregame injury-report load differences", ELO_TUNED_INJURY_FEATURES, logistic_pipeline),
+        Candidate("market_rating_injury", "Baseline features plus the trailing spread-based power rating and injury-report load differences", MARKET_RATING_INJURY_FEATURES, logistic_pipeline),
+        Candidate("elo_seed_injury", "Baseline features plus market-seeded warm-up Elo and injury-report load differences", ELO_SEED_INJURY_FEATURES, logistic_pipeline),
+        Candidate("elo_seed_market_rating_injury", "Baseline features plus market-seeded Elo, the spread-based power rating, and injury-report load differences", ELO_SEED_MARKET_RATING_INJURY_FEATURES, logistic_pipeline),
         Candidate("market_stack", "Elo and injury features stacked on the recorded market logit", tuple(INJURY_FEATURES + ["market_logit"]), functools.partial(logistic_pipeline, C=1.0), uses_market=True),
         Candidate(
             "regularized_logistic",
@@ -374,7 +502,7 @@ CANDIDATES: dict[str, Candidate] = {
 # random_forest is excluded from the default queue. It adds little diversity to boosted_trees
 # (0.93 probability correlation in the 2023-2025 replay) and scores worse on every metric.
 # Run it with `--candidates ...,random_forest` when a new feature set may change that result.
-DEFAULT_QUEUE = ("baseline", "elo", "qb", "elo_qb", "elo_injury", "elo_warm", "elo_mov", "elo_mov_injury", "elo_mov2", "elo_mov2_injury", "elo_tuned_injury", "market_stack", "regularized_logistic", "boosted_trees")
+DEFAULT_QUEUE = ("baseline", "elo", "qb", "elo_qb", "elo_injury", "elo_warm", "elo_mov", "elo_mov_injury", "elo_mov2", "elo_mov2_injury", "elo_tuned_injury", "market_rating_injury", "elo_seed_injury", "elo_seed_market_rating_injury", "market_stack", "regularized_logistic", "boosted_trees")
 
 
 def select_hyperparameters(candidate: Candidate, train: pd.DataFrame, validation: pd.DataFrame) -> tuple[dict[str, Any], np.ndarray]:
@@ -650,6 +778,8 @@ def summarize(predictions: list[dict[str, Any]], weeks: list[dict[str, Any]], na
             comparisons["rawVersusEloInjury"] = "elo_injury__probability"
         if "elo_mov_injury" in names and name != "elo_mov_injury":
             comparisons["rawVersusEloMovInjury"] = "elo_mov_injury__probability"
+        if "elo_tuned_injury" in names and name != "elo_tuned_injury":
+            comparisons["rawVersusEloTunedInjury"] = "elo_tuned_injury__probability"
         summary["candidates"][name] = {
             "allGames": predict.probability_metrics(valid.homeWin.to_numpy(), valid[f"{name}__probability"].to_numpy()),
             "bySeason": season_breakdown(scored, name, comparisons),
@@ -682,10 +812,10 @@ def summarize(predictions: list[dict[str, Any]], weeks: list[dict[str, Any]], na
 
 
 def print_elo_missing(features: pd.DataFrame) -> None:
-    """Print how many feature rows lack each v2 Elo column; the count must be zero."""
-    for column in ("elo_diff_warm", "elo_diff_mov", ELO_MOV2_COLUMN, *ELO_GRID_PARAMS):
+    """Print how many feature rows lack each derived Elo or market column; the count must be zero."""
+    for column in ("elo_diff_warm", "elo_diff_mov", ELO_MOV2_COLUMN, *ELO_GRID_PARAMS, MARKET_RATING_COLUMN, ELO_SEED_COLUMN):
         if column in features.columns:
-            print(f"Elo column {column}: {int(features[column].isna().sum())} feature rows missing")
+            print(f"Derived column {column}: {int(features[column].isna().sum())} feature rows missing")
 
 
 def load_features(to_season: int, cache: Path | None, refresh: bool) -> pd.DataFrame:
@@ -714,6 +844,25 @@ def load_features(to_season: int, cache: Path | None, refresh: bool) -> pd.DataF
             aliases=ELO_TEAM_ALIASES,
         )
         features[column] = features.game_id.astype(str).map(differences)
+    scored_lines = elo_schedule[elo_schedule.spread_line.notna() & elo_schedule.home_moneyline.notna() & elo_schedule.away_moneyline.notna()]
+    agreement = ((scored_lines.spread_line > 0) == (scored_lines.home_moneyline < scored_lines.away_moneyline)).mean()
+    print(f"Spread sign check versus moneyline favourite: {agreement:.1%} of {len(scored_lines)} games with both lines")
+    features[MARKET_RATING_COLUMN] = features.game_id.astype(str).map(
+        market_rating_differences(elo_schedule, features, aliases=ELO_TEAM_ALIASES)
+    )
+    season_priors = market_season_priors(elo_schedule, aliases=ELO_TEAM_ALIASES)
+    features[ELO_SEED_COLUMN] = features.game_id.astype(str).map(
+        pregame_elo_v2(
+            elo_schedule,
+            k=ELO_SEED_K,
+            home_advantage=ELO_SEED_HOME_ADVANTAGE,
+            season_regression=ELO_SEED_REGRESSION,
+            mov_cap=ELO_MOV_CAP,
+            signed_mov=True,
+            aliases=ELO_TEAM_ALIASES,
+            season_prior=season_priors,
+        )
+    )
     print_elo_missing(features)
     features = build_injury_features(features, load_injuries(seasons))
     if cache is not None:
@@ -761,7 +910,7 @@ def main() -> None:
     parser.add_argument("--candidates", help="Comma-separated candidate names (default: full queue)")
     parser.add_argument("--list", action="store_true", help="List registered candidates and exit")
     parser.add_argument("--output", type=Path, default=EXPERIMENT_OUTPUT)
-    parser.add_argument("--features-cache", type=Path, help="Pickle path for built features (default: model/artifacts/features-v5-<start>-<to>.pkl)")
+    parser.add_argument("--features-cache", type=Path, help="Pickle path for built features (default: model/artifacts/features-v6-<start>-<to>.pkl)")
     parser.add_argument("--no-cache", action="store_true", help="Do not read or write the feature cache")
     parser.add_argument("--refresh-features", action="store_true", help="Rebuild the feature cache from nflverse")
     args = parser.parse_args()
@@ -772,7 +921,7 @@ def main() -> None:
     if args.from_season > args.to_season:
         parser.error("--from-season must not be after --to-season")
     candidates = parse_candidates(args.candidates)
-    cache = None if args.no_cache else args.features_cache or FEATURE_CACHE_DIR / f"features-v5-{predict.START_SEASON}-{args.to_season}.pkl"
+    cache = None if args.no_cache else args.features_cache or FEATURE_CACHE_DIR / f"features-v6-{predict.START_SEASON}-{args.to_season}.pkl"
     features = load_features(args.to_season, cache, args.refresh_features)
     print_injury_coverage(features)
     results = run_experiments(features, args.from_season, args.to_season, candidates)

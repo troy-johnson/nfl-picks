@@ -1,5 +1,6 @@
 from pathlib import Path
 import importlib.util
+import itertools
 import math
 import sys
 
@@ -60,7 +61,7 @@ def run_fast(features: pd.DataFrame, names=FAST_QUEUE) -> dict:
 
 
 def test_registry_covers_requested_candidates():
-    assert {"baseline", "elo", "qb", "elo_qb", "elo_injury", "elo_warm", "elo_mov", "elo_mov_injury", "elo_mov2", "elo_mov2_injury", "elo_tuned_injury", "market_stack", "regularized_logistic", "boosted_trees", "random_forest"} <= set(experiments.CANDIDATES)
+    assert {"baseline", "elo", "qb", "elo_qb", "elo_injury", "elo_warm", "elo_mov", "elo_mov_injury", "elo_mov2", "elo_mov2_injury", "elo_tuned_injury", "market_rating_injury", "elo_seed_injury", "elo_seed_market_rating_injury", "market_stack", "regularized_logistic", "boosted_trees", "random_forest"} <= set(experiments.CANDIDATES)
     assert experiments.CANDIDATES["baseline"].features == tuple(predict.FEATURES)
     assert experiments.CANDIDATES["elo"].features == tuple(predict.ELO_FEATURES)
     assert experiments.CANDIDATES["qb"].features == tuple(predict.QB_FEATURES)
@@ -73,6 +74,11 @@ def test_registry_covers_requested_candidates():
     assert experiments.CANDIDATES["elo_mov2"].features == tuple(predict.FEATURES) + ("elo_diff_mov2",)
     assert experiments.CANDIDATES["elo_mov2_injury"].features == tuple(predict.FEATURES) + ("elo_diff_mov2", "diff_injury_load", "diff_qb_injury")
     assert experiments.CANDIDATES["elo_tuned_injury"].features == tuple(predict.FEATURES) + ("elo_diff_tuned", "diff_injury_load", "diff_qb_injury")
+    assert experiments.CANDIDATES["market_rating_injury"].features == tuple(predict.FEATURES) + ("market_rating_diff", "diff_injury_load", "diff_qb_injury")
+    assert experiments.CANDIDATES["elo_seed_injury"].features == tuple(predict.FEATURES) + ("elo_diff_market_seed", "diff_injury_load", "diff_qb_injury")
+    assert experiments.CANDIDATES["elo_seed_market_rating_injury"].features == tuple(predict.FEATURES) + ("elo_diff_market_seed", "market_rating_diff", "diff_injury_load", "diff_qb_injury")
+    assert experiments.ELO_SEED_SPREAD_TO_ELO == 25.0
+    assert (experiments.ELO_SEED_K, experiments.ELO_SEED_HOME_ADVANTAGE, experiments.ELO_SEED_REGRESSION) == (16.0, 48.0, 0.67)
     assert experiments.ELO_TEAM_ALIASES == {"OAK": "LV", "SD": "LAC", "STL": "LA"}
     assert len(experiments.ELO_GRID_PARAMS) == 18
     assert experiments.CANDIDATES["market_stack"].features == tuple(experiments.INJURY_FEATURES + ["market_logit"])
@@ -81,10 +87,11 @@ def test_registry_covers_requested_candidates():
     assert experiments.CANDIDATES["boosted_trees"].calibrate
     for name in experiments.DEFAULT_QUEUE:
         assert name in experiments.CANDIDATES
-    assert {"elo_injury", "elo_warm", "elo_mov", "elo_mov_injury", "elo_mov2", "elo_mov2_injury", "elo_tuned_injury", "market_stack"} <= set(experiments.DEFAULT_QUEUE)
+    assert {"elo_injury", "elo_warm", "elo_mov", "elo_mov_injury", "elo_mov2", "elo_mov2_injury", "elo_tuned_injury", "market_rating_injury", "elo_seed_injury", "elo_seed_market_rating_injury", "market_stack"} <= set(experiments.DEFAULT_QUEUE)
     queue = list(experiments.DEFAULT_QUEUE)
     assert queue[queue.index("elo_injury") + 1:queue.index("elo_injury") + 4] == ["elo_warm", "elo_mov", "elo_mov_injury"]
     assert queue[queue.index("elo_mov_injury") + 1:queue.index("elo_mov_injury") + 4] == ["elo_mov2", "elo_mov2_injury", "elo_tuned_injury"]
+    assert queue[queue.index("elo_tuned_injury") + 1:queue.index("elo_tuned_injury") + 4] == ["market_rating_injury", "elo_seed_injury", "elo_seed_market_rating_injury"]
     assert "random_forest" not in experiments.DEFAULT_QUEUE
     assert experiments.parse_candidates("boosted_trees,random_forest")[-1].name == "random_forest"
 
@@ -331,6 +338,29 @@ def test_elo_aliases_do_not_mutate_the_input_frame():
     pd.testing.assert_frame_equal(frame, before)
 
 
+def test_pregame_elo_v2_season_prior_none_reproduces_the_default_walk():
+    frame = synthetic_schedule()
+    assert experiments.pregame_elo_v2(frame) == predict.pregame_elo_differences(frame)
+    assert experiments.pregame_elo_v2(frame, season_prior=None) == predict.pregame_elo_differences(frame)
+    kwargs = {"mov_cap": 24.0, "signed_mov": True, "aliases": {"H0": "H1"}}
+    assert experiments.pregame_elo_v2(frame, **kwargs) == experiments.pregame_elo_v2(frame, season_prior=None, **kwargs)
+
+
+def test_season_prior_moves_season_start_ratings_toward_the_prior():
+    frame = relocation_schedule()
+    aliases = {"OAK": "LV"}
+    walk = experiments.pregame_elo_v2(frame, aliases=aliases)
+    seeded = experiments.pregame_elo_v2(frame, aliases=aliases, season_prior={(2, "LV"): 1700.0})
+    probability = 1 / (1 + 10 ** (-predict.ELO_HOME_ADVANTAGE / 400))
+    oak_final = predict.ELO_INITIAL_RATING + predict.ELO_K_FACTOR * (1 - probability)
+    regression = predict.ELO_SEASON_REGRESSION
+    unseeded_rating = predict.ELO_INITIAL_RATING + regression * (oak_final - predict.ELO_INITIAL_RATING)
+    seeded_rating = 1700.0 + regression * (oak_final - 1700.0)
+    assert walk["2_01_OPP_LV"] == pytest.approx(unseeded_rating - predict.ELO_INITIAL_RATING + predict.ELO_HOME_ADVANTAGE)
+    assert seeded["2_01_OPP_LV"] == pytest.approx(seeded_rating - predict.ELO_INITIAL_RATING + predict.ELO_HOME_ADVANTAGE)
+    assert walk["2_01_OPP_LV"] < seeded["2_01_OPP_LV"]
+
+
 def upset_margin_schedules(margin: int) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Same week-1 margin, once won by the home favourite and once by the away underdog."""
     favourite = pd.DataFrame([
@@ -359,6 +389,96 @@ def test_signed_mov_factor_moves_upset_wins_more_than_expected_wins():
     probability = 1 / (1 + 10 ** (-predict.ELO_HOME_ADVANTAGE / 400))
     signed_underdog_gain = predict.ELO_K_FACTOR * probability * math.log(10 + 1) * 2.2 / (2.2 - predict.ELO_HOME_ADVANTAGE * 0.001)
     assert signed_underdog["2021_02_A1_A0"] == pytest.approx(signed_underdog_gain + predict.ELO_HOME_ADVANTAGE)
+
+
+def spread_schedule(seed: int = 7, seasons=(2021, 2022), weeks: int = 4, games_per_week: int = 4) -> pd.DataFrame:
+    """Two seasons of completed games with closing spreads for the market-rating tests."""
+    rng = np.random.default_rng(seed)
+    rows = []
+    for season in seasons:
+        for week in range(1, weeks + 1):
+            for game in range(games_per_week):
+                home_score, away_score = int(rng.integers(0, 45)), int(rng.integers(0, 45))
+                if home_score == away_score:
+                    away_score += 3
+                rows.append({
+                    "game_id": f"{season}_{week:02d}_A{game}_H{game}",
+                    "season": season,
+                    "week": week,
+                    "gameday": f"{season}-10-{(week - 1) * 7 + 1:02d}",
+                    "gametime": "13:00",
+                    "home_team": f"H{game}",
+                    "away_team": f"A{game}",
+                    "home_score": home_score,
+                    "away_score": away_score,
+                    "spread_line": float(rng.choice([-7.0, -3.0, -1.0, 1.0, 3.0, 7.0])),
+                    "location": "Home",
+                })
+    return pd.DataFrame(rows)
+
+
+def test_spread_ratings_recover_known_team_strengths():
+    rng = np.random.default_rng(9)
+    teams = [f"T{index}" for index in range(8)]
+    strengths = dict(zip(teams, rng.uniform(-6.0, 6.0, len(teams))))
+    home_field = 2.0
+    rows = []
+    for index, (home, away) in enumerate(itertools.combinations(teams, 2)):
+        neutral = index % 7 == 3
+        rows.append({
+            "game_id": f"g{index:02d}",
+            "season": 1,
+            "week": 1 + index // 4,
+            "gameday": f"1-10-{index + 1:02d}",
+            "gametime": "13:00",
+            "home_team": home,
+            "away_team": away,
+            "home_score": 24,
+            "away_score": 17,
+            "spread_line": strengths[home] - strengths[away] + (0.0 if neutral else home_field),
+            "location": "Neutral" if neutral else "Home",
+        })
+    frame = pd.DataFrame(rows)
+    ratings, fitted_home_field = experiments.fit_spread_ratings(frame)
+    for home, away in itertools.combinations(teams, 2):
+        assert ratings[home] - ratings[away] == pytest.approx(strengths[home] - strengths[away], abs=0.3)
+    assert fitted_home_field == pytest.approx(home_field, abs=0.3)
+
+
+def test_market_rating_differences_ignore_target_day_and_later_spreads():
+    schedule = spread_schedule()
+    before = schedule.copy(deep=True)
+    targets = schedule[(schedule.season == 2022) & (schedule.week == 3)]
+    original = experiments.market_rating_differences(schedule, targets)
+    assert len(original) == 4
+
+    altered = schedule.copy()
+    same_day_or_later = (altered.season == 2022) & (altered.week >= 3)
+    altered.loc[same_day_or_later, "spread_line"] = altered.loc[same_day_or_later, "spread_line"] + 10.0
+    assert experiments.market_rating_differences(altered, targets) == original
+
+    shifted = schedule.copy()
+    earlier = (shifted.season == 2021) | ((shifted.season == 2022) & (shifted.week <= 2))
+    shifted.loc[earlier, "spread_line"] = -shifted.loc[earlier, "spread_line"]
+    changed = experiments.market_rating_differences(shifted, targets)
+    assert changed != original
+
+    pd.testing.assert_frame_equal(schedule, before)
+
+
+def test_market_season_priors_use_only_previous_season_spreads():
+    schedule = spread_schedule()
+    original = experiments.market_season_priors(schedule)
+    teams = {f"H{game}" for game in range(4)} | {f"A{game}" for game in range(4)}
+    assert set(original) == {(2022, team) for team in teams}
+
+    altered = schedule.copy()
+    altered.loc[altered.season == 2022, "spread_line"] = altered.loc[altered.season == 2022, "spread_line"] + 10.0
+    assert experiments.market_season_priors(altered) == original
+
+    shifted = schedule.copy()
+    shifted.loc[shifted.season == 2021, "spread_line"] = -shifted.loc[shifted.season == 2021, "spread_line"]
+    assert experiments.market_season_priors(shifted) != original
 
 
 def tuned_features(seed: int = 3) -> pd.DataFrame:
@@ -594,7 +714,7 @@ def test_market_stack_outputs_nan_when_target_game_lacks_market():
 
 
 def test_new_candidates_match_output_shape():
-    names = FAST_QUEUE + ["elo_injury", "market_stack"]
+    names = FAST_QUEUE + ["elo_injury", "market_stack", "market_rating_injury", "elo_seed_injury", "elo_seed_market_rating_injury"]
     results = run_fast(synthetic_features(), names)
     expected_keys = {"probability", "blendedProbability", "marketWeight"}
     for prediction in results["predictions"]:
