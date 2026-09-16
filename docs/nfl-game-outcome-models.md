@@ -124,6 +124,27 @@ Per-season spreads are large: 2024 was the most predictable season (market Brier
 
 These results use recorded nflverse closing moneylines. They can show that a candidate does or does not improve on the live model. They cannot show market-beating value. That claim needs the same-time multi-book snapshots in `data/odds-snapshots/` and enough completed games to give a week-block standard error smaller than the observed difference.
 
+## Crowd Pick Shares
+
+`model/crowd.py` archives the public straight-up pick shares from ESPN's NFL Pick'em game (`gambit-api.fantasy.espn.com`, challenge keys `nfl-pigskin-pickem-<season>` through 2025 and `nfl-pickem-2026`). The shares are stored in `data/crowd-picks/`. The capture workflow records them 0-120 minutes before each game day's first kickoff, and locked games keep their earlier shares. The shares are not a model input. They describe the pool field, which matters for a pick'em contest where the score against other entries, not the probability, decides the result.
+
+2021-2025 evaluation (1,355 regular-season games with recorded odds):
+
+| Market favorite probability | Games | Mean market favorite | Mean crowd favorite share | Favorite win rate |
+| --- | ---: | ---: | ---: | ---: |
+| 0.50-0.55 | 172 | 0.526 | 0.573 | 0.494 |
+| 0.55-0.60 | 287 | 0.575 | 0.635 | 0.613 |
+| 0.60-0.65 | 255 | 0.625 | 0.780 | 0.627 |
+| 0.65-0.70 | 179 | 0.677 | 0.834 | 0.642 |
+| 0.70-0.75 | 162 | 0.725 | 0.893 | 0.747 |
+| 0.75-0.80 | 158 | 0.774 | 0.924 | 0.759 |
+| 0.80-0.90 | 133 | 0.845 | 0.962 | 0.865 |
+| 0.90-1.00 | 9 | 0.912 | 0.971 | 1.000 |
+
+- The crowd favorite wins 65.2% of games; the market favorite wins 66.5%. The two disagree in 168 games (12%), and the market favorite wins 55.4% of those.
+- Used as a probability, the crowd share scores Brier 0.2459 and log loss 0.7522 against 0.2117 and 0.6109 for the de-vigged closing line. The field is far more extreme than the market.
+- Coin-flip games (market favorite below 55%) are where a pick against the field costs the least expected points. The weekly report (`model/crowd.py --report`) ranks games by market probability minus crowd share for the less-picked team.
+
 ## Data and feature rules
 
 Use one immutable row per game with an `as_of` timestamp. Each field must have been observable at that timestamp. This prevents future game results, final injury status, revised weather, and later odds from leaking into training.

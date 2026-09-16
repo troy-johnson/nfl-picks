@@ -53,3 +53,21 @@ THE_ODDS_API_KEY=... uv run --project model python model/predict.py --capture-od
 ```
 
 Snapshots are written to `data/odds-snapshots/<season>/<game-day>.json`. They preserve each available US sportsbook's de-vigged moneyline probability and their equal-weight average. Recording does not change live picks.
+
+## Crowd pick shares
+
+`model/crowd.py` records the public pick shares from ESPN's NFL Pick'em game. The shares tell how the pool field picks each game. They do not change live picks.
+
+```bash
+uv run --project model python model/crowd.py --archive --from-season 2021 --to-season 2025
+uv run --project model python model/crowd.py --capture
+uv run --project model python model/crowd.py --evaluate --from-season 2021 --to-season 2025
+uv run --project model python model/crowd.py --report
+```
+
+- `--archive` downloads the final straight-up shares for past seasons into `data/crowd-picks/<season>/week-NN.json`.
+- `--capture` runs in the capture workflow 0-120 minutes before the first kickoff of the next game day. Locked games keep their earlier shares. Open games take the fresh shares.
+- `--evaluate` joins the archive with nflverse results and closing moneylines and writes `model/artifacts/crowd-evaluation.json`.
+- `--report` reads `public/data/current.json` and lists, for each game, the market probability, the crowd share, and the contrarian value (market probability minus crowd share) of the less-picked team.
+
+2021-2025 result (1,355 games): the crowd favorite wins 65.2% of games and the market favorite wins 66.5%. The crowd share is not a probability: used as one it scores Brier 0.2459 against 0.2117 for the market. The field is much more extreme than the market. When the market favorite sits at 60-70%, about 78-83% of entries pick it. Coin-flip games (market favorite below 55%) are where a pick against the field costs the least expected points.

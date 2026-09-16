@@ -29,11 +29,13 @@ jobs:
             exit 0
           fi
           uv run --project model python model/predict.py --capture-odds
-      - name: Commit odds snapshot
+      - name: Capture ESPN pick shares
+        run: uv run --project model python model/crowd.py --capture
+      - name: Commit snapshots
         run: |
-          if [ -z "$(git status --porcelain -- data/odds-snapshots)" ]; then exit 0; fi
+          if [ -z "$(git status --porcelain -- data/odds-snapshots data/crowd-picks)" ]; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/odds-snapshots
-          git commit -m "data: capture NFL odds"
+          git add data/odds-snapshots data/crowd-picks
+          git commit -m "data: capture NFL odds and pick shares"
           git push
