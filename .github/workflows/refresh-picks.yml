@@ -38,9 +38,9 @@ jobs:
         run: uv run --project model python model/predict.py ${{ inputs.force && '--force' || '' }}
       - name: Commit updated picks
         run: |
-          if git diff --quiet -- public/data; then echo "No pick changes to publish."; exit 0; fi
+          if git diff --quiet -- public/data && [ -z "$(git status --porcelain -- data/crowd-picks)" ]; then echo "No pick changes to publish."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data
+          git add public/data data/crowd-picks
           git commit -m "data: refresh NFL picks"
           git push

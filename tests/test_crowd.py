@@ -151,3 +151,57 @@ def test_weekly_report_ranks_by_contrarian_value():
     assert abs(top["expectedPointCost"] - 0.20) < 1e-9
     assert abs(rows[1]["expectedPointCost"] - 0.04) < 1e-9
     assert "A@B" in crowd.format_report(rows)
+    assert rows[0]["poolPick"] == "B", "60/40 favourite costs 0.20 points; the pool keeps the favourite"
+    assert rows[1]["poolPick"] == "D", "52% favourite with only 58% of the field stays with the favourite"
+
+
+def test_pool_pick_fades_crowded_coin_flips_only():
+    flip = crowd.pool_pick("A", "B", 0.52, 0.80)
+    assert flip["poolPick"] == "A" and flip["flipped"]
+    assert "80%" in flip["poolPickReason"]
+    assert crowd.pool_pick("A", "B", 0.52, 0.55)["poolPick"] == "B", "field is split; no reason to fade"
+    assert crowd.pool_pick("A", "B", 0.60, 0.95)["poolPick"] == "B", "favourite costs 0.20 points; too expensive"
+    assert crowd.pool_pick("A", "B", 0.48, 0.15)["poolPick"] == "B", "away favourite crowded: take home underdog"
+    assert crowd.pool_pick("A", "B", 0.48, 0.60)["poolPick"] == "A", "away favourite with split field: keep it"
+    assert crowd.pool_pick("A", "B", 0.52, None) == {"poolPick": "B", "poolPickReason": "no crowd data", "flipped": False}
+    assert crowd.pool_pick("A", "B", None, 0.9) == {"poolPick": None, "poolPickReason": "no market", "flipped": False}
+    assert crowd.pool_pick("A", "B", 0.52, 0.80, max_cost=0.0)["poolPick"] == "B", "max_cost 0 disables flips"
+
+
+def test_simulate_pool_scores_rules_on_identical_games():
+    rows = []
+    for season in (2024, 2025):
+        for index in range(12):
+            market = 0.51 + 0.03 * (index % 6)
+            rows.append({
+                "season": season, "week": index + 1, "awayTeam": f"A{index}", "homeTeam": f"H{index}",
+                "homeShare": min(0.95, market + 0.25), "awayShare": max(0.05, 0.75 - market), "entries": 100,
+                "market_home_prob": market, "home_win": 1.0 if index % 3 else 0.0,
+            })
+    rows.append({"season": 2025, "week": 18, "awayTeam": "T", "homeTeam": "U", "homeShare": 0.5, "awayShare": 0.5, "entries": 1, "market_home_prob": 0.6, "home_win": 0.5})
+    result = crowd.simulate_pool(pd.DataFrame(rows), rules=((0.0, 1.01), (0.04, 0.6)), sharp_opponents=(0, 3), entrants=4, sims=50)
+    assert result["games"] == 24, "tied game is dropped"
+    assert result["seasons"] == [2024, 2025]
+    favorite, rule = result["rules"]
+    assert favorite["flipsPerSeason"] == 0
+    assert rule["flipsPerSeason"] == 2, "market 0.51 games with 0.76 crowd share flip"
+    for entry in result["rules"]:
+        assert 0 <= entry["realizedWinShare"] <= 1
+        assert set(entry["simulatedWinShareBySharpOpponents"]) == {"0", "3"}
+    assert "cost<=0.04 share>=0.6" in crowd.format_simulation(result)
+
+
+def test_pool_fields_added_to_published_game(tmp_path):
+    game = {"gameId": "g1", "awayTeam": "SEA", "homeTeam": "ARI", "pick": "ARI", "marketHomeProbability": 0.51}
+    shares = {("SEA", "ARI"): {"homeShare": 0.8, "awayShare": 0.2, "entries": 1000}}
+    fields = predict.pool_fields(game, shares)
+    assert fields["poolPick"] == "SEA"
+    assert fields["crowdHomeShare"] == 0.8 and fields["crowdEntries"] == 1000
+    assert abs(fields["contrarianValue"] - (-0.29)) < 1e-9
+    empty = predict.pool_fields(game, {})
+    assert empty["poolPick"] == "ARI" and empty["crowdHomeShare"] is None and empty["contrarianValue"] is None
+    week_games = [{"awayTeam": "SEA", "homeTeam": "ARI", "homeShare": 0.7, "awayShare": 0.3, "entries": 5, "lockAt": None}]
+    crowd.write_week(2026, 3, week_games, tmp_path)
+    stored = crowd.week_shares(2026, 3, NOW, tmp_path, refresh=False)
+    assert stored[("SEA", "ARI")]["homeShare"] == 0.7
+    assert crowd.week_shares(2026, 4, NOW, tmp_path, refresh=False) == {}

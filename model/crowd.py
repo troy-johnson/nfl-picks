@@ -6,7 +6,8 @@ each game locks, and evaluates the crowd against the recorded market.
 
 The crowd share is not a win probability. It measures where the pick'em field
 stands, which is what matters when the goal is to finish ahead of a league
-rather than to beat the market. Nothing here changes live picks.
+rather than to beat the market. The live `pick` never changes here; the pool
+rule only adds a separate `poolPick`.
 """
 from __future__ import annotations
 
@@ -19,6 +20,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -32,6 +34,17 @@ STRAIGHT_FORMAT_ID = 1
 ESPN_TEAM_ALIASES = {"WSH": "WAS", "LAR": "LA"}
 CAPTURE_WINDOW_MINUTES = 120
 REGULAR_SEASON_WEEKS = 18
+
+# Pool rule: take the underdog only when the favourite's expected point edge
+# (2p - 1) is at most POOL_MAX_COST and the field sits on the favourite at
+# POOL_MIN_CROWD_SHARE or more. Chosen from the 2021-2025 pool simulation
+# (see `--simulate`): it costs about 0.2 expected points per season and keeps a
+# ten-entrant pool winnable when other entrants also pick market favourites.
+POOL_MAX_COST = 0.04
+POOL_MIN_CROWD_SHARE = 0.60
+POOL_ENTRANTS = 10
+POOL_RULES = ((0.0, 1.01), (0.02, 0.5), (0.04, 0.5), (0.04, 0.6), (0.06, 0.6), (0.06, 0.7), (0.10, 0.6), (0.10, 0.7))
+POOL_SHARP_OPPONENTS = (0, 2, 4, 6, 9)
 
 
 def nflverse_team(abbrev: str) -> str:
@@ -194,6 +207,29 @@ def capture_current_week(now: datetime | None = None, output_dir: Path = CROWD_D
     return path
 
 
+def week_shares(season: int, week: int, now: datetime | None = None, output_dir: Path = CROWD_DIR, refresh: bool = True) -> dict[tuple[str, str], dict[str, Any]]:
+    """Crowd shares for one week keyed by (awayTeam, homeTeam).
+
+    With ``refresh`` the current ESPN shares are fetched and merged into the
+    week file so that locked games keep their pre-lock share. Any fetch error
+    falls back to the stored file, and a missing file yields an empty map, so
+    callers that publish picks never fail because of the crowd feed.
+    """
+    now = now or datetime.now(timezone.utc)
+    stored = read_week(season, week, output_dir)
+    games = stored
+    if refresh:
+        try:
+            fresh = normalize_pick_shares(fetch_challenge_week(challenge_key_for_season(season), week), season, week, now)
+        except Exception as error:  # noqa: BLE001 - the crowd feed is optional
+            print(f"Crowd shares unavailable for {season} week {week}: {error}")
+        else:
+            if fresh:
+                games = merge_week(stored, fresh, now)
+                write_week(season, week, games, output_dir)
+    return {(game["awayTeam"], game["homeTeam"]): game for game in games}
+
+
 def load_archive(from_season: int, to_season: int, output_dir: Path = CROWD_DIR) -> pd.DataFrame:
     rows: list[dict[str, Any]] = []
     for season in range(from_season, to_season + 1):
@@ -271,6 +307,136 @@ def contrarian_value(market_prob: float, crowd_share: float) -> float:
     return market_prob - crowd_share
 
 
+def pool_pick(
+    away_team: str,
+    home_team: str,
+    market_home_prob: float | None,
+    crowd_home_share: float | None,
+    max_cost: float = POOL_MAX_COST,
+    min_share: float = POOL_MIN_CROWD_SHARE,
+) -> dict[str, Any]:
+    """Pool-oriented side for one game.
+
+    Returns the market favourite unless the game is close to a coin flip and
+    the field is stacked on the favourite. In that case the underdog costs
+    almost nothing in expected points and separates the entry from opponents
+    who also pick favourites. Without market or crowd data the favourite is
+    returned with reason ``no crowd data`` or ``no market``.
+    """
+    if market_home_prob is None or pd.isna(market_home_prob):
+        return {"poolPick": None, "poolPickReason": "no market", "flipped": False}
+    favorite_home = market_home_prob >= 0.5
+    favorite = home_team if favorite_home else away_team
+    underdog = away_team if favorite_home else home_team
+    favorite_prob = market_home_prob if favorite_home else 1 - market_home_prob
+    cost = 2 * favorite_prob - 1
+    if crowd_home_share is None or pd.isna(crowd_home_share):
+        return {"poolPick": favorite, "poolPickReason": "no crowd data", "flipped": False}
+    favorite_share = crowd_home_share if favorite_home else 1 - crowd_home_share
+    if cost <= max_cost + 1e-9 and favorite_share >= min_share - 1e-9:
+        return {
+            "poolPick": underdog,
+            "poolPickReason": f"coin flip ({favorite} {favorite_prob:.0%}) with {favorite_share:.0%} of the field on {favorite}",
+            "flipped": True,
+        }
+    return {"poolPick": favorite, "poolPickReason": "market favorite", "flipped": False}
+
+
+def pool_picks_frame(frame: pd.DataFrame, max_cost: float, min_share: float) -> np.ndarray:
+    """Boolean home picks for a joined frame under one pool rule."""
+    picks = []
+    for row in frame.itertuples():
+        result = pool_pick(row.awayTeam, row.homeTeam, row.market_home_prob, row.homeShare, max_cost, min_share)
+        picks.append(result["poolPick"] == row.homeTeam)
+    return np.asarray(picks, dtype=bool)
+
+
+def _pool_win_share(home_picks: np.ndarray, home_share: np.ndarray, market_home: np.ndarray, outcomes: np.ndarray, sharp: int, entrants: int, rng: np.random.Generator) -> float:
+    """Share of simulated pools won by our picks.
+
+    Opponents come in two kinds: ``sharp`` entrants always take the market
+    favourite; the rest pick the home team with probability equal to the crowd
+    home share, independently per game. Ties split the win evenly.
+    """
+    sims, games = outcomes.shape
+    casual = rng.random((sims, entrants - 1 - sharp, games)) < home_share
+    favorite = np.broadcast_to(market_home >= 0.5, (sims, sharp, games))
+    opponents = np.concatenate([casual, favorite], axis=1)
+    opponent_points = (opponents == outcomes[:, None, :]).sum(axis=2)
+    our_points = (home_picks[None, :] == outcomes).sum(axis=1)
+    best = opponent_points.max(axis=1)
+    ties = (opponent_points == our_points[:, None]).sum(axis=1)
+    win = np.where(our_points > best, 1.0, np.where(our_points == best, 1.0 / (1 + ties), 0.0))
+    return float(win.mean())
+
+
+def simulate_pool(
+    joined: pd.DataFrame,
+    rules: tuple[tuple[float, float], ...] = POOL_RULES,
+    sharp_opponents: tuple[int, ...] = POOL_SHARP_OPPONENTS,
+    entrants: int = POOL_ENTRANTS,
+    sims: int = 2000,
+    seed: int = 0,
+) -> dict[str, Any]:
+    """Season-long pool simulation for each candidate pool rule.
+
+    Each season is one pool of ``entrants`` players. Our entry follows the
+    rule; outcomes are drawn from the recorded market probability (assumed
+    calibrated) so that the estimate is not tied to one realised season.
+    ``realizedPoints`` and ``realizedWinShare`` use the actual results instead,
+    against fully casual opponents.
+    """
+    rng = np.random.default_rng(seed)
+    scored = joined.dropna(subset=["market_home_prob", "home_win"]).copy()
+    scored = scored[scored.home_win != 0.5]
+    seasons = sorted(int(season) for season in scored.season.unique())
+    result: dict[str, Any] = {"entrants": entrants, "simulations": sims, "seasons": seasons, "games": int(len(scored)), "rules": []}
+    for max_cost, min_share in rules:
+        flips = 0
+        realized_points = realized_win = 0.0
+        simulated_points = 0.0
+        win_by_sharp = dict.fromkeys(sharp_opponents, 0.0)
+        for season in seasons:
+            group = scored[scored.season == season]
+            market_home = group.market_home_prob.to_numpy(dtype=float)
+            home_share = group.homeShare.to_numpy(dtype=float)
+            actual = group.home_win.to_numpy() == 1
+            home_picks = pool_picks_frame(group, max_cost, min_share)
+            flips += int((home_picks != (market_home >= 0.5)).sum())
+            realized = np.broadcast_to(actual, (sims, len(actual)))
+            realized_points += float((home_picks == actual).sum())
+            realized_win += _pool_win_share(home_picks, home_share, market_home, realized, 0, entrants, rng)
+            simulated = rng.random((sims, len(market_home))) < market_home
+            simulated_points += float((home_picks[None, :] == simulated).sum(axis=1).mean())
+            for sharp in sharp_opponents:
+                win_by_sharp[sharp] += _pool_win_share(home_picks, home_share, market_home, simulated, sharp, entrants, rng)
+        count = len(seasons)
+        result["rules"].append({
+            "maxCost": max_cost,
+            "minCrowdShare": min_share,
+            "label": "favorite" if max_cost == 0 else f"cost<={max_cost:.2f} share>={min_share:.1f}",
+            "flipsPerSeason": flips / count,
+            "realizedPoints": realized_points / count,
+            "realizedWinShare": realized_win / count,
+            "simulatedPoints": simulated_points / count,
+            "simulatedWinShareBySharpOpponents": {str(sharp): win / count for sharp, win in win_by_sharp.items()},
+        })
+    return result
+
+
+def format_simulation(result: dict[str, Any]) -> str:
+    sharp = list(next(iter(result["rules"]))["simulatedWinShareBySharpOpponents"])
+    header = f"{'rule':<24} {'flips':>5} {'real pts':>8} {'real win':>8} {'sim pts':>7} " + " ".join(f"{'sharp=' + key:>8}" for key in sharp)
+    lines = [f"{result['games']} games, {result['entrants']} entrants, {result['simulations']} simulated pools per season, seasons {result['seasons'][0]}-{result['seasons'][-1]}", header]
+    for rule in result["rules"]:
+        lines.append(
+            f"{rule['label']:<24} {rule['flipsPerSeason']:>5.1f} {rule['realizedPoints']:>8.1f} {rule['realizedWinShare']:>8.3f} {rule['simulatedPoints']:>7.1f} "
+            + " ".join(f"{rule['simulatedWinShareBySharpOpponents'][key]:>8.3f}" for key in sharp)
+        )
+    lines.append("sharp=k: k opponents always pick the market favorite; the other entrants pick with the crowd shares")
+    return "\n".join(lines)
+
+
 def weekly_report(current: dict[str, Any], crowd_games: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Join live picks with the crowd shares for the same week."""
     crowd_by_game = {(game["awayTeam"], game["homeTeam"]): game for game in crowd_games}
@@ -285,11 +451,13 @@ def weekly_report(current: dict[str, Any], crowd_games: list[dict[str, Any]]) ->
         home_value = contrarian_value(market_home, crowd["homeShare"])
         contrarian_team = game["homeTeam"] if home_value > 0 else game["awayTeam"]
         contrarian_prob = market_home if contrarian_team == game["homeTeam"] else 1 - market_home
+        pool = pool_pick(game["awayTeam"], game["homeTeam"], market_home, crowd["homeShare"])
         rows.append({
             "gameId": game["gameId"],
             "awayTeam": game["awayTeam"],
             "homeTeam": game["homeTeam"],
             "pick": game["pick"],
+            "poolPick": pool["poolPick"],
             "modelHomeProbability": game["homeWinProbability"],
             "marketHomeProbability": market_home,
             "crowdHomeShare": crowd["homeShare"],
@@ -304,10 +472,10 @@ def weekly_report(current: dict[str, Any], crowd_games: list[dict[str, Any]]) ->
 
 
 def format_report(rows: list[dict[str, Any]]) -> str:
-    lines = [f"{'game':<10} {'pick':<5} {'model':>6} {'market':>7} {'crowd':>6} {'contrarian':<11} {'mkt':>5} {'crowd':>6} {'value':>6} {'cost':>6}"]
+    lines = [f"{'game':<10} {'pick':<5} {'pool':<5} {'model':>6} {'market':>7} {'crowd':>6} {'contrarian':<11} {'mkt':>5} {'crowd':>6} {'value':>6} {'cost':>6}"]
     for row in rows:
         lines.append(
-            f"{row['awayTeam'] + '@' + row['homeTeam']:<10} {row['pick']:<5} {row['modelHomeProbability']:>6.3f} {row['marketHomeProbability']:>7.3f} {row['crowdHomeShare']:>6.3f} "
+            f"{row['awayTeam'] + '@' + row['homeTeam']:<10} {row['pick']:<5} {row['poolPick'] or '-':<5} {row['modelHomeProbability']:>6.3f} {row['marketHomeProbability']:>7.3f} {row['crowdHomeShare']:>6.3f} "
             f"{row['contrarianTeam']:<11} {row['contrarianTeamMarketProbability']:>5.2f} {row['contrarianTeamCrowdShare']:>6.2f} {row['contrarianValue']:>6.3f} {row['expectedPointCost']:>6.3f}"
         )
     lines.append("model/market/crowd columns are home-team values")
@@ -322,9 +490,13 @@ def main() -> None:
     parser.add_argument("--force", action="store_true", help="Capture even when no game day is due")
     parser.add_argument("--evaluate", action="store_true", help="Compare crowd and market favorites on archived seasons")
     parser.add_argument("--report", action="store_true", help="Show contrarian value for the current week's live picks")
+    parser.add_argument("--simulate", action="store_true", help="Simulate season-long pools for each pool rule on archived seasons")
+    parser.add_argument("--entrants", type=int, default=POOL_ENTRANTS)
+    parser.add_argument("--simulations", type=int, default=2000)
     parser.add_argument("--from-season", type=int, default=2021)
     parser.add_argument("--to-season", type=int, default=2025)
     parser.add_argument("--output", type=Path, default=ROOT / "model" / "artifacts" / "crowd-evaluation.json")
+    parser.add_argument("--simulation-output", type=Path, default=ROOT / "model" / "artifacts" / "pool-simulation.json")
     args = parser.parse_args()
 
     if args.archive:
@@ -345,6 +517,15 @@ def main() -> None:
             print(f"{row['marketFavoriteRange']:<16} {row['games']:>5} {row['meanMarketFavoriteProbability']:>8.3f} {row['meanCrowdFavoriteShare']:>10.3f} {row['favoriteWinRate']:>8.3f}")
         for season, row in result["bySeason"].items():
             print(f"{season}: {row['games']} games, crowd favorite {row['crowdFavoriteAccuracy']:.3f}, market favorite {row['marketFavoriteAccuracy']:.3f}")
+    if args.simulate:
+        crowd = load_archive(args.from_season, args.to_season)
+        if crowd.empty:
+            raise SystemExit("No archived crowd picks. Run --archive first.")
+        joined = join_market(crowd, predict.load_schedule(list(range(args.from_season, args.to_season + 1))))
+        result = simulate_pool(joined, entrants=args.entrants, sims=args.simulations)
+        args.simulation_output.parent.mkdir(parents=True, exist_ok=True)
+        args.simulation_output.write_text(json.dumps(result, indent=2) + "\n")
+        print(format_simulation(result))
     if args.report:
         current = json.loads(predict.OUTPUT.read_text())
         season, week = int(current["season"]), int(current["week"])

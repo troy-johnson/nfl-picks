@@ -157,6 +157,20 @@ These results use recorded nflverse closing moneylines. They can show that a can
 - Used as a probability, the crowd share scores Brier 0.2459 and log loss 0.7522 against 0.2117 and 0.6109 for the de-vigged closing line. The field is far more extreme than the market.
 - Coin-flip games (market favorite below 55%) are where a pick against the field costs the least expected points. The weekly report (`model/crowd.py --report`) ranks games by market probability minus crowd share for the less-picked team.
 
+### Pool pick rule
+
+The target contest is a season-long straight pool with about ten entrants, where the most correct picks wins. Two objectives compete there: expected points (always pick the favorite) and separation from the field (differ from other entries where it is cheap). `model/crowd.py --simulate` plays each archived season as one ten-entrant pool 2,000 times. Outcomes come from the closing-market probability, so the estimate does not depend on one realized season; opponents pick with the crowd shares, except `sharp=k` opponents who always take the market favorite.
+
+| Rule | Flips per season | Simulated points cost | Pool win share, all casual | Sharp = 2 | Sharp = 4 | Sharp = 9 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Always favorite | 0.0 | 0.00 | 0.717 | 0.254 | 0.164 | 0.100 |
+| cost <= 0.02, share >= 0.5 | 3.0 | -0.03 | 0.710 | 0.373 | 0.374 | 0.423 |
+| cost <= 0.04, share >= 0.6 (chosen) | 6.2 | 0.01 | 0.701 | 0.393 | 0.408 | 0.479 |
+| cost <= 0.06, share >= 0.6 | 10.2 | 0.33 | 0.686 | 0.359 | 0.365 | 0.411 |
+| cost <= 0.10, share >= 0.6 | 18.4 | 1.01 | 0.650 | 0.340 | 0.353 | 0.398 |
+
+`cost` is the favorite's expected point edge `2p - 1`; `share` is the crowd share on the favorite. Simulated points cost is the per-season loss in expected correct picks against the favorite-only entry (negative values are simulation noise). Against a fully casual field the favorite-only entry is already the best, and every flip rule is slightly worse. As soon as two or more opponents also pick market favorites, the favorite-only entry ties with them and its win share collapses, while the chosen rule keeps 39-48%. The published `poolPick` applies the chosen rule; `pick` remains the market-blend favorite and the live model is unchanged. On realized 2021-2025 results the chosen rule scored 180.0 correct picks per season against 180.2 for the favorite-only entry. The rule was selected on the same 2021-2025 data it is reported on; the 2026 season is the first out-of-sample test.
+
 ## Data and feature rules
 
 Use one immutable row per game with an `as_of` timestamp. Each field must have been observable at that timestamp. This prevents future game results, final injury status, revised weather, and later odds from leaking into training.

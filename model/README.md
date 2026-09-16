@@ -87,3 +87,20 @@ uv run --project model python model/crowd.py --report
 - `--report` reads `public/data/current.json` and lists, for each game, the market probability, the crowd share, and the contrarian value (market probability minus crowd share) of the less-picked team.
 
 2021-2025 result (1,355 games): the crowd favorite wins 65.2% of games and the market favorite wins 66.5%. The crowd share is not a probability: used as one it scores Brier 0.2459 against 0.2117 for the market. The field is much more extreme than the market. When the market favorite sits at 60-70%, about 78-83% of entries pick it. Coin-flip games (market favorite below 55%) are where a pick against the field costs the least expected points.
+
+### Pool pick rule
+
+The site is used in a small season-long pool (about ten entrants, most correct picks wins). `pick` stays the market-blend favorite. Each published game also carries `poolPick`, `poolPickReason`, `crowdHomeShare`, `crowdEntries`, and `contrarianValue`. `generate()` fetches the current week's ESPN shares through `crowd.week_shares`; a failed fetch falls back to the stored week file, and a missing file leaves the crowd fields as `None` and the pool pick equal to the market favorite.
+
+The rule (`crowd.pool_pick`) takes the underdog only when both conditions hold:
+
+- the favorite's expected point edge `2p - 1` is at most `POOL_MAX_COST = 0.04` (market favorite at 52% or less), and
+- at least `POOL_MIN_CROWD_SHARE = 0.60` of the field is on the favorite.
+
+Simulate the rule grid on the archived seasons:
+
+```bash
+uv run --project model python model/crowd.py --simulate --from-season 2021 --to-season 2025
+```
+
+The simulation plays each season as one pool of ten entrants and writes `model/artifacts/pool-simulation.json`. Outcomes are drawn from the closing-market probability; opponents pick with the crowd shares, except `sharp=k` opponents who always take the market favorite. 2021-2025 result: always picking the favorite wins 72% of pools against a fully casual field but 25% with two sharp opponents and 10% with nine (tie splits). The chosen rule flips about six games per season, costs about 0.2 expected points per season, and wins 39-48% of pools once at least two opponents pick favorites (70% against a fully casual field). Wider rules (`cost<=0.06` or `cost<=0.10`) cost more points and win fewer pools.

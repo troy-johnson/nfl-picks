@@ -773,6 +773,30 @@ def preflight(force: bool, now: datetime | None = None) -> str:
     return stage
 
 
+def pool_fields(game: dict[str, Any], shares: dict[tuple[str, str], dict[str, Any]]) -> dict[str, Any]:
+    """Pool-oriented fields for one published game.
+
+    `pick` stays the market-blend favourite. `poolPick` follows the crowd rule
+    in `crowd.pool_pick`, which fades the favourite only in near coin flips the
+    field has piled onto. Missing crowd data leaves the fields as None and the
+    pool pick equal to the market favourite.
+    """
+    import crowd  # local import: the live model does not depend on the crowd feed
+
+    crowd_game = shares.get((game["awayTeam"], game["homeTeam"]))
+    home_share = None if crowd_game is None else crowd_game.get("homeShare")
+    market_home = game["marketHomeProbability"]
+    pool = crowd.pool_pick(game["awayTeam"], game["homeTeam"], market_home, home_share)
+    value = None if home_share is None or market_home is None else round(crowd.contrarian_value(market_home, home_share), 4)
+    return {
+        "crowdHomeShare": None if home_share is None else round(float(home_share), 4),
+        "crowdEntries": None if crowd_game is None else crowd_game.get("entries"),
+        "contrarianValue": value,
+        "poolPick": pool["poolPick"],
+        "poolPickReason": pool["poolPickReason"],
+    }
+
+
 def generate(refresh_weather: bool, refresh_news: bool, now: datetime | None = None) -> dict[str, Any]:
     now = now or datetime.now(timezone.utc)
     season = current_nfl_season()
@@ -788,12 +812,16 @@ def generate(refresh_weather: bool, refresh_news: bool, now: datetime | None = N
     stadiums = load_stadiums() if refresh_weather else {}
     team_news = news_for_teams(set(current.home_team) | set(current.away_team), now) if refresh_news else {}
     snapshot_path, baseline = baseline_for(season, week)
+    import crowd  # local import: the live model does not depend on the crowd feed
+
+    shares = crowd.week_shares(season, week, now)
     games = []
     for (_, row), stat_home in zip(current.iterrows(), stat_probs):
         market_home = None if pd.isna(row.get("market_home_prob")) else float(row.market_home_prob)
         final_home = float(stat_home) if market_home is None else model.market_weight * market_home + (1 - model.market_weight) * float(stat_home)
         pick = str(row.home_team) if final_home >= 0.5 else str(row.away_team)
         game = {"gameId": str(row.game_id), "awayTeam": str(row.away_team), "homeTeam": str(row.home_team), "gameday": str(row.gameday), "gametime": None if pd.isna(row.get("gametime")) else str(row.gametime), "stadium": None if pd.isna(row.get("stadium")) else str(row.stadium), "roof": None if pd.isna(row.get("roof")) else str(row.roof), "pick": pick, "winProbability": round(max(final_home, 1 - final_home), 4), "homeWinProbability": round(final_home, 4), "statisticalHomeProbability": round(float(stat_home), 4), "marketHomeProbability": None if market_home is None else round(market_home, 4), "spreadLine": None if pd.isna(row.get("spread_line")) else float(row.spread_line), "confidence": confidence(final_home), "homeQb": None if pd.isna(row.get("home_qb_name")) else str(row.home_qb_name), "awayQb": None if pd.isna(row.get("away_qb_name")) else str(row.away_qb_name), "weather": weather_for_game(row, stadiums) if refresh_weather else None, "news": (team_news.get(str(row.away_team), []) + team_news.get(str(row.home_team), []))[:2], "flags": []}
+        game.update(pool_fields(game, shares))
         game["flags"] = game_flags(game, baseline)
         games.append(game)
     payload = {"season": season, "week": week, "generatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"), "firstGame": min((g["gameday"] for g in games), default=None), "model": {"trainingSeasons": model.training_seasons, "validationSeason": model.validation_season, "marketWeight": round(model.market_weight, 2), "validationAccuracy": round(model.validation_accuracy, 4), "validationBrier": round(model.validation_brier, 4), "marketBrier": None if model.market_brier is None else round(model.market_brier, 4)}, "games": games}
