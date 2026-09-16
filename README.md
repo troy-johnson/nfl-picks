@@ -41,15 +41,17 @@ Output is written to `public/data/current.json`. The first run for a week also c
 
 ## Automation
 
-`.github/workflows/refresh-picks.yml` creates the weekly snapshot on Wednesday. It checks a 90-minute pre-kickoff window every 30 minutes for Thursday games, with Saturday and Sunday fallbacks. The final run refreshes market, QB, weather, and news data. Other scheduled runs exit without changing published picks. A manual run with `force` bypasses the time window.
+`.github/workflows/refresh-picks.yml` creates the weekly snapshot on Wednesday. It checks the 60-120 minute pre-kickoff window every 30 minutes for Thursday games, with Saturday and Sunday fallbacks. The final run refreshes market, QB, weather, and news data. Other scheduled runs exit without changing published picks. A manual run with `force` bypasses the time window.
 
-A changed JSON file is committed to `main`, which is intended to trigger the Vercel Git deployment.
+A changed JSON file is committed to `main`, which is intended to trigger the Vercel Git deployment. If `THE_ODDS_API_KEY` is set as a repository secret, `.github/workflows/capture-odds.yml` checks every in-season day and records each game day's 60-120 minute pre-kickoff multi-book moneyline snapshot in `data/odds-snapshots/`. These records do not affect live picks.
 
 ## Model validation
 
 The statistical model is trained on chronological pregame features. The prior completed season is held out to choose the market-vs-statistical blend by Brier score. After selecting that weight, the logistic model is refit on all completed games before the current week's probabilities are generated.
 
-This is a V1 baseline. The next meaningful improvement is comparing this approach against pure market probability, expert consensus, Elo, and richer QB/injury features over several historical seasons.
+Run `uv run --project model python model/predict.py --backtest` to score historical games with expanding weekly training windows. The full comparison report is written to `model/artifacts/backtest.json`.
+
+Elo, QB, combined Elo-QB, and opponent-adjusted team challengers are available in the backtest. The live model remains the V1 baseline until a challenger improves the market blend on a held-out period.
 
 ## Data sources
 
@@ -57,3 +59,4 @@ This is a V1 baseline. The next meaningful improvement is comparing this approac
 - Stadium coordinates and timezones: greerreNFL/Stadiums
 - Weather: Open-Meteo
 - News links: Google News RSS
+- Future moneyline snapshots: The Odds API

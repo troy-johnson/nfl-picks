@@ -1,0 +1,43 @@
+name: Capture NFL odds
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0,30 * * 8-12,1-2 *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-data
+  cancel-in-progress: false
+
+# `secrets` is not allowed in a job-level `if`, so the check is made in env
+# and applied to each step instead.
+env:
+  ODDS_KEY_SET: ${{ secrets.THE_ODDS_API_KEY != '' }}
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - if: env.ODDS_KEY_SET == 'true'
+        uses: actions/checkout@v4
+      - if: env.ODDS_KEY_SET == 'true'
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Capture game-day odds
+        if: env.ODDS_KEY_SET == 'true'
+        env:
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+        run: uv run --project model python model/predict.py --capture-odds
+      - name: Commit odds snapshot
+        if: env.ODDS_KEY_SET == 'true'
+        run: |
+          if [ -z "$(git status --porcelain -- data/odds-snapshots)" ]; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/odds-snapshots
+          git commit -m "data: capture NFL odds"
+          git push
