@@ -138,7 +138,7 @@ These results use recorded nflverse closing moneylines. They can show that a can
 
 ## Crowd Pick Shares
 
-`model/crowd.py` archives the public straight-up pick shares from ESPN's NFL Pick'em game (`gambit-api.fantasy.espn.com`, challenge keys `nfl-pigskin-pickem-<season>` through 2025 and `nfl-pickem-2026`). The shares are stored in `data/crowd-picks/`. The capture workflow records them 0-120 minutes before each game day's first kickoff, and locked games keep their earlier shares. The shares are not a model input. They describe the pool field, which matters for a pick'em contest where the score against other entries, not the probability, decides the result.
+`model/crowd.py` archives the public straight-up pick shares from ESPN's NFL Pick'em game (`gambit-api.fantasy.espn.com`, challenge keys `nfl-pigskin-pickem-<season>` through 2025 and `nfl-pickem-2026`). The shares are stored in `data/crowd-picks/`. The capture workflow records them 0-180 minutes before each game day's first kickoff, and locked games keep their earlier shares. The shares are not a model input. They describe the pool field, which matters for a pick'em contest where the score against other entries, not the probability, decides the result.
 
 2021-2025 evaluation (1,355 regular-season games with recorded odds):
 
@@ -195,7 +195,7 @@ Random train/test splits are invalid for this use because they let later games a
 
 The recorded closing lines in the replay tables above cannot prove market-beating value. They were set after the picks would have been made. The fair benchmark is the price available at prediction time. `model/snapshots.py` provides that test:
 
-- `predict.py --capture-odds` stores one multi-book snapshot per game day, 60-120 minutes before the first kickoff, in `data/odds-snapshots/<season>/<game-day>.json`. Each game carries the pick and probabilities that were published at that moment.
+- `predict.py --capture-odds` stores one multi-book snapshot per game day, 45-180 minutes before the first kickoff, in `data/odds-snapshots/<season>/<game-day>.json`. Each game carries the pick and probabilities that were published at that moment.
 - `snapshots.py` joins the archive to final scores and scores `sameTimeMarket`, `closingMarket`, `publishedPick`, `publishedStatistical`, and any `candidate:<name>` from the experiment queue on identical games. Unplayed games, ties, and games without a frozen pick are dropped.
 - Paired Brier and log-loss differences use week-block standard errors. The report also states how many games a 0.005 or 0.010 Brier difference would need at two standard errors, extrapolated from the observed variance.
 - Claim rule: a source beats the same-time market only after at least 250 completed games and a difference beyond two standard errors on both Brier and log loss. The report prints `insufficient games` until then.

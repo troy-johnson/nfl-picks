@@ -106,9 +106,15 @@ def upcoming_game_day(schedule: pd.DataFrame, season: int, now: datetime) -> tup
     return game_day, min(day_games._kickoff), day_games
 
 
+# Wide enough that one scheduled run per kickoff time always lands inside it,
+# even when GitHub Actions delays the cron by 30 minutes.
+CAPTURE_WINDOW_MIN_MINUTES = 45
+CAPTURE_WINDOW_MAX_MINUTES = 180
+
+
 def odds_capture_due(now: datetime, first_kickoff: datetime) -> bool:
     minutes_until_kickoff = (first_kickoff - now).total_seconds() / 60
-    return 60 <= minutes_until_kickoff <= 120
+    return CAPTURE_WINDOW_MIN_MINUTES <= minutes_until_kickoff <= CAPTURE_WINDOW_MAX_MINUTES
 
 
 def fetch_current_odds(api_key: str) -> list[dict[str, Any]]:
@@ -748,7 +754,7 @@ def upcoming_week_and_kickoff(schedule: pd.DataFrame, season: int, now: datetime
 
 def refresh_stage(now: datetime, first_kickoff: datetime) -> str | None:
     minutes_until_kickoff = (first_kickoff - now).total_seconds() / 60
-    if 60 <= minutes_until_kickoff <= 120:
+    if CAPTURE_WINDOW_MIN_MINUTES <= minutes_until_kickoff <= CAPTURE_WINDOW_MAX_MINUTES:
         return "final"
     eastern = now.astimezone(ZoneInfo("America/New_York"))
     if eastern.weekday() == 2 and 10 <= eastern.hour < 18:

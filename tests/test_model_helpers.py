@@ -38,7 +38,9 @@ def test_refresh_stage_allows_midweek_and_pre_kickoff_runs():
 def test_odds_capture_due_only_in_final_window():
     kickoff=datetime(2026,9,18,0,15,tzinfo=timezone.utc)
     assert predict.odds_capture_due(datetime(2026,9,17,22,45,tzinfo=timezone.utc),kickoff)
-    assert not predict.odds_capture_due(datetime(2026,9,17,21,30,tzinfo=timezone.utc),kickoff)
+    assert predict.odds_capture_due(datetime(2026,9,17,21,30,tzinfo=timezone.utc),kickoff)
+    assert not predict.odds_capture_due(datetime(2026,9,17,21,0,tzinfo=timezone.utc),kickoff)
+    assert not predict.odds_capture_due(datetime(2026,9,17,23,45,tzinfo=timezone.utc),kickoff)
 
 
 def test_upcoming_game_day_includes_playoff_games():

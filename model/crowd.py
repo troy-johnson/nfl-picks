@@ -32,7 +32,7 @@ CHALLENGES_URL = "https://gambit-api.fantasy.espn.com/apis/v1/challenges"
 CHALLENGE_KEY_PATTERN = re.compile(r"^nfl-(?:pigskin-)?pickem-(\d{4})$")
 STRAIGHT_FORMAT_ID = 1
 ESPN_TEAM_ALIASES = {"WSH": "WAS", "LAR": "LA"}
-CAPTURE_WINDOW_MINUTES = 120
+CAPTURE_WINDOW_MINUTES = 180
 REGULAR_SEASON_WEEKS = 18
 
 # Pool rule: take the underdog only when the favourite's expected point edge

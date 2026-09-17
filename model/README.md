@@ -42,11 +42,11 @@ Injury features come from the nflverse weekly injury reports (`injuries_{season}
 
 To add a candidate, append a `Candidate(...)` to `CANDIDATES` in `model/experiments.py`. Give it a feature tuple, an estimator builder, an optional small hyperparameter grid, and `calibrate=True` for models with uncalibrated probabilities. Then run the tests, which check that no candidate uses outcome or target-starter columns.
 
-The Wednesday run creates the weekly snapshot. The final run occurs 60-120 minutes before the first kickoff. It refreshes market, quarterback, weather, and team news data. Injury headlines are intentionally not assigned arbitrary point values; they are shown for review beside market movement before the first kickoff.
+The Wednesday run creates the weekly snapshot. The final run occurs 45-180 minutes before the first kickoff. It refreshes market, quarterback, weather, and team news data. Injury headlines are intentionally not assigned arbitrary point values; they are shown for review beside market movement before the first kickoff.
 
 ## Future odds snapshots
 
-Create a The Odds API account and set `THE_ODDS_API_KEY` locally or as a GitHub Actions repository secret. The scheduled capture workflow checks every in-season day and records one snapshot 60-120 minutes before the first kickoff.
+Create a The Odds API account and set `THE_ODDS_API_KEY` locally or as a GitHub Actions repository secret. The scheduled capture workflow checks every in-season day and records one snapshot 45-180 minutes before the first kickoff.
 
 ```bash
 THE_ODDS_API_KEY=... uv run --project model python model/predict.py --capture-odds
@@ -82,7 +82,7 @@ uv run --project model python model/crowd.py --report
 ```
 
 - `--archive` downloads the final straight-up shares for past seasons into `data/crowd-picks/<season>/week-NN.json`.
-- `--capture` runs in the capture workflow 0-120 minutes before the first kickoff of the next game day. Locked games keep their earlier shares. Open games take the fresh shares.
+- `--capture` runs in the capture workflow 0-180 minutes before the first kickoff of the next game day. Locked games keep their earlier shares. Open games take the fresh shares.
 - `--evaluate` joins the archive with nflverse results and closing moneylines and writes `model/artifacts/crowd-evaluation.json`.
 - `--report` reads `public/data/current.json` and lists, for each game, the market probability, the crowd share, and the contrarian value (market probability minus crowd share) of the less-picked team.
 

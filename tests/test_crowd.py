@@ -104,7 +104,8 @@ def test_merge_week_backfills_results_for_locked_games():
 def test_capture_due_window():
     kickoff = NOW + timedelta(minutes=90)
     assert crowd.capture_due(NOW, kickoff)
-    assert not crowd.capture_due(NOW - timedelta(minutes=60), kickoff)
+    assert crowd.capture_due(NOW - timedelta(minutes=60), kickoff)
+    assert not crowd.capture_due(NOW - timedelta(minutes=120), kickoff)
     assert not crowd.capture_due(kickoff, kickoff)
 
 
