@@ -189,12 +189,14 @@ def normalize_odds_snapshot(events: list[dict[str, Any]], games: pd.DataFrame, s
         })
     if not snapshot_games:
         raise RuntimeError("The Odds API returned no usable odds for the scheduled games")
-    target = first_kickoff - timedelta(minutes=90)
+    window_opens = first_kickoff - timedelta(minutes=CAPTURE_WINDOW_MAX_MINUTES)
+    window_closes = first_kickoff - timedelta(minutes=CAPTURE_WINDOW_MIN_MINUTES)
     return {
         "provider": "The Odds API",
         "season": season,
         "gameDay": game_day,
-        "captureTargetAt": target.isoformat().replace("+00:00", "Z"),
+        "captureWindowOpensAt": window_opens.isoformat().replace("+00:00", "Z"),
+        "captureWindowClosesAt": window_closes.isoformat().replace("+00:00", "Z"),
         "capturedAt": captured_at.isoformat().replace("+00:00", "Z"),
         "firstKickoffAt": first_kickoff.isoformat().replace("+00:00", "Z"),
         "market": "h2h",
