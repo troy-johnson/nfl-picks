@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 4,
-  "generatedAt": "2026-10-01T23:16:20.751390Z",
+  "generatedAt": "2026-10-01T23:23:20.452950Z",
   "firstGame": "2026-10-01",
   "model": {
     "trainingSeasons": [
@@ -56,9 +56,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.28,
-      "crowdEntries": 678270,
-      "contrarianValue": 0.1479,
+      "crowdHomeShare": 0.2803,
+      "crowdEntries": 681178,
+      "contrarianValue": 0.1476,
       "poolPick": "PIT",
       "poolPickReason": "market favorite"
     },
@@ -99,9 +99,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.3792,
-      "crowdEntries": 651140,
-      "contrarianValue": -0.0101,
+      "crowdHomeShare": 0.379,
+      "crowdEntries": 653557,
+      "contrarianValue": -0.0099,
       "poolPick": "IND",
       "poolPickReason": "market favorite"
     },
@@ -144,9 +144,9 @@
       "flags": [
         "Market moved 5 pts since initial snapshot"
       ],
-      "crowdHomeShare": 0.5984,
-      "crowdEntries": 643659,
-      "contrarianValue": -0.1619,
+      "crowdHomeShare": 0.5983,
+      "crowdEntries": 645987,
+      "contrarianValue": -0.1618,
       "poolPick": "ARI",
       "poolPickReason": "market favorite"
     },
@@ -187,9 +187,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.4192,
-      "crowdEntries": 641156,
-      "contrarianValue": 0.1742,
+      "crowdHomeShare": 0.4191,
+      "crowdEntries": 643525,
+      "contrarianValue": 0.1743,
       "poolPick": "HOU",
       "poolPickReason": "market favorite"
     },
@@ -202,10 +202,10 @@
       "stadium": "Raymond James Stadium",
       "roof": "outdoors",
       "pick": "GB",
-      "winProbability": 0.6086,
-      "homeWinProbability": 0.3914,
+      "winProbability": 0.6143,
+      "homeWinProbability": 0.3857,
       "statisticalHomeProbability": 0.5399,
-      "marketHomeProbability": 0.3836,
+      "marketHomeProbability": 0.3775,
       "spreadLine": -3.5,
       "confidence": "low",
       "homeQb": "Jalon Daniels",
@@ -232,9 +232,9 @@
       "flags": [
         "Home QB changed: Baker Mayfield \u2192 Jalon Daniels"
       ],
-      "crowdHomeShare": 0.2292,
-      "crowdEntries": 642544,
-      "contrarianValue": 0.1544,
+      "crowdHomeShare": 0.2293,
+      "crowdEntries": 644897,
+      "contrarianValue": 0.1482,
       "poolPick": "GB",
       "poolPickReason": "market favorite"
     },
@@ -275,9 +275,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.5428,
-      "crowdEntries": 644219,
-      "contrarianValue": 0.0207,
+      "crowdHomeShare": 0.5427,
+      "crowdEntries": 646556,
+      "contrarianValue": 0.0208,
       "poolPick": "CIN",
       "poolPickReason": "market favorite"
     },
@@ -290,10 +290,10 @@
       "stadium": "Lincoln Financial Field",
       "roof": "outdoors",
       "pick": "LA",
-      "winProbability": 0.6066,
-      "homeWinProbability": 0.3934,
+      "winProbability": 0.6119,
+      "homeWinProbability": 0.3881,
       "statisticalHomeProbability": 0.3384,
-      "marketHomeProbability": 0.3962,
+      "marketHomeProbability": 0.3908,
       "spreadLine": -3.5,
       "confidence": "low",
       "homeQb": "Jalen Hurts",
@@ -319,8 +319,8 @@
       ],
       "flags": [],
       "crowdHomeShare": 0.2738,
-      "crowdEntries": 643167,
-      "contrarianValue": 0.1224,
+      "crowdEntries": 645520,
+      "contrarianValue": 0.117,
       "poolPick": "LA",
       "poolPickReason": "market favorite"
     },
@@ -362,7 +362,7 @@
       ],
       "flags": [],
       "crowdHomeShare": 0.9563,
-      "crowdEntries": 649075,
+      "crowdEntries": 651441,
       "contrarianValue": -0.2342,
       "poolPick": "BUF",
       "poolPickReason": "market favorite"
@@ -405,7 +405,7 @@
       ],
       "flags": [],
       "crowdHomeShare": 0.8867,
-      "crowdEntries": 646813,
+      "crowdEntries": 649160,
       "contrarianValue": -0.2775,
       "poolPick": "CHI",
       "poolPickReason": "market favorite"
@@ -447,9 +447,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.9847,
-      "crowdEntries": 643746,
-      "contrarianValue": -0.1531,
+      "crowdHomeShare": 0.9846,
+      "crowdEntries": 646119,
+      "contrarianValue": -0.153,
       "poolPick": "BAL",
       "poolPickReason": "market favorite"
     },
@@ -485,7 +485,7 @@
       ],
       "flags": [],
       "crowdHomeShare": 0.9766,
-      "crowdEntries": 642534,
+      "crowdEntries": 644920,
       "contrarianValue": -0.1495,
       "poolPick": "MIN",
       "poolPickReason": "market favorite"
@@ -528,7 +528,7 @@
       ],
       "flags": [],
       "crowdHomeShare": 0.8039,
-      "crowdEntries": 640553,
+      "crowdEntries": 642950,
       "contrarianValue": -0.2318,
       "poolPick": "SF",
       "poolPickReason": "market favorite"
@@ -565,7 +565,7 @@
       ],
       "flags": [],
       "crowdHomeShare": 0.2292,
-      "crowdEntries": 641144,
+      "crowdEntries": 643544,
       "contrarianValue": 0.1133,
       "poolPick": "KC",
       "poolPickReason": "market favorite"
@@ -587,7 +587,13 @@
       "confidence": "high",
       "homeQb": "Drew Lock",
       "awayQb": "Justin Herbert",
-      "weather": null,
+      "weather": {
+        "summary": "71\u00b0F \u00b7 wind 6 mph",
+        "temperatureF": 71.2,
+        "precipitationPct": 0,
+        "windMph": 6.2,
+        "gustMph": 5.4
+      },
       "news": [
         {
           "title": "49ers injury update: Key starter exits Chargers preseason game - 49ers Webzone",
@@ -602,7 +608,7 @@
       ],
       "flags": [],
       "crowdHomeShare": 0.9396,
-      "crowdEntries": 640661,
+      "crowdEntries": 643040,
       "contrarianValue": -0.1796,
       "poolPick": "SEA",
       "poolPickReason": "market favorite"
@@ -647,7 +653,7 @@
         "Weather: meaningful precipitation risk"
       ],
       "crowdHomeShare": 0.1377,
-      "crowdEntries": 639815,
+      "crowdEntries": 642207,
       "contrarianValue": 0.2398,
       "poolPick": "DET",
       "poolPickReason": "market favorite"
@@ -684,7 +690,7 @@
       ],
       "flags": [],
       "crowdHomeShare": 0.7567,
-      "crowdEntries": 638760,
+      "crowdEntries": 641149,
       "contrarianValue": -0.1846,
       "poolPick": "NO",
       "poolPickReason": "market favorite"
