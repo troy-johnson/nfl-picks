@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 4,
-  "generatedAt": "2026-10-01T22:01:53.841032Z",
+  "generatedAt": "2026-10-01T23:16:20.751390Z",
   "firstGame": "2026-10-01",
   "model": {
     "trainingSeasons": [
@@ -37,11 +37,11 @@
       "homeQb": "Deshaun Watson",
       "awayQb": "Aaron Rodgers",
       "weather": {
-        "summary": "79\u00b0F \u00b7 wind 9 mph",
-        "temperatureF": 79.3,
+        "summary": "79\u00b0F \u00b7 wind 10 mph",
+        "temperatureF": 79.4,
         "precipitationPct": 2,
-        "windMph": 9.4,
-        "gustMph": 14.8
+        "windMph": 10.3,
+        "gustMph": 19.9
       },
       "news": [
         {
@@ -50,15 +50,15 @@
           "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNcE5EWHhxRThvdGRLQzhfcURMWmdROGw2Qi1RMGxJekZMSVU4NnA5WGRnb3E3emtfU2JQeVQ3dDFLa24yLVA0MHF1UEctb1o3SHE4OUJtMHI1cUZmYmw5OUd3R3d4SktKYjc3N0ZYdjl2MEFsLXh6RXVtVGViWUs1OTNnWWkxSFhFM0E?oc=5"
         },
         {
-          "title": "Bengals officially declare starter doubtful for Week 3 game against Steelers while Pittsburgh has many decisions to make - A to Z Sports",
-          "source": "A to Z Sports",
+          "title": "Bengals officially declare starter doubtful for Week 3 game against Steelers while Pittsburgh has many decisions to make - atozsports.com",
+          "source": "atozsports.com",
           "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOOWJWd3hHTmVCSUF3c3c0Zkl1S0tYeV9TNll3MklCMGdINy1hOHJ0eE5OOER3QW96cWZRcnFRTU5IdWxRSlJBNDhsYjZyUjZlNF9mZjNqa1dOZkwzUXI2djhjVmJYV1JsVC1TNGd6eUwzVXBqa0VMdHI0WW8zclJCVks3SGIxWFpTTWl6Z01DZG1aWHNDdDJtVE1xNDhVQ0lmRHdjeDA0MzE1NUJiRjNIYmRNbnBSVUhBSGFtQXdIM3Z4QUJBWkt1a1pSYU9ZSXR5UzRzRDRoMGQ1OTRGUGl0dTBKNVZoQURwNnRSUEdGQWFsUnhXd1E?oc=5"
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.2772,
-      "crowdEntries": 653192,
-      "contrarianValue": 0.1507,
+      "crowdHomeShare": 0.28,
+      "crowdEntries": 678270,
+      "contrarianValue": 0.1479,
       "poolPick": "PIT",
       "poolPickReason": "market favorite"
     },
@@ -99,9 +99,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.3819,
-      "crowdEntries": 629919,
-      "contrarianValue": -0.0128,
+      "crowdHomeShare": 0.3792,
+      "crowdEntries": 651140,
+      "contrarianValue": -0.0101,
       "poolPick": "IND",
       "poolPickReason": "market favorite"
     },
@@ -144,9 +144,9 @@
       "flags": [
         "Market moved 5 pts since initial snapshot"
       ],
-      "crowdHomeShare": 0.5989,
-      "crowdEntries": 623048,
-      "contrarianValue": -0.1624,
+      "crowdHomeShare": 0.5984,
+      "crowdEntries": 643659,
+      "contrarianValue": -0.1619,
       "poolPick": "ARI",
       "poolPickReason": "market favorite"
     },
@@ -187,9 +187,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.4199,
-      "crowdEntries": 620682,
-      "contrarianValue": 0.1735,
+      "crowdHomeShare": 0.4192,
+      "crowdEntries": 641156,
+      "contrarianValue": 0.1742,
       "poolPick": "HOU",
       "poolPickReason": "market favorite"
     },
@@ -232,9 +232,9 @@
       "flags": [
         "Home QB changed: Baker Mayfield \u2192 Jalon Daniels"
       ],
-      "crowdHomeShare": 0.2297,
-      "crowdEntries": 622033,
-      "contrarianValue": 0.1539,
+      "crowdHomeShare": 0.2292,
+      "crowdEntries": 642544,
+      "contrarianValue": 0.1544,
       "poolPick": "GB",
       "poolPickReason": "market favorite"
     },
@@ -264,20 +264,20 @@
       },
       "news": [
         {
+          "title": "Bengals Get Positive Injury Update on Key $40 Million Starter Before Jaguars Game - heavy.com",
+          "source": "heavy.com",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSnhael82ME5BQlNDTTRLNlFqQXIycm5TdGtiMjBHSDBoSktBWExSWjhBMTFfblFCNzdxS1lsTXJOcTg1dFhCczRMY3BDdWxrVnRqRGdWTk9YbThkTFI3dlJyZUgyR29ZX08xWlJZZmNqY0FxcEZLVjIzRFl5RTV1azdNSW9XZ0U1WkZKMXIwdGQzWlVBcVE?oc=5"
+        },
+        {
           "title": "What\u2019s wrong with Drake Maye? Patriots QB\u2019s issues hit new low in loss to Jaguars - Boston Herald",
           "source": "Boston Herald",
           "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOdF84elBfOGhmMDNrbjJKSzh6UElxT3Mta1VMbk15TlZrbWhWU2ZtdDhEbXlIaVE3czZ4dUtjc0puTEZsdkV0LXVnZ19paXo4ZmxNTVd1TkVNOTN1azJKWFBhWFFpY1hKMmUtRmlqMGFULUt6Wk1PY0htakljNFpwNDctZlV5elRSSWxCeWIwdHU0eXN1ZWVMdzRIcXZwcURURFN4Y2hHYlQ1Yzl4YjRXMDNXbVdHRkRaMm1Z?oc=5"
-        },
-        {
-          "title": "Bengals\u2019 first injury report of Week 4 includes unexpected offensive starter missing practice - A to Z Sports",
-          "source": "A to Z Sports",
-          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQOU1KSWVaQlVlekVIYWVxenI0TlViemE2U2FpZ1pxNV8zY0tIeFRFWkFMM2NZdzhsRzhDNGJfSEZ4RklfWUJoYUF5SkMxTzg3NVJFdU5mWk8zQjI1eGVXU2ViTUpFNF9fU21vWlZkQ2RpQU1BckNXcWFsTkttQVVJYlBNV0trZ1BBbUswQnZ6aWFJYjhEYlNETTNqU1Bfdjk4bTRIWnJoazlpY2lZc0hxOHc4Qy1tQ1dXdVlkRWxIeEdneW9QMjdBY2dIZVJrV29LeTVVQUZnQTVlR0Fvd0dQZ0JhaTFneTA?oc=5"
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.5433,
-      "crowdEntries": 623574,
-      "contrarianValue": 0.0202,
+      "crowdHomeShare": 0.5428,
+      "crowdEntries": 644219,
+      "contrarianValue": 0.0207,
       "poolPick": "CIN",
       "poolPickReason": "market favorite"
     },
@@ -307,8 +307,8 @@
       },
       "news": [
         {
-          "title": "Rams-Eagles injury report: 7 starters listed for LA Wednesday - Rams Wire",
-          "source": "Rams Wire",
+          "title": "Rams-Eagles injury report: 7 starters listed for LA Wednesday - theramswire.usatoday.com",
+          "source": "theramswire.usatoday.com",
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQU1BIMGZLZTl5bGlXNzg5ZVlDMjdUYnY0Y0V6WXJqVmRJd1Roa1ZyX1BiOHRsMVJyTkhpTWptTTNYSWJXallZbFpLcTFNekJzMHNBbF9Gel9Tajg5WDIta2IwNG1zQ0gzUUpmQnh5MURONkRQOWZTcFQ0SDkxSkMtYU5fbkdLMURTN3UteWdtWGhSTko2ZEVrU1FHenRUVnpzVWJoSFA3NnNBdUoxYTFHWE5Bd1pxR2VfUVdPdXhGVlc1ejBfNi1Sb3g5OWhHUQ?oc=5"
         },
         {
@@ -318,9 +318,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.2739,
-      "crowdEntries": 622587,
-      "contrarianValue": 0.1223,
+      "crowdHomeShare": 0.2738,
+      "crowdEntries": 643167,
+      "contrarianValue": 0.1224,
       "poolPick": "LA",
       "poolPickReason": "market favorite"
     },
@@ -361,9 +361,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.9564,
-      "crowdEntries": 628265,
-      "contrarianValue": -0.2343,
+      "crowdHomeShare": 0.9563,
+      "crowdEntries": 649075,
+      "contrarianValue": -0.2342,
       "poolPick": "BUF",
       "poolPickReason": "market favorite"
     },
@@ -404,9 +404,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.8864,
-      "crowdEntries": 626070,
-      "contrarianValue": -0.2772,
+      "crowdHomeShare": 0.8867,
+      "crowdEntries": 646813,
+      "contrarianValue": -0.2775,
       "poolPick": "CHI",
       "poolPickReason": "market favorite"
     },
@@ -447,9 +447,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.9848,
-      "crowdEntries": 623214,
-      "contrarianValue": -0.1532,
+      "crowdHomeShare": 0.9847,
+      "crowdEntries": 643746,
+      "contrarianValue": -0.1531,
       "poolPick": "BAL",
       "poolPickReason": "market favorite"
     },
@@ -484,9 +484,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.9767,
-      "crowdEntries": 622052,
-      "contrarianValue": -0.1496,
+      "crowdHomeShare": 0.9766,
+      "crowdEntries": 642534,
+      "contrarianValue": -0.1495,
       "poolPick": "MIN",
       "poolPickReason": "market favorite"
     },
@@ -507,7 +507,13 @@
       "confidence": "low",
       "homeQb": "Brock Purdy",
       "awayQb": "Bo Nix",
-      "weather": null,
+      "weather": {
+        "summary": "86\u00b0F \u00b7 wind 4 mph",
+        "temperatureF": 85.7,
+        "precipitationPct": 0,
+        "windMph": 4.1,
+        "gustMph": 4.9
+      },
       "news": [
         {
           "title": "Bucs sign ex-Broncos QB after losing Baker Mayfield to injury; Vikings add ex-Denver RB - Broncos Wire",
@@ -521,9 +527,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.8032,
-      "crowdEntries": 620131,
-      "contrarianValue": -0.2311,
+      "crowdHomeShare": 0.8039,
+      "crowdEntries": 640553,
+      "contrarianValue": -0.2318,
       "poolPick": "SF",
       "poolPickReason": "market favorite"
     },
@@ -547,20 +553,20 @@
       "weather": null,
       "news": [
         {
+          "title": "Kahlil Benson Proves Doubters Wrong After Earning Big NFL Honor - heavy.com",
+          "source": "heavy.com",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOYk9LbFF4QnF0amVCSWNIUFN1OGhIZVJMQXo0MXRTaHpYSUNfcW1jSEtsZlhyOHpqSWJ4YzM1M0s1YUxJWGk1TGdGWWVXRkJzZ29VS0JMWHc4Z1Z4ZXBGcEQ3eGlZamgtUUlBM0dJLXFTZWxpMWZzNDE2emNUa3FpeGVUTlhDRWJMNmc?oc=5"
+        },
+        {
           "title": "One Kansas City Chiefs Starter Receives Ominous Update - Yahoo Sports",
           "source": "Yahoo Sports",
           "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOeGwzQVpCMXJGTGhpMzdsUWlQczV0SVZmOVc1YVVNUzl4cFVTQ3lyeExhbENma290WFY1ZkE2U3FxUU1naENsemw5RWtUZ2tVMFJVVWtpSGtWdEd2RkpmZmJUMnQwSDZBdTZvbG9aelVrNTlPZXZxaXF1aXU5UUsta21na3hyQQ?oc=5"
-        },
-        {
-          "title": "Chiefs\u2019 Starter Gets Upgraded Status on Week 4 Injury Report - heavy.com",
-          "source": "heavy.com",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOb1J5VzhRcFk3dk5xamlkQVpnTW9CX2p4SWdCY21GV1hmenJ5aElhV0JUOExYdnB6ZmJucHZXYjV2ZGt5VEh6azNPS1lYV29wTDRXdDFZWlFVLU9FT2RZclZPcDJ5UW1WLTB0WWZZSkhndXh4RWtXMXZJNEtQamlSWW9MZkxWWmRqTlR2U2syVkhONHdObVJmRVJ3?oc=5"
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.2289,
-      "crowdEntries": 620711,
-      "contrarianValue": 0.1136,
+      "crowdHomeShare": 0.2292,
+      "crowdEntries": 641144,
+      "contrarianValue": 0.1133,
       "poolPick": "KC",
       "poolPickReason": "market favorite"
     },
@@ -581,13 +587,7 @@
       "confidence": "high",
       "homeQb": "Drew Lock",
       "awayQb": "Justin Herbert",
-      "weather": {
-        "summary": "71\u00b0F \u00b7 wind 6 mph",
-        "temperatureF": 71.2,
-        "precipitationPct": 0,
-        "windMph": 6.2,
-        "gustMph": 5.4
-      },
+      "weather": null,
       "news": [
         {
           "title": "49ers injury update: Key starter exits Chargers preseason game - 49ers Webzone",
@@ -601,9 +601,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.9398,
-      "crowdEntries": 620240,
-      "contrarianValue": -0.1798,
+      "crowdHomeShare": 0.9396,
+      "crowdEntries": 640661,
+      "contrarianValue": -0.1796,
       "poolPick": "SEA",
       "poolPickReason": "market favorite"
     },
@@ -646,9 +646,9 @@
       "flags": [
         "Weather: meaningful precipitation risk"
       ],
-      "crowdHomeShare": 0.1378,
-      "crowdEntries": 619436,
-      "contrarianValue": 0.2397,
+      "crowdHomeShare": 0.1377,
+      "crowdEntries": 639815,
+      "contrarianValue": 0.2398,
       "poolPick": "DET",
       "poolPickReason": "market favorite"
     },
@@ -684,7 +684,7 @@
       ],
       "flags": [],
       "crowdHomeShare": 0.7567,
-      "crowdEntries": 618412,
+      "crowdEntries": 638760,
       "contrarianValue": -0.1846,
       "poolPick": "NO",
       "poolPickReason": "market favorite"
