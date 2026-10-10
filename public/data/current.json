@@ -1,8 +1,8 @@
 {
   "season": 2026,
   "week": 5,
-  "generatedAt": "2026-10-07T20:49:54.740749Z",
-  "firstGame": "2026-10-08",
+  "generatedAt": "2026-10-10T17:13:12.979685Z",
+  "firstGame": "2026-10-11",
   "model": {
     "trainingSeasons": [
       2021,
@@ -20,32 +20,6 @@
   },
   "games": [
     {
-      "gameId": "2026_05_TB_DAL",
-      "awayTeam": "TB",
-      "homeTeam": "DAL",
-      "gameday": "2026-10-08",
-      "gametime": "20:15",
-      "stadium": "AT&T Stadium",
-      "roof": null,
-      "pick": "DAL",
-      "winProbability": 0.7809,
-      "homeWinProbability": 0.7809,
-      "statisticalHomeProbability": 0.5817,
-      "marketHomeProbability": 0.7914,
-      "spreadLine": 8.5,
-      "confidence": "high",
-      "homeQb": "Dak Prescott",
-      "awayQb": "Jalon Daniels",
-      "weather": null,
-      "news": [],
-      "flags": [],
-      "crowdHomeShare": 0.951,
-      "crowdEntries": 420718,
-      "contrarianValue": -0.1596,
-      "poolPick": "DAL",
-      "poolPickReason": "market favorite"
-    },
-    {
       "gameId": "2026_05_PHI_JAX",
       "awayTeam": "PHI",
       "homeTeam": "JAX",
@@ -54,20 +28,37 @@
       "stadium": "Tottenham Hotspur Stadium",
       "roof": "outdoors",
       "pick": "JAX",
-      "winProbability": 0.7486,
-      "homeWinProbability": 0.7486,
-      "statisticalHomeProbability": 0.7649,
-      "marketHomeProbability": 0.7478,
-      "spreadLine": 7.0,
+      "winProbability": 0.7658,
+      "homeWinProbability": 0.7658,
+      "statisticalHomeProbability": 0.7639,
+      "marketHomeProbability": 0.7659,
+      "spreadLine": 7.5,
       "confidence": "high",
       "homeQb": "Trevor Lawrence",
       "awayQb": "Jalen Hurts",
-      "weather": null,
-      "news": [],
+      "weather": {
+        "summary": "76\u00b0F \u00b7 wind 9 mph",
+        "temperatureF": 76.4,
+        "precipitationPct": 26,
+        "windMph": 8.9,
+        "gustMph": 17.7
+      },
+      "news": [
+        {
+          "title": "Eagles at Jaguars Injury Report - Philadelphia Eagles",
+          "source": "Philadelphia Eagles",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQMmo5d3VYQnAyMTVaZkZLNTlNTE9icUxJNzlvSFg1Z1Y1WVVQYzRUSmN0UTJDVW1IMUYzS21jaTJzTjhKa2dIRUROUGJhQTNGT1dOTE5IVWlIdGVyN3ZPODdyb2RsNHVYRmdEazZkMURlWG5hd1VQT0w4MDlsR05ncHBwYkk4V1lDbGZMZEIxOG9kbGJYUGM0MGdrczFSTEN0bHhGY3RzcThJU05UWWZ6dVRRM0x2LXUxZGd0RGNtUkswd2Fxc3FSbzB6c0hyVThxN05aNzNISEg5UQ?oc=5"
+        },
+        {
+          "title": "Philadelphia Eagles Named Potential Suitor for Familiar Face at Skill Position - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOTVFoamxhYVNvR3Y0eC1YZmY5QU5DNmcxWk1yTW5aMzU4dElJNEMyUGowdjN0UkRPSUN3SlQ2RjU0eS1LZlRyMU1RTW1RckVpbW45cGFlTEZRSXlpYmZMWERZWDNlVm9QbnczSGhzSWExeGhPS1IxcFVCOUw3dmlSOEJyMDV3N2V1aXFabnZrUks1dEQtVHc?oc=5"
+        }
+      ],
       "flags": [],
-      "crowdHomeShare": 0.7759,
-      "crowdEntries": 411507,
-      "contrarianValue": -0.0281,
+      "crowdHomeShare": 0.8135,
+      "crowdEntries": 706651,
+      "contrarianValue": -0.0476,
       "poolPick": "JAX",
       "poolPickReason": "market favorite"
     },
@@ -80,20 +71,37 @@
       "stadium": "Lambeau Field",
       "roof": "outdoors",
       "pick": "CHI",
-      "winProbability": 0.5743,
-      "homeWinProbability": 0.4257,
-      "statisticalHomeProbability": 0.3836,
-      "marketHomeProbability": 0.4279,
-      "spreadLine": -2.5,
+      "winProbability": 0.5367,
+      "homeWinProbability": 0.4633,
+      "statisticalHomeProbability": 0.3826,
+      "marketHomeProbability": 0.4675,
+      "spreadLine": -1.5,
       "confidence": "low",
       "homeQb": "Jordan Love",
       "awayQb": "Tyson Bagent",
-      "weather": null,
-      "news": [],
+      "weather": {
+        "summary": "74\u00b0F \u00b7 wind 14 mph",
+        "temperatureF": 74.0,
+        "precipitationPct": 0,
+        "windMph": 13.8,
+        "gustMph": 26.2
+      },
+      "news": [
+        {
+          "title": "Packers Starter Suddenly in Jeopardy of Missing Matchup vs. Bears - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUXpKcGdKQWtHR09GNFlZSzZJRHFqUGRtemFWZWItdll4Sy1nRVNNbURkbHZYZU5NMEpGcDQ4Q2tYeHNhVVlYUGJkY2YwZ1lXSVR3aWxEWlpDTEtlbFBvemVqQ2lrbWQ3T3V6R3NBUUJid25IVGt5SUNxbzNYdXhFdzh3NVhjNnhxZUg0akJtVnE4cEw1?oc=5"
+        },
+        {
+          "title": "Packers-Bears Wednesday Injury Report: Seven Chicago Starters Didn\u2019t Practice - Sports Illustrated",
+          "source": "Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQm5qd1JldHJXV2lSeTFtN1NxTEhERUQtSEhzSmFrbW54cWpsSzdrMEdYRXc3c01jcGdLNXVGai1TenRqODNVa29sWWZSRVY5YUJkcnhoM0xXZXBHZi1ncVdaVVlLcjJtT3VDWTNuVTNlYmpFWHlhRUFOMXhIYkREVTc4TFhvSU5Pbk1JYlRVV21fVjRpOFNINjRLdU1lOEtxY1FPdjZFcUlfNF9WWmdkWQ?oc=5"
+        }
+      ],
       "flags": [],
-      "crowdHomeShare": 0.2283,
-      "crowdEntries": 403883,
-      "contrarianValue": 0.1996,
+      "crowdHomeShare": 0.2348,
+      "crowdEntries": 693825,
+      "contrarianValue": 0.2327,
       "poolPick": "CHI",
       "poolPickReason": "market favorite"
     },
@@ -106,20 +114,37 @@
       "stadium": "Hard Rock Stadium",
       "roof": "outdoors",
       "pick": "CIN",
-      "winProbability": 0.7432,
-      "homeWinProbability": 0.2568,
-      "statisticalHomeProbability": 0.2128,
-      "marketHomeProbability": 0.2591,
-      "spreadLine": -6.5,
+      "winProbability": 0.7498,
+      "homeWinProbability": 0.2502,
+      "statisticalHomeProbability": 0.2115,
+      "marketHomeProbability": 0.2522,
+      "spreadLine": -7.0,
       "confidence": "high",
       "homeQb": "Malik Willis",
       "awayQb": "Joe Burrow",
-      "weather": null,
-      "news": [],
+      "weather": {
+        "summary": "90\u00b0F \u00b7 wind 10 mph",
+        "temperatureF": 89.6,
+        "precipitationPct": 2,
+        "windMph": 9.8,
+        "gustMph": 12.8
+      },
+      "news": [
+        {
+          "title": "Ja'Marr Chase Could Be a Risky Start Among These NFL Fantasy Football Players to Avoid in Week 5 - Sports Illustrated",
+          "source": "Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQckJpMlNZUmRCam5BRkUtcElXdkEyWHlQMVkyWmxCNTI2YVo3c0pMNlZxanVsbXlVeGYyaXRsWUZraENoNnR2WGhKcFEzM0ZjUTcwZ0NFdnh0azFqVkhTWFB3N0V2VTE3N1kzcGpvSUZHUW80cUdfZ0FMSGtBdl95aHNJOXJCSVdGMmZoUWhTY0plbkpxdWdYZXZmVklMNDJRR1ZMTTVSWlBFajNxMEVzVlRubkYzNml3MzJsX2pWM0x5aHFNcEtWbG1CeGpiSENmU1E0ZWFKUFRNTkVU?oc=5"
+        },
+        {
+          "title": "Ex-Dolphins Starter Suffers Season-Ending Injury Days After Signing With Team - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQOUhnSndOZ1ZkWWNFMUFsNEotbkhRa0JTQTFpUm4xakFWalVJWGlHc3BLNUpTUE5Sd2hsRFJfUDdaR1NTblVMaTRrZ1ZEbE11eWxvUUxqdTJXTjlYcnRKOEFZd2U1UUJCamRKQXg2YV9DTEQ2UUJQaE5FcWs2QjAyaVN2UXVSUzEzSVkw?oc=5"
+        }
+      ],
       "flags": [],
-      "crowdHomeShare": 0.0341,
-      "crowdEntries": 408484,
-      "contrarianValue": 0.225,
+      "crowdHomeShare": 0.0368,
+      "crowdEntries": 699398,
+      "contrarianValue": 0.2154,
       "poolPick": "CIN",
       "poolPickReason": "market favorite"
     },
@@ -132,20 +157,39 @@
       "stadium": "MetLife Stadium",
       "roof": "outdoors",
       "pick": "NYJ",
-      "winProbability": 0.5417,
-      "homeWinProbability": 0.5417,
-      "statisticalHomeProbability": 0.5211,
-      "marketHomeProbability": 0.5427,
+      "winProbability": 0.5498,
+      "homeWinProbability": 0.5498,
+      "statisticalHomeProbability": 0.5178,
+      "marketHomeProbability": 0.5514,
       "spreadLine": 2.5,
       "confidence": "low",
       "homeQb": "Geno Smith",
       "awayQb": "Deshaun Watson",
-      "weather": null,
-      "news": [],
-      "flags": [],
-      "crowdHomeShare": 0.204,
-      "crowdEntries": 405524,
-      "contrarianValue": 0.3387,
+      "weather": {
+        "summary": "66\u00b0F \u00b7 wind 10 mph \u00b7 78% precip",
+        "temperatureF": 65.8,
+        "precipitationPct": 78,
+        "windMph": 10.3,
+        "gustMph": 23.0
+      },
+      "news": [
+        {
+          "title": "Browns Get Bad News on Defensive Front Ahead of Jets Matchup - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQS0pZcWlaTUtlWHZhdXB0dUF0LWRKbTVBVm1uMVhPV3VSRTFETk5pa1JwTDlkV0hZbEx0RzYtOG5rYTNTaHozVkZTZEJZWnBDSHVhR2Eya3BxQnZhRnp4THRVX25VRmVMOF9lUTVHOXoySlBKc3hHZnVZbC1QVld0c0JDVjhYcmc?oc=5"
+        },
+        {
+          "title": "Browns Get Good News on Injured Starter for Week 5 - Heavy.com",
+          "source": "Heavy.com",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNeVRhWVl4dGNQMmZjOUZBUmxjUksxMkt0V2tQU292SGJFczZiaHZ0akZyNHFBNmJpX1BOenBuMTNrOEpHRVRoTlRtVG5wektiMVp5SkZjNWFvNU1hT18zUkp4SEV6bjZsTHo2bW8zLWJyTkxiVE1KcUw5Y2JnbVZoWVotOW1EOF9qZXlwQVN2UGdwZw?oc=5"
+        }
+      ],
+      "flags": [
+        "Weather: meaningful precipitation risk"
+      ],
+      "crowdHomeShare": 0.2047,
+      "crowdEntries": 695609,
+      "contrarianValue": 0.3467,
       "poolPick": "NYJ",
       "poolPickReason": "market favorite"
     },
@@ -158,20 +202,37 @@
       "stadium": "Nissan Stadium",
       "roof": "outdoors",
       "pick": "HOU",
-      "winProbability": 0.7418,
-      "homeWinProbability": 0.2582,
-      "statisticalHomeProbability": 0.4301,
-      "marketHomeProbability": 0.2492,
-      "spreadLine": -7.5,
+      "winProbability": 0.7389,
+      "homeWinProbability": 0.2611,
+      "statisticalHomeProbability": 0.4303,
+      "marketHomeProbability": 0.2522,
+      "spreadLine": -7.0,
       "confidence": "high",
       "homeQb": "Cam Ward",
       "awayQb": "C.J. Stroud",
-      "weather": null,
-      "news": [],
+      "weather": {
+        "summary": "66\u00b0F \u00b7 wind 8 mph",
+        "temperatureF": 65.9,
+        "precipitationPct": 4,
+        "windMph": 8.4,
+        "gustMph": 15.4
+      },
+      "news": [
+        {
+          "title": "Cowboys Week 4 Inactives vs. Texans Include Multiple Defensive Starters - Sports Illustrated",
+          "source": "Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxObjRtc0YzRGgtNGF1VHdka1U3QlRMZzN0aWM0bXVwMFVNSGVDeWV3ZWxkVU1yY05FdlVub0wwN0dBbVZ4U3J1YXVSWWtIQ0xFSFpueE5Tall3RG9UdHdodXFVTzBPSGxhMzlkMnZLSVZYejVfN2xwTHA4RVBuNFZXMFNUMHhhYmlET3FTWHJSejBZRk9qRU5jUmpMXzY2RXZaOVFCNXU5b0hYUQ?oc=5"
+        },
+        {
+          "title": "Ravens Could be Without Multiple Starters vs. Titans - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOdVB0TlN6cGItZW5hSW5lTUQ1SDFxOTd4Z1phUVBHSFRDNnRnODRSUE85TVZPRWlCUlVkclhySTRZbGMxcjBVQmJVbFp4UWRJdi1ZSXNvdWMyR211MnJlNFlSenlRaTNUTjZHQ3c3SUxCNHVPYXBRbFJVUXd3ektmVTFqU01oaERldDF6aVFVRzA?oc=5"
+        }
+      ],
       "flags": [],
-      "crowdHomeShare": 0.084,
-      "crowdEntries": 408302,
-      "contrarianValue": 0.1652,
+      "crowdHomeShare": 0.089,
+      "crowdEntries": 699704,
+      "contrarianValue": 0.1632,
       "poolPick": "HOU",
       "poolPickReason": "market favorite"
     },
@@ -186,18 +247,37 @@
       "pick": "PIT",
       "winProbability": 0.5779,
       "homeWinProbability": 0.5779,
-      "statisticalHomeProbability": 0.6883,
+      "statisticalHomeProbability": 0.6888,
       "marketHomeProbability": 0.5721,
-      "spreadLine": 2.5,
+      "spreadLine": 3.0,
       "confidence": "low",
       "homeQb": "Aaron Rodgers",
       "awayQb": "Daniel Jones",
-      "weather": null,
-      "news": [],
-      "flags": [],
-      "crowdHomeShare": 0.6124,
-      "crowdEntries": 403879,
-      "contrarianValue": -0.0403,
+      "weather": {
+        "summary": "64\u00b0F \u00b7 wind 16 mph \u00b7 53% precip",
+        "temperatureF": 64.4,
+        "precipitationPct": 53,
+        "windMph": 15.6,
+        "gustMph": 36.0
+      },
+      "news": [
+        {
+          "title": "Shane Steichen Gives Injury Update for $16 Million Starter After Week 4 Win - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOa2d3OXdnTkxoeWtyMGdoUFdvWDRKekhxN1pjMmlaajZTYWgyZmh4Q2padVFyakJVVXRKdE5lY1ZMU0w4QWJRYmYzMVdGWmoyaEd1V1FNaVhpbzVEMi1nVkZKUEZPRDBPRllsLWYwaDBvcnVLbWVZNE1ObjZBcF9hdEVUT1hsZw?oc=5"
+        },
+        {
+          "title": "Colts-Steelers First Injury Report: Multiple Starters Miss Practice - Sports Illustrated",
+          "source": "Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPbjBFUXhQZXpoSzdWRXZ3bDdSTVhkS1ZiTWhFTDlDYjduM2w5ZWxUc0NRWVJZUTZET2ZmamJZZ3Z1SlUwUnlKMVpNLU05M1V3N1dVSTFiNmVReHZrMXg0cFd2amIzNXV1eEpobHhtcXp0QkUwLW1iMDI1QWVvVkc2MEFTNEs1RmpTcVBuSmpzVHNQMkRqdmJueDhza2FOUDNnZ0w0?oc=5"
+        }
+      ],
+      "flags": [
+        "Weather: high wind may materially affect the game"
+      ],
+      "crowdHomeShare": 0.6196,
+      "crowdEntries": 694041,
+      "contrarianValue": -0.0475,
       "poolPick": "PIT",
       "poolPickReason": "market favorite"
     },
@@ -210,20 +290,37 @@
       "stadium": "Gillette Stadium",
       "roof": "outdoors",
       "pick": "NE",
-      "winProbability": 0.6444,
-      "homeWinProbability": 0.6444,
-      "statisticalHomeProbability": 0.7864,
-      "marketHomeProbability": 0.6369,
+      "winProbability": 0.6388,
+      "homeWinProbability": 0.6388,
+      "statisticalHomeProbability": 0.7872,
+      "marketHomeProbability": 0.6309,
       "spreadLine": 3.5,
       "confidence": "medium",
       "homeQb": "Drake Maye",
       "awayQb": "Kirk Cousins",
-      "weather": null,
-      "news": [],
+      "weather": {
+        "summary": "64\u00b0F \u00b7 wind 10 mph",
+        "temperatureF": 64.5,
+        "precipitationPct": 2,
+        "windMph": 9.7,
+        "gustMph": 15.0
+      },
+      "news": [
+        {
+          "title": "Patriots-Raiders injury report: Christian Gonzalez among several starters out Sunday - Boston Herald",
+          "source": "Boston Herald",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMDlKd3I5U1JCZ1JhN3hQTW1pelREYTlVb0pRYUpGOE5DN1RTSmlMNlFQUWlqZG9lNDFCcFN1WnE2OEk1cWVCckhqc0hwV09CSmFKQnp0NzFnR0pUMmtzSGltYzd4eElUUjJrRWx0OWZGYmZyZjRMMFpBUTl3Sm9GX1hQVEpHcEtFeGlTUHZGRkRmYlItY2JUVDlnNWlGN2ZfZkdVN0dsWXVGQWlmYzBzS2FOdHBYeFd6OF9RU1V0dXNRQQ?oc=5"
+        },
+        {
+          "title": "Patriots Week 5 Injury Report: Offensive Starter Returns, Top CBs Remain Out - Sports Illustrated",
+          "source": "Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPMEtMS0pETGVRVDFPQV8xcjFpeGVpcm1VdDBxNWVWUUpxc00zY1l0SVByZnFQRDhNVmtzRTNTRGVGV1NfM210SW10eVp5NHdzTVZLUjVSUEdRd005TjJOWUEyVWh4VnJwQmpDY3JyazJmWGo4ams2OHJZaUR2T0l4TmhXNWl2WGZ0ZVVzaEIycDlVOUtyTFVfcERuNUV2RTJ6YzJ0VjBoazhMQVNkWEJLaTlZUQ?oc=5"
+        }
+      ],
       "flags": [],
-      "crowdHomeShare": 0.4965,
-      "crowdEntries": 405876,
-      "contrarianValue": 0.1404,
+      "crowdHomeShare": 0.4921,
+      "crowdEntries": 696469,
+      "contrarianValue": 0.1388,
       "poolPick": "NE",
       "poolPickReason": "market favorite"
     },
@@ -236,20 +333,31 @@
       "stadium": "Caesars Superdome",
       "roof": "dome",
       "pick": "MIN",
-      "winProbability": 0.5283,
-      "homeWinProbability": 0.4717,
-      "statisticalHomeProbability": 0.55,
-      "marketHomeProbability": 0.4675,
-      "spreadLine": -1.5,
+      "winProbability": 0.558,
+      "homeWinProbability": 0.442,
+      "statisticalHomeProbability": 0.5459,
+      "marketHomeProbability": 0.4365,
+      "spreadLine": -2.5,
       "confidence": "low",
       "homeQb": "Tyler Shough",
       "awayQb": "Kyler Murray",
       "weather": null,
-      "news": [],
+      "news": [
+        {
+          "title": "Vikings Linked to Multiple Running Backs as Aaron Jones\u2019 Durability Raises Fresh Concerns - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxONFFPQkQ3bjFIc0N5S04zeThwWUwtSDRPb1lJWl9FOFVNSzY0VG9vNG5CclBYN2RsUE9Idzd1Sk92RVByVWo5aWFLZUlkWVFRMVF6dkNtaldKWDZhdVdEZl9Fb25mbDBMd3RVa3NOOFJaTVhNUnZRNFJVMkZtbXBYenltR3JGMTcxOFdYSmdOdw?oc=5"
+        },
+        {
+          "title": "Minnesota Vikings offense suffers another brutal blow, and it will impact every aspect of Kevin O'Connell's unit - A to Z Sports",
+          "source": "A to Z Sports",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNR3dFWjI4SjQ0QVVmdzZ2M2MtendMWXVHa3JJVFRNTXh2bmIxX1VySGxYdkRPNExTbFF3cndjMnhpUzZLbjRpTURLS2xPTFhjbnptZHBTUDQ4N0NDNk9sQ0xGWWk5dXh2aWlFQk93bmwzcVpFR3dOOWdmb0VjTFVFZUFIMlRoeXdXcEJGajRDVE4wZnBiVmVmUFRPQlBKNXRUb0VPLWp6ODE5YXdsVU9fQWZ0Tl83aXhSMTl6bTlvZjJuSmlaWldYSlVnQWRGY3p1OTlNZzd4a1pMd3ZiWE9r?oc=5"
+        }
+      ],
       "flags": [],
-      "crowdHomeShare": 0.2197,
-      "crowdEntries": 406014,
-      "contrarianValue": 0.2478,
+      "crowdHomeShare": 0.219,
+      "crowdEntries": 696430,
+      "contrarianValue": 0.2175,
       "poolPick": "MIN",
       "poolPickReason": "market favorite"
     },
@@ -262,20 +370,39 @@
       "stadium": "Northwest Stadium",
       "roof": "outdoors",
       "pick": "WAS",
-      "winProbability": 0.6103,
-      "homeWinProbability": 0.6103,
-      "statisticalHomeProbability": 0.4934,
-      "marketHomeProbability": 0.6164,
+      "winProbability": 0.5982,
+      "homeWinProbability": 0.5982,
+      "statisticalHomeProbability": 0.4927,
+      "marketHomeProbability": 0.6038,
       "spreadLine": 3.5,
       "confidence": "low",
       "homeQb": "Jayden Daniels",
       "awayQb": "Jameis Winston",
-      "weather": null,
-      "news": [],
-      "flags": [],
-      "crowdHomeShare": 0.2548,
-      "crowdEntries": 403768,
-      "contrarianValue": 0.3616,
+      "weather": {
+        "summary": "68\u00b0F \u00b7 wind 8 mph \u00b7 69% precip",
+        "temperatureF": 68.3,
+        "precipitationPct": 69,
+        "windMph": 7.9,
+        "gustMph": 16.3
+      },
+      "news": [
+        {
+          "title": "The 5 NFL teams most impacted by injuries in 2026, with the New York Giants at the top - The Athletic - The New York Times",
+          "source": "The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZFJ4Z2ZxMnVuQUNnbHFSUXJMSmZaX1RnVmNFMGg5TVpLUFNfcDNLZ0tCNEVubjBqQmx3dldYOHJHa3pCZVFaamVybzhvQnZyUFBva2ZtQUs0dzVQbW12RUxibkpiTjdhb3ZINU9RYzVidlFlYzA4a3RET3dPd2tmRTBaUndBWF9wVnV6YjVsMGN0cE5vMkVwMXdHR3ZVZ2c1TndiNDZ0VQ?oc=5"
+        },
+        {
+          "title": "Will Jayden Daniels play in Week 5 against the New York Giants? - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWmhtWXJOeUhyT013dF9zOHNfX0VFM0dKR1RKWFFzT3dIWlFXV2lYRGpPZHVxRzIzM3dqdFA4bkFBNEsySTh2MFpCSlgtMWZQSzBvWjFMblVlZU01czNxZEl6WGhZSTUzZUc1NGZsSk1hY0VMYlNfaFJ5WFFXc0JpcA?oc=5"
+        }
+      ],
+      "flags": [
+        "Weather: meaningful precipitation risk"
+      ],
+      "crowdHomeShare": 0.2766,
+      "crowdEntries": 693816,
+      "contrarianValue": 0.3272,
       "poolPick": "WAS",
       "poolPickReason": "market favorite"
     },
@@ -288,20 +415,31 @@
       "stadium": "SoFi Stadium",
       "roof": "dome",
       "pick": "DEN",
-      "winProbability": 0.6156,
-      "homeWinProbability": 0.3844,
-      "statisticalHomeProbability": 0.5146,
-      "marketHomeProbability": 0.3775,
+      "winProbability": 0.6236,
+      "homeWinProbability": 0.3764,
+      "statisticalHomeProbability": 0.5161,
+      "marketHomeProbability": 0.3691,
       "spreadLine": -3.5,
-      "confidence": "low",
+      "confidence": "medium",
       "homeQb": "Justin Herbert",
       "awayQb": "Bo Nix",
       "weather": null,
-      "news": [],
+      "news": [
+        {
+          "title": "Ascending Broncos WR Suffers \u2018Serious Lower Leg Injury\u2019 Against 49ers - Heavy.com",
+          "source": "Heavy.com",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNWWVaNk9rblpVVF9GRzNoc2JodUNQeS1BZm93S1FoQ2pwZEFRck5BVGQ4am1VNHppangzdTVZcWxURXVRWnRZN2k4Q29OcjFhZ1RWM3BHVGh3MDdtZ25kVXVVdlM2dl9Va2V0dTV3NnRzN0huWHpCNjdiU3hzWEpxMWVLZXhCYWM?oc=5"
+        },
+        {
+          "title": "Chargers\u2019 Nightmare Start Gets Worse With 3 Key Players Ruled Out - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQUThmVjd5R0FPN3NwV3loT2JtLS05c3JoWml4WGhyaFhwTDVIbmRyc0dad2h1LUxEWGFsZnI3eUx1ZHNTdG9GQ1BoTU11R3BHdFEwNVlLRGRMS1NYQ2RmUFplYzdpbnRlUy1hLVhrLW9GZlVod2UyX0o0Z1VDWU94Wk9WT0dTTDlwOFYzTg?oc=5"
+        }
+      ],
       "flags": [],
-      "crowdHomeShare": 0.1357,
-      "crowdEntries": 403691,
-      "contrarianValue": 0.2418,
+      "crowdHomeShare": 0.1424,
+      "crowdEntries": 693237,
+      "contrarianValue": 0.2267,
       "poolPick": "DEN",
       "poolPickReason": "market favorite"
     },
@@ -316,18 +454,35 @@
       "pick": "DET",
       "winProbability": 0.6791,
       "homeWinProbability": 0.3209,
-      "statisticalHomeProbability": 0.4407,
+      "statisticalHomeProbability": 0.4404,
       "marketHomeProbability": 0.3146,
       "spreadLine": -5.5,
       "confidence": "medium",
       "homeQb": "Jacoby Brissett",
       "awayQb": "Jared Goff",
-      "weather": null,
-      "news": [],
+      "weather": {
+        "summary": "82\u00b0F \u00b7 wind 16 mph",
+        "temperatureF": 81.5,
+        "precipitationPct": 21,
+        "windMph": 16.2,
+        "gustMph": 25.1
+      },
+      "news": [
+        {
+          "title": "Lions Rule Out 4 Players for Cardinals Game as a Key Starter in Doubt - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPdmFSV0ZsbjZ6OU1HVkFjTFIzcEZMNkhZOUhJREVzbmd1YVE2eFpRSW5xLXJoN080WUZGMWRidFowdllIVlVfSzZtMUo0Zm9EWFNCai0xaDBhX0g1aTNoSV9QODdyUlhQVm5Eb1lTYi1jWjRMSGdrQ1dNNU1ZXzJQR0hfUGljUQ?oc=5"
+        },
+        {
+          "title": "Lions Confirm Two Impact Starters Return to Practice - Heavy.com",
+          "source": "Heavy.com",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBaZ2RUMmtqWWpGUjVieVExVHRrYW1YdXRMdDcwVFlEWjVRMUk4Z1BsZnNWb3NjR2VZbkVDb0dWeDVNR2FtZFluczFya2NsSFdScXR6aUgxNm5adTZROS13OG5ReU05ZUNERHEtMUJRekdXY1dtTGExT1phZWI4QQ?oc=5"
+        }
+      ],
       "flags": [],
-      "crowdHomeShare": 0.0787,
-      "crowdEntries": 403466,
-      "contrarianValue": 0.2359,
+      "crowdHomeShare": 0.0806,
+      "crowdEntries": 692982,
+      "contrarianValue": 0.234,
       "poolPick": "DET",
       "poolPickReason": "market favorite"
     },
@@ -340,20 +495,37 @@
       "stadium": "Lumen Field",
       "roof": "outdoors",
       "pick": "SEA",
-      "winProbability": 0.5793,
-      "homeWinProbability": 0.5793,
-      "statisticalHomeProbability": 0.5099,
-      "marketHomeProbability": 0.583,
-      "spreadLine": 2.5,
+      "winProbability": 0.5892,
+      "homeWinProbability": 0.5892,
+      "statisticalHomeProbability": 0.5102,
+      "marketHomeProbability": 0.5934,
+      "spreadLine": 3.0,
       "confidence": "low",
       "homeQb": "Drew Lock",
       "awayQb": "Brock Purdy",
-      "weather": null,
-      "news": [],
+      "weather": {
+        "summary": "59\u00b0F \u00b7 wind 9 mph",
+        "temperatureF": 59.0,
+        "precipitationPct": 0,
+        "windMph": 8.8,
+        "gustMph": 14.3
+      },
+      "news": [
+        {
+          "title": "Is it time to panic about 49ers' injuries? Breaking down IR, trade deadline plan - ESPN",
+          "source": "ESPN",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPNUdoMURLZ3ZFVjRSMDhsM1NucG5udG85TW1USi1sVDFRRTFsSTJLX1Q4d2huYzYzSDdDNHRPVlZQTFJTeVNfblhKSFFWOWFaOTNJbHdjZU01OWVBS0ROZTZ5U0pXaEVtQWpoSTNMcnpYT2FoS1ZmamhLRzdMaFFrMFR0VVE2OWtwcEtWNWZqY2ViWGlB?oc=5"
+        },
+        {
+          "title": "49ers place four players on PUP list; Warner, Bosa cleared for training camp; Two released - 49ers Webzone",
+          "source": "49ers Webzone",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMEo2QVdGbVM1YVp1Yy12aE94ZjUwWjlPWklHdVViZE8tajhHUnczOU9haXl0YVN3dHNsM1J0TGlmNGRJV2lzNFI5WUdSeElZSng0QXQycW94dC04RjBTa3FFLVlxTEVpTnhwVTdqbHZBRkhWZWJqS1BLLUoyYkZUeVdzQU4xWTRN?oc=5"
+        }
+      ],
       "flags": [],
-      "crowdHomeShare": 0.5206,
-      "crowdEntries": 402378,
-      "contrarianValue": 0.0624,
+      "crowdHomeShare": 0.5116,
+      "crowdEntries": 691925,
+      "contrarianValue": 0.0818,
       "poolPick": "SEA",
       "poolPickReason": "market favorite"
     },
@@ -370,16 +542,29 @@
       "homeWinProbability": 0.6088,
       "statisticalHomeProbability": 0.4633,
       "marketHomeProbability": 0.6164,
-      "spreadLine": 3.5,
+      "spreadLine": 3.0,
       "confidence": "low",
       "homeQb": "Michael Penix Jr.",
-      "awayQb": "Lamar Jackson",
+      "awayQb": "Tyler Huntley",
       "weather": null,
-      "news": [],
-      "flags": [],
-      "crowdHomeShare": 0.3281,
-      "crowdEntries": 402084,
-      "contrarianValue": 0.2883,
+      "news": [
+        {
+          "title": "Ravens QB Lamar Jackson (ankle) out vs. Falcons; Tyler Huntley to start - NFL.com",
+          "source": "NFL.com",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNeV9uY0N5Rng3bE5zdjhiWUhxZXFvUUgzejQtVlZuamR4c2xkaHNWcjJ2dC13NU5ldEk3bVZHeXdWa1NWWS14V3ZMcjJqWmFwNTVWczR3enFIRGxTNUVnYUxRUk5QblJnU3EyaHhXelE5QTNOR01fU3dYbEwzX0NFWmlDWWtlcGhYazRpNHI4OA?oc=5"
+        },
+        {
+          "title": "Lamar Jackson leaves in walking boot, to reportedly undergo MRI on ankle injury from Ravens win over Titans - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNVkJydEJzTUFva2dtX0daNUlFU2F1M3pQODBiaHR3WlFRd2stUGVCZUVLdndDbmhVX091RThZV1BIcDZuMmF6T1NBSk84WmlrUnhLajdvc3hJSWFxMEg2YXI5OHdvbWZEZDRIV29PY3VWdzU3bjJsRDVZeVpJQUt5a29VS2lMaVFTbHhYUlVydTJtdHJuVmRWRlkxS2pkR29VVlBIeGttUDhjajNmOXFUbnZUWTJRYU84SmppZWRMWVdGSy1FRmhSenNwckZuNEt1RURFOG5oUEowUG9Kc2FzVlg1d2FRcEp6S0phR0hlRGlheVhFRzQzZllTdVpuaGh3Q3c?oc=5"
+        }
+      ],
+      "flags": [
+        "Away QB changed: Lamar Jackson \u2192 Tyler Huntley"
+      ],
+      "crowdHomeShare": 0.3914,
+      "crowdEntries": 691432,
+      "contrarianValue": 0.225,
       "poolPick": "ATL",
       "poolPickReason": "market favorite"
     },
@@ -392,20 +577,31 @@
       "stadium": "SoFi Stadium",
       "roof": "dome",
       "pick": "LA",
-      "winProbability": 0.5921,
-      "homeWinProbability": 0.5921,
+      "winProbability": 0.6071,
+      "homeWinProbability": 0.6071,
       "statisticalHomeProbability": 0.5672,
-      "marketHomeProbability": 0.5934,
+      "marketHomeProbability": 0.6092,
       "spreadLine": 3.0,
       "confidence": "low",
       "homeQb": "Matthew Stafford",
       "awayQb": "Josh Allen",
       "weather": null,
-      "news": [],
+      "news": [
+        {
+          "title": "Bills vs. Rams injury update: Buffalo loses multiple starters, Aaron Donald status unclear - Democrat and Chronicle",
+          "source": "Democrat and Chronicle",
+          "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOZE5zSmNGWUVNWEM0T0FzWV9WUGp5eXQwbUxmc3dyWkVBdjJXc2hpOTdHa0EwUUlVa0xJQm9VYktRWVJVd0JZekZBcjA1U3RIOEhDaDNqTTRtTnQyZm5LWV9NOEVPZFZMcS1hTkcxY2JqQkVnSV9KQmRVWTB0S2tiQjdPb081REFPbDUtMloybDNadF9JT2FHZGFnRDFTSjg3bFZ1ZVZnSG5wcV9PRmc2TE5kYnJ1S2J6VDhIdVNTUl9fQUpEV2g1Sm8zdnEwemdvaGl1MUEtTm10ZWU1ejk2UjhJMEs4eENkUU40S2FTdllBeDl3WF9MdUZTY3NyZ1pOdzNWemxwSlEwX2VpWkhJNEVR?oc=5"
+        },
+        {
+          "title": "Rams Injury Report: Aaron Donald Among Three Key Starters Who Could Return vs. Bills - Sports Illustrated",
+          "source": "Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPaEttLU02ZExPcDdoOU1VU3hoWWFIRG1xTllUWi1ScEdTd0FZaEJWUnZBcmdxOFQyX1NDS3VDdTUxeWxzMUdEMFdwQXhiSDZ0eksxWHNtT0hPWUplNzhFOEVnRjZOcTJoZjNaX09lVlk0LXRnSHlaZmtGNkExaVdqTUFYOA?oc=5"
+        }
+      ],
       "flags": [],
-      "crowdHomeShare": 0.3882,
-      "crowdEntries": 401450,
-      "contrarianValue": 0.2052,
+      "crowdHomeShare": 0.3795,
+      "crowdEntries": 690487,
+      "contrarianValue": 0.2297,
       "poolPick": "LA",
       "poolPickReason": "market favorite"
     }
