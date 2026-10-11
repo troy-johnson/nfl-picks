@@ -90,3 +90,17 @@ def test_forecast_excludes_all_target_week_results_and_stats(monkeypatch):
 
 def test_frozen_sources_still_match():
     assert forward.specification()["candidate"] == "baseline_core_exp4"
+
+
+def test_missed_morning_capture_keeps_only_remaining_games():
+    schedule = pd.DataFrame([
+        {"game_id": "morning", "season": 2026, "game_type": "REG", "gameday": "2026-10-11", "gametime": "09:30"},
+        {"game_id": "afternoon", "season": 2026, "game_type": "REG", "gameday": "2026-10-11", "gametime": "13:00"},
+        {"game_id": "evening", "season": 2026, "game_type": "REG", "gameday": "2026-10-11", "gametime": "20:15"},
+    ])
+    now = forward.timestamp("2026-10-11T15:00:00Z")
+    day, kickoff, games = forward.remaining_game_day(schedule, 2026, now)
+    assert day == "2026-10-11"
+    assert kickoff == forward.timestamp("2026-10-11T17:00:00Z")
+    assert set(games.game_id) == {"afternoon", "evening"}
+    assert forward.predict.odds_capture_due(now, kickoff)

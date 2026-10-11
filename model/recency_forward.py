@@ -104,6 +104,13 @@ def save_capture(path: Path, payload: dict, spec: dict) -> bool:
     return True
 
 
+def remaining_game_day(schedule: pd.DataFrame, season: int, now: datetime) -> tuple[str, datetime, pd.DataFrame]:
+    """Allow a missed morning capture to save games that have not started."""
+    day, _, games = predict.upcoming_game_day(schedule, season, now)
+    games = games[games.apply(predict.kickoff_at, axis=1) > now].copy()
+    return day, min(games.apply(predict.kickoff_at, axis=1)), games
+
+
 def capture() -> None:
     spec = specification()
     now = datetime.now(timezone.utc)
@@ -113,7 +120,7 @@ def capture() -> None:
     if regular.empty or not any(predict.kickoff_at(row) > now for _, row in regular[regular.season == season].iterrows()):
         print("No upcoming regular-season games")
         return
-    day, kickoff, games = predict.upcoming_game_day(regular, season, now)
+    day, kickoff, games = remaining_game_day(regular, season, now)
     path = ARCHIVE / str(season) / f"{day}.json"
     if path.exists() or not predict.odds_capture_due(now, kickoff):
         print(f"Candidate capture is already saved or not due for {day}")

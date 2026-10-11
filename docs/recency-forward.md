@@ -9,6 +9,8 @@ The capture workflow now runs `model/recency_forward.py --capture` in the existi
 It saves raw probabilities, blended probabilities, model inputs, source hashes, and fresh multi-book odds.
 The archive stores odds and predictions under `data/model-predictions/recency/<season>/<day>.json`.
 Each archive preserves the first capture. The script refuses a save after kickoff.
+If the first capture window is missed, a later window can capture games that have not started.
+The archive excludes games that started before that capture.
 The script verifies the frozen prediction sources before capture and evaluation.
 The frozen specification remains unchanged, including its original status text.
 This workflow replaces that status once the changes reach the scheduled branch.
