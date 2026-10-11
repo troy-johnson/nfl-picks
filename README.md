@@ -43,7 +43,9 @@ Output is written to `public/data/current.json`. The first run for a week also c
 
 `.github/workflows/refresh-picks.yml` creates the weekly snapshot on Wednesday. It checks the 60-120 minute pre-kickoff window every 30 minutes for Thursday games, with Saturday and Sunday fallbacks. The final run refreshes market, QB, weather, and news data. Other scheduled runs exit without changing published picks. A manual run with `force` bypasses the time window.
 
-A changed JSON file is committed to `main`, which is intended to trigger the Vercel Git deployment. If `THE_ODDS_API_KEY` is set as a repository secret, `.github/workflows/capture-odds.yml` checks every in-season day and records each game day's 60-120 minute pre-kickoff multi-book moneyline snapshot in `data/odds-snapshots/`. These records do not affect live picks.
+A changed JSON file is committed to `main`, which is intended to trigger the Vercel Git deployment. If `THE_ODDS_API_KEY` is set as a repository secret, `.github/workflows/capture-odds.yml` checks every in-season day. It captures multi-book moneyline odds 45–180 minutes before the day's first kickoff in `data/odds-snapshots/`.
+
+The workflow also saves the frozen recency candidate, the eight-game control, and fresh odds before kickoff. Predictions enter `data/model-predictions/recency/`. Evaluation enters `data/model-evaluation/recency.json`. These records do not affect live picks. See [the forward test](docs/recency-forward.md) for the sample rules and the 250-game minimum.
 
 ## Model validation
 

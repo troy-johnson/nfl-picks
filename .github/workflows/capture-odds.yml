@@ -40,13 +40,25 @@ jobs:
           uv run --project model python model/predict.py --capture-odds
       - name: Capture ESPN pick shares
         run: uv run --project model python model/crowd.py --capture
-      - name: Commit snapshots
+      - name: Capture frozen candidate forecasts
+        env:
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
         run: |
-          if [ -z "$(git status --porcelain -- data/odds-snapshots data/crowd-picks)" ]; then exit 0; fi
+          if [ -z "$THE_ODDS_API_KEY" ]; then
+            echo "THE_ODDS_API_KEY is not set; skipping candidate capture"
+            exit 0
+          fi
+          uv run --project model python model/recency_forward.py --capture
+      - name: Score frozen candidate forecasts
+        run: uv run --project model python model/recency_forward.py
+      - name: Commit snapshots
+        if: always()
+        run: |
+          if [ -z "$(git status --porcelain -- data/odds-snapshots data/crowd-picks data/model-predictions data/model-evaluation)" ]; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/odds-snapshots data/crowd-picks
-          git commit -m "data: capture NFL odds and pick shares"
+          git add data/odds-snapshots data/crowd-picks data/model-predictions data/model-evaluation
+          git commit -m "data: capture NFL odds, pick shares, and candidate forecasts"
           # Another run can land a commit between checkout and push.
           for attempt in 1 2 3; do
             git pull --rebase --autostash && git push && exit 0

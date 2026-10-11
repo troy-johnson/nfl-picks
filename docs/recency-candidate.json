@@ -1,0 +1,45 @@
+{
+  "candidate": "baseline_core_exp4",
+  "frozenAt": "2026-10-10T23:28:24.039673-06:00",
+  "status": "specification frozen; future prediction capture is not configured",
+  "metrics": [
+    "off_epa",
+    "off_success",
+    "pass_epa",
+    "rush_epa",
+    "def_epa_allowed",
+    "def_success_allowed",
+    "def_pass_epa_allowed",
+    "def_rush_epa_allowed"
+  ],
+  "historyGames": 24,
+  "halfLifeGames": 4,
+  "weightFormula": "0.5 ** (gamesAgo / 4)",
+  "average": "weighted game-level means; omit missing values per metric",
+  "contextFeatures": [
+    "rest_diff",
+    "neutral_site"
+  ],
+  "trainingStartSeason": 2021,
+  "training": "expanding weekly training; target-week games excluded",
+  "estimator": {
+    "name": "logistic regression",
+    "C": 0.6,
+    "maxIter": 2000,
+    "imputation": "training-set median",
+    "scaling": "training-set standard scaler"
+  },
+  "marketBlend": "select on the latest completed prior season using existing Brier selection",
+  "evaluation": {
+    "primaryControl": "original eight-game statistical baseline",
+    "primaryMetric": "raw Brier score",
+    "confirmationMetric": "raw log loss",
+    "minimumCompletedGames": 250,
+    "sample": "only games with kickoff after frozenAt and predictions saved before kickoff"
+  },
+  "sourceHashes": {
+    "recency_experiments.py": "7fd8b4d74e9939fa749cd01978b5ca0a0ce4e1b68da1fec75e4344a740cc33fd",
+    "predict.py": "c269ee027b076c0d1db8c197dbf0de0fc7b98e829fbdc7d2ac97ce3940530dd8",
+    "experiments.py": "b302b5df165535d13f1883f5ea284efbd741b2db1771432ac7d1cd413733c50c"
+  }
+}

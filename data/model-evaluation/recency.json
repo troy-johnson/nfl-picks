@@ -1,0 +1,12 @@
+{
+  "candidate": "baseline_core_exp4",
+  "frozenAt": "2026-10-10T23:28:24.039673-06:00",
+  "specHash": "86086fbf3f7695f68bee48a76bcb7bf1a2e2a7c5b30d4e3a5db9673ff7ecfb24",
+  "games": 0,
+  "minimumCompletedGames": 250,
+  "status": "insufficient games: 0 of 250",
+  "metrics": {},
+  "comparisons": {},
+  "scoredGameIds": [],
+  "generatedAt": "2026-10-11T07:52:33.051682+00:00"
+}
