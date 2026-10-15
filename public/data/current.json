@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 6,
-  "generatedAt": "2026-10-15T17:14:40.326747Z",
+  "generatedAt": "2026-10-15T21:32:32.296629Z",
   "firstGame": "2026-10-15",
   "model": {
     "trainingSeasons": [
@@ -37,11 +37,11 @@
       "homeQb": "Bo Nix",
       "awayQb": "Drew Lock",
       "weather": {
-        "summary": "49\u00b0F \u00b7 wind 2 mph",
-        "temperatureF": 48.8,
+        "summary": "52\u00b0F \u00b7 wind 6 mph",
+        "temperatureF": 51.5,
         "precipitationPct": 0,
-        "windMph": 2.4,
-        "gustMph": 5.8
+        "windMph": 6.0,
+        "gustMph": 12.3
       },
       "news": [
         {
@@ -56,9 +56,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.2312,
-      "crowdEntries": 546179,
-      "contrarianValue": 0.2053,
+      "crowdHomeShare": 0.2333,
+      "crowdEntries": 607934,
+      "contrarianValue": 0.2032,
       "poolPick": "SEA",
       "poolPickReason": "market favorite"
     },
@@ -99,9 +99,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.8489,
-      "crowdEntries": 532795,
-      "contrarianValue": -0.2854,
+      "crowdHomeShare": 0.8504,
+      "crowdEntries": 590411,
+      "contrarianValue": -0.2869,
       "poolPick": "JAX",
       "poolPickReason": "market favorite"
     },
@@ -114,37 +114,39 @@
       "stadium": "Huntington Bank Field",
       "roof": "outdoors",
       "pick": "BAL",
-      "winProbability": 0.6932,
-      "homeWinProbability": 0.3068,
+      "winProbability": 0.6495,
+      "homeWinProbability": 0.3505,
       "statisticalHomeProbability": 0.2608,
-      "marketHomeProbability": 0.3092,
-      "spreadLine": -5.5,
+      "marketHomeProbability": 0.3553,
+      "spreadLine": -3.5,
       "confidence": "medium",
       "homeQb": "Deshaun Watson",
       "awayQb": "Lamar Jackson",
       "weather": {
-        "summary": "58\u00b0F \u00b7 wind 11 mph",
-        "temperatureF": 58.0,
+        "summary": "58\u00b0F \u00b7 wind 9 mph",
+        "temperatureF": 57.7,
         "precipitationPct": 0,
-        "windMph": 10.7,
-        "gustMph": 15.4
+        "windMph": 9.4,
+        "gustMph": 13.4
       },
       "news": [
         {
-          "title": "Lamar Jackson still sidelined as Ja\u2019Kobi Lane, Trey Hendrickson return to Ravens practice - The Baltimore Banner",
-          "source": "The Baltimore Banner",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWlEwQmd0NlZvRGVtbUlGd3hncEY1RWc3XzBUajM4RmRlZ0pvRzVJeG5kbko2MTFrd2tGdXhLRVhhX2czUWpMc2M4bW1ZOUFtbDlaX1l6TGhPNDFyYUlvVU5fSGJPYXB1Y3IyalBQektneFdtV2lRbVBKUS1NZTlZZHR0eUM1MWhVZ2ZIZF9tWkV3Mk9Yd0RXMXhySGJuVjZ1V0NfRWQ0RWRMUDlJWVE3U1IwbHNoNTdOa3o3aXBfQTg?oc=5"
+          "title": "Who will start at QB for Baltimore Ravens with Lamar Jackson injured? - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdWE1SHJLYm9vbUYtd2JvVjgxVmlhb3JhZUNOS3cwanNoVFpSdmllRWtodGgydWtoLWJUZ1NxcmUwTk5kaG1KXzM3YkVqLVl1MkhTYkhFWGZiTU13TktMSHh0eHFzS0h0b3BvTVpPZGxvRE5mV0dwZDBEd3lHYTkxT2xMM1hBNFE?oc=5"
         },
         {
-          "title": "Rapoport: Lamar Jackson did not practice for Ravens Wednesday (ankle) 'GMFB' - Yahoo Sports",
-          "source": "Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNYmVkOWVmWW4xdmptSzRIMi1oUWJpOEFXdElLSFhmd19pZEdldW4zM3QyUVhMWjNtTkR2c1pLSUc3dFBmYUdZY3VVSlk5TlVjbEZQX1ZEbWMtUHRRMlVmRWxuVHcyOGZhZm9NYkhhamU5QWVOMnJtYTFGdXJsekNMSUUxVQ?oc=5"
+          "title": "Falcons injury report: Za'Darius Smith, Jake Matthews questionable vs. Ravens - Atlanta Falcons",
+          "source": "Atlanta Falcons",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPYnh3U3FQLXhuc1NCSjROYTVObHNKal9xVzJpWjZRel9qaWI0b1RRTUxjQi1FcFVrSjVoWmRCVVpNTzRNV3l6em5nbC0zOWRzYTBHcllURUpVdERwR2VRekZVS3R4V2FydVRmNW1ENDRvRWlrUFVkVU1zeWxJRnZUUFpjbjJHbnpqS2t4eEFqSnlDN2lJbks0NDdnUnRRUQ?oc=5"
         }
       ],
-      "flags": [],
-      "crowdHomeShare": 0.1081,
-      "crowdEntries": 525244,
-      "contrarianValue": 0.2011,
+      "flags": [
+        "Market moved 5 pts since initial snapshot"
+      ],
+      "crowdHomeShare": 0.1098,
+      "crowdEntries": 581594,
+      "contrarianValue": 0.2455,
       "poolPick": "BAL",
       "poolPickReason": "market favorite"
     },
@@ -157,20 +159,20 @@
       "stadium": "Lincoln Financial Field",
       "roof": "outdoors",
       "pick": "CAR",
-      "winProbability": 0.5157,
-      "homeWinProbability": 0.4843,
+      "winProbability": 0.616,
+      "homeWinProbability": 0.384,
       "statisticalHomeProbability": 0.3922,
-      "marketHomeProbability": 0.4892,
-      "spreadLine": -1.5,
+      "marketHomeProbability": 0.3836,
+      "spreadLine": -3.5,
       "confidence": "low",
       "homeQb": "Jalen Hurts",
       "awayQb": "Bryce Young",
       "weather": {
-        "summary": "58\u00b0F \u00b7 wind 4 mph",
-        "temperatureF": 58.0,
+        "summary": "57\u00b0F \u00b7 wind 4 mph",
+        "temperatureF": 57.1,
         "precipitationPct": 1,
-        "windMph": 4.5,
-        "gustMph": 5.6
+        "windMph": 3.6,
+        "gustMph": 4.5
       },
       "news": [
         {
@@ -185,11 +187,12 @@
         }
       ],
       "flags": [
+        "Market moved 12 pts since initial snapshot",
         "Market favorite flipped since initial snapshot"
       ],
-      "crowdHomeShare": 0.5314,
-      "crowdEntries": 522098,
-      "contrarianValue": -0.0422,
+      "crowdHomeShare": 0.4888,
+      "crowdEntries": 578528,
+      "contrarianValue": -0.1052,
       "poolPick": "CAR",
       "poolPickReason": "market favorite"
     },
@@ -215,7 +218,7 @@
         "temperatureF": 61.5,
         "precipitationPct": 0,
         "windMph": 12.3,
-        "gustMph": 17.2
+        "gustMph": 17.4
       },
       "news": [
         {
@@ -232,11 +235,11 @@
       "flags": [
         "Market moved 7 pts since initial snapshot"
       ],
-      "crowdHomeShare": 0.3645,
-      "crowdEntries": 524746,
-      "contrarianValue": 0.1247,
+      "crowdHomeShare": 0.3653,
+      "crowdEntries": 581254,
+      "contrarianValue": 0.1239,
       "poolPick": "ATL",
-      "poolPickReason": "coin flip (CHI 51%) with 64% of the field on CHI"
+      "poolPickReason": "coin flip (CHI 51%) with 63% of the field on CHI"
     },
     {
       "gameId": "2026_06_NO_NYG",
@@ -256,11 +259,11 @@
       "homeQb": "Jameis Winston",
       "awayQb": "Tyler Shough",
       "weather": {
-        "summary": "58\u00b0F \u00b7 wind 6 mph",
-        "temperatureF": 58.3,
+        "summary": "56\u00b0F \u00b7 wind 4 mph",
+        "temperatureF": 56.3,
         "precipitationPct": 1,
-        "windMph": 6.4,
-        "gustMph": 8.9
+        "windMph": 3.6,
+        "gustMph": 3.8
       },
       "news": [
         {
@@ -275,9 +278,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.738,
-      "crowdEntries": 522928,
-      "contrarianValue": -0.2423,
+      "crowdHomeShare": 0.7381,
+      "crowdEntries": 579158,
+      "contrarianValue": -0.2424,
       "poolPick": "NO",
       "poolPickReason": "market favorite"
     },
@@ -299,11 +302,11 @@
       "homeQb": "Drake Maye",
       "awayQb": "Geno Smith",
       "weather": {
-        "summary": "56\u00b0F \u00b7 wind 8 mph",
-        "temperatureF": 55.8,
+        "summary": "54\u00b0F \u00b7 wind 4 mph",
+        "temperatureF": 53.9,
         "precipitationPct": 0,
-        "windMph": 8.2,
-        "gustMph": 11.4
+        "windMph": 4.2,
+        "gustMph": 5.8
       },
       "news": [
         {
@@ -318,9 +321,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.9482,
-      "crowdEntries": 524782,
-      "contrarianValue": -0.2147,
+      "crowdHomeShare": 0.9477,
+      "crowdEntries": 581082,
+      "contrarianValue": -0.2142,
       "poolPick": "NE",
       "poolPickReason": "market favorite"
     },
@@ -342,11 +345,11 @@
       "homeQb": "Jalon Daniels",
       "awayQb": "Aaron Rodgers",
       "weather": {
-        "summary": "80\u00b0F \u00b7 wind 20 mph",
-        "temperatureF": 80.2,
-        "precipitationPct": 1,
-        "windMph": 19.5,
-        "gustMph": 23.9
+        "summary": "78\u00b0F \u00b7 wind 20 mph",
+        "temperatureF": 78.4,
+        "precipitationPct": 0,
+        "windMph": 20.5,
+        "gustMph": 27.3
       },
       "news": [
         {
@@ -360,10 +363,12 @@
           "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWE9JVTR0YnRzQkZNci1UWS1lS3JuOHVqeU9rTzBObWRxb1Z6dk42Mk5Ud254LTNacXR2R01FWXN3a1RVM1phX3E3M0wyOXNiS204N2ViSDc2ZERVajJibmdIRVgydEM1STBQUkNuOWxWc0pfektxYXV5ZzNhMDd1ZkxCTXRXRHZNLTNTSzJ4OA?oc=5"
         }
       ],
-      "flags": [],
-      "crowdHomeShare": 0.1611,
-      "crowdEntries": 522102,
-      "contrarianValue": 0.2668,
+      "flags": [
+        "Weather: high wind may materially affect the game"
+      ],
+      "crowdHomeShare": 0.1593,
+      "crowdEntries": 578347,
+      "contrarianValue": 0.2686,
       "poolPick": "PIT",
       "poolPickReason": "market favorite"
     },
@@ -385,11 +390,11 @@
       "homeQb": "Daniel Jones",
       "awayQb": "Cam Ward",
       "weather": {
-        "summary": "59\u00b0F \u00b7 wind 7 mph",
-        "temperatureF": 58.9,
+        "summary": "58\u00b0F \u00b7 wind 7 mph",
+        "temperatureF": 58.5,
         "precipitationPct": 0,
         "windMph": 7.2,
-        "gustMph": 10.5
+        "gustMph": 10.7
       },
       "news": [
         {
@@ -404,9 +409,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.9566,
-      "crowdEntries": 525210,
-      "contrarianValue": -0.2157,
+      "crowdHomeShare": 0.9562,
+      "crowdEntries": 581534,
+      "contrarianValue": -0.2153,
       "poolPick": "IND",
       "poolPickReason": "market favorite"
     },
@@ -419,10 +424,10 @@
       "stadium": "SoFi Stadium",
       "roof": "dome",
       "pick": "LA",
-      "winProbability": 0.8544,
-      "homeWinProbability": 0.8544,
+      "winProbability": 0.8495,
+      "homeWinProbability": 0.8495,
       "statisticalHomeProbability": 0.6899,
-      "marketHomeProbability": 0.863,
+      "marketHomeProbability": 0.8579,
       "spreadLine": 12.5,
       "confidence": "high",
       "homeQb": "Matthew Stafford",
@@ -430,20 +435,20 @@
       "weather": null,
       "news": [
         {
+          "title": "Rams-Cardinals injury report: LA in great shape to start Week 6 - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUmNmNHpWaXlLUGs5QzhHTTRUTlFiVU8wc2pHQkpDRGctS1BzU3ZBRUZibGV5b1B3Vm11T1lrMlZ5Umd0WGhQWUEtUG10YnZ6bUJTM3laWWFQWUJJcnpkVlZTSldOR0xFZjJROXlpalp1OTdKTlRwZWRSTC01VU5PMHY1YzktUk0?oc=5"
+        },
+        {
           "title": "Rams injury report: 3 starters out, limited on Wednesday - Yahoo Sports",
           "source": "Yahoo Sports",
           "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNM3ViejE0OGJhdkZtWWdMbVBDam1JVWlvRUVPNlpTOHExbER4VjBFZmtLbjJWR1k4TV9aTk9BTGIwa0RwVDZoRWdLYl8yNE40Nk5yeGJZQkZsUTBFYzctNDBlS19RMGJyOFJxdkVPMlNCNEd3cmd3cjFNd3JOODVtZDdEWTQ?oc=5"
-        },
-        {
-          "title": "Bills' Postgame Injury Update: Starter Spencer Brown Left MNF Win After 16 Plays - Sports Illustrated",
-          "source": "Sports Illustrated",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdjZCekpXRXNTNzZxX2t0a1o0dEJMWm5YT25La3ZwdjJaQ0lSamFGZVdWZEN3MVpzLXZoRjNwenRNQ1hqVFAtODg3LU5rVmlDek51ZUZVZnhNT3djQnZFZXVySTRSa3gxclZKNUVNLWFzT3FjcUFxNW81Ny1GbmpnakVINXhLUDI2TG1MVkxCbEJFd052TTB3VEluczRqWmoxb2d6aHVnMEFIdGF2T3VMMmNhOF9HN3g0cEtWT293?oc=5"
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.9805,
-      "crowdEntries": 522741,
-      "contrarianValue": -0.1175,
+      "crowdHomeShare": 0.9803,
+      "crowdEntries": 578972,
+      "contrarianValue": -0.1224,
       "poolPick": "LA",
       "poolPickReason": "market favorite"
     },
@@ -456,11 +461,11 @@
       "stadium": "Allegiant Stadium",
       "roof": "dome",
       "pick": "BUF",
-      "winProbability": 0.6837,
-      "homeWinProbability": 0.3163,
+      "winProbability": 0.6572,
+      "homeWinProbability": 0.3428,
       "statisticalHomeProbability": 0.348,
-      "marketHomeProbability": 0.3146,
-      "spreadLine": -5.5,
+      "marketHomeProbability": 0.3425,
+      "spreadLine": -4.5,
       "confidence": "medium",
       "homeQb": "Kirk Cousins",
       "awayQb": "Josh Allen",
@@ -478,9 +483,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.0812,
-      "crowdEntries": 521804,
-      "contrarianValue": 0.2334,
+      "crowdHomeShare": 0.0821,
+      "crowdEntries": 578026,
+      "contrarianValue": 0.2604,
       "poolPick": "BUF",
       "poolPickReason": "market favorite"
     },
@@ -505,7 +510,7 @@
         "summary": "65\u00b0F \u00b7 wind 15 mph",
         "temperatureF": 65.3,
         "precipitationPct": 0,
-        "windMph": 15.1,
+        "windMph": 15.0,
         "gustMph": 20.4
       },
       "news": [
@@ -521,9 +526,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.954,
-      "crowdEntries": 522591,
-      "contrarianValue": -0.1582,
+      "crowdHomeShare": 0.9544,
+      "crowdEntries": 578793,
+      "contrarianValue": -0.1586,
       "poolPick": "KC",
       "poolPickReason": "market favorite"
     },
@@ -546,10 +551,10 @@
       "awayQb": "Dak Prescott",
       "weather": {
         "summary": "54\u00b0F \u00b7 wind 16 mph",
-        "temperatureF": 54.5,
+        "temperatureF": 54.0,
         "precipitationPct": 0,
-        "windMph": 15.8,
-        "gustMph": 34.0
+        "windMph": 15.5,
+        "gustMph": 34.2
       },
       "news": [
         {
@@ -566,9 +571,9 @@
       "flags": [
         "Weather: high wind may materially affect the game"
       ],
-      "crowdHomeShare": 0.696,
-      "crowdEntries": 520552,
-      "contrarianValue": -0.1743,
+      "crowdHomeShare": 0.6978,
+      "crowdEntries": 576728,
+      "contrarianValue": -0.1761,
       "poolPick": "GB",
       "poolPickReason": "market favorite"
     },
@@ -590,11 +595,11 @@
       "homeQb": "Brock Purdy",
       "awayQb": "Jayden Daniels",
       "weather": {
-        "summary": "64\u00b0F \u00b7 wind 10 mph",
-        "temperatureF": 64.5,
+        "summary": "67\u00b0F \u00b7 wind 10 mph",
+        "temperatureF": 66.7,
         "precipitationPct": 0,
-        "windMph": 10.0,
-        "gustMph": 10.5
+        "windMph": 10.4,
+        "gustMph": 8.9
       },
       "news": [
         {
@@ -603,15 +608,15 @@
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPY3psdTRRV0ItMC1vRE05alRjUDRjWm9HaUo1QWlTYTJNTnFULUh5TXF4c1R4YU50UVp0QU02M01VNzVnNzlSTkFOVkZtdjFWcUh2bGRuTXFoYVNJb3M1Z3NpWGZROG92MWNQYktfQlBDd3VBUWhHeXI1aG5RRTlYMUIyZldpSDBvOVJlaA?oc=5"
         },
         {
-          "title": "Commanders Announce Good News on QB Jayden Daniels Ahead of Giants Game - Yahoo Sports",
-          "source": "Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNOGNCc1ByRTdYU0cydmR0S185VHFEOEZfSFM2N0JMcXRrNU5uMEdRYWRBSGV0Z0ZobnhnZmQ3RkdYNThJZGNrZlI4bnVUOTlRVnhzcm92VW56cEFaQVhNWWFlV0tMUXhoNjUycHVsUTl3TXFQZVAxZTM2SWZzZlVoNGtPblZ3NTNZ?oc=5"
+          "title": "San Francisco 49ers lose another key starter as brutal injury news piles up during critical matchup against Seattle Seahawks - A to Z Sports",
+          "source": "A to Z Sports",
+          "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPaTB0MXV2VWRlWUxjQjJhOGZpUGw5dm5qSEMwTEJ3djRFV1ZsbC1CdFpCaTBzTlh0SFVmeGc3SjdqaWtlWXcyODhMd1hCSkFSeVlZcFl4c3lMRzFBX2FSNGlPWG9ULTktUjBja1RnVmR4VWZWaVZuLW9NeWFGRXp6MUFRT2NFVnM1QVE2dEg3RW0tWGZqN0hrZUM1NEljQXVtUFRYOHdkNW9YNGRCWDZLOHhTY2FnZHVGY1dWM3dVTzJUbzkzMHI3eW1zb3FwaFQtQi1CcjFpTW5lMjlPTUFKa0d4bFlaU0hlODc3cXJrUVdpY0hsc0lpV0V2dHhPV1ZIRzNUMTRSd0g?oc=5"
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.97,
-      "crowdEntries": 521454,
-      "contrarianValue": -0.1932,
+      "crowdHomeShare": 0.9699,
+      "crowdEntries": 577610,
+      "contrarianValue": -0.1931,
       "poolPick": "SF",
       "poolPickReason": "market favorite"
     }
