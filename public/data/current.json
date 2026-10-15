@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 6,
-  "generatedAt": "2026-10-15T21:32:32.296629Z",
+  "generatedAt": "2026-10-15T22:43:00.520280Z",
   "firstGame": "2026-10-15",
   "model": {
     "trainingSeasons": [
@@ -28,19 +28,19 @@
       "stadium": "Empower Field at Mile High",
       "roof": "outdoors",
       "pick": "SEA",
-      "winProbability": 0.5627,
-      "homeWinProbability": 0.4373,
+      "winProbability": 0.5708,
+      "homeWinProbability": 0.4292,
       "statisticalHomeProbability": 0.4524,
-      "marketHomeProbability": 0.4365,
+      "marketHomeProbability": 0.4279,
       "spreadLine": -2.5,
       "confidence": "low",
       "homeQb": "Bo Nix",
       "awayQb": "Drew Lock",
       "weather": {
-        "summary": "52\u00b0F \u00b7 wind 6 mph",
-        "temperatureF": 51.5,
+        "summary": "53\u00b0F \u00b7 wind 6 mph",
+        "temperatureF": 53.1,
         "precipitationPct": 0,
-        "windMph": 6.0,
+        "windMph": 5.9,
         "gustMph": 12.3
       },
       "news": [
@@ -56,9 +56,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.2333,
-      "crowdEntries": 607934,
-      "contrarianValue": 0.2032,
+      "crowdHomeShare": 0.234,
+      "crowdEntries": 628644,
+      "contrarianValue": 0.1939,
       "poolPick": "SEA",
       "poolPickReason": "market favorite"
     },
@@ -80,11 +80,11 @@
       "homeQb": "Trevor Lawrence",
       "awayQb": "C.J. Stroud",
       "weather": {
-        "summary": "54\u00b0F \u00b7 wind 11 mph",
-        "temperatureF": 54.3,
+        "summary": "51\u00b0F \u00b7 wind 12 mph",
+        "temperatureF": 51.1,
         "precipitationPct": 19,
-        "windMph": 11.4,
-        "gustMph": 22.8
+        "windMph": 12.3,
+        "gustMph": 24.2
       },
       "news": [
         {
@@ -99,9 +99,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.8504,
-      "crowdEntries": 590411,
-      "contrarianValue": -0.2869,
+      "crowdHomeShare": 0.8512,
+      "crowdEntries": 608578,
+      "contrarianValue": -0.2877,
       "poolPick": "JAX",
       "poolPickReason": "market favorite"
     },
@@ -144,9 +144,9 @@
       "flags": [
         "Market moved 5 pts since initial snapshot"
       ],
-      "crowdHomeShare": 0.1098,
-      "crowdEntries": 581594,
-      "contrarianValue": 0.2455,
+      "crowdHomeShare": 0.1104,
+      "crowdEntries": 599077,
+      "contrarianValue": 0.2449,
       "poolPick": "BAL",
       "poolPickReason": "market favorite"
     },
@@ -159,12 +159,12 @@
       "stadium": "Lincoln Financial Field",
       "roof": "outdoors",
       "pick": "CAR",
-      "winProbability": 0.616,
-      "homeWinProbability": 0.384,
+      "winProbability": 0.6217,
+      "homeWinProbability": 0.3783,
       "statisticalHomeProbability": 0.3922,
-      "marketHomeProbability": 0.3836,
+      "marketHomeProbability": 0.3775,
       "spreadLine": -3.5,
-      "confidence": "low",
+      "confidence": "medium",
       "homeQb": "Jalen Hurts",
       "awayQb": "Bryce Young",
       "weather": {
@@ -190,9 +190,9 @@
         "Market moved 12 pts since initial snapshot",
         "Market favorite flipped since initial snapshot"
       ],
-      "crowdHomeShare": 0.4888,
-      "crowdEntries": 578528,
-      "contrarianValue": -0.1052,
+      "crowdHomeShare": 0.48,
+      "crowdEntries": 595988,
+      "contrarianValue": -0.1025,
       "poolPick": "CAR",
       "poolPickReason": "market favorite"
     },
@@ -236,7 +236,7 @@
         "Market moved 7 pts since initial snapshot"
       ],
       "crowdHomeShare": 0.3653,
-      "crowdEntries": 581254,
+      "crowdEntries": 598829,
       "contrarianValue": 0.1239,
       "poolPick": "ATL",
       "poolPickReason": "coin flip (CHI 51%) with 63% of the field on CHI"
@@ -267,9 +267,9 @@
       },
       "news": [
         {
-          "title": "New Orleans Saints 150-game starter begins return from injured reserve - Yahoo Sports",
-          "source": "Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOb2FHY0ltajl4RzYwMGx1LUpLVGNMTWFwNGF5R1NIcFVIWk1NN2dJczFXcVJieDBQN0pYeXdvajZCNmc1bFB2ZlpIaWVfZ3VyOWxBRUY5TXhNVjgtY25GeUIwNVpkdklEakJFa0RYRVJ3b2ZYZUZoaGdTOEU5TG9lWG1wLTJKZ1k?oc=5"
+          "title": "New Orleans Saints 150-game starter begins return from injured reserve - Saints Wire",
+          "source": "Saints Wire",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNV09mLTRZOFFQRkxQdUNYcjBfMkRtYXkzcTZWa1g1blNCMXVidXJrVnNYejFCYWFiUGlqZmszVzd5dGNORDE4WFc5TExRaldqLXN3cE1QZDJINFMxX0F2cjd2MF80SGdFSFdma18yMnQzQkhicDZ3UkM3RGtDM2xKNmFybVA0OXQ3czBJbmxfcEw5Um9RTkdCRk53TDNWTF9aZHhWTWJWaWRtTnJIRldJbTh5YTM3enJHSTloeWFZdjRHaVVJSnA0Z0RNX1o?oc=5"
         },
         {
           "title": "Illness makes another Saints starter a late addition to injury report - Yahoo Sports",
@@ -278,9 +278,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.7381,
-      "crowdEntries": 579158,
-      "contrarianValue": -0.2424,
+      "crowdHomeShare": 0.7384,
+      "crowdEntries": 596580,
+      "contrarianValue": -0.2427,
       "poolPick": "NO",
       "poolPickReason": "market favorite"
     },
@@ -315,15 +315,15 @@
           "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQdHNmWFJmbEhRSjhjUFQ4U1hfRXlJVjgycnlJOHpHOHNoa19tcUR4TEw5SWlQVm10Unc1RlkwckZ1MnMyS2pnbXBwTGJLR2FLc2l4bEZHTVVnVHpOTGFsTHU1T0JsNlVsLVMxN3BoOXFHbHdiYWc2UnFCcmU3aEJ4VFZSbGU1ejVhd0pmaVVQVlh6dUhCalVIVXpRcDRXQlFOcmZ3SlpTWk1lT05ReGJyR05hSExoMWRySThj?oc=5"
         },
         {
-          "title": "Browns vs. Jets injury report: 11 ruled out, 3 questionable for Week 5 - Yahoo Sports",
-          "source": "Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOTHZnVTQ3d2I4dFJZVldFNUtOR2R6cHctVFVtYnBKWXpyZGUzZXZXVWUySk80ZnIyT0JzLUh6R1Uwc1o0NUU1YjZwNFFYRWNkRzRLd1RIcU1ubXNVXzZPNndFTUlVMVZzbmVwU2swSkhJdktwVERpd0NQV01MbWlkUGIyNA?oc=5"
+          "title": "Fantasy Football Injury Update: Breece Hall Remains Week to Week, Keeps Braelon Allen as a Fantasy Starter - Sports Illustrated",
+          "source": "Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNZi1tTTFWM3o1cFAwbVFGRWdoNHBtYUpfOEZINmQzbm8wTGx2cHlaNjVzbklZdG9KTEgwTmxiN242R1hRaDViX2hLdFVqSC1uLXFTQ2R1TGE2RDN1SW80ZWU3LXhmTW1aNDltYmdTak9jd0lOWWFJWFlvSG5GQnZJZFpwemNTQmhtRlA3WlA5bkhpaDZ5c2NUYXRJVzN6eFgzMEVyVS1fWi01cF9meThBVGxsTlRUaTJuaHlBQzNuTlVOUV91QktkSFp6RFpBUDJCU2Nic2dPUnk?oc=5"
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.9477,
-      "crowdEntries": 581082,
-      "contrarianValue": -0.2142,
+      "crowdHomeShare": 0.9474,
+      "crowdEntries": 598544,
+      "contrarianValue": -0.2139,
       "poolPick": "NE",
       "poolPickReason": "market favorite"
     },
@@ -366,9 +366,9 @@
       "flags": [
         "Weather: high wind may materially affect the game"
       ],
-      "crowdHomeShare": 0.1593,
-      "crowdEntries": 578347,
-      "contrarianValue": 0.2686,
+      "crowdHomeShare": 0.1588,
+      "crowdEntries": 595739,
+      "contrarianValue": 0.2691,
       "poolPick": "PIT",
       "poolPickReason": "market favorite"
     },
@@ -409,9 +409,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.9562,
-      "crowdEntries": 581534,
-      "contrarianValue": -0.2153,
+      "crowdHomeShare": 0.956,
+      "crowdEntries": 599016,
+      "contrarianValue": -0.2151,
       "poolPick": "IND",
       "poolPickReason": "market favorite"
     },
@@ -424,10 +424,10 @@
       "stadium": "SoFi Stadium",
       "roof": "dome",
       "pick": "LA",
-      "winProbability": 0.8495,
-      "homeWinProbability": 0.8495,
+      "winProbability": 0.8544,
+      "homeWinProbability": 0.8544,
       "statisticalHomeProbability": 0.6899,
-      "marketHomeProbability": 0.8579,
+      "marketHomeProbability": 0.863,
       "spreadLine": 12.5,
       "confidence": "high",
       "homeQb": "Matthew Stafford",
@@ -446,9 +446,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.9803,
-      "crowdEntries": 578972,
-      "contrarianValue": -0.1224,
+      "crowdHomeShare": 0.9801,
+      "crowdEntries": 596344,
+      "contrarianValue": -0.1171,
       "poolPick": "LA",
       "poolPickReason": "market favorite"
     },
@@ -483,9 +483,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.0821,
-      "crowdEntries": 578026,
-      "contrarianValue": 0.2604,
+      "crowdHomeShare": 0.0824,
+      "crowdEntries": 595373,
+      "contrarianValue": 0.2601,
       "poolPick": "BUF",
       "poolPickReason": "market favorite"
     },
@@ -506,13 +506,7 @@
       "confidence": "high",
       "homeQb": "Patrick Mahomes",
       "awayQb": "Justin Herbert",
-      "weather": {
-        "summary": "65\u00b0F \u00b7 wind 15 mph",
-        "temperatureF": 65.3,
-        "precipitationPct": 0,
-        "windMph": 15.0,
-        "gustMph": 20.4
-      },
+      "weather": null,
       "news": [
         {
           "title": "Chargers Sign QB With 2,700 Career Yards as Pressure Mounts on Justin Herbert - Yahoo Sports",
@@ -527,7 +521,7 @@
       ],
       "flags": [],
       "crowdHomeShare": 0.9544,
-      "crowdEntries": 578793,
+      "crowdEntries": 596120,
       "contrarianValue": -0.1586,
       "poolPick": "KC",
       "poolPickReason": "market favorite"
@@ -571,9 +565,9 @@
       "flags": [
         "Weather: high wind may materially affect the game"
       ],
-      "crowdHomeShare": 0.6978,
-      "crowdEntries": 576728,
-      "contrarianValue": -0.1761,
+      "crowdHomeShare": 0.6983,
+      "crowdEntries": 594078,
+      "contrarianValue": -0.1766,
       "poolPick": "GB",
       "poolPickReason": "market favorite"
     },
@@ -614,9 +608,9 @@
         }
       ],
       "flags": [],
-      "crowdHomeShare": 0.9699,
-      "crowdEntries": 577610,
-      "contrarianValue": -0.1931,
+      "crowdHomeShare": 0.9697,
+      "crowdEntries": 594946,
+      "contrarianValue": -0.1929,
       "poolPick": "SF",
       "poolPickReason": "market favorite"
     }
