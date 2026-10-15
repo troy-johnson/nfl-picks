@@ -1,0 +1,103 @@
+{
+  "provider": "The Odds API",
+  "season": 2026,
+  "gameDay": "2026-10-15",
+  "captureWindowOpensAt": "2026-10-15T21:15:00Z",
+  "captureWindowClosesAt": "2026-10-15T23:30:00Z",
+  "capturedAt": "2026-10-15T21:28:50.494881Z",
+  "firstKickoffAt": "2026-10-16T00:15:00Z",
+  "market": "h2h",
+  "region": "us",
+  "games": [
+    {
+      "gameId": "2026_06_SEA_DEN",
+      "kickoffAt": "2026-10-16T00:15:00Z",
+      "homeTeam": "DEN",
+      "awayTeam": "SEA",
+      "oddsEventId": "855f58fad5f0f14b239f4f63df27998b",
+      "marketHomeProbability": 0.43198270885425444,
+      "published": {
+        "generatedAt": "2026-10-15T17:14:40.326747Z",
+        "pick": "SEA",
+        "homeWinProbability": 0.4373,
+        "statisticalHomeProbability": 0.4524,
+        "marketHomeProbability": 0.4365,
+        "marketWeight": 0.95
+      },
+      "bookmakers": [
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "lastUpdate": "2026-10-15T21:28:49Z",
+          "homeMoneyline": 120,
+          "awayMoneyline": -142,
+          "homeProbability": 0.43650793650793646
+        },
+        {
+          "key": "betus",
+          "title": "BetUS",
+          "lastUpdate": "2026-10-15T21:28:16Z",
+          "homeMoneyline": 125,
+          "awayMoneyline": -145,
+          "homeProbability": 0.42888402625820565
+        },
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "lastUpdate": "2026-10-15T21:28:16Z",
+          "homeMoneyline": 118,
+          "awayMoneyline": -138,
+          "homeProbability": 0.4416895553411031
+        },
+        {
+          "key": "lowvig",
+          "title": "LowVig.ag",
+          "lastUpdate": "2026-10-15T21:28:19Z",
+          "homeMoneyline": 125,
+          "awayMoneyline": -145,
+          "homeProbability": 0.42888402625820565
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "lastUpdate": "2026-10-15T21:28:50Z",
+          "homeMoneyline": 125,
+          "awayMoneyline": -145,
+          "homeProbability": 0.42888402625820565
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "lastUpdate": "2026-10-15T21:28:20Z",
+          "homeMoneyline": 120,
+          "awayMoneyline": -148,
+          "homeProbability": 0.43235704323570434
+        },
+        {
+          "key": "mybookieag",
+          "title": "MyBookie.ag",
+          "lastUpdate": "2026-10-15T21:27:07Z",
+          "homeMoneyline": 122,
+          "awayMoneyline": -144,
+          "homeProbability": 0.4328697133125177
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "lastUpdate": "2026-10-15T21:28:20Z",
+          "homeMoneyline": 125,
+          "awayMoneyline": -145,
+          "homeProbability": 0.42888402625820565
+        },
+        {
+          "key": "bovada",
+          "title": "Bovada",
+          "lastUpdate": "2026-10-15T21:27:13Z",
+          "homeMoneyline": 125,
+          "awayMoneyline": -145,
+          "homeProbability": 0.42888402625820565
+        }
+      ]
+    }
+  ]
+}
