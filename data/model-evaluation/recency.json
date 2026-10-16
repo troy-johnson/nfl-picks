@@ -2,97 +2,121 @@
   "candidate": "baseline_core_exp4",
   "frozenAt": "2026-10-10T23:28:24.039673-06:00",
   "specHash": "86086fbf3f7695f68bee48a76bcb7bf1a2e2a7c5b30d4e3a5db9673ff7ecfb24",
-  "games": 12,
+  "games": 13,
   "minimumCompletedGames": 250,
-  "status": "insufficient games: 12 of 250",
+  "status": "insufficient games: 13 of 250",
   "metrics": {
     "baseline": {
-      "games": 12,
-      "accuracy": 0.5833333333333334,
-      "brier": 0.21168342851774302,
-      "logLoss": 0.6083818307154135
+      "games": 13,
+      "accuracy": 0.5384615384615384,
+      "brier": 0.21847064939246927,
+      "logLoss": 0.6226057328311394
     },
     "candidate": {
-      "games": 12,
-      "accuracy": 0.5833333333333334,
-      "brier": 0.22772013951024925,
-      "logLoss": 0.6445092043152137
+      "games": 13,
+      "accuracy": 0.5384615384615384,
+      "brier": 0.2306571925183914,
+      "logLoss": 0.6506978285134832
     },
     "baselineBlend": {
-      "games": 12,
-      "accuracy": 0.6666666666666666,
-      "brier": 0.20611122506032353,
-      "logLoss": 0.5996463331831486
+      "games": 13,
+      "accuracy": 0.6153846153846154,
+      "brier": 0.21498633205019263,
+      "logLoss": 0.6179054408016942
     },
     "candidateBlend": {
-      "games": 12,
-      "accuracy": 0.6666666666666666,
-      "brier": 0.2064611186489087,
-      "logLoss": 0.600261862394795
+      "games": 13,
+      "accuracy": 0.6153846153846154,
+      "brier": 0.21539823590980425,
+      "logLoss": 0.6186547743136122
     },
     "market": {
-      "games": 12,
-      "accuracy": 0.6666666666666666,
-      "brier": 0.2064611186489087,
-      "logLoss": 0.600261862394795
+      "games": 13,
+      "accuracy": 0.6153846153846154,
+      "brier": 0.21539823590980425,
+      "logLoss": 0.6186547743136122
     }
   },
   "comparisons": {
     "candidate_vs_baseline": {
-      "games": 12,
-      "weekBlocks": 1,
+      "games": 13,
+      "weekBlocks": 2,
       "repeats": 10000,
-      "status": "insufficient week blocks",
       "brier": {
-        "difference": 0.0160367109925062,
-        "ci95": null
+        "difference": 0.012186543125922109,
+        "ci95": [
+          -0.03401547127308702,
+          0.0160367109925062
+        ]
       },
       "logLoss": {
-        "difference": 0.03612737359980038,
-        "ci95": null
-      }
+        "difference": 0.028092095682343828,
+        "ci95": [
+          -0.06833123932713481,
+          0.03612737359980038
+        ]
+      },
+      "status": "no confirmed improvement"
     },
     "candidate_vs_market": {
-      "games": 12,
-      "weekBlocks": 1,
+      "games": 13,
+      "weekBlocks": 2,
       "repeats": 10000,
-      "status": "insufficient week blocks",
       "brier": {
-        "difference": 0.02125902086134052,
-        "ci95": null
+        "difference": 0.01525895660858715,
+        "ci95": [
+          -0.05674181442445331,
+          0.02125902086134052
+        ]
       },
       "logLoss": {
-        "difference": 0.04424734192041876,
-        "ci95": null
-      }
+        "difference": 0.03204305419987102,
+        "ci95": [
+          -0.11440839844670181,
+          0.04424734192041876
+        ]
+      },
+      "status": "no confirmed improvement"
     },
     "candidateBlend_vs_baselineBlend": {
-      "games": 12,
-      "weekBlocks": 1,
+      "games": 13,
+      "weekBlocks": 2,
       "repeats": 10000,
-      "status": "insufficient week blocks",
       "brier": {
-        "difference": 0.00034989358858514226,
-        "ci95": null
+        "difference": 0.00041190385961159054,
+        "ci95": [
+          0.00034989358858514226,
+          0.00115602711192897
+        ]
       },
       "logLoss": {
-        "difference": 0.0006155292116464262,
-        "ci95": null
-      }
+        "difference": 0.0007493335119180139,
+        "ci95": [
+          0.0006155292116464262,
+          0.002354985115177066
+        ]
+      },
+      "status": "no confirmed improvement"
     },
     "candidateBlend_vs_market": {
-      "games": 12,
-      "weekBlocks": 1,
+      "games": 13,
+      "weekBlocks": 2,
       "repeats": 10000,
-      "status": "insufficient week blocks",
       "brier": {
         "difference": 0.0,
-        "ci95": null
+        "ci95": [
+          0.0,
+          0.0
+        ]
       },
       "logLoss": {
         "difference": 0.0,
-        "ci95": null
-      }
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "status": "no confirmed improvement"
     }
   },
   "scoredGameIds": [
@@ -107,7 +131,8 @@
     "2026_05_DET_ARI",
     "2026_05_SF_SEA",
     "2026_05_BAL_ATL",
-    "2026_05_BUF_LA"
+    "2026_05_BUF_LA",
+    "2026_06_SEA_DEN"
   ],
-  "generatedAt": "2026-10-16T00:27:30.093105+00:00"
+  "generatedAt": "2026-10-16T15:33:37.975725+00:00"
 }
