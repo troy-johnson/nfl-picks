@@ -2,104 +2,104 @@
   "candidate": "baseline_core_exp4",
   "frozenAt": "2026-10-10T23:28:24.039673-06:00",
   "specHash": "86086fbf3f7695f68bee48a76bcb7bf1a2e2a7c5b30d4e3a5db9673ff7ecfb24",
-  "games": 13,
+  "games": 20,
   "minimumCompletedGames": 250,
-  "status": "insufficient games: 13 of 250",
+  "status": "insufficient games: 20 of 250",
   "metrics": {
     "baseline": {
-      "games": 13,
-      "accuracy": 0.5384615384615384,
-      "brier": 0.21847064939246927,
-      "logLoss": 0.6226057328311394
+      "games": 20,
+      "accuracy": 0.45,
+      "brier": 0.24139213131708104,
+      "logLoss": 0.6713401792153009
     },
     "candidate": {
-      "games": 13,
-      "accuracy": 0.5384615384615384,
-      "brier": 0.2306571925183914,
-      "logLoss": 0.6506978285134832
+      "games": 20,
+      "accuracy": 0.45,
+      "brier": 0.2561827423764177,
+      "logLoss": 0.7057272296462811
     },
     "baselineBlend": {
-      "games": 13,
-      "accuracy": 0.6153846153846154,
-      "brier": 0.21498633205019263,
-      "logLoss": 0.6179054408016942
+      "games": 20,
+      "accuracy": 0.65,
+      "brier": 0.23065507029278293,
+      "logLoss": 0.6517368380688976
     },
     "candidateBlend": {
-      "games": 13,
-      "accuracy": 0.6153846153846154,
-      "brier": 0.21539823590980425,
-      "logLoss": 0.6186547743136122
+      "games": 20,
+      "accuracy": 0.65,
+      "brier": 0.2306303493738006,
+      "logLoss": 0.6519077135817448
     },
     "market": {
-      "games": 13,
-      "accuracy": 0.6153846153846154,
-      "brier": 0.21539823590980425,
-      "logLoss": 0.6186547743136122
+      "games": 20,
+      "accuracy": 0.65,
+      "brier": 0.2306303493738006,
+      "logLoss": 0.6519077135817448
     }
   },
   "comparisons": {
     "candidate_vs_baseline": {
-      "games": 13,
+      "games": 20,
       "weekBlocks": 2,
       "repeats": 10000,
       "brier": {
-        "difference": 0.012186543125922109,
+        "difference": 0.014790611059336697,
         "ci95": [
-          -0.03401547127308702,
+          0.01292146115958244,
           0.0160367109925062
         ]
       },
       "logLoss": {
-        "difference": 0.028092095682343828,
+        "difference": 0.03438705043098015,
         "ci95": [
-          -0.06833123932713481,
-          0.03612737359980038
+          0.031776565677749787,
+          0.03612737359980039
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidate_vs_market": {
-      "games": 13,
+      "games": 20,
       "weekBlocks": 2,
       "repeats": 10000,
       "brier": {
-        "difference": 0.01525895660858715,
+        "difference": 0.025552393002617118,
         "ci95": [
-          -0.05674181442445331,
-          0.02125902086134052
+          0.02125902086134052,
+          0.031992451214532015
         ]
       },
       "logLoss": {
-        "difference": 0.03204305419987102,
+        "difference": 0.05381951606453629,
         "ci95": [
-          -0.11440839844670181,
-          0.04424734192041876
+          0.04424734192041876,
+          0.06817777728071257
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidateBlend_vs_baselineBlend": {
-      "games": 13,
+      "games": 20,
       "weekBlocks": 2,
       "repeats": 10000,
       "brier": {
-        "difference": 0.00041190385961159054,
+        "difference": -2.4720918982325605e-05,
         "ci95": [
-          0.00034989358858514226,
-          0.00115602711192897
+          -0.0005866426803335274,
+          0.00034989358858514226
         ]
       },
       "logLoss": {
-        "difference": 0.0007493335119180139,
+        "difference": 0.00017087551284719615,
         "ci95": [
-          0.0006155292116464262,
-          0.002354985115177066
+          -0.000496105035351635,
+          0.0006155292116464169
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidateBlend_vs_market": {
-      "games": 13,
+      "games": 20,
       "weekBlocks": 2,
       "repeats": 10000,
       "brier": {
@@ -132,7 +132,14 @@
     "2026_05_SF_SEA",
     "2026_05_BAL_ATL",
     "2026_05_BUF_LA",
-    "2026_06_SEA_DEN"
+    "2026_06_SEA_DEN",
+    "2026_06_BAL_CLE",
+    "2026_06_CAR_PHI",
+    "2026_06_CHI_ATL",
+    "2026_06_NO_NYG",
+    "2026_06_NYJ_NE",
+    "2026_06_PIT_TB",
+    "2026_06_TEN_IND"
   ],
-  "generatedAt": "2026-10-18T18:40:22.741232+00:00"
+  "generatedAt": "2026-10-18T21:33:21.549574+00:00"
 }
