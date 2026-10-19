@@ -219,14 +219,14 @@
       "homeTeam": "SF",
       "espnEventId": "401873008",
       "lockAt": "2026-10-20T00:15:00Z",
-      "entries": 730878,
-      "homeShare": 0.964628843664743,
-      "awayShare": 0.035371156335257045,
+      "entries": 731353,
+      "homeShare": 0.9642416179327903,
+      "awayShare": 0.03575838206720968,
       "espnSpread": -7.5,
-      "espnHomeMoneyline": "-395",
-      "espnAwayMoneyline": "310",
+      "espnHomeMoneyline": "-410",
+      "espnAwayMoneyline": "320",
       "homeWin": null,
-      "capturedAt": "2026-10-19T21:45:10.320197Z"
+      "capturedAt": "2026-10-19T22:55:25.390318Z"
     }
   ]
 }
