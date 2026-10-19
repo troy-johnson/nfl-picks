@@ -2,104 +2,104 @@
   "candidate": "baseline_core_exp4",
   "frozenAt": "2026-10-10T23:28:24.039673-06:00",
   "specHash": "86086fbf3f7695f68bee48a76bcb7bf1a2e2a7c5b30d4e3a5db9673ff7ecfb24",
-  "games": 20,
+  "games": 23,
   "minimumCompletedGames": 250,
-  "status": "insufficient games: 20 of 250",
+  "status": "insufficient games: 23 of 250",
   "metrics": {
     "baseline": {
-      "games": 20,
-      "accuracy": 0.45,
-      "brier": 0.24139213131708104,
-      "logLoss": 0.6713401792153009
+      "games": 23,
+      "accuracy": 0.4782608695652174,
+      "brier": 0.24104880290408834,
+      "logLoss": 0.6716916691661879
     },
     "candidate": {
-      "games": 20,
-      "accuracy": 0.45,
-      "brier": 0.2561827423764177,
-      "logLoss": 0.7057272296462811
+      "games": 23,
+      "accuracy": 0.4782608695652174,
+      "brier": 0.25486602710494755,
+      "logLoss": 0.704569814226615
     },
     "baselineBlend": {
-      "games": 20,
-      "accuracy": 0.65,
-      "brier": 0.23065507029278293,
-      "logLoss": 0.6517368380688976
+      "games": 23,
+      "accuracy": 0.6521739130434783,
+      "brier": 0.23894508116425794,
+      "logLoss": 0.677959664560851
     },
     "candidateBlend": {
-      "games": 20,
-      "accuracy": 0.65,
-      "brier": 0.2306303493738006,
-      "logLoss": 0.6519077135817448
+      "games": 23,
+      "accuracy": 0.6521739130434783,
+      "brier": 0.23940052969336226,
+      "logLoss": 0.6802402224158657
     },
     "market": {
-      "games": 20,
-      "accuracy": 0.65,
-      "brier": 0.2306303493738006,
-      "logLoss": 0.6519077135817448
+      "games": 23,
+      "accuracy": 0.6521739130434783,
+      "brier": 0.23940052969336226,
+      "logLoss": 0.6802402224158657
     }
   },
   "comparisons": {
     "candidate_vs_baseline": {
-      "games": 20,
+      "games": 23,
       "weekBlocks": 2,
       "repeats": 10000,
       "brier": {
-        "difference": 0.014790611059336697,
+        "difference": 0.01381722420085924,
         "ci95": [
-          0.01292146115958244,
+          0.011395965882698917,
           0.0160367109925062
         ]
       },
       "logLoss": {
-        "difference": 0.03438705043098015,
+        "difference": 0.032878145060426966,
         "ci95": [
-          0.031776565677749787,
+          0.02933353210838324,
           0.03612737359980039
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidate_vs_market": {
-      "games": 20,
+      "games": 23,
       "weekBlocks": 2,
       "repeats": 10000,
       "brier": {
-        "difference": 0.025552393002617118,
+        "difference": 0.015465497411585361,
         "ci95": [
-          0.02125902086134052,
-          0.031992451214532015
+          0.009145290011852462,
+          0.02125902086134052
         ]
       },
       "logLoss": {
-        "difference": 0.05381951606453629,
+        "difference": 0.024329591810749313,
         "ci95": [
-          0.04424734192041876,
-          0.06817777728071257
+          0.0026011371456553622,
+          0.04424734192041876
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidateBlend_vs_baselineBlend": {
-      "games": 20,
+      "games": 23,
       "weekBlocks": 2,
       "repeats": 10000,
       "brier": {
-        "difference": -2.4720918982325605e-05,
+        "difference": 0.0004554485291042434,
         "ci95": [
-          -0.0005866426803335274,
-          0.00034989358858514226
+          0.00034989358858514226,
+          0.0005705993733068991
         ]
       },
       "logLoss": {
-        "difference": 0.00017087551284719615,
+        "difference": 0.0022805578550146722,
         "ci95": [
-          -0.000496105035351635,
-          0.0006155292116464169
+          0.0006155292116464169,
+          0.0040969527386891325
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidateBlend_vs_market": {
-      "games": 20,
+      "games": 23,
       "weekBlocks": 2,
       "repeats": 10000,
       "brier": {
@@ -139,7 +139,10 @@
     "2026_06_NO_NYG",
     "2026_06_NYJ_NE",
     "2026_06_PIT_TB",
-    "2026_06_TEN_IND"
+    "2026_06_TEN_IND",
+    "2026_06_ARI_LA",
+    "2026_06_BUF_LV",
+    "2026_06_LAC_KC"
   ],
-  "generatedAt": "2026-10-18T21:33:21.549574+00:00"
+  "generatedAt": "2026-10-19T00:13:32.793585+00:00"
 }
