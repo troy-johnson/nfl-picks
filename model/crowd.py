@@ -25,6 +25,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import predict  # noqa: E402
+import scheduled_runs  # noqa: E402
 
 ROOT = predict.ROOT
 CROWD_DIR = ROOT / "data" / "crowd-picks"
@@ -193,7 +194,7 @@ def capture_current_week(now: datetime | None = None, output_dir: Path = CROWD_D
     """Refresh the current week's shares when a game day is about to start."""
     now = now or datetime.now(timezone.utc)
     season = predict.current_nfl_season(now)
-    game_day, first_kickoff, day_games = predict.upcoming_game_day(predict.load_schedule([season]), season, now)
+    game_day, first_kickoff, day_games = scheduled_runs.remaining_game_day(predict.load_schedule([season]), season, now)
     if not force and not capture_due(now, first_kickoff):
         print(f"Crowd capture for {game_day} is not due yet")
         return None
