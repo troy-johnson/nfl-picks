@@ -37,7 +37,7 @@ jobs:
             echo "THE_ODDS_API_KEY is not set; skipping capture"
             exit 0
           fi
-          uv run --project model python model/predict.py --capture-odds
+          uv run --project model python model/scheduled_runs.py --capture-odds
       - name: Capture ESPN pick shares
         run: uv run --project model python model/crowd.py --capture
       - name: Capture frozen candidate forecasts

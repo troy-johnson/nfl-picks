@@ -24,17 +24,19 @@ npm run dev
 Requires Python 3.12+ and [uv](https://docs.astral.sh/uv/):
 
 ```bash
-uv run --project model python model/predict.py
+uv run --project model python model/scheduled_runs.py
 ```
+
+The command runs only when a refresh is due: Wednesday 10:00-18:00 ET, or 45-180 minutes before the next kickoff that has not started. A refresh keeps the published picks for games that already started.
 
 Useful options:
 
 ```bash
 # Skip weather calls
-uv run --project model python model/predict.py --no-weather
+uv run --project model python model/scheduled_runs.py --no-weather
 
-# Regenerate even after this week's first kickoff
-uv run --project model python model/predict.py --force
+# Regenerate outside a refresh window
+uv run --project model python model/scheduled_runs.py --force
 ```
 
 Output is written to `public/data/current.json`. The first run for a week also creates `public/data/snapshots/YYYY-WW-initial.json`; later runs compare against it for late-change warnings.

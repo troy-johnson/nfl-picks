@@ -46,10 +46,10 @@ The Wednesday run creates the weekly snapshot. The final run occurs 45-180 minut
 
 ## Future odds snapshots
 
-Create a The Odds API account and set `THE_ODDS_API_KEY` locally or as a GitHub Actions repository secret. The scheduled capture workflow checks every in-season day and records one snapshot 45-180 minutes before the first kickoff.
+Create a The Odds API account and set `THE_ODDS_API_KEY` locally or as a GitHub Actions repository secret. The scheduled capture workflow checks every in-season day and records one snapshot per game day, 45-180 minutes before the next kickoff that has not started. If the window before a 09:30 ET London game is missed, the capture saves the later games of that day.
 
 ```bash
-THE_ODDS_API_KEY=... uv run --project model python model/predict.py --capture-odds
+THE_ODDS_API_KEY=... uv run --project model python model/scheduled_runs.py --capture-odds
 ```
 
 Snapshots are written to `data/odds-snapshots/<season>/<game-day>.json`. They preserve each available US sportsbook's de-vigged moneyline probability and their equal-weight average. Each game also carries a `published` block copied from `public/data/current.json` at capture time: the pick, the blended and statistical home probabilities, and the market weight that users saw. Recording does not change live picks.
