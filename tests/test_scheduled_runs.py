@@ -10,13 +10,13 @@ import scheduled_runs as runs
 
 predict = runs.predict
 
-# Week 8 of 2026 has a 09:30 ET London game. 2026-10-25 is in EDT (UTC-4).
+# Week 7 of 2026 has a 09:30 ET London game. 2026-10-25 is in EDT (UTC-4).
 WEEK = pd.DataFrame([
-    {"game_id": "thu", "season": 2026, "game_type": "REG", "week": 8, "gameday": "2026-10-22", "gametime": "20:15"},
-    {"game_id": "london", "season": 2026, "game_type": "REG", "week": 8, "gameday": "2026-10-25", "gametime": "09:30"},
-    {"game_id": "early", "season": 2026, "game_type": "REG", "week": 8, "gameday": "2026-10-25", "gametime": "13:00"},
-    {"game_id": "late", "season": 2026, "game_type": "REG", "week": 8, "gameday": "2026-10-25", "gametime": "16:25"},
-    {"game_id": "mon", "season": 2026, "game_type": "REG", "week": 8, "gameday": "2026-10-26", "gametime": "20:15"},
+    {"game_id": "thu", "season": 2026, "game_type": "REG", "week": 7, "gameday": "2026-10-22", "gametime": "20:15"},
+    {"game_id": "london", "season": 2026, "game_type": "REG", "week": 7, "gameday": "2026-10-25", "gametime": "09:30"},
+    {"game_id": "early", "season": 2026, "game_type": "REG", "week": 7, "gameday": "2026-10-25", "gametime": "13:00"},
+    {"game_id": "late", "season": 2026, "game_type": "REG", "week": 7, "gameday": "2026-10-25", "gametime": "16:25"},
+    {"game_id": "mon", "season": 2026, "game_type": "REG", "week": 7, "gameday": "2026-10-26", "gametime": "20:15"},
 ])
 BEFORE_LONDON = datetime(2026, 10, 25, 11, 47, tzinfo=timezone.utc)  # 07:47 ET
 AFTER_LONDON = datetime(2026, 10, 25, 14, 52, tzinfo=timezone.utc)  # 10:52 ET

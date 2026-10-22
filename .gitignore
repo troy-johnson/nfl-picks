@@ -8,3 +8,4 @@ __pycache__/
 model/artifacts/
 .DS_Store
 .serena/
+*.tsbuildinfo
