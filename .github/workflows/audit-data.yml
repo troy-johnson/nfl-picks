@@ -1,0 +1,33 @@
+name: Audit NFL data
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Check game days in the last N days (empty: the whole season)"
+        required: false
+        default: "2"
+  schedule:
+    # Daily on an off-minute slot. GitHub drops or delays crons that sit on
+    # :00/:30. A two-day lookback checks each game day on two runs.
+    - cron: "23 10 * 9-12,1-2 *"
+      timezone: "America/New_York"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The refresh check reads the commit history of public/data/current.json.
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Check saved data for completed game days
+        env:
+          DAYS: ${{ github.event_name == 'schedule' && '2' || inputs.days }}
+        run: uv run --project model python model/audit.py ${DAYS:+--days "$DAYS"}

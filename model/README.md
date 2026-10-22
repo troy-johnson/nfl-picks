@@ -44,6 +44,22 @@ To add a candidate, append a `Candidate(...)` to `CANDIDATES` in `model/experime
 
 The Wednesday run creates the weekly snapshot. The final run occurs 45-180 minutes before the first kickoff. It refreshes market, quarterback, weather, and team news data. Injury headlines are intentionally not assigned arbitrary point values; they are shown for review beside market movement before the first kickoff.
 
+## Data audit
+
+The capture and refresh jobs exit 0 when they skip work. `model/audit.py` checks the saved files for each completed game day instead. It fails when a day lacks any of these:
+
+- An odds snapshot that holds every game, captured before kickoff.
+- A pre-kickoff ESPN pick share for every regular-season game.
+- A recency candidate forecast for every regular-season game after the freeze.
+- A change to `public/data/current.json` in the 180 minutes before the first regular-season kickoff.
+
+```bash
+uv run --project model python model/audit.py            # the whole season
+uv run --project model python model/audit.py --days 2   # the last two days
+```
+
+The `Audit NFL data` workflow runs it daily with `--days 2`. A failed run is the alert. The refresh check reads the git history, so the workflow checks out all commits.
+
 ## Future odds snapshots
 
 Create a The Odds API account and set `THE_ODDS_API_KEY` locally or as a GitHub Actions repository secret. The scheduled capture workflow checks every in-season day and records one snapshot per game day, 45-180 minutes before the next kickoff that has not started. If the window before a 09:30 ET London game is missed, the capture saves the later games of that day.
