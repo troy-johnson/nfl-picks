@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 import sys
 
 import numpy as np
@@ -42,3 +43,28 @@ def test_multiple_comparison_intervals_are_wider():
         assert adjusted[0] <= ordinary[0]
         assert adjusted[1] >= ordinary[1]
         assert result[metric]["adjustedConfidence"] == pytest.approx(1 - 0.05 / 6)
+
+
+def test_same_time_comparison_reads_nested_captures_once_per_game(monkeypatch, tmp_path):
+    monkeypatch.setattr(backtest.predict, "ODDS_SNAPSHOT_DIR", tmp_path)
+
+    def capture(relative, captured, probability, saved=None):
+        payload = {
+            "season": 2026, "gameDay": "2026-10-25", "capturedAt": f"2026-10-25T{captured}:00Z",
+            "firstKickoffAt": "2026-10-25T13:30:00Z",
+            "games": [{"gameId": "g", "kickoffAt": "2026-10-25T17:00:00Z", "marketHomeProbability": probability}],
+        }
+        if saved:
+            payload["savedAt"] = f"2026-10-25T{saved}:00Z"
+        path = tmp_path / "2026" / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(payload))
+
+    capture("2026-10-25.json", "11:47", .5)
+    capture("2026-10-25/afternoon.json", "15:47", .8)
+    capture("2026-10-25/late.json", "16:59", .99, saved="17:00")
+    prediction = {"gameId": "g", "season": 2026, "week": 7, "homeWin": 1,
+                  "candidates": {"team4": {"probability": .8, "blendedProbability": .8}}}
+    result = backtest.score_same_time([prediction])
+    assert result["games"] == 1
+    assert result["rawVersusSameTime"]["brier"]["difference"] == 0

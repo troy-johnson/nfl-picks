@@ -1,9 +1,8 @@
 """Score the live picks against the same-time odds archive.
 
-`predict.py --capture-odds` stores one multi-book moneyline snapshot per game
-day, taken 60-120 minutes before the day's first kickoff, together with the
-pick that was published at that moment. This module joins those snapshots to
-final scores and scores every probability source on identical games:
+Live generation stores its market inputs and predictions together before
+kickoff. Each kickoff batch can have another immutable capture. This module
+selects each game's latest valid paired capture and scores identical games:
 
 - sameTimeMarket: the de-vigged multi-book average in the snapshot.
 - closingMarket: the nflverse recorded closing moneyline (the backtest benchmark).
@@ -54,17 +53,31 @@ def load_snapshots(snapshot_dir: Path = predict.ODDS_SNAPSHOT_DIR) -> list[dict[
     """Every stored game-day snapshot, oldest first."""
     if not snapshot_dir.exists():
         return []
-    return [json.loads(path.read_text()) for path in sorted(snapshot_dir.glob("*/*.json"))]
+    return [json.loads(path.read_text()) for path in sorted(snapshot_dir.rglob("*.json"))]
 
 
 def snapshot_frame(snapshots: list[dict[str, Any]]) -> pd.DataFrame:
-    """One row per snapshot game with the same-time market and the frozen published pick."""
+    """Select the last pregame paired forecast; exclude stale published copies."""
     rows = []
     for snapshot in snapshots:
         captured_at, first_kickoff = parse_timestamp(snapshot.get("capturedAt")), parse_timestamp(snapshot.get("firstKickoffAt"))
         minutes_before = None if captured_at is None or first_kickoff is None else (first_kickoff - captured_at).total_seconds() / 60
         for game in snapshot.get("games", []):
             published = game.get("published") or {}
+            kickoff = parse_timestamp(game.get("kickoffAt")) or first_kickoff
+            saved = parse_timestamp(snapshot.get("savedAt")) or captured_at
+            published_at = parse_timestamp(published.get("generatedAt"))
+            if captured_at is None or saved is None or saved < captured_at:
+                continue
+            if kickoff is None or saved >= kickoff or captured_at >= kickoff:
+                continue
+            if snapshot.get("formatVersion") == 2:
+                paired = published.get("marketCapturedAt") == snapshot.get("capturedAt")
+                paired = paired and published_at is not None and captured_at <= published_at <= saved
+            else:
+                paired = published_at is not None and 0 <= (captured_at - published_at).total_seconds() <= 300
+            if kickoff is not None and published_at is not None and published_at >= kickoff:
+                paired = False
             rows.append({
                 "game_id": str(game["gameId"]),
                 "season": int(snapshot["season"]),
@@ -73,8 +86,8 @@ def snapshot_frame(snapshots: list[dict[str, Any]]) -> pd.DataFrame:
                 "minutesBeforeFirstKickoff": minutes_before,
                 "bookCount": len(game.get("bookmakers", [])),
                 SAME_TIME: float(game["marketHomeProbability"]),
-                PUBLISHED: published.get("homeWinProbability"),
-                STATISTICAL: published.get("statisticalHomeProbability"),
+                PUBLISHED: published.get("homeWinProbability") if paired else None,
+                STATISTICAL: published.get("statisticalHomeProbability") if paired else None,
                 "publishedMarketHomeProbability": published.get("marketHomeProbability"),
                 "publishedAt": published.get("generatedAt"),
             })
@@ -82,7 +95,11 @@ def snapshot_frame(snapshots: list[dict[str, Any]]) -> pd.DataFrame:
     frame = pd.DataFrame(rows, columns=columns)
     for column in (PUBLISHED, STATISTICAL, "publishedMarketHomeProbability"):
         frame[column] = pd.to_numeric(frame[column], errors="coerce")
-    return frame
+    if frame.empty:
+        return frame
+    frame["_paired"] = frame[PUBLISHED].notna() & frame[STATISTICAL].notna()
+    frame["_captured"] = pd.to_datetime(frame.capturedAt, utc=True)
+    return frame.sort_values(["_paired", "_captured"]).drop_duplicates("game_id", keep="last").drop(columns=["_paired", "_captured"]).sort_values(["gameDay", "game_id"]).reset_index(drop=True)
 
 
 def join_results(frame: pd.DataFrame, schedule: pd.DataFrame) -> pd.DataFrame:
@@ -146,6 +163,8 @@ def evaluate(joined: pd.DataFrame, min_games: int = MIN_GAMES_FOR_CLAIM) -> dict
         return {"games": 0, "seasons": [], "sources": {}, "comparisons": [], "bySeason": {}, "sameTimeVersusClosing": None, "capture": None}
     sources = probability_sources(joined)
     scored = joined.dropna(subset=sources).copy()
+    if scored.empty:
+        return {**evaluate(pd.DataFrame(), min_games), "snapshotGames": int(len(joined))}
     actual = scored.home_win.to_numpy()
     weeks = scored.weekBlock.to_numpy()
     result: dict[str, Any] = {
@@ -196,7 +215,7 @@ def evaluate(joined: pd.DataFrame, min_games: int = MIN_GAMES_FOR_CLAIM) -> dict
 
 def format_report(result: dict[str, Any]) -> str:
     if not result["games"]:
-        return "No completed games with same-time odds yet."
+        return "No completed games with paired same-time odds and published forecasts yet."
     lines = [f"{result['games']} completed games with same-time odds across {result['weekBlocks']} weeks ({', '.join(map(str, result['seasons']))})", ""]
     lines.append(f"{'source':<32}{'acc':>8}{'brier':>10}{'logloss':>10}{'slope':>8}")
     for name, metrics in result["sources"].items():

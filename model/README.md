@@ -2,6 +2,31 @@
 
 V1 builds pregame rolling team-strength features from nflverse play-by-play, trains a logistic regression with chronological validation, then blends its probability with the de-vigged market probability using the prior season's Brier score to choose the blend weight.
 
+## Live market inputs
+
+`scheduled_runs.py` calls `live_picks.py` for publication.
+It uses the statistical functions from the frozen `predict.py` source.
+`live_odds.py` supplies the current market input from The Odds API.
+
+- Each bookmaker contributes its de-vigged moneyline probability with equal weight.
+- A consensus requires two distinct bookmakers with prices updated within 30 minutes.
+- The adapter rejects future timestamps, invalid prices, duplicate books, and mismatched kickoff times.
+- Games within 180 minutes of kickoff must have fresh consensus odds.
+- Later games can use labeled schedule odds with unknown age when consensus is unavailable.
+- Missing current-season play-by-play for completed prior weeks stops publication.
+- Network calls and validation finish before the published file changes.
+- Started games retain their previous predictions and timestamps.
+
+The refresh workflow supplies `THE_ODDS_API_KEY` from the repository secret.
+For a local run, export that variable before running `scheduled_runs.py`.
+The site shows each game's market source, bookmaker count, price timestamp, and age at generation.
+The displayed spread still comes from the schedule and has its own label.
+
+Each refresh archives its exact market inputs with its published forecasts.
+Files use `data/odds-snapshots/<season>/<day>/<timestamp>.json` and never replace an earlier capture.
+The Wednesday snapshot and later kickoff batches can therefore have separate records.
+Operational changes do not require edits to the frozen statistical sources.
+
 ## Historical backtest
 
 Run a local expanding-window backtest over completed games:
@@ -42,16 +67,22 @@ Injury features come from the nflverse weekly injury reports (`injuries_{season}
 
 To add a candidate, append a `Candidate(...)` to `CANDIDATES` in `model/experiments.py`. Give it a feature tuple, an estimator builder, an optional small hyperparameter grid, and `calibrate=True` for models with uncalibrated probabilities. Then run the tests, which check that no candidate uses outcome or target-starter columns.
 
-The Wednesday run creates the weekly snapshot. The final run occurs 45-180 minutes before the first kickoff. It refreshes market, quarterback, weather, and team news data. Injury headlines are intentionally not assigned arbitrary point values; they are shown for review beside market movement before the first kickoff.
+The Wednesday run creates the weekly snapshot.
+Final runs occur 45-180 minutes before each kickoff batch.
+They refresh market, quarterback, weather, and team news data.
+Injury headlines appear beside market movement for review.
 
 ## Data audit
 
 The capture and refresh jobs exit 0 when they skip work. `model/audit.py` checks the saved files for each completed game day instead. It fails when a day lacks any of these:
 
-- An odds snapshot that holds every game, captured before kickoff.
+- An odds capture for every game before kickoff.
 - A pre-kickoff ESPN pick share for every regular-season game.
 - A recency candidate forecast for every regular-season game after the freeze.
 - A change to `public/data/current.json` in the 180 minutes before the first regular-season kickoff.
+
+For days with the new capture format, every game needs odds within 180 minutes of its own kickoff.
+Every regular-season game also needs a forecast paired with those odds.
 
 ```bash
 uv run --project model python model/audit.py            # the whole season
@@ -62,17 +93,26 @@ The `Audit NFL data` workflow runs it daily with `--days 2`. A failed run is the
 
 ## Future odds snapshots
 
-Create a The Odds API account and set `THE_ODDS_API_KEY` locally or as a GitHub Actions repository secret. The scheduled capture workflow checks every in-season day and records one snapshot per game day, 45-180 minutes before the next kickoff that has not started. If the window before a 09:30 ET London game is missed, the capture saves the later games of that day.
+Set `THE_ODDS_API_KEY` locally and as a GitHub Actions repository secret.
+The capture workflow records odds 45-180 minutes before the next kickoff that has not started.
+A morning capture does not prevent another capture before afternoon or evening games.
+If a morning window is missed, the workflow can still capture later games.
 
 ```bash
 THE_ODDS_API_KEY=... uv run --project model python model/scheduled_runs.py --capture-odds
 ```
 
-Snapshots are written to `data/odds-snapshots/<season>/<game-day>.json`. They preserve each available US sportsbook's de-vigged moneyline probability and their equal-weight average. Each game also carries a `published` block copied from `public/data/current.json` at capture time: the pick, the blended and statistical home probabilities, and the market weight that users saw. Recording does not change live picks.
+Captures use `data/odds-snapshots/<season>/<game-day>/<timestamp>.json`.
+They preserve eligible US bookmakers' prices and the consensus probability.
+Live generation includes a `published` block with forecasts that use that exact capture.
+Independent capture jobs save market data without copying an older published forecast.
+The reader also supports the earlier `<game-day>.json` archive.
 
 ### Same-time evaluation
 
-`model/snapshots.py` scores the published picks against the same-time market. It joins every snapshot game to its final score and the recorded closing line, then scores each probability source on identical games.
+`model/snapshots.py` selects each game's latest valid pregame paired forecast.
+It joins that forecast to the result and recorded closing line.
+It scores each source on identical games.
 
 ```bash
 uv run --project model python model/snapshots.py
@@ -82,13 +122,18 @@ uv run --project model python model/snapshots.py --experiments model/artifacts/e
 - Sources: `sameTimeMarket` (snapshot average), `closingMarket` (nflverse recorded line), `publishedPick` (blended probability users saw), `publishedStatistical` (raw model), and `candidate:<name>` for each challenger when `--experiments` points at an experiment queue output.
 - Output `model/artifacts/snapshot-evaluation.json` holds per-source accuracy, Brier, log loss, and calibration; paired Brier and log-loss differences with week-block standard errors; per-season metrics; the same-time-versus-closing move; and every scored game.
 - A comparison reports `status`. A market-beating claim needs at least 250 completed games (`--min-games`) and a difference beyond two standard errors on both Brier and log loss. `gamesToDetect` extrapolates from the observed week-block standard error how many games a 0.005 or 0.010 Brier difference would need.
-- Games without a frozen `published` block, unplayed games, and ties are dropped from the paired comparison.
+- Unplayed games, ties, and captures without a valid paired forecast are excluded.
+- New captures must identify the exact market capture used by the forecast.
+- Earlier archives qualify only when publication preceded capture by at most five minutes.
+- A later unpaired capture cannot replace an earlier paired forecast in the comparison.
+- Captures saved at or after kickoff are excluded.
 
 Until the archive holds a season of completed games, the report says `insufficient games`. That is the intended answer.
 
 ## Crowd pick shares
 
-`model/crowd.py` records the public pick shares from ESPN's NFL Pick'em game. The shares tell how the pool field picks each game. They do not change live picks.
+`model/crowd.py` records the public pick shares from ESPN's NFL Pick'em game.
+The shares describe national entries, rather than this group's actual picks. They do not change live picks.
 
 ```bash
 uv run --project model python model/crowd.py --archive --from-season 2021 --to-season 2025
@@ -104,9 +149,12 @@ uv run --project model python model/crowd.py --report
 
 2021-2025 result (1,355 games): the crowd favorite wins 65.2% of games and the market favorite wins 66.5%. The crowd share is not a probability: used as one it scores Brier 0.2459 against 0.2117 for the market. The field is much more extreme than the market. When the market favorite sits at 60-70%, about 78-83% of entries pick it. Coin-flip games (market favorite below 55%) are where a pick against the field costs the least expected points.
 
-### Pool pick rule
+### Historical pool challenger
 
-The site is used in a small season-long pool (about ten entrants, most correct picks wins). `pick` stays the market-blend favorite. Each published game also carries `poolPick`, `poolPickReason`, `crowdHomeShare`, `crowdEntries`, and `contrarianValue`. `generate()` fetches the current week's ESPN shares through `crowd.week_shares`; a failed fetch falls back to the stored week file, and a missing file leaves the crowd fields as `None` and the pool pick equal to the market favorite.
+The original pool challenger used national crowd shares to select occasional underdogs.
+It remains available for historical experiments through `crowd.pool_pick`.
+Live publication now sets `poolPick` to the standard `pick` for the accuracy objective.
+It still displays crowd shares as context.
 
 The rule (`crowd.pool_pick`) takes the underdog only when both conditions hold:
 
@@ -119,4 +167,57 @@ Simulate the rule grid on the archived seasons:
 uv run --project model python model/crowd.py --simulate --from-season 2021 --to-season 2025
 ```
 
-The simulation plays each season as one pool of ten entrants and writes `model/artifacts/pool-simulation.json`. Outcomes are drawn from the closing-market probability; opponents pick with the crowd shares, except `sharp=k` opponents who always take the market favorite. 2021-2025 result: always picking the favorite wins 72% of pools against a fully casual field but 25% with two sharp opponents and 10% with nine (tie splits). The chosen rule flips about six games per season, costs about 0.2 expected points per season, and wins 39-48% of pools once at least two opponents pick favorites (70% against a fully casual field). Wider rules (`cost<=0.06` or `cost<=0.10`) cost more points and win fewer pools.
+The simulation now defaults to nine entrants and excludes each entry's lowest-scoring week.
+Use `--count-every-week` for the earlier scoring control.
+Rules share the same simulated outcomes and opponents to reduce comparison noise.
+Outcomes use recorded closing probabilities; simulated opponents use national crowd shares or always select the market favorite.
+Ties split first-place credit. The simulation does not model ESPN tiebreak answers or individual opponents.
+Historical ten-entry results do not establish an advantage in this group.
+The simulator does not change live recommendations.
+
+### Submitted-pick check
+
+`data/pool-config.json` identifies the season, challenge, group, and entry.
+`espn_pool.py` reads the group's current standings and actual rules.
+The site displays the entrant count, points, rank, dropped week, tiebreak setting, and gap to first place.
+It also displays the number of remaining regular-season games.
+Accuracy remains the objective even when the entry trails the leader.
+
+```bash
+uv run --project model python model/espn_pool.py
+```
+
+The check uses these statuses:
+
+- `matched`: a visible submitted pick matches the recommendation.
+- `different`: a visible submitted pick differs from the recommendation.
+- `missing`: the locked game has no visible pick, or a complete entry export confirms an open game has no pick.
+- `unavailable`: the public feed does not expose enough information to check the pick.
+
+ESPN can hide picks before kickoff. The public response cannot confirm that those picks are missing.
+To check open picks, copy every submitted pick for the week from your signed-in ESPN entry into a local export.
+Use an ignored path such as `model/artifacts/submitted-picks.json`:
+
+```json
+{
+  "entryId": "3a361ee0-9107-11f1-88ce-316fbfbdb402",
+  "season": 2026,
+  "week": 7,
+  "capturedAt": "2026-10-22T22:45:00Z",
+  "complete": true,
+  "picks": {
+    "2026_07_NE_CHI": "CHI"
+  }
+}
+```
+
+Set `capturedAt` to the export time. Include every pick already submitted for that week.
+An omitted game means no submitted pick when `complete` is true.
+The checker rejects exports older than 30 minutes and exports for another entry or week.
+
+```bash
+uv run --project model python model/espn_pool.py --entry-file model/artifacts/submitted-picks.json
+```
+
+Set `ESPN_ENTRY_FILE` to the export path to include that check in local live generation.
+The check reads picks; it does not submit or change them on ESPN.

@@ -77,3 +77,25 @@ def test_playoff_days_check_only_odds(tmp_path):
     write(tmp_path, "docs/recency-candidate.json", {"frozenAt": "2026-10-10T23:28:24-06:00"})
     playoff = pd.DataFrame([{"game_id": "sb", "season": 2026, "game_type": "POST", "week": 22, "gameday": "2027-02-07", "gametime": "18:30", "away_team": "BUF", "home_team": "SF"}])
     assert audit.audit(playoff, 2026, datetime(2027, 2, 8, tzinfo=timezone.utc), [], root=tmp_path) == ["2027-02-07: no odds snapshot"]
+
+
+def test_new_captures_require_a_paired_forecast_before_each_kickoff(tmp_path):
+    complete_day(tmp_path)
+    def capture(time, game_ids):
+        write(tmp_path, f"data/odds-snapshots/2026/2026-10-25/{time}.json", {
+            "formatVersion": 2, "capturedAt": f"2026-10-25T{time}:00Z", "savedAt": f"2026-10-25T{time}:30Z",
+            "games": [{"gameId": game_id, "published": {
+                "marketCapturedAt": f"2026-10-25T{time}:00Z", "generatedAt": f"2026-10-25T{time}:00Z",
+                "homeWinProbability": .6, "statisticalHomeProbability": .55,
+            }} for game_id in game_ids],
+        })
+    capture("11:47", ["london", "early"])
+    problems = audit.audit(SCHEDULE, 2026, AFTER, REFRESH, root=tmp_path)
+    assert problems == ["2026-10-25: odds snapshot lacks early", "2026-10-25: no fresh paired forecast for early"]
+    capture("15:47", ["early"])
+    assert audit.audit(SCHEDULE, 2026, AFTER, REFRESH, root=tmp_path) == []
+    path = tmp_path / "data/odds-snapshots/2026/2026-10-25/15:47.json"
+    late = json.loads(path.read_text())
+    late["games"][0]["published"]["generatedAt"] = "2026-10-25T17:01:00Z"
+    path.write_text(json.dumps(late))
+    assert audit.audit(SCHEDULE, 2026, AFTER, REFRESH, root=tmp_path) == ["2026-10-25: no fresh paired forecast for early"]

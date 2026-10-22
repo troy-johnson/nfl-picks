@@ -7,6 +7,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parents[1] / "model"))
 import scheduled_runs as runs
+import live_odds
 
 predict = runs.predict
 
@@ -56,18 +57,21 @@ def test_preflight_exits_between_windows(monkeypatch):
 def test_capture_odds_saves_afternoon_games_after_london_kickoff(monkeypatch, tmp_path):
     calls = {}
 
-    def normalize(events, games, season, game_day, first_kickoff, captured_at, published):
-        calls.update(games=list(games.game_id), first_kickoff=first_kickoff)
-        return {"games": [{"gameId": game_id} for game_id in games.game_id]}
+    def quotes(events, games, captured_at):
+        calls.update(games=list(games.game_id))
+        return {row.game_id: {"gameId": row.game_id, "kickoffAt": live_odds.iso(predict.kickoff_at(row)), "capturedAt": live_odds.iso(captured_at)} for _, row in games.iterrows()}
 
     monkeypatch.setattr(predict, "current_nfl_season", lambda now=None: 2026)
     monkeypatch.setattr(predict, "fetch_current_odds", lambda api_key: [])
-    monkeypatch.setattr(predict, "published_picks", lambda season: {})
-    monkeypatch.setattr(predict, "normalize_odds_snapshot", normalize)
+    monkeypatch.setattr(live_odds, "quotes", quotes)
     monkeypatch.setenv("THE_ODDS_API_KEY", "test")
     assert runs.capture_odds(AFTER_LONDON, tmp_path, WEEK) is not None
-    assert calls == {"games": ["early", "late"], "first_kickoff": datetime(2026, 10, 25, 17, tzinfo=timezone.utc)}
-    assert (tmp_path / "2026" / "2026-10-25.json").exists()
+    assert calls == {"games": ["early", "late"]}
+    assert len(list((tmp_path / "2026" / "2026-10-25").glob("*.json"))) == 1
+    later = datetime(2026, 10, 25, 18, tzinfo=timezone.utc)
+    assert runs.capture_odds(later, tmp_path, WEEK) is not None
+    assert calls == {"games": ["late"]}
+    assert len(list((tmp_path / "2026" / "2026-10-25").glob("*.json"))) == 2
     assert runs.capture_odds(BETWEEN_WINDOWS, tmp_path / "other", WEEK) is None
 
 
@@ -78,7 +82,7 @@ def game(game_id, gameday, gametime, pick="A"):
 def test_keep_started_games_preserves_published_picks_in_kickoff_order():
     previous = {"season": 2026, "week": 8, "games": [game("thu", "2026-10-22", "20:15", "old"), game("london", "2026-10-25", "09:30", "old"), game("early", "2026-10-25", "13:00", "old")]}
     payload = {"season": 2026, "week": 8, "firstGame": "2026-10-25", "games": [game("early", "2026-10-25", "13:00", "new")]}
-    merged = runs.keep_started_games(previous, payload)
+    merged = runs.keep_started_games(previous, payload, AFTER_LONDON)
     assert [(g["gameId"], g["pick"]) for g in merged["games"]] == [("thu", "old"), ("london", "old"), ("early", "new")]
     assert merged["firstGame"] == "2026-10-22"
 

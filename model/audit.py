@@ -35,13 +35,42 @@ def read_json(path: Path) -> dict | None:
 
 
 def check_odds(day: str, games: pd.DataFrame, root: Path) -> list[str]:
-    snapshot = read_json(root / "data" / "odds-snapshots" / str(games.season.iloc[0]) / f"{day}.json")
-    if snapshot is None:
+    directory = root / "data" / "odds-snapshots" / str(games.season.iloc[0])
+    paths = sorted((directory / day).glob("*.json"))
+    legacy = directory / f"{day}.json"
+    if legacy.exists():
+        paths.append(legacy)
+    if not paths:
         return [f"{day}: no odds snapshot"]
-    captured = timestamp(snapshot["capturedAt"])
-    saved = {game["gameId"] for game in snapshot["games"]}
-    missing = [row.game_id for row in games.itertuples() if row.game_id not in saved or captured >= row.kickoff]
-    return [f"{day}: odds snapshot lacks {', '.join(missing)}"] if missing else []
+    saved = {}
+    paired = set()
+    version_two = False
+    for path in paths:
+        snapshot = read_json(path)
+        captured = timestamp(snapshot["capturedAt"])
+        finished = timestamp(snapshot.get("savedAt", snapshot["capturedAt"]))
+        version_two = version_two or snapshot.get("formatVersion") == 2
+        for game in snapshot["games"]:
+            saved.setdefault(game["gameId"], []).append((captured, finished))
+            published = game.get("published") or {}
+            generated = timestamp(published["generatedAt"]) if published.get("generatedAt") else None
+            if (published.get("marketCapturedAt") == snapshot["capturedAt"] and generated is not None
+                    and captured <= generated <= finished and published.get("homeWinProbability") is not None
+                    and published.get("statisticalHomeProbability") is not None):
+                paired.add((game["gameId"], captured, finished))
+    missing = []
+    no_forecast = []
+    for row in games.itertuples():
+        opens = row.kickoff - timedelta(minutes=predict.CAPTURE_WINDOW_MAX_MINUTES)
+        valid = [(captured, finished) for captured, finished in saved.get(row.game_id, []) if captured <= finished < row.kickoff and (not version_two or captured >= opens)]
+        if not valid:
+            missing.append(row.game_id)
+        if version_two and row.game_type == "REG" and not any((row.game_id, captured, finished) in paired for captured, finished in valid):
+            no_forecast.append(row.game_id)
+    problems = [f"{day}: odds snapshot lacks {', '.join(missing)}"] if missing else []
+    if no_forecast:
+        problems.append(f"{day}: no fresh paired forecast for {', '.join(no_forecast)}")
+    return problems
 
 
 def check_crowd(day: str, games: pd.DataFrame, root: Path) -> list[str]:

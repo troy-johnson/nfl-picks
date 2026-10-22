@@ -40,7 +40,7 @@ def snapshot(season: int, game_day: str, games: list[tuple[str, str, str, float,
                 "homeTeam": home,
                 "awayTeam": away,
                 "marketHomeProbability": market,
-                "published": None if published is None else {"generatedAt": f"{game_day}T12:00:00Z", "pick": home if published >= 0.5 else away, "homeWinProbability": published, "statisticalHomeProbability": round(published - 0.05, 4), "marketHomeProbability": market, "marketWeight": 0.9},
+                "published": None if published is None else {"generatedAt": f"{game_day}T15:30:00Z", "pick": home if published >= 0.5 else away, "homeWinProbability": published, "statisticalHomeProbability": round(published - 0.05, 4), "marketHomeProbability": market, "marketWeight": 0.9},
                 "bookmakers": [{"key": "a", "homeProbability": market}, {"key": "b", "homeProbability": market}],
             }
             for game_id, away, home, market, published in games
@@ -164,7 +164,7 @@ def test_empty_archive_reports_no_games(tmp_path):
     result, frame = snapshots.run(tmp_path / "missing", None, 250)
     assert result["games"] == 0
     assert frame.empty
-    assert snapshots.format_report(result) == "No completed games with same-time odds yet."
+    assert snapshots.format_report(result) == "No completed games with paired same-time odds and published forecasts yet."
 
 
 def test_load_snapshots_reads_season_folders_in_order(tmp_path):
@@ -183,3 +183,33 @@ def test_single_week_archive_serialises_without_nan():
     assert comparison["gamesToDetect"]["0.005"] is None
     assert "NaN" not in json.dumps(result)
     assert "SE n/a" in snapshots.format_report(result)
+
+
+def test_old_published_forecast_is_not_a_same_time_comparison():
+    items, schedule = synthetic_archive(weeks=1)
+    for game in items[0]["games"]:
+        game["published"]["generatedAt"] = "2026-09-10T12:00:00Z"
+    result = snapshots.evaluate(snapshots.join_results(snapshots.snapshot_frame(items), schedule))
+    assert result["games"] == 0
+    assert result["snapshotGames"] == 4
+
+
+def test_latest_paired_capture_wins_without_late_or_unpaired_overwrites():
+    import copy
+
+    first = snapshot(2026, "2026-09-17", [("g", "NE", "CHI", .60, .59)])
+    first.update(formatVersion=2, savedAt="2026-09-17T15:31:00Z")
+    first["games"][0]["kickoffAt"] = "2026-09-17T17:00:00Z"
+    first["games"][0]["published"]["marketCapturedAt"] = first["capturedAt"]
+    second = copy.deepcopy(first)
+    second.update(capturedAt="2026-09-17T16:00:00Z", savedAt="2026-09-17T16:01:00Z")
+    second["games"][0]["published"].update(generatedAt=second["capturedAt"], marketCapturedAt=second["capturedAt"], homeWinProbability=.65)
+    unpaired = copy.deepcopy(second)
+    unpaired.update(capturedAt="2026-09-17T16:10:00Z", savedAt="2026-09-17T16:11:00Z")
+    unpaired["games"][0]["published"] = None
+    late = copy.deepcopy(second)
+    late["savedAt"] = "2026-09-17T17:00:00Z"
+    late["games"][0]["published"]["homeWinProbability"] = .99
+    frame = snapshots.snapshot_frame([late, unpaired, first, second])
+    assert len(frame) == 1
+    assert frame.iloc[0][snapshots.PUBLISHED] == .65

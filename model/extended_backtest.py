@@ -15,6 +15,7 @@ import pandas as pd
 import experiments
 import matchup_experiments as matchup
 import predict
+import snapshots
 
 ARTIFACTS = predict.ROOT / "model" / "artifacts"
 PBP_COLUMNS = ["season", "season_type", "week", "posteam", "defteam", "play_type", "epa", "success", "pass", "rush"]
@@ -153,17 +154,8 @@ def score_period(predictions: list[dict]) -> dict:
 def score_same_time(predictions: list[dict]) -> dict:
     """Compare reconstructed challenger probabilities to the stored pregame odds."""
     by_id = {row["gameId"]: row for row in predictions}
-    rows = []
-    for path in sorted(predict.ODDS_SNAPSHOT_DIR.glob("2026/*.json")):
-        snapshot = json.loads(path.read_text())
-        captured = datetime.fromisoformat(snapshot["capturedAt"].replace("Z", "+00:00"))
-        first = datetime.fromisoformat(snapshot["firstKickoffAt"].replace("Z", "+00:00"))
-        if captured >= first:
-            continue
-        for game in snapshot["games"]:
-            row = by_id.get(game["gameId"])
-            if row is not None:
-                rows.append((row, game["marketHomeProbability"]))
+    frame = snapshots.snapshot_frame(snapshots.load_snapshots(predict.ODDS_SNAPSHOT_DIR / "2026"))
+    rows = [(by_id[game["game_id"]], game[snapshots.SAME_TIME]) for game in frame.to_dict("records") if game["game_id"] in by_id]
     if not rows:
         return {"games": 0}
     actual = np.array([row["homeWin"] for row, _ in rows])

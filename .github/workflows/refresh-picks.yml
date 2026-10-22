@@ -11,6 +11,7 @@ on:
     branches: [main]
     paths:
       - "model/**"
+      - "data/pool-config.json"
       - ".github/workflows/refresh-picks.yml"
   schedule:
     # Off-minute slots in Eastern time. GitHub drops or delays crons that
@@ -42,13 +43,15 @@ jobs:
         with:
           enable-cache: true
       - name: Generate current week
+        env:
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
         run: uv run --project model python model/scheduled_runs.py ${{ inputs.force && '--force' || '' }}
       - name: Commit updated picks
         run: |
-          if git diff --quiet -- public/data && [ -z "$(git status --porcelain -- data/crowd-picks)" ]; then echo "No pick changes to publish."; exit 0; fi
+          if [ -z "$(git status --porcelain -- public/data data/crowd-picks data/odds-snapshots)" ]; then echo "No pick changes to publish."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data data/crowd-picks
+          git add public/data data/crowd-picks data/odds-snapshots
           git commit -m "data: refresh NFL picks"
           # Another run can land a commit between checkout and push.
           for attempt in 1 2 3; do

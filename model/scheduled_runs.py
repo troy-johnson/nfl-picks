@@ -12,6 +12,7 @@ import argparse
 import json
 import os
 import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -48,49 +49,90 @@ def preflight(force: bool, now: datetime, schedule: pd.DataFrame | None = None) 
     return stage
 
 
-def keep_started_games(previous: dict[str, Any] | None, payload: dict[str, Any]) -> dict[str, Any]:
+def keep_started_games(previous: dict[str, Any] | None, payload: dict[str, Any], now: datetime | None = None) -> dict[str, Any]:
     """Keep the published picks for games that started before this refresh.
 
-    `predict.generate` publishes only games that have not started. Without this
+    The generator returns only games that have not started. Without this
     step, a Sunday refresh would remove the Thursday game from the week.
     """
     if not previous or (previous.get("season"), previous.get("week")) != (payload["season"], payload["week"]):
         return payload
     fresh = {game["gameId"] for game in payload["games"]}
-    started = [game for game in previous.get("games", []) if game["gameId"] not in fresh]
+    now = now or datetime.now(timezone.utc)
+    started = [game for game in previous.get("games", []) if game["gameId"] not in fresh and predict.kickoff_at(pd.Series(game)) <= now]
     games = sorted(started + payload["games"], key=lambda game: (game["gameday"], game.get("gametime") or "", game["gameId"]))
     return {**payload, "firstGame": min((game["gameday"] for game in games), default=None), "games": games}
 
 
+def atomic_json(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    content = json.dumps(payload, indent=2, allow_nan=False) + "\n"
+    with tempfile.NamedTemporaryFile(mode="w", dir=path.parent, delete=False) as output:
+        temporary = Path(output.name)
+        output.write(content)
+    try:
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
 def refresh(force: bool, no_weather: bool, now: datetime | None = None) -> dict[str, Any]:
-    now = now or datetime.now(timezone.utc)
-    stage = preflight(force, now)
+    import espn_pool
+    import live_odds
+    import live_picks
+
+    stage = preflight(force, now or datetime.now(timezone.utc))
     previous = json.loads(predict.OUTPUT.read_text()) if predict.OUTPUT.exists() else None
     current_conditions = stage in {"final", "forced"}
-    payload = keep_started_games(previous, predict.generate(current_conditions and not no_weather, current_conditions, now))
-    predict.OUTPUT.write_text(json.dumps(payload, indent=2) + "\n")
+    payload, quotes, context = live_picks.generate(current_conditions and not no_weather, current_conditions, now)
+    if previous and (previous.get("season"), previous.get("week")) == (payload["season"], payload["week"]):
+        old_games = {game["gameId"]: game for game in previous.get("games", [])}
+        for game in payload["games"]:
+            old = old_games.get(game["gameId"], {})
+            if old.get("pick") and old["pick"] != game["pick"]:
+                game["previousPick"] = old["pick"]
+                game["recommendationChangedAt"] = payload["generatedAt"]
+            elif old.get("previousPick"):
+                game["previousPick"] = old["previousPick"]
+                game["recommendationChangedAt"] = old["recommendationChangedAt"]
+            if game.get("previousPick"):
+                game["flags"].append(f"Recommendation changed: {game['previousPick']} → {game['pick']}")
+    saved_at = now or datetime.now(timezone.utc)
+    payload = keep_started_games(previous, payload, saved_at)
+    payload = espn_pool.attach(payload, context, saved_at)
+    saved_at = now or datetime.now(timezone.utc)
+    live_odds.archive(quotes, payload["season"], payload, saved_at, predict.ODDS_SNAPSHOT_DIR)
+    snapshot_path, baseline = predict.baseline_for(payload["season"], payload["week"])
+    if baseline is None and not snapshot_path.exists():
+        atomic_json(snapshot_path, payload)
+    atomic_json(predict.OUTPUT, payload)
     return payload
 
 
 def capture_odds(now: datetime | None = None, output_dir: Path = predict.ODDS_SNAPSHOT_DIR, schedule: pd.DataFrame | None = None) -> dict[str, Any] | None:
-    now = now or datetime.now(timezone.utc)
-    season = predict.current_nfl_season(now)
+    import live_odds
+
+    started = now or datetime.now(timezone.utc)
+    season = predict.current_nfl_season(started)
     schedule = predict.load_schedule([season]) if schedule is None else schedule
-    game_day, first_kickoff, games = remaining_game_day(schedule, season, now)
-    if not predict.odds_capture_due(now, first_kickoff):
+    game_day, first_kickoff, games = remaining_game_day(schedule, season, started)
+    if not predict.odds_capture_due(started, first_kickoff):
         print(f"Odds capture for {game_day} is not due yet")
         return None
-    path = predict.odds_snapshot_path(season, game_day, output_dir)
-    if path.exists():
-        print(f"Odds snapshot already exists for {game_day}")
-        return json.loads(path.read_text())
     api_key = os.environ.get("THE_ODDS_API_KEY")
     if not api_key:
         raise RuntimeError("Set THE_ODDS_API_KEY before capturing odds")
-    snapshot = predict.normalize_odds_snapshot(predict.fetch_current_odds(api_key), games, season, game_day, first_kickoff, now, predict.published_picks(season))
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(snapshot, indent=2) + "\n")
-    print(f"Captured odds for {len(snapshot['games'])} games on {game_day}")
+    events = predict.fetch_current_odds(api_key)
+    captured = now or datetime.now(timezone.utc)
+    if any(predict.kickoff_at(row) <= captured for _, row in games.iterrows()):
+        raise RuntimeError("Odds capture crossed a kickoff")
+    quotes = live_odds.quotes(events, games, captured)
+    live_odds.require_due_quotes(games, quotes, captured)
+    if not quotes:
+        raise RuntimeError("The odds feed has no fresh multi-book prices")
+    paths = live_odds.archive(quotes, season, None, now or datetime.now(timezone.utc), output_dir)
+    snapshot = json.loads(paths[0].read_text())
+    print(f"Captured odds for {len(quotes)} games on {game_day}")
     return snapshot
 
 

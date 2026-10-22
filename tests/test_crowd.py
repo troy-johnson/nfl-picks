@@ -4,6 +4,7 @@ import importlib.util
 import sys
 
 import pandas as pd
+import pytest
 
 MODEL_DIR = Path(__file__).parents[1] / "model"
 
@@ -135,12 +136,12 @@ def test_join_market_and_evaluate():
 def test_weekly_report_ranks_by_contrarian_value():
     current = {"games": [
         {"gameId": "1", "awayTeam": "A", "homeTeam": "B", "pick": "B", "homeWinProbability": 0.62, "marketHomeProbability": 0.60},
-        {"gameId": "2", "awayTeam": "C", "homeTeam": "D", "pick": "D", "homeWinProbability": 0.55, "marketHomeProbability": 0.52},
+        {"gameId": "2", "awayTeam": "C", "homeTeam": "D", "pick": "D", "poolPick": "D", "homeWinProbability": 0.55, "marketHomeProbability": 0.52},
         {"gameId": "3", "awayTeam": "X", "homeTeam": "Y", "pick": "Y", "homeWinProbability": 0.7, "marketHomeProbability": 0.7},
     ]}
     shares = [
         {"awayTeam": "A", "homeTeam": "B", "homeShare": 0.85, "awayShare": 0.15, "entries": 100},
-        {"awayTeam": "C", "homeTeam": "D", "homeShare": 0.58, "awayShare": 0.42, "entries": 100},
+        {"awayTeam": "C", "homeTeam": "D", "homeShare": 0.70, "awayShare": 0.30, "entries": 100},
     ]
     rows = crowd.weekly_report(current, shares)
     assert [row["gameId"] for row in rows] == ["1", "2"], "games without crowd data are dropped; largest value first"
@@ -153,7 +154,7 @@ def test_weekly_report_ranks_by_contrarian_value():
     assert abs(rows[1]["expectedPointCost"] - 0.04) < 1e-9
     assert "A@B" in crowd.format_report(rows)
     assert rows[0]["poolPick"] == "B", "60/40 favourite costs 0.20 points; the pool keeps the favourite"
-    assert rows[1]["poolPick"] == "D", "52% favourite with only 58% of the field stays with the favourite"
+    assert rows[1]["poolPick"] == "D", "the report preserves the published accuracy recommendation"
 
 
 def test_pool_pick_fades_crowded_coin_flips_only():
@@ -190,6 +191,23 @@ def test_simulate_pool_scores_rules_on_identical_games():
         assert 0 <= entry["realizedWinShare"] <= 1
         assert set(entry["simulatedWinShareBySharpOpponents"]) == {"0", "3"}
     assert "cost<=0.04 share>=0.6" in crowd.format_simulation(result)
+    reversed_rules = crowd.simulate_pool(pd.DataFrame(rows), rules=((0.04, 0.6), (0.0, 1.01)), sharp_opponents=(0, 3), entrants=4, sims=50)
+    assert reversed_rules["rules"] == list(reversed(result["rules"]))
+
+
+@pytest.mark.parametrize("drop_lowest, realized, simulated", [(False, 5, 6), (True, 4, 4)])
+def test_simulation_points_follow_the_selected_scoring_rule(drop_lowest, realized, simulated):
+    games = pd.DataFrame([
+        {"season": 2025, "week": index // 2 + 1, "awayTeam": f"A{index}", "homeTeam": f"H{index}",
+         "homeShare": 1.0, "market_home_prob": 1.0, "home_win": float(index < 5)}
+        for index in range(6)
+    ])
+    result = crowd.simulate_pool(games, rules=((0.0, 1.01),), sims=10, drop_lowest_week=drop_lowest)
+    favorite = result["rules"][0]
+    assert result["entrants"] == 9
+    assert favorite["realizedPoints"] == realized
+    assert favorite["simulatedPoints"] == simulated
+    assert favorite["realizedWinShare"] == pytest.approx(1 / 9)
 
 
 def test_pool_fields_added_to_published_game(tmp_path):

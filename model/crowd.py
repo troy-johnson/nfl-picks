@@ -36,16 +36,12 @@ ESPN_TEAM_ALIASES = {"WSH": "WAS", "LAR": "LA"}
 CAPTURE_WINDOW_MINUTES = 180
 REGULAR_SEASON_WEEKS = 18
 
-# Pool rule: take the underdog only when the favourite's expected point edge
-# (2p - 1) is at most POOL_MAX_COST and the field sits on the favourite at
-# POOL_MIN_CROWD_SHARE or more. Chosen from the 2021-2025 pool simulation
-# (see `--simulate`): it costs about 0.2 expected points per season and keeps a
-# ten-entrant pool winnable when other entrants also pick market favourites.
+# Historical challenger rule. Live accuracy recommendations use the standard pick.
 POOL_MAX_COST = 0.04
 POOL_MIN_CROWD_SHARE = 0.60
-POOL_ENTRANTS = 10
+POOL_ENTRANTS = 9
 POOL_RULES = ((0.0, 1.01), (0.02, 0.5), (0.04, 0.5), (0.04, 0.6), (0.06, 0.6), (0.06, 0.7), (0.10, 0.6), (0.10, 0.7))
-POOL_SHARP_OPPONENTS = (0, 2, 4, 6, 9)
+POOL_SHARP_OPPONENTS = (0, 2, 4, 6, 8)
 
 
 def nflverse_team(abbrev: str) -> str:
@@ -352,7 +348,14 @@ def pool_picks_frame(frame: pd.DataFrame, max_cost: float, min_share: float) -> 
     return np.asarray(picks, dtype=bool)
 
 
-def _pool_win_share(home_picks: np.ndarray, home_share: np.ndarray, market_home: np.ndarray, outcomes: np.ndarray, sharp: int, entrants: int, rng: np.random.Generator) -> float:
+def pool_scores(correct: np.ndarray, weeks: np.ndarray, drop_lowest_week: bool) -> np.ndarray:
+    """Score each entry, subtracting its own lowest week when configured."""
+    weekly = np.stack([correct[..., weeks == week].sum(axis=-1) for week in np.unique(weeks)], axis=-1)
+    total = weekly.sum(axis=-1)
+    return total - weekly.min(axis=-1) if drop_lowest_week else total
+
+
+def _pool_win_share(home_picks: np.ndarray, home_share: np.ndarray, market_home: np.ndarray, outcomes: np.ndarray, sharp: int, entrants: int, rng: np.random.Generator, weeks: np.ndarray, drop_lowest_week: bool) -> float:
     """Share of simulated pools won by our picks.
 
     Opponents come in two kinds: ``sharp`` entrants always take the market
@@ -363,8 +366,8 @@ def _pool_win_share(home_picks: np.ndarray, home_share: np.ndarray, market_home:
     casual = rng.random((sims, entrants - 1 - sharp, games)) < home_share
     favorite = np.broadcast_to(market_home >= 0.5, (sims, sharp, games))
     opponents = np.concatenate([casual, favorite], axis=1)
-    opponent_points = (opponents == outcomes[:, None, :]).sum(axis=2)
-    our_points = (home_picks[None, :] == outcomes).sum(axis=1)
+    opponent_points = pool_scores(opponents == outcomes[:, None, :], weeks, drop_lowest_week)
+    our_points = pool_scores(home_picks[None, :] == outcomes, weeks, drop_lowest_week)
     best = opponent_points.max(axis=1)
     ties = (opponent_points == our_points[:, None]).sum(axis=1)
     win = np.where(our_points > best, 1.0, np.where(our_points == best, 1.0 / (1 + ties), 0.0))
@@ -374,10 +377,11 @@ def _pool_win_share(home_picks: np.ndarray, home_share: np.ndarray, market_home:
 def simulate_pool(
     joined: pd.DataFrame,
     rules: tuple[tuple[float, float], ...] = POOL_RULES,
-    sharp_opponents: tuple[int, ...] = POOL_SHARP_OPPONENTS,
+    sharp_opponents: tuple[int, ...] | None = None,
     entrants: int = POOL_ENTRANTS,
     sims: int = 2000,
     seed: int = 0,
+    drop_lowest_week: bool = True,
 ) -> dict[str, Any]:
     """Season-long pool simulation for each candidate pool rule.
 
@@ -387,11 +391,18 @@ def simulate_pool(
     ``realizedPoints`` and ``realizedWinShare`` use the actual results instead,
     against fully casual opponents.
     """
-    rng = np.random.default_rng(seed)
+    if entrants < 2 or sims < 1:
+        raise ValueError("A pool needs at least two entrants and one simulation")
+    if sharp_opponents is None:
+        sharp_opponents = tuple(sorted({value for value in (*POOL_SHARP_OPPONENTS, entrants - 1) if value < entrants}))
+    if any(sharp < 0 or sharp >= entrants for sharp in sharp_opponents):
+        raise ValueError("The number of sharp opponents must be below the entrant count")
     scored = joined.dropna(subset=["market_home_prob", "home_win"]).copy()
     scored = scored[scored.home_win != 0.5]
     seasons = sorted(int(season) for season in scored.season.unique())
-    result: dict[str, Any] = {"entrants": entrants, "simulations": sims, "seasons": seasons, "games": int(len(scored)), "rules": []}
+    if not seasons:
+        raise ValueError("No completed games are available for the pool simulation")
+    result: dict[str, Any] = {"entrants": entrants, "simulations": sims, "seasons": seasons, "games": int(len(scored)), "dropLowestWeek": drop_lowest_week, "tieMethod": "equal share of tied first place; ESPN tiebreak predictions are not modeled", "rules": []}
     for max_cost, min_share in rules:
         flips = 0
         realized_points = realized_win = 0.0
@@ -402,15 +413,16 @@ def simulate_pool(
             market_home = group.market_home_prob.to_numpy(dtype=float)
             home_share = group.homeShare.to_numpy(dtype=float)
             actual = group.home_win.to_numpy() == 1
+            weeks = group.week.to_numpy()
             home_picks = pool_picks_frame(group, max_cost, min_share)
             flips += int((home_picks != (market_home >= 0.5)).sum())
             realized = np.broadcast_to(actual, (sims, len(actual)))
-            realized_points += float((home_picks == actual).sum())
-            realized_win += _pool_win_share(home_picks, home_share, market_home, realized, 0, entrants, rng)
-            simulated = rng.random((sims, len(market_home))) < market_home
-            simulated_points += float((home_picks[None, :] == simulated).sum(axis=1).mean())
+            realized_points += float(pool_scores(home_picks == actual, weeks, drop_lowest_week))
+            realized_win += _pool_win_share(home_picks, home_share, market_home, realized, 0, entrants, np.random.default_rng(seed + season), weeks, drop_lowest_week)
+            simulated = np.random.default_rng(seed + season).random((sims, len(market_home))) < market_home
+            simulated_points += float(pool_scores(home_picks[None, :] == simulated, weeks, drop_lowest_week).mean())
             for sharp in sharp_opponents:
-                win_by_sharp[sharp] += _pool_win_share(home_picks, home_share, market_home, simulated, sharp, entrants, rng)
+                win_by_sharp[sharp] += _pool_win_share(home_picks, home_share, market_home, simulated, sharp, entrants, np.random.default_rng(seed + season * 100 + sharp), weeks, drop_lowest_week)
         count = len(seasons)
         result["rules"].append({
             "maxCost": max_cost,
@@ -435,6 +447,8 @@ def format_simulation(result: dict[str, Any]) -> str:
             + " ".join(f"{rule['simulatedWinShareBySharpOpponents'][key]:>8.3f}" for key in sharp)
         )
     lines.append("sharp=k: k opponents always pick the market favorite; the other entrants pick with the crowd shares")
+    lines.append("Scoring: " + ("drop each entry's lowest week" if result["dropLowestWeek"] else "count every week"))
+    lines.append(result["tieMethod"])
     return "\n".join(lines)
 
 
@@ -452,13 +466,12 @@ def weekly_report(current: dict[str, Any], crowd_games: list[dict[str, Any]]) ->
         home_value = contrarian_value(market_home, crowd["homeShare"])
         contrarian_team = game["homeTeam"] if home_value > 0 else game["awayTeam"]
         contrarian_prob = market_home if contrarian_team == game["homeTeam"] else 1 - market_home
-        pool = pool_pick(game["awayTeam"], game["homeTeam"], market_home, crowd["homeShare"])
         rows.append({
             "gameId": game["gameId"],
             "awayTeam": game["awayTeam"],
             "homeTeam": game["homeTeam"],
             "pick": game["pick"],
-            "poolPick": pool["poolPick"],
+            "poolPick": game.get("poolPick") or game["pick"],
             "modelHomeProbability": game["homeWinProbability"],
             "marketHomeProbability": market_home,
             "crowdHomeShare": crowd["homeShare"],
@@ -493,6 +506,7 @@ def main() -> None:
     parser.add_argument("--report", action="store_true", help="Show contrarian value for the current week's live picks")
     parser.add_argument("--simulate", action="store_true", help="Simulate season-long pools for each pool rule on archived seasons")
     parser.add_argument("--entrants", type=int, default=POOL_ENTRANTS)
+    parser.add_argument("--count-every-week", action="store_true", help="Disable the group's lowest-week exclusion for a control replay")
     parser.add_argument("--simulations", type=int, default=2000)
     parser.add_argument("--from-season", type=int, default=2021)
     parser.add_argument("--to-season", type=int, default=2025)
@@ -523,7 +537,7 @@ def main() -> None:
         if crowd.empty:
             raise SystemExit("No archived crowd picks. Run --archive first.")
         joined = join_market(crowd, predict.load_schedule(list(range(args.from_season, args.to_season + 1))))
-        result = simulate_pool(joined, entrants=args.entrants, sims=args.simulations)
+        result = simulate_pool(joined, entrants=args.entrants, sims=args.simulations, drop_lowest_week=not args.count_every_week)
         args.simulation_output.parent.mkdir(parents=True, exist_ok=True)
         args.simulation_output.write_text(json.dumps(result, indent=2) + "\n")
         print(format_simulation(result))
