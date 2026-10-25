@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 7,
-  "generatedAt": "2026-10-25T18:34:23.341546Z",
+  "generatedAt": "2026-10-25T22:06:33.310524Z",
   "firstGame": "2026-10-22",
   "model": {
     "trainingSeasons": [
@@ -569,10 +569,10 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_07_DEN_ARI",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "matched",
+        "submittedPick": "DEN",
         "recommendedPick": "DEN",
-        "submittedAt": null
+        "submittedAt": "2026-10-22T19:55:20.274000Z"
       }
     },
     {
@@ -619,10 +619,10 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_07_GB_DET",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "matched",
+        "submittedPick": "DET",
         "recommendedPick": "DET",
-        "submittedAt": null
+        "submittedAt": "2026-10-22T19:55:24.128000Z"
       }
     },
     {
@@ -669,10 +669,10 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_07_LA_LV",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "matched",
+        "submittedPick": "LA",
         "recommendedPick": "LA",
-        "submittedAt": null
+        "submittedAt": "2026-10-22T19:55:24.128000Z"
       }
     },
     {
@@ -683,17 +683,17 @@
       "gametime": "20:20",
       "stadium": "Lumen Field",
       "roof": "outdoors",
-      "statisticalHomeProbability": 0.6011,
-      "marketHomeProbability": 0.5762,
+      "statisticalHomeProbability": 0.6036,
+      "marketHomeProbability": 0.5832,
       "spreadLine": 3.0,
       "homeQb": "Sam Darnold",
       "awayQb": "Patrick Mahomes",
       "weather": {
-        "summary": "53\u00b0F \u00b7 wind 7 mph",
-        "temperatureF": 53.2,
-        "precipitationPct": 16,
-        "windMph": 7.0,
-        "gustMph": 17.2
+        "summary": "54\u00b0F \u00b7 wind 2 mph",
+        "temperatureF": 53.6,
+        "precipitationPct": 12,
+        "windMph": 1.7,
+        "gustMph": 3.8
       },
       "news": [
         {
@@ -711,18 +711,18 @@
         "Home QB changed: Drew Lock \u2192 Sam Darnold"
       ],
       "pick": "SEA",
-      "homeWinProbability": 0.5774,
-      "winProbability": 0.5774,
+      "homeWinProbability": 0.5842,
+      "winProbability": 0.5842,
       "confidence": "low",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-10-25T18:34:23.341546Z",
-      "marketUpdatedAt": "2026-10-25T18:33:34Z",
+      "marketCapturedAt": "2026-10-25T22:06:33.310524Z",
+      "marketUpdatedAt": "2026-10-25T22:04:02Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 0.8,
-      "generatedAt": "2026-10-25T18:34:23.341546Z",
-      "crowdHomeShare": 0.3641,
-      "crowdEntries": 700234,
-      "contrarianValue": 0.2121,
+      "marketAgeMinutes": 2.5,
+      "generatedAt": "2026-10-25T22:06:33.310524Z",
+      "crowdHomeShare": 0.3639,
+      "crowdEntries": 703921,
+      "contrarianValue": 0.2193,
       "poolPick": "SEA",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -741,44 +741,44 @@
       "gametime": "20:15",
       "stadium": "Lincoln Financial Field",
       "roof": "outdoors",
-      "statisticalHomeProbability": 0.3481,
+      "statisticalHomeProbability": 0.3502,
       "marketHomeProbability": 0.3356,
       "spreadLine": -4.5,
       "homeQb": "Jalen Hurts",
       "awayQb": "Dak Prescott",
       "weather": {
         "summary": "57\u00b0F \u00b7 wind 5 mph",
-        "temperatureF": 56.9,
+        "temperatureF": 57.4,
         "precipitationPct": 1,
-        "windMph": 5.0,
-        "gustMph": 11.2
+        "windMph": 5.1,
+        "gustMph": 11.4
       },
       "news": [
         {
-          "title": "Cowboys Injury Updates Put Dallas on Track to Get 2 Defensive Starters Back in Week 7 - Sports Illustrated",
-          "source": "Sports Illustrated",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWjBiS1ltTUt4NnFPMkpidWU1R2l4U21lbzBDeDVsS2x3cWloU1JtcVBuU1pPZzRqSWRTN2JFYzl3bHhQNDRWRTRkeUpFSW0xSUlmamJidGxYZnJvQWItOWdBWjFlbTV1NFN5YUJ2WWNTbXVWVzB1MVdza0dJUFFHWUJtZVlJSFk3c3FLN3ZsRjRUNFJCVW5ycHpzVF8tdEI2RUpqaA?oc=5"
+          "title": "WR George Pickens, CB Joey Porter Jr. have no injury designation - NBC Sports",
+          "source": "NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPR1FwbzVqMUdCQktWNFFuc2FFOWhza1VhS3BIM0JvZWJKQkVITDRZMFlPc19BX3IwRnhBbkozV25NUzZWekQ3MjQ0VDFSRzJxcEdsMlZmUU0yMnF2aU5JOWxnNUQ4X0s4ZEd1QUMzT3R0ZzBNUEt4bjJ6M2lhdnY4N1BFVkZ0TmprM2gwTnJkY0hRNWJ5TjBaTkxSX0VuZGZiUlJpVnJiWFJ6OHp6aGRyc0doS0Y0RUtHT0haQlhUZUFqQQ?oc=5"
         },
         {
-          "title": "George Pickens among multiple starters on Cowboys' initial injury report for primetime matchup vs Eagles - Yahoo Sports",
-          "source": "Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWEpoUWRkUDhMRkhrd2hKTk16NE9ERE9kaUdBdzVEYll3SjBuRXFydzZJZ01QOU5TcTlEbWhGMFphNkU2OWZBQS1fb0tWLVJ0b3RicW1yQUcyUDEySlZqODl3bTE2T0hwNHNVQUV6c2RMSm5LcG5KcU1QQ1ZlcmdpYjZtak9LM0ZfOHdLU2prX24?oc=5"
+          "title": "Pair of Cowboys defenders listed as questionable vs. Eagles won't travel with team - Dallas News",
+          "source": "Dallas News",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZDFJbXdWdG9nTXZ0akwyZUxrTjZaZUU5ZkRBLW5WcFVHeXZ1RzVOSDczVkpBYW1veVJFajFiRXcybzJjYmtfeHdISXBUdU0tODBZLUYxTVR2MVZhT1QySC1oeC1pX1lhUXdKeWlNVEhmMnlabXFtYlVmS0VTZmlnS2JLRDc2eTZCdGM3NWhKZWtnalIzdjhvZ3liZXBSdkJVSUVuWmVqTElqODg?oc=5"
         }
       ],
       "flags": [],
       "pick": "DAL",
-      "homeWinProbability": 0.3362,
-      "winProbability": 0.6638,
+      "homeWinProbability": 0.3363,
+      "winProbability": 0.6637,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-10-25T18:34:23.341546Z",
-      "marketUpdatedAt": "2026-10-25T18:33:34Z",
+      "marketCapturedAt": "2026-10-25T22:06:33.310524Z",
+      "marketUpdatedAt": "2026-10-25T22:04:02Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 0.8,
-      "generatedAt": "2026-10-25T18:34:23.341546Z",
-      "crowdHomeShare": 0.2083,
-      "crowdEntries": 698881,
-      "contrarianValue": 0.1273,
+      "marketAgeMinutes": 2.5,
+      "generatedAt": "2026-10-25T22:06:33.310524Z",
+      "crowdHomeShare": 0.2077,
+      "crowdEntries": 702448,
+      "contrarianValue": 0.1279,
       "poolPick": "DAL",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -792,33 +792,33 @@
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-10-25T18:34:23.354243Z",
+    "checkedAt": "2026-10-25T22:06:33.321851Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
     "entries": 9,
-    "rank": 8,
-    "points": 470,
-    "leaderPoints": 510,
-    "correctPicksBehind": 4.0,
+    "rank": 7,
+    "points": 500,
+    "leaderPoints": 550,
+    "correctPicksBehind": 5.0,
     "pointsPerPick": 10,
     "dropLowestWeek": true,
     "tiebreakers": true,
     "droppedWeeks": [
       3
     ],
-    "remainingGames": 170,
+    "remainingGames": 167,
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-10-25T18:34:23.354243Z",
+      "checkedAt": "2026-10-25T22:06:33.321851Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
-        "matched": 9,
+        "matched": 12,
         "different": 0,
         "missing": 0,
-        "unavailable": 5
+        "unavailable": 2
       }
     }
   }
