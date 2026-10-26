@@ -2,75 +2,75 @@
   "candidate": "baseline_core_exp4",
   "frozenAt": "2026-10-10T23:28:24.039673-06:00",
   "specHash": "86086fbf3f7695f68bee48a76bcb7bf1a2e2a7c5b30d4e3a5db9673ff7ecfb24",
-  "games": 36,
+  "games": 37,
   "minimumCompletedGames": 250,
-  "status": "insufficient games: 36 of 250",
+  "status": "insufficient games: 37 of 250",
   "metrics": {
     "baseline": {
-      "games": 36,
-      "accuracy": 0.4722222222222222,
-      "brier": 0.23900549355749906,
-      "logLoss": 0.6668922567876631
+      "games": 37,
+      "accuracy": 0.4864864864864865,
+      "brier": 0.23683473341692113,
+      "logLoss": 0.6626002793171254
     },
     "candidate": {
-      "games": 36,
-      "accuracy": 0.4722222222222222,
-      "brier": 0.25024120855129045,
-      "logLoss": 0.6933339900322735
+      "games": 37,
+      "accuracy": 0.4864864864864865,
+      "brier": 0.2499915315469582,
+      "logLoss": 0.6928425722019599
     },
     "baselineBlend": {
-      "games": 36,
-      "accuracy": 0.6666666666666666,
-      "brier": 0.23687117428824328,
-      "logLoss": 0.672630140433769
+      "games": 37,
+      "accuracy": 0.6756756756756757,
+      "brier": 0.23525072585276538,
+      "logLoss": 0.6692018438492472
     },
     "candidateBlend": {
-      "games": 36,
-      "accuracy": 0.6666666666666666,
-      "brier": 0.23726904432194396,
-      "logLoss": 0.6747360777162058
+      "games": 37,
+      "accuracy": 0.6756756756756757,
+      "brier": 0.23566451209941422,
+      "logLoss": 0.6713055614797383
     },
     "market": {
-      "games": 36,
-      "accuracy": 0.6666666666666666,
-      "brier": 0.23726904432194396,
-      "logLoss": 0.6747360777162058
+      "games": 37,
+      "accuracy": 0.6756756756756757,
+      "brier": 0.23566451209941422,
+      "logLoss": 0.6713055614797383
     }
   },
   "comparisons": {
     "candidate_vs_baseline": {
-      "games": 36,
+      "games": 37,
       "weekBlocks": 3,
       "repeats": 10000,
       "brier": {
-        "difference": 0.011235714993791378,
+        "difference": 0.013156798130037017,
         "ci95": [
           0.005220052327087855,
-          0.016036710992506205
+          0.01887502655409609
         ]
       },
       "logLoss": {
-        "difference": 0.02644173324461048,
+        "difference": 0.030242292884834543,
         "ci95": [
           0.015670833887284966,
-          0.03612737359980038
+          0.04014295941721409
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidate_vs_market": {
-      "games": 36,
+      "games": 37,
       "weekBlocks": 3,
       "repeats": 10000,
       "brier": {
-        "difference": 0.012972164229346505,
+        "difference": 0.014327019447543936,
         "ci95": [
           0.005439333269985142,
           0.021259020861340523
         ]
       },
       "logLoss": {
-        "difference": 0.018597912316067743,
+        "difference": 0.021537010722221705,
         "ci95": [
           -0.0029410399596865202,
           0.04424734192041876
@@ -79,18 +79,18 @@
       "status": "no confirmed improvement"
     },
     "candidateBlend_vs_baselineBlend": {
-      "games": 36,
+      "games": 37,
       "weekBlocks": 3,
       "repeats": 10000,
       "brier": {
-        "difference": 0.0003978700337006222,
+        "difference": 0.0004137862466488137,
         "ci95": [
           0.00034989358858514226,
-          0.0004708875636292954
+          0.0005138777593921631
         ]
       },
       "logLoss": {
-        "difference": 0.002105937282436729,
+        "difference": 0.0021037176304909214,
         "ci95": [
           0.0006155292116464262,
           0.0032733906069845864
@@ -99,7 +99,7 @@
       "status": "no confirmed improvement"
     },
     "candidateBlend_vs_market": {
-      "games": 36,
+      "games": 37,
       "weekBlocks": 3,
       "repeats": 10000,
       "brier": {
@@ -155,7 +155,8 @@
     "2026_07_TB_CAR",
     "2026_07_DEN_ARI",
     "2026_07_GB_DET",
-    "2026_07_LA_LV"
+    "2026_07_LA_LV",
+    "2026_07_KC_SEA"
   ],
-  "generatedAt": "2026-10-26T00:43:45.170151+00:00"
+  "generatedAt": "2026-10-26T17:39:09.848729+00:00"
 }
