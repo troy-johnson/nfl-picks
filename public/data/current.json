@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 7,
-  "generatedAt": "2026-10-25T22:06:33.310524Z",
+  "generatedAt": "2026-10-26T21:55:52.844438Z",
   "firstGame": "2026-10-22",
   "model": {
     "trainingSeasons": [
@@ -727,10 +727,10 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_07_KC_SEA",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "matched",
+        "submittedPick": "SEA",
         "recommendedPick": "SEA",
-        "submittedAt": null
+        "submittedAt": "2026-10-22T19:55:31.361000Z"
       }
     },
     {
@@ -741,44 +741,44 @@
       "gametime": "20:15",
       "stadium": "Lincoln Financial Field",
       "roof": "outdoors",
-      "statisticalHomeProbability": 0.3502,
-      "marketHomeProbability": 0.3356,
+      "statisticalHomeProbability": 0.3511,
+      "marketHomeProbability": 0.3334,
       "spreadLine": -4.5,
       "homeQb": "Jalen Hurts",
       "awayQb": "Dak Prescott",
       "weather": {
-        "summary": "57\u00b0F \u00b7 wind 5 mph",
-        "temperatureF": 57.4,
-        "precipitationPct": 1,
-        "windMph": 5.1,
+        "summary": "59\u00b0F \u00b7 wind 5 mph",
+        "temperatureF": 59.0,
+        "precipitationPct": 0,
+        "windMph": 4.6,
         "gustMph": 11.4
       },
       "news": [
         {
-          "title": "WR George Pickens, CB Joey Porter Jr. have no injury designation - NBC Sports",
-          "source": "NBC Sports",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPR1FwbzVqMUdCQktWNFFuc2FFOWhza1VhS3BIM0JvZWJKQkVITDRZMFlPc19BX3IwRnhBbkozV25NUzZWekQ3MjQ0VDFSRzJxcEdsMlZmUU0yMnF2aU5JOWxnNUQ4X0s4ZEd1QUMzT3R0ZzBNUEt4bjJ6M2lhdnY4N1BFVkZ0TmprM2gwTnJkY0hRNWJ5TjBaTkxSX0VuZGZiUlJpVnJiWFJ6OHp6aGRyc0doS0Y0RUtHT0haQlhUZUFqQQ?oc=5"
+          "title": "2 Cowboys defenders to continue rehab; did not travel to Philadelphia for MNF battle - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOS1hrTTZRVmo3cFJIWFl5b3M3ZTN2dlZYQVhoS1BKTjR0dE94aEZzbk9GckpSZUxuMWxqcUJXa21GeVFIWFdFd2NUdHRFd05rX0xDbGQtLXBNWGRBRkJOR29rQXNZeEEtcExVWXFzR2JFQmEtd21URzJ4R1NJTVNPX1dPREJtd1RiQ0lV?oc=5"
         },
         {
-          "title": "Pair of Cowboys defenders listed as questionable vs. Eagles won't travel with team - Dallas News",
-          "source": "Dallas News",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZDFJbXdWdG9nTXZ0akwyZUxrTjZaZUU5ZkRBLW5WcFVHeXZ1RzVOSDczVkpBYW1veVJFajFiRXcybzJjYmtfeHdISXBUdU0tODBZLUYxTVR2MVZhT1QySC1oeC1pX1lhUXdKeWlNVEhmMnlabXFtYlVmS0VTZmlnS2JLRDc2eTZCdGM3NWhKZWtnalIzdjhvZ3liZXBSdkJVSUVuWmVqTElqODg?oc=5"
+          "title": "3 under-the-radar players for Cowboys at Eagles - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPaWwwRHNoWW9yZ194V1RVeUo5U0RwcTZHQnJKcV9wQUhhbUYzMFpQS1ZENVFBMFQ4Q0Zuak9wQWdOeXNkU1BHZTlkbXhhUnhQUlhxaFV4STBhT0ZFTUUyOHE1QkxQZVNUWTBNQTRZbklxZERpVGlVUTQ3cThMRi1nenpTaEo?oc=5"
         }
       ],
       "flags": [],
       "pick": "DAL",
-      "homeWinProbability": 0.3363,
-      "winProbability": 0.6637,
+      "homeWinProbability": 0.3343,
+      "winProbability": 0.6657,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-10-25T22:06:33.310524Z",
-      "marketUpdatedAt": "2026-10-25T22:04:02Z",
+      "marketCapturedAt": "2026-10-26T21:55:52.844438Z",
+      "marketUpdatedAt": "2026-10-26T21:53:31Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 2.5,
-      "generatedAt": "2026-10-25T22:06:33.310524Z",
-      "crowdHomeShare": 0.2077,
-      "crowdEntries": 702448,
-      "contrarianValue": 0.1279,
+      "marketAgeMinutes": 2.4,
+      "generatedAt": "2026-10-26T21:55:52.844438Z",
+      "crowdHomeShare": 0.2068,
+      "crowdEntries": 708519,
+      "contrarianValue": 0.1266,
       "poolPick": "DAL",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -792,33 +792,33 @@
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-10-25T22:06:33.321851Z",
+    "checkedAt": "2026-10-26T21:55:52.853033Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
     "entries": 9,
     "rank": 7,
-    "points": 500,
-    "leaderPoints": 550,
-    "correctPicksBehind": 5.0,
+    "points": 540,
+    "leaderPoints": 570,
+    "correctPicksBehind": 3.0,
     "pointsPerPick": 10,
     "dropLowestWeek": true,
     "tiebreakers": true,
     "droppedWeeks": [
       3
     ],
-    "remainingGames": 167,
+    "remainingGames": 166,
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-10-25T22:06:33.321851Z",
+      "checkedAt": "2026-10-26T21:55:52.853033Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
-        "matched": 12,
+        "matched": 13,
         "different": 0,
         "missing": 0,
-        "unavailable": 2
+        "unavailable": 1
       }
     }
   }
