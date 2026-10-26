@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 7,
-  "generatedAt": "2026-10-26T21:55:52.844438Z",
+  "generatedAt": "2026-10-26T23:10:59.125594Z",
   "firstGame": "2026-10-22",
   "model": {
     "trainingSeasons": [
@@ -742,16 +742,16 @@
       "stadium": "Lincoln Financial Field",
       "roof": "outdoors",
       "statisticalHomeProbability": 0.3511,
-      "marketHomeProbability": 0.3334,
+      "marketHomeProbability": 0.3439,
       "spreadLine": -4.5,
       "homeQb": "Jalen Hurts",
       "awayQb": "Dak Prescott",
       "weather": {
-        "summary": "59\u00b0F \u00b7 wind 5 mph",
-        "temperatureF": 59.0,
+        "summary": "60\u00b0F \u00b7 wind 4 mph",
+        "temperatureF": 59.5,
         "precipitationPct": 0,
-        "windMph": 4.6,
-        "gustMph": 11.4
+        "windMph": 4.4,
+        "gustMph": 10.5
       },
       "news": [
         {
@@ -760,25 +760,25 @@
           "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOS1hrTTZRVmo3cFJIWFl5b3M3ZTN2dlZYQVhoS1BKTjR0dE94aEZzbk9GckpSZUxuMWxqcUJXa21GeVFIWFdFd2NUdHRFd05rX0xDbGQtLXBNWGRBRkJOR29rQXNZeEEtcExVWXFzR2JFQmEtd21URzJ4R1NJTVNPX1dPREJtd1RiQ0lV?oc=5"
         },
         {
-          "title": "3 under-the-radar players for Cowboys at Eagles - Yahoo Sports",
-          "source": "Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPaWwwRHNoWW9yZ194V1RVeUo5U0RwcTZHQnJKcV9wQUhhbUYzMFpQS1ZENVFBMFQ4Q0Zuak9wQWdOeXNkU1BHZTlkbXhhUnhQUlhxaFV4STBhT0ZFTUUyOHE1QkxQZVNUWTBNQTRZbklxZERpVGlVUTQ3cThMRi1nenpTaEo?oc=5"
+          "title": "Recent injury news piles more pressure on Brian Schottenheimer and the Dallas Cowboys ahead of Week 7 matchup versus the Eagles - A to Z Sports",
+          "source": "A to Z Sports",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNX21Hc25wNS1vbHZFWHpUazJZQzZUYnpmTy15dHBhZENVSWlRMS1QdDY4UUF5RlJQYmk4UTdCWkluNU1fR1BQZmpkRmpjNEM2elNnYnVZWFd2Q05NVFI0TDdRX2tSRUJndV9MWDdvQm1ONWMtNXVxdDJoNm1hX2k0WktzSHFWWTc4MGY5dnJBaXhsZ1ZNRy1DMDhReG1kMHYtaFg2LWZMQ0h0VGNaakdabWxNUQ?oc=5"
         }
       ],
       "flags": [],
       "pick": "DAL",
-      "homeWinProbability": 0.3343,
-      "winProbability": 0.6657,
+      "homeWinProbability": 0.3442,
+      "winProbability": 0.6558,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-10-26T21:55:52.844438Z",
-      "marketUpdatedAt": "2026-10-26T21:53:31Z",
+      "marketCapturedAt": "2026-10-26T23:10:59.125594Z",
+      "marketUpdatedAt": "2026-10-26T23:09:39Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 2.4,
-      "generatedAt": "2026-10-26T21:55:52.844438Z",
-      "crowdHomeShare": 0.2068,
-      "crowdEntries": 708519,
-      "contrarianValue": 0.1266,
+      "marketAgeMinutes": 1.3,
+      "generatedAt": "2026-10-26T23:10:59.125594Z",
+      "crowdHomeShare": 0.2069,
+      "crowdEntries": 709025,
+      "contrarianValue": 0.137,
       "poolPick": "DAL",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -792,7 +792,7 @@
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-10-26T21:55:52.853033Z",
+    "checkedAt": "2026-10-26T23:10:59.136414Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
@@ -811,7 +811,7 @@
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-10-26T21:55:52.853033Z",
+      "checkedAt": "2026-10-26T23:10:59.136414Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
