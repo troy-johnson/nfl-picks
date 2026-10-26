@@ -219,14 +219,14 @@
       "homeTeam": "PHI",
       "espnEventId": "401873009",
       "lockAt": "2026-10-27T00:15:00Z",
-      "entries": 708519,
-      "homeShare": 0.2068017936004539,
-      "awayShare": 0.7931982063995461,
+      "entries": 709017,
+      "homeShare": 0.206923106216071,
+      "awayShare": 0.793076893783929,
       "espnSpread": 4.5,
-      "espnHomeMoneyline": "170",
-      "espnAwayMoneyline": "-205",
+      "espnHomeMoneyline": "185",
+      "espnAwayMoneyline": "-225",
       "homeWin": null,
-      "capturedAt": "2026-10-26T21:55:44.748475Z"
+      "capturedAt": "2026-10-26T23:09:59.067087Z"
     }
   ]
 }
