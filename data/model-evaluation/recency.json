@@ -2,105 +2,105 @@
   "candidate": "baseline_core_exp4",
   "frozenAt": "2026-10-10T23:28:24.039673-06:00",
   "specHash": "86086fbf3f7695f68bee48a76bcb7bf1a2e2a7c5b30d4e3a5db9673ff7ecfb24",
-  "games": 38,
+  "games": 39,
   "minimumCompletedGames": 250,
-  "status": "insufficient games: 38 of 250",
+  "status": "insufficient games: 39 of 250",
   "metrics": {
     "baseline": {
-      "games": 38,
-      "accuracy": 0.5,
-      "brier": 0.23379082933315148,
-      "logLoss": 0.6564225921975458
+      "games": 39,
+      "accuracy": 0.5128205128205128,
+      "brier": 0.23315929294667853,
+      "logLoss": 0.6552649460045473
     },
     "candidate": {
-      "games": 38,
-      "accuracy": 0.5,
-      "brier": 0.24757541740278488,
-      "logLoss": 0.6879527319280188
+      "games": 39,
+      "accuracy": 0.5128205128205128,
+      "brier": 0.24556254035949665,
+      "logLoss": 0.6838935198374754
     },
     "baselineBlend": {
-      "games": 38,
-      "accuracy": 0.6842105263157895,
-      "brier": 0.23200359984136942,
-      "logLoss": 0.6623057046500146
+      "games": 39,
+      "accuracy": 0.6923076923076923,
+      "brier": 0.22957582158554538,
+      "logLoss": 0.6571936765140292
     },
     "candidateBlend": {
-      "games": 38,
-      "accuracy": 0.6842105263157895,
-      "brier": 0.2323938782161331,
-      "logLoss": 0.6643257014412368
+      "games": 39,
+      "accuracy": 0.6923076923076923,
+      "brier": 0.22986983817295248,
+      "logLoss": 0.6589765041375285
     },
     "market": {
-      "games": 38,
-      "accuracy": 0.6842105263157895,
-      "brier": 0.2323938782161331,
-      "logLoss": 0.6643257014412368
+      "games": 39,
+      "accuracy": 0.6923076923076923,
+      "brier": 0.22986983817295248,
+      "logLoss": 0.6589765041375285
     }
   },
   "comparisons": {
     "candidate_vs_baseline": {
-      "games": 38,
-      "weekBlocks": 3,
+      "games": 39,
+      "weekBlocks": 4,
       "repeats": 10000,
       "brier": {
-        "difference": 0.013784588069633391,
+        "difference": 0.012403247412818097,
         "ci95": [
-          0.005220052327087855,
-          0.020270241114142485
+          0.001983784478998502,
+          0.018761292647634847
         ]
       },
       "logLoss": {
-        "difference": 0.03153013973047287,
+        "difference": 0.028628573832928116,
         "ci95": [
-          0.015670833887284966,
-          0.043145845078896926
+          0.008720707875780779,
+          0.040026425695080206
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidate_vs_market": {
-      "games": 38,
-      "weekBlocks": 3,
+      "games": 39,
+      "weekBlocks": 4,
       "repeats": 10000,
       "brier": {
-        "difference": 0.015181539186651749,
+        "difference": 0.015692702186544106,
         "ci95": [
-          0.005439333269985142,
-          0.021259020861340523
+          0.007559159192304331,
+          0.022325011270656926
         ]
       },
       "logLoss": {
-        "difference": 0.02362703048678204,
+        "difference": 0.024917015699947063,
         "ci95": [
-          -0.0029410399596865202,
-          0.04424734192041876
+          0.002550209594592343,
+          0.046531119757326364
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidateBlend_vs_baselineBlend": {
-      "games": 38,
-      "weekBlocks": 3,
+      "games": 39,
+      "weekBlocks": 4,
       "repeats": 10000,
       "brier": {
-        "difference": 0.00039027837476366577,
+        "difference": 0.0002940165874071175,
         "ci95": [
-          0.00034989358858514226,
-          0.00043746309443993463
+          -0.00032168494038416944,
+          0.0004168585048270423
         ]
       },
       "logLoss": {
-        "difference": 0.0020199967912220593,
+        "difference": 0.0017828276234992078,
         "ci95": [
-          0.0006155292116464262,
-          0.0032733906069845864
+          1.2057676137523254e-05,
+          0.0029708016020823227
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidateBlend_vs_market": {
-      "games": 38,
-      "weekBlocks": 3,
+      "games": 39,
+      "weekBlocks": 4,
       "repeats": 10000,
       "brier": {
         "difference": 0.0,
@@ -157,7 +157,8 @@
     "2026_07_GB_DET",
     "2026_07_LA_LV",
     "2026_07_KC_SEA",
-    "2026_07_DAL_PHI"
+    "2026_07_DAL_PHI",
+    "2026_08_CAR_GB"
   ],
-  "generatedAt": "2026-10-30T02:09:17.491837+00:00"
+  "generatedAt": "2026-10-30T17:12:53.622411+00:00"
 }
