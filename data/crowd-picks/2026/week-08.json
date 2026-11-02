@@ -161,7 +161,7 @@
       "espnSpread": -6.5,
       "espnHomeMoneyline": "-270",
       "espnAwayMoneyline": "220",
-      "homeWin": null,
+      "homeWin": true,
       "capturedAt": "2026-11-01T18:27:30.986519Z"
     },
     {
@@ -177,7 +177,7 @@
       "espnSpread": 1.5,
       "espnHomeMoneyline": "-108",
       "espnAwayMoneyline": "-112",
-      "homeWin": null,
+      "homeWin": true,
       "capturedAt": "2026-11-01T18:27:30.986519Z"
     },
     {
@@ -193,7 +193,7 @@
       "espnSpread": 6.5,
       "espnHomeMoneyline": "270",
       "espnAwayMoneyline": "-340",
-      "homeWin": null,
+      "homeWin": false,
       "capturedAt": "2026-11-01T18:27:30.986519Z"
     },
     {
@@ -209,7 +209,7 @@
       "espnSpread": -3.5,
       "espnHomeMoneyline": "-278",
       "espnAwayMoneyline": "225",
-      "homeWin": null,
+      "homeWin": true,
       "capturedAt": "2026-11-01T22:55:08.590133Z"
     },
     {
@@ -219,14 +219,14 @@
       "homeTeam": "SEA",
       "espnEventId": "401873036",
       "lockAt": "2026-11-03T01:15:00Z",
-      "entries": 676514,
-      "homeShare": 0.6726320519604916,
-      "awayShare": 0.3273679480395084,
+      "entries": 682650,
+      "homeShare": 0.6710451915329965,
+      "awayShare": 0.3289548084670036,
       "espnSpread": -3.5,
-      "espnHomeMoneyline": "-166",
-      "espnAwayMoneyline": "140",
+      "espnHomeMoneyline": "-170",
+      "espnAwayMoneyline": "142",
       "homeWin": null,
-      "capturedAt": "2026-11-01T22:55:08.590133Z"
+      "capturedAt": "2026-11-02T22:20:49.701752Z"
     }
   ]
 }
