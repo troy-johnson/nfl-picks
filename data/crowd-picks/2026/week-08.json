@@ -219,14 +219,14 @@
       "homeTeam": "SEA",
       "espnEventId": "401873036",
       "lockAt": "2026-11-03T01:15:00Z",
-      "entries": 682650,
-      "homeShare": 0.6710451915329965,
-      "awayShare": 0.3289548084670036,
+      "entries": 682661,
+      "homeShare": 0.6710519569742522,
+      "awayShare": 0.32894804302574776,
       "espnSpread": -3.5,
       "espnHomeMoneyline": "-170",
       "espnAwayMoneyline": "142",
       "homeWin": null,
-      "capturedAt": "2026-11-02T22:20:49.701752Z"
+      "capturedAt": "2026-11-02T22:22:10.535466Z"
     }
   ]
 }

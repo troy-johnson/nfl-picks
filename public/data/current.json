@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 8,
-  "generatedAt": "2026-11-01T22:55:23.189168Z",
+  "generatedAt": "2026-11-02T22:22:23.923772Z",
   "firstGame": "2026-10-29",
   "model": {
     "trainingSeasons": [
@@ -726,10 +726,10 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_08_PHI_WAS",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "matched",
+        "submittedPick": "WAS",
         "recommendedPick": "WAS",
-        "submittedAt": null
+        "submittedAt": "2026-11-01T16:09:56.470000Z"
       }
     },
     {
@@ -740,44 +740,44 @@
       "gametime": "20:15",
       "stadium": "Lumen Field",
       "roof": "outdoors",
-      "statisticalHomeProbability": 0.4985,
-      "marketHomeProbability": 0.6068,
-      "spreadLine": 3.0,
+      "statisticalHomeProbability": 0.499,
+      "marketHomeProbability": 0.6154,
+      "spreadLine": 3.5,
       "homeQb": "Sam Darnold",
       "awayQb": "Caleb Williams",
       "weather": {
-        "summary": "50\u00b0F \u00b7 wind 2 mph",
-        "temperatureF": 50.5,
+        "summary": "46\u00b0F \u00b7 wind 2 mph",
+        "temperatureF": 45.6,
         "precipitationPct": 1,
-        "windMph": 1.5,
-        "gustMph": 2.0
+        "windMph": 1.6,
+        "gustMph": 1.6
       },
       "news": [
         {
-          "title": "Bears report: TE Colston Loveland good to go vs. Seahawks despite neck injury - Chicago Sun-Times",
-          "source": "Chicago Sun-Times",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTW5zQW1jbzVHX0ZSTGwxRzBpZlpPZGh3NVJLQUxGOFlEYjhBc0Z1Q09oVm9aTmoyT1BSNnJLZDNmYVpBaDR1amdwMTJxZGRrZjVtMUYxVVZLZ2h2cjZzc0lfWUl0anlqOURfbmx1dFdENHczODI0bmxTdFptUEZZdnhnYUZWanVVb0t4cWtCUndKRlhyWXFXM2lER0ZIZFFOYk9VcGNPRUl5RDBtTWxyeXZ6cUhscTU1NHI5OU13?oc=5"
+          "title": "Colston Loveland limited at Bears practice with a neck injury - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQalUtbXg3cE1wN2V5TlpTbUdzRzlPZVYtY0piVDh1OVVXTXlQME9MNnRSbFJQSWJTWm5fcVJBZktVMXFqMlR5V01mRG82MkVBdGtnVzhEV3RGejRFQV9pNTFZQVFqSkdQNHgxQnpNeXF6U1RoZ0lnakhhVUN3Zm5hc0FRZVBxcGlwZzJGRGlHLVhGUQ?oc=5"
         },
         {
-          "title": "Bears vs. Seahawks Injury Report: Kyle Monangai is out for Chicago - Windy City Gridiron",
-          "source": "Windy City Gridiron",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPb0NsZ283UGszYm9JYm52STlaZVBuU0ZJcUQxN3VoZV9GdmFpV0tvX1pBSllXM2xnSFAxcHFadk1fczREWnZTanZWOXVjNi13d2FjWFA4U2dwSUw1WFJ4akI5Z0NWeGxlUHR5S0xXendxWk1nb182SVM5RnZGY0dfLXQ2S2owRG9mSmZaRjF0RElUYnJ2U0JYLWVZNGQyTktUSllfSGV6MVpEV2VmRFVjTlNCX3RobzJIZmFWN2NsalpfaUNnN1Jj?oc=5"
+          "title": "Fantasy football start or sit Week 8: Jadarian Price, Emanuel Wilson, Zach Charbonnet - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSzgxci1iTVhCYWpYZENxNUlwZFhmWkNhVHV2R3NWR1hfenV5X2tVUVMwV0V3R3dwaGFYWHJ6WEhsS09RejQ0cUhtdVdwclZTdFlBdHpsc05VWGFNa09TR1VZUVVPZG1RcGQ3Y1NUX0Y1VGpGYVRJeDAtekpFXzNTOXhEb1Q4ZUk?oc=5"
         }
       ],
       "flags": [],
       "pick": "SEA",
-      "homeWinProbability": 0.6014,
-      "winProbability": 0.6014,
+      "homeWinProbability": 0.6095,
+      "winProbability": 0.6095,
       "confidence": "low",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-01T22:55:23.189168Z",
-      "marketUpdatedAt": "2026-11-01T22:53:30Z",
+      "marketCapturedAt": "2026-11-02T22:22:23.923772Z",
+      "marketUpdatedAt": "2026-11-02T22:20:38Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 1.9,
-      "generatedAt": "2026-11-01T22:55:23.189168Z",
-      "crowdHomeShare": 0.6726,
-      "crowdEntries": 676514,
-      "contrarianValue": -0.0658,
+      "marketAgeMinutes": 1.8,
+      "generatedAt": "2026-11-02T22:22:23.923772Z",
+      "crowdHomeShare": 0.6711,
+      "crowdEntries": 682661,
+      "contrarianValue": -0.0557,
       "poolPick": "SEA",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -791,14 +791,14 @@
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-01T22:55:23.200527Z",
+    "checkedAt": "2026-11-02T22:22:23.934885Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
     "entries": 9,
     "rank": 7,
-    "points": 610,
-    "leaderPoints": 650,
+    "points": 640,
+    "leaderPoints": 680,
     "correctPicksBehind": 4.0,
     "pointsPerPick": 10,
     "dropLowestWeek": true,
@@ -806,18 +806,18 @@
     "droppedWeeks": [
       3
     ],
-    "remainingGames": 153,
+    "remainingGames": 152,
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-01T22:55:23.200527Z",
+      "checkedAt": "2026-11-02T22:22:23.934885Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
-        "matched": 11,
+        "matched": 12,
         "different": 1,
         "missing": 0,
-        "unavailable": 2
+        "unavailable": 1
       }
     }
   }
