@@ -43,16 +43,21 @@ jobs:
         with:
           fetch-depth: 0
       - uses: astral-sh/setup-uv@v6
+        id: python
         with:
           enable-cache: true
       - name: Generate current week
+        id: forecasts
         if: github.event.schedule != '37 0,1,12-23 * 9-12,1 *'
         env:
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
         run: uv run --project model python model/scheduled_runs.py ${{ inputs.force && '--force' || '' }}
       - name: Refresh scores and submitted picks
+        id: results
+        if: ${{ !cancelled() && steps.python.outcome == 'success' }}
         run: uv run --project model python model/results.py
       - name: Commit updated picks
+        if: ${{ !cancelled() && (steps.forecasts.outcome == 'success' || steps.results.outcome == 'success') }}
         run: |
           if [ -z "$(git status --porcelain -- public/data data/crowd-picks data/odds-snapshots)" ]; then echo "No pick changes to publish."; exit 0; fi
           git config user.name "github-actions[bot]"
