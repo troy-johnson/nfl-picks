@@ -27,6 +27,9 @@ on:
     # Backup slot in case the primary run is dropped.
     - cron: "22 8,11,12,14,15,18,19 * 9-12,1 *"
       timezone: "America/New_York"
+    # Refresh scores after kickoff, including the last game of the week.
+    - cron: "37 0,1,12-23 * 9-12,1 *"
+      timezone: "America/New_York"
 permissions:
   contents: write
 concurrency:
@@ -43,9 +46,12 @@ jobs:
         with:
           enable-cache: true
       - name: Generate current week
+        if: github.event.schedule != '37 0,1,12-23 * 9-12,1 *'
         env:
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
         run: uv run --project model python model/scheduled_runs.py ${{ inputs.force && '--force' || '' }}
+      - name: Refresh scores and submitted picks
+        run: uv run --project model python model/results.py
       - name: Commit updated picks
         run: |
           if [ -z "$(git status --porcelain -- public/data data/crowd-picks data/odds-snapshots)" ]; then echo "No pick changes to publish."; exit 0; fi

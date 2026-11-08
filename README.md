@@ -36,6 +36,18 @@ An incomplete current-season play-by-play feed or missing required odds stops pu
 Later games can use labeled nflverse fallback odds until their final window.
 Cards show the odds source, bookmaker count, update time, and age at generation.
 
+Cards also show ESPN scores, final-game status, and results for your submitted picks.
+Results use your actual ESPN pick, which can differ from the recommendation.
+Hidden picks remain unavailable. In-progress games remain pending.
+Score checks have a separate timestamp from forecast generation.
+
+```bash
+uv run --project model python model/results.py
+```
+
+This command refreshes scores and submitted picks without generating new forecasts.
+The refresh workflow also checks results hourly from noon through 1 a.m. ET during the season.
+
 Useful options:
 
 ```bash

@@ -1,5 +1,6 @@
 import {TeamLogo} from "@/components/TeamLogo";
 import {MarketFreshness} from "@/components/MarketFreshness";
+import {GameResult} from "@/components/GameResult";
 import type {GamePick} from "@/lib/types";
 const pct=(v:number|null)=>v==null?"—":`${Math.round(v*100)}%`;
 function spread(g:GamePick){if(g.spreadLine==null)return"—";const fav=g.spreadLine>=0?g.homeTeam:g.awayTeam;return `${fav} ${-Math.abs(g.spreadLine)}`;}
@@ -15,7 +16,8 @@ export function GameCard({game}:{game:GamePick}) {
       <div className="teams"><TeamLogo team={game.awayTeam}/><span>{game.awayTeam}</span><span className="at">@</span><TeamLogo team={game.homeTeam}/><span>{game.homeTeam}</span></div>
       <div className="kickoff">{game.gameday}{game.gametime ? ` · ${game.gametime} ET` : ""}</div>
     </div><div className={`confidence confidence-${game.confidence}`} title="Confidence: how lopsided the blended win probability is. High is 72%+, Medium 62-71%, Low under 62%.">{game.confidence}</div></div>
-    <div className="pick-row"><div><div className="eyebrow">Pick</div><div className="pick-team"><TeamLogo size={40} team={game.pick}/><span>{game.pick}</span></div></div><div className="win-probability">{pct(game.winProbability)}</div></div>
+    <GameResult game={game}/>
+    <div className="pick-row"><div><div className="eyebrow">{game.result?.status === "final" || game.result?.status === "in_progress" ? "Pregame recommendation" : "Pick"}</div><div className="pick-team"><TeamLogo size={40} team={game.pick}/><span>{game.pick}</span></div></div><div className="win-probability">{pct(game.winProbability)}</div></div>
     {poolPick && poolPick !== game.pick && <div className="pool-pick"><span className="eyebrow">Archived pool pick</span><strong className="pool-team"><TeamLogo size={20} team={poolPick}/>{poolPick}</strong><span>{game.poolPickReason}</span></div>}
     <div className="metrics">
       <div title="Logistic regression on rolling EPA and success rate. No betting lines."><span>Stat model</span><strong>{pct(stat)}</strong></div>
@@ -28,7 +30,7 @@ export function GameCard({game}:{game:GamePick}) {
       {check.status === "matched" && `Submitted pick: ${check.submittedPick} · matches`}
       {check.status === "different" && `Submitted pick: ${check.submittedPick} · recommendation: ${check.recommendedPick}`}
       {check.status === "missing" && "Missing submitted pick in the checked data"}
-      {check.status === "unavailable" && "Submitted pick unavailable · check ESPN before kickoff"}
+      {check.status === "unavailable" && (game.result?.status === "final" || game.result?.status === "in_progress" ? "Submitted pick unavailable" : "Submitted pick unavailable · check ESPN before kickoff")}
     </div>}
     {(game.weather || game.flags.length > 0 || (game.news?.length ?? 0) > 0) && <div className="notes">
       {game.weather && <div>{game.weather.summary}</div>}

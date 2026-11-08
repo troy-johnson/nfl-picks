@@ -1,6 +1,7 @@
 import picksJson from "@/public/data/current.json";
 import {GameCard} from "@/components/GameCard";
 import {PoolSummary} from "@/components/PoolSummary";
+import {ResultsSummary} from "@/components/ResultsSummary";
 import type {PicksPayload} from "@/lib/types";
 const picks=picksJson as PicksPayload;
 function fmt(v:string){if(!v)return "Not generated yet";return new Intl.DateTimeFormat("en-US",{dateStyle:"medium",timeStyle:"short",timeZone:"America/Denver"}).format(new Date(v));}
@@ -9,11 +10,12 @@ export default function Home() {
   return <main className="page-shell">
     <header className="page-header"><div><div className="eyebrow">{picks.season || 2026} pick&apos;em</div><h1>NFL Picks</h1><p>Market-informed, stats-driven straight-up win probabilities.</p></div><div className="week-badge">Week {picks.week || "—"}</div></header>
     <section className="summary-bar">
-      <div><span>Updated</span><strong>{fmt(picks.generatedAt)}</strong></div>
+      <div><span>Picks updated</span><strong>{fmt(picks.generatedAt)}</strong></div>
       <div><span>Market weight</span><strong>{Math.round((picks.model?.marketWeight ?? 0)*100)}%</strong></div>
       <div><span>Stat model validation</span><strong>{picks.model?.validationAccuracy == null ? "—" : `${Math.round(picks.model.validationAccuracy*100)}%`}</strong></div>
     </section>
     <PoolSummary pool={picks.pool}/>
+    <ResultsSummary games={games} updatedAt={picks.resultsUpdatedAt}/>
     {games.length ? <section className="game-grid">{games.map(game => <GameCard key={game.gameId} game={game}/>)}</section> : <section className="empty-state"><h2>No generated picks yet</h2><p>Run the prediction workflow to populate this week.</p></section>}
     <section className="legend"><h2>How to read a card</h2><dl>
       <dt>Pick</dt><dd>The team with the higher blended win probability. This is the accuracy recommendation.</dd>
@@ -25,6 +27,7 @@ export default function Home() {
       <dt>Confidence</dt><dd>High means 72% or more. Medium means 62% to 71%. Low means under 62%.</dd>
       <dt>Pool strategy</dt><dd>Current recommendations maximize expected correct picks. The group panel shows the actual standings and dropped-week rule. Older locked games can show an archived pool pick.</dd>
       <dt>Submitted picks</dt><dd>The check compares visible ESPN picks with the recommendation. ESPN can hide open picks, so an unavailable pick is not a confirmed missing pick.</dd>
+      <dt>Your results</dt><dd>Final scores come from ESPN. Won or lost refers to your submitted pick, which can differ from the pregame recommendation. In-progress games remain pending.</dd>
     </dl></section>
     <footer>Statistical probabilities blended with market odds. Forecasts and their market inputs are archived together before kickoff.</footer>
   </main>;

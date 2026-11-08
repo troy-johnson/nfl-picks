@@ -9,3 +9,8 @@
 .pool-heading strong{font-size:.75rem;color:var(--good)}
 .pick-check-summary{display:flex;flex-direction:column;gap:5px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border);font-size:.8rem}
 .pick-check-summary span{color:var(--muted);line-height:1.5}
+.game-result{margin-top:14px;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--bg)}
+.result-heading{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:.75rem}.result-heading span{color:var(--muted)}
+.result-score{font-size:1.2rem;font-weight:800;margin-top:8px}.result-score span{color:var(--muted);padding:0 5px}
+.your-pick{font-size:.85rem;font-weight:700;margin-top:8px}.game-result-win .your-pick{color:var(--good)}
+.game-result-loss .your-pick,.game-result-missing .your-pick{color:var(--warn)}
