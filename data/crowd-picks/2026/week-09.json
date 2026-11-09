@@ -235,14 +235,14 @@
       "homeTeam": "MIN",
       "espnEventId": "401873051",
       "lockAt": "2026-11-10T01:15:00Z",
-      "entries": 667983,
-      "homeShare": 0.18447176050887523,
-      "awayShare": 0.8155282394911247,
+      "entries": 667991,
+      "homeShare": 0.18447254528878382,
+      "awayShare": 0.8155274547112161,
       "espnSpread": 3.5,
       "espnHomeMoneyline": "160",
       "espnAwayMoneyline": "-192",
       "homeWin": null,
-      "capturedAt": "2026-11-09T22:43:18.427915Z"
+      "capturedAt": "2026-11-09T22:44:30.598083Z"
     }
   ]
 }

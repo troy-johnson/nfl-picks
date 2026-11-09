@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 9,
-  "generatedAt": "2026-11-08T22:57:41.700575Z",
+  "generatedAt": "2026-11-09T22:44:42.926968Z",
   "firstGame": "2026-11-05",
   "model": {
     "trainingSeasons": [
@@ -83,7 +83,7 @@
         "submittedPick": "JAX",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -150,7 +150,7 @@
         "submittedPick": "CIN",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -211,7 +211,7 @@
         "submittedPick": "CLE",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -278,7 +278,7 @@
         "submittedPick": "IND",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -345,7 +345,7 @@
         "submittedPick": "DEN",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -412,7 +412,7 @@
         "submittedPick": "DET",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -479,7 +479,7 @@
         "submittedPick": "LA",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -546,7 +546,7 @@
         "submittedPick": "NYG",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -613,7 +613,7 @@
         "submittedPick": "KC",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -674,7 +674,7 @@
         "submittedPick": "HOU",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -743,7 +743,7 @@
         "submittedPick": "SF",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -810,7 +810,7 @@
         "submittedPick": "SEA",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -877,7 +877,7 @@
         "submittedPick": "NE",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -944,7 +944,7 @@
         "submittedPick": "CHI",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     },
     {
@@ -955,38 +955,38 @@
       "gametime": "20:15",
       "stadium": "U.S. Bank Stadium",
       "roof": "dome",
-      "statisticalHomeProbability": 0.3532,
-      "marketHomeProbability": 0.387,
-      "spreadLine": -3.0,
+      "statisticalHomeProbability": 0.354,
+      "marketHomeProbability": 0.3678,
+      "spreadLine": -3.5,
       "homeQb": "Kyler Murray",
       "awayQb": "Josh Allen",
       "weather": null,
       "news": [
         {
-          "title": "Bills' Final Week 9 Injury Report: DJ Moore Cleared, Two OL Starters Questionable - Sports Illustrated",
-          "source": "Sports Illustrated",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUzFSVER5Ym9WdDJMZ3g5WUR0RWR2cnJWUzlFMXFwRktVY1NxZVBXOVNseVU4aWNFWE9kU1lER0JJWjNJa1dYQmloSUdROW9TV0ZQS2wzZXRFMVloVG1adl94ZFFBd1BCbS03LVhySnI1X3AtSWlYNHZsc0xoaFhHN3VSaDdnMU16RVNHZkN1X0JIMkxaa2hpZEVtbFYwR01WdkFRLS1SWjM4RzdmQnBVRHBaU0V3ek1q?oc=5"
+          "title": "S Geno Stone and WR Trent Sherfield Sr. elevated, WR Joshua Palmer placed on Injured Reserve | Week 9 - Buffalo Bills",
+          "source": "Buffalo Bills",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOa1VPMGRMX0FIUnVTYU8xdWx6U3V2T3Y4YkE1NnFfd3lKeGs3YUFhZDVnb2VYZ3I3bUoyQ2hVb25pbHU0Qkc5TVFWSGRTSlRmUW12TS13UjNWQk5TS3FVajlZOWNLYVRaOXNpcG96Tl9nZkhEUGdVYnpEWEdEeDZoZUQzRGhpYzdQckpBZEg2M1FGZDV6ZzRER2N5eGF5TFpMTDlWX2dfNEplVlFRTzFDMUVtRzU3NnFycTR4MlY4bXdmcE1VcDFveV94SQ?oc=5"
         },
         {
-          "title": "Vikings to start QB Carson Wentz against Bills with Kyler Murray ruled out - ESPN",
-          "source": "ESPN",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQaXctZDV1R21JRnZXSmFXVTZKa1l6OF9pUmdtMndFYkVQMi1Gc3FNU2tRXzVxQXFHbEdDUndmY2FXNjdpYjMwR2w3TWJVVUZkVTVEWWRsYlh3YTk0Tm5zYTZFVTF2X3JDRkRld1BFclpkTWYwUGpjVjV4bDJidUVrLUk3NC15X1NqWGlqSnpHclhmUQ?oc=5"
+          "title": "Bills Make Multiple Roster Moves Ahead of Vikings Showdown - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQSHFFdjdZSUN1dlI5M1hSS09NRlB2N2JUZmxkUDU4dTU4Z3E0bHh5ZzdZVU1FUEd2dEpUQTBLTllNcnk2ajhCb2U1cmNxdURHbmZSNXdLeVpZbC1mVVZ4bm9HRkZ6Rm92dkpfemFsME9VVjg0Y3pZUjNGdkNxaEx4UW93eWEwaWVuRFE?oc=5"
         }
       ],
       "flags": [],
       "pick": "BUF",
-      "homeWinProbability": 0.3853,
-      "winProbability": 0.6147,
-      "confidence": "low",
+      "homeWinProbability": 0.3671,
+      "winProbability": 0.6329,
+      "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-08T22:57:41.700575Z",
-      "marketUpdatedAt": "2026-11-08T22:55:41Z",
+      "marketCapturedAt": "2026-11-09T22:44:42.926968Z",
+      "marketUpdatedAt": "2026-11-09T22:42:34Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 2.0,
-      "generatedAt": "2026-11-08T22:57:41.700575Z",
-      "crowdHomeShare": 0.1836,
-      "crowdEntries": 662656,
-      "contrarianValue": 0.2034,
+      "marketAgeMinutes": 2.1,
+      "generatedAt": "2026-11-09T22:44:42.926968Z",
+      "crowdHomeShare": 0.1845,
+      "crowdEntries": 667991,
+      "contrarianValue": 0.1833,
       "poolPick": "BUF",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -1005,13 +1005,13 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-09T10:16:29.652966Z"
+        "checkedAt": "2026-11-09T22:44:44.378223Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-09T10:16:29.652966Z",
+    "checkedAt": "2026-11-09T22:44:44.378223Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
@@ -1026,11 +1026,11 @@
     "droppedWeeks": [
       3
     ],
-    "remainingGames": 138,
+    "remainingGames": 137,
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-09T10:16:29.652966Z",
+      "checkedAt": "2026-11-09T22:44:44.378223Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
@@ -1041,5 +1041,5 @@
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-09T10:16:29.652966Z"
+  "resultsUpdatedAt": "2026-11-09T22:44:44.378223Z"
 }
