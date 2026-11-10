@@ -83,7 +83,7 @@
         "submittedPick": "JAX",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -150,7 +150,7 @@
         "submittedPick": "CIN",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -211,7 +211,7 @@
         "submittedPick": "CLE",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -278,7 +278,7 @@
         "submittedPick": "IND",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -345,7 +345,7 @@
         "submittedPick": "DEN",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -412,7 +412,7 @@
         "submittedPick": "DET",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -479,7 +479,7 @@
         "submittedPick": "LA",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -546,7 +546,7 @@
         "submittedPick": "NYG",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -613,7 +613,7 @@
         "submittedPick": "KC",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -674,7 +674,7 @@
         "submittedPick": "HOU",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -743,7 +743,7 @@
         "submittedPick": "SF",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -810,7 +810,7 @@
         "submittedPick": "SEA",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -877,7 +877,7 @@
         "submittedPick": "NE",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -944,7 +944,7 @@
         "submittedPick": "CHI",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     },
     {
@@ -991,27 +991,27 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_09_BUF_MIN",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "matched",
+        "submittedPick": "BUF",
         "recommendedPick": "BUF",
-        "submittedAt": null
+        "submittedAt": "2026-11-05T19:49:49.040000Z"
       },
       "result": {
-        "status": "scheduled",
-        "detail": "11/9 - 8:15 PM EST",
-        "awayScore": null,
-        "homeScore": null,
+        "status": "in_progress",
+        "detail": "2:00 - 4th",
+        "awayScore": 23,
+        "homeScore": 6,
         "winner": null,
-        "submittedPick": null,
+        "submittedPick": "BUF",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-10T00:50:52.024700Z"
+        "checkedAt": "2026-11-10T04:22:38.999603Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-10T00:50:52.024700Z",
+    "checkedAt": "2026-11-10T04:22:38.999603Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
@@ -1030,16 +1030,16 @@
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-10T00:50:52.024700Z",
+      "checkedAt": "2026-11-10T04:22:38.999603Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
-        "matched": 12,
+        "matched": 13,
         "different": 2,
         "missing": 0,
-        "unavailable": 1
+        "unavailable": 0
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-10T00:50:52.024700Z"
+  "resultsUpdatedAt": "2026-11-10T04:22:38.999603Z"
 }
