@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 10,
-  "generatedAt": "2026-11-11T19:53:41.030517Z",
+  "generatedAt": "2026-11-11T20:14:49.174329Z",
   "firstGame": "2026-11-12",
   "model": {
     "trainingSeasons": [
@@ -28,7 +28,7 @@
       "stadium": "MetLife Stadium",
       "roof": "outdoors",
       "statisticalHomeProbability": 0.5594,
-      "marketHomeProbability": 0.5529,
+      "marketHomeProbability": 0.5533,
       "spreadLine": 2.5,
       "homeQb": "J.J. McCarthy",
       "awayQb": "Jayden Daniels",
@@ -36,18 +36,18 @@
       "news": [],
       "flags": [],
       "pick": "NYG",
-      "homeWinProbability": 0.5532,
-      "winProbability": 0.5532,
+      "homeWinProbability": 0.5536,
+      "winProbability": 0.5536,
       "confidence": "low",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:22Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
       "crowdHomeShare": 0.8497,
-      "crowdEntries": 339217,
-      "contrarianValue": -0.2968,
+      "crowdEntries": 340768,
+      "contrarianValue": -0.2964,
       "poolPick": "NYG",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -66,7 +66,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -90,13 +90,13 @@
       "winProbability": 0.585,
       "confidence": "low",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:22Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
       "crowdHomeShare": 0.8595,
-      "crowdEntries": 333035,
+      "crowdEntries": 334546,
       "contrarianValue": -0.2753,
       "poolPick": "DET",
       "poolPickReason": "accuracy: higher win probability",
@@ -116,7 +116,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -140,13 +140,13 @@
       "winProbability": 0.7777,
       "confidence": "high",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:22Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
       "crowdHomeShare": 0.0146,
-      "crowdEntries": 328394,
+      "crowdEntries": 329903,
       "contrarianValue": 0.1992,
       "poolPick": "BUF",
       "poolPickReason": "accuracy: higher win probability",
@@ -166,7 +166,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -190,14 +190,14 @@
       "winProbability": 0.5519,
       "confidence": "low",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:22Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
-      "crowdHomeShare": 0.3547,
-      "crowdEntries": 326725,
-      "contrarianValue": 0.2018,
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
+      "crowdHomeShare": 0.355,
+      "crowdEntries": 328217,
+      "contrarianValue": 0.2015,
       "poolPick": "NO",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -216,7 +216,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -228,7 +228,7 @@
       "stadium": "Huntington Bank Field",
       "roof": "outdoors",
       "statisticalHomeProbability": 0.4511,
-      "marketHomeProbability": 0.3272,
+      "marketHomeProbability": 0.3277,
       "spreadLine": -4.5,
       "homeQb": "Deshaun Watson",
       "awayQb": "C.J. Stroud",
@@ -236,18 +236,18 @@
       "news": [],
       "flags": [],
       "pick": "HOU",
-      "homeWinProbability": 0.3334,
-      "winProbability": 0.6666,
+      "homeWinProbability": 0.3339,
+      "winProbability": 0.6661,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:23Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
       "crowdHomeShare": 0.2772,
-      "crowdEntries": 328903,
-      "contrarianValue": 0.05,
+      "crowdEntries": 330403,
+      "contrarianValue": 0.0505,
       "poolPick": "HOU",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -266,7 +266,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -290,13 +290,13 @@
       "winProbability": 0.8113,
       "confidence": "high",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:23Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
       "crowdHomeShare": 0.0176,
-      "crowdEntries": 329441,
+      "crowdEntries": 330944,
       "contrarianValue": 0.1655,
       "poolPick": "JAX",
       "poolPickReason": "accuracy: higher win probability",
@@ -316,7 +316,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -340,13 +340,13 @@
       "winProbability": 0.6197,
       "confidence": "low",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:23Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
       "crowdHomeShare": 0.0533,
-      "crowdEntries": 330867,
+      "crowdEntries": 332379,
       "contrarianValue": 0.3251,
       "poolPick": "KC",
       "poolPickReason": "accuracy: higher win probability",
@@ -366,7 +366,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -390,14 +390,14 @@
       "winProbability": 0.6411,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:23Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
-      "crowdHomeShare": 0.74,
-      "crowdEntries": 327521,
-      "contrarianValue": -0.1004,
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
+      "crowdHomeShare": 0.7402,
+      "crowdEntries": 329025,
+      "contrarianValue": -0.1006,
       "poolPick": "IND",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -416,7 +416,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -428,7 +428,7 @@
       "stadium": "Lambeau Field",
       "roof": "outdoors",
       "statisticalHomeProbability": 0.6815,
-      "marketHomeProbability": 0.5981,
+      "marketHomeProbability": 0.597,
       "spreadLine": 3.0,
       "homeQb": "Jordan Love",
       "awayQb": "Kirk Cousins",
@@ -436,18 +436,18 @@
       "news": [],
       "flags": [],
       "pick": "GB",
-      "homeWinProbability": 0.6023,
-      "winProbability": 0.6023,
+      "homeWinProbability": 0.6012,
+      "winProbability": 0.6012,
       "confidence": "low",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:23Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
-      "crowdHomeShare": 0.7897,
-      "crowdEntries": 328753,
-      "contrarianValue": -0.1916,
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
+      "crowdHomeShare": 0.7895,
+      "crowdEntries": 330251,
+      "contrarianValue": -0.1925,
       "poolPick": "GB",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -466,7 +466,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -490,13 +490,13 @@
       "winProbability": 0.7824,
       "confidence": "high",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:23Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
       "crowdHomeShare": 0.0469,
-      "crowdEntries": 327279,
+      "crowdEntries": 328785,
       "contrarianValue": 0.169,
       "poolPick": "LA",
       "poolPickReason": "accuracy: higher win probability",
@@ -516,7 +516,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -540,14 +540,14 @@
       "winProbability": 0.7057,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:23Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
-      "crowdHomeShare": 0.0968,
-      "crowdEntries": 327456,
-      "contrarianValue": 0.1885,
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
+      "crowdHomeShare": 0.0966,
+      "crowdEntries": 328960,
+      "contrarianValue": 0.1887,
       "poolPick": "SEA",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -566,7 +566,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -590,13 +590,13 @@
       "winProbability": 0.6533,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:23Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
       "crowdHomeShare": 0.0858,
-      "crowdEntries": 327581,
+      "crowdEntries": 329075,
       "contrarianValue": 0.2613,
       "poolPick": "SF",
       "poolPickReason": "accuracy: higher win probability",
@@ -616,7 +616,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -640,13 +640,13 @@
       "winProbability": 0.6239,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:23Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
       "crowdHomeShare": 0.8218,
-      "crowdEntries": 326416,
+      "crowdEntries": 327903,
       "contrarianValue": -0.1971,
       "poolPick": "CIN",
       "poolPickReason": "accuracy: higher win probability",
@@ -666,7 +666,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     },
     {
@@ -678,7 +678,7 @@
       "stadium": "M&T Bank Stadium",
       "roof": "outdoors",
       "statisticalHomeProbability": 0.7452,
-      "marketHomeProbability": 0.6549,
+      "marketHomeProbability": 0.6535,
       "spreadLine": 4.5,
       "homeQb": "Tyler Huntley",
       "awayQb": "Justin Herbert",
@@ -686,18 +686,18 @@
       "news": [],
       "flags": [],
       "pick": "BAL",
-      "homeWinProbability": 0.6594,
-      "winProbability": 0.6594,
+      "homeWinProbability": 0.6581,
+      "winProbability": 0.6581,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-11T19:53:41.030517Z",
-      "marketUpdatedAt": "2026-11-11T19:49:23Z",
+      "marketCapturedAt": "2026-11-11T20:14:49.174329Z",
+      "marketUpdatedAt": "2026-11-11T20:12:47Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.3,
-      "generatedAt": "2026-11-11T19:53:41.030517Z",
+      "marketAgeMinutes": 2.0,
+      "generatedAt": "2026-11-11T20:14:49.174329Z",
       "crowdHomeShare": 0.8132,
-      "crowdEntries": 326044,
-      "contrarianValue": -0.1583,
+      "crowdEntries": 327528,
+      "contrarianValue": -0.1597,
       "poolPick": "BAL",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -716,13 +716,13 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-11T19:53:42.380737Z"
+        "checkedAt": "2026-11-11T20:14:50.612912Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-11T19:53:42.380737Z",
+    "checkedAt": "2026-11-11T20:14:50.612912Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
@@ -741,7 +741,7 @@
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-11T19:53:42.380737Z",
+      "checkedAt": "2026-11-11T20:14:50.612912Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
@@ -752,5 +752,5 @@
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-11T19:53:42.380737Z"
+  "resultsUpdatedAt": "2026-11-11T20:14:50.612912Z"
 }
