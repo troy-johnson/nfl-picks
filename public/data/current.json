@@ -77,7 +77,7 @@
         "submittedPick": "NYG",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -138,7 +138,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -199,7 +199,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -260,7 +260,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -321,7 +321,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -382,7 +382,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -443,7 +443,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -504,7 +504,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -565,7 +565,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -626,7 +626,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -687,7 +687,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -748,7 +748,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -809,7 +809,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     },
     {
@@ -870,13 +870,13 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-13T22:49:56.910228Z"
+        "checkedAt": "2026-11-14T01:05:16.876012Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-13T22:49:56.910228Z",
+    "checkedAt": "2026-11-14T01:05:16.876012Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
@@ -895,7 +895,7 @@
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-13T22:49:56.910228Z",
+      "checkedAt": "2026-11-14T01:05:16.876012Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
@@ -906,5 +906,5 @@
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-13T22:49:56.910228Z"
+  "resultsUpdatedAt": "2026-11-14T01:05:16.876012Z"
 }
