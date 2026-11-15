@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 10,
-  "generatedAt": "2026-11-15T19:09:18.432346Z",
+  "generatedAt": "2026-11-15T19:24:38.330080Z",
   "firstGame": "2026-11-12",
   "model": {
     "trainingSeasons": [
@@ -77,7 +77,7 @@
         "submittedPick": "NYG",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -138,7 +138,7 @@
         "submittedPick": "DET",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -198,14 +198,14 @@
       },
       "result": {
         "status": "in_progress",
-        "detail": "4:49 - 2nd",
+        "detail": "0:35 - 2nd",
         "awayScore": 10,
         "homeScore": 3,
         "winner": null,
         "submittedPick": "BUF",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -259,14 +259,14 @@
       },
       "result": {
         "status": "in_progress",
-        "detail": "3:17 - 2nd",
+        "detail": "Halftime",
         "awayScore": 7,
         "homeScore": 0,
         "winner": null,
         "submittedPick": "NO",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -326,14 +326,14 @@
       },
       "result": {
         "status": "in_progress",
-        "detail": "4:12 - 2nd",
+        "detail": "0:11 - 2nd",
         "awayScore": 17,
         "homeScore": 10,
         "winner": null,
         "submittedPick": "HOU",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -393,14 +393,14 @@
       },
       "result": {
         "status": "in_progress",
-        "detail": "4:58 - 2nd",
+        "detail": "1:16 - 2nd",
         "awayScore": 13,
         "homeScore": 10,
         "winner": null,
         "submittedPick": "JAX",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -460,14 +460,14 @@
       },
       "result": {
         "status": "in_progress",
-        "detail": "3:49 - 2nd",
-        "awayScore": 7,
+        "detail": "0:18 - 2nd",
+        "awayScore": 14,
         "homeScore": 3,
         "winner": null,
         "submittedPick": "KC",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -527,14 +527,14 @@
       },
       "result": {
         "status": "in_progress",
-        "detail": "6:35 - 2nd",
+        "detail": "0:39 - 2nd",
         "awayScore": 7,
-        "homeScore": 7,
+        "homeScore": 14,
         "winner": null,
         "submittedPick": "IND",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -594,14 +594,14 @@
       },
       "result": {
         "status": "in_progress",
-        "detail": "6:17 - 2nd",
+        "detail": "1:56 - 2nd",
         "awayScore": 17,
         "homeScore": 0,
         "winner": null,
         "submittedPick": "GB",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -613,7 +613,7 @@
       "stadium": "State Farm Stadium",
       "roof": null,
       "statisticalHomeProbability": 0.2471,
-      "marketHomeProbability": 0.202,
+      "marketHomeProbability": 0.2023,
       "spreadLine": -9.5,
       "homeQb": "Gardner Minshew",
       "awayQb": "Matthew Stafford",
@@ -626,30 +626,30 @@
       },
       "news": [
         {
+          "title": "Myles Garrett, Trey McBride Among 6 Make-or-Break Players for Rams vs. Cardinals in Week 10 - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdnBWWjFjNGtWcHZaRjcxVy0tNnN6SWphSjZTVlNVVG1EMWFCRUxFbnNYQ3pDTTh4cEUzS1N3WDZMZzh0UFdWSGJJUDQtVHBBaC13eTlyZnVVajRvQ1JaTjVjMm00RGZ6Vm1IN1BFY0RQVXJlUl9YYlh1aHd1RUstZXo5RUFpWl8w?oc=5"
+        },
+        {
           "title": "Rams Injury Report, Week 10 at Cardinals: Steve Avila and Terrance Ferguson ruled out; Trent McDuffie and Kam Curl questionable - Rams",
           "source": "Rams",
           "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOekdUVm5rVmxqR1hGYUoxV2xWdjhvcjVpVndmS3QyQkJTR0t6TFhKd3RmMHFib0I2UXlTVG92N2tLOVhiNklfV0E4bFI3WTZKQVdCQlJyZWhLN2dWRzB1QXkyaEszYmo2dFhXMzdxWXNEQXZpam10MlRyM1djbzEzcmZVZGV2WWxfTEVFTjVkTVNXeDZ0OTFiZGw2NE9vN2haYXc?oc=5"
-        },
-        {
-          "title": "Which receivers did Rams add after Puka Nacua goes to IR? - Turf Show Times",
-          "source": "Turf Show Times",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPYkRfTENjN2h5bWxvb0Q2am5QbHMtRHdhdzhHaTZJcUV2eldlaDFBTmlxSnczRXhUT1NNNmZ5SXdyOTl5Ry1sZ003bktjUU5ybW1GUUpQR19Fc2RaZFFDSV93OWIwbXhxYlRyWUNrYVF5RzhfMlEweEVjYjEtcXMyMlJqc21GQ3RVaTRuNkQwNmN0SHB3aFZBU0RLLWQ?oc=5"
         }
       ],
       "flags": [],
       "pick": "LA",
-      "homeWinProbability": 0.2042,
-      "winProbability": 0.7958,
+      "homeWinProbability": 0.2046,
+      "winProbability": 0.7954,
       "confidence": "high",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-15T19:09:18.432346Z",
-      "marketUpdatedAt": "2026-11-15T19:04:37Z",
+      "marketCapturedAt": "2026-11-15T19:24:38.330080Z",
+      "marketUpdatedAt": "2026-11-15T19:22:54Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.7,
-      "generatedAt": "2026-11-15T19:09:18.432346Z",
+      "marketAgeMinutes": 1.7,
+      "generatedAt": "2026-11-15T19:24:38.330080Z",
       "crowdHomeShare": 0.0474,
-      "crowdEntries": 637820,
-      "contrarianValue": 0.1546,
+      "crowdEntries": 638089,
+      "contrarianValue": 0.1549,
       "poolPick": "LA",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -668,7 +668,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -703,13 +703,13 @@
       "winProbability": 0.7041,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-15T19:09:18.432346Z",
-      "marketUpdatedAt": "2026-11-15T19:04:37Z",
+      "marketCapturedAt": "2026-11-15T19:24:38.330080Z",
+      "marketUpdatedAt": "2026-11-15T19:22:54Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.7,
-      "generatedAt": "2026-11-15T19:09:18.432346Z",
+      "marketAgeMinutes": 1.7,
+      "generatedAt": "2026-11-15T19:24:38.330080Z",
       "crowdHomeShare": 0.0901,
-      "crowdEntries": 638267,
+      "crowdEntries": 638528,
       "contrarianValue": 0.197,
       "poolPick": "SEA",
       "poolPickReason": "accuracy: higher win probability",
@@ -729,7 +729,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -741,7 +741,7 @@
       "stadium": "AT&T Stadium",
       "roof": null,
       "statisticalHomeProbability": 0.337,
-      "marketHomeProbability": 0.3462,
+      "marketHomeProbability": 0.3468,
       "spreadLine": -4.5,
       "homeQb": "Dak Prescott",
       "awayQb": "Brock Purdy",
@@ -754,30 +754,30 @@
       },
       "news": [
         {
+          "title": "49ers OT Williams, LB Greenlaw questionable, WR Evans out vs. Cowboys - ESPN",
+          "source": "ESPN",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOT2pMdEx5LWIzUEJvZlBURTJ2QlZGZGszcFN1ZERreFNhUkx3a2hOaGVjNW5yZTdmLXJtWjItQjgzdnJUc1VzWGVwY2x3dFRtdVBEUU5qTDZZRFM3YUc3M1dWWGVpVkdKRU85Ri1aZnNHdjA2UDc1RzllMDdxYndrR0lxZkFMZnMzTEJFVnNncEtidERGMjhKdHltVlBjUjg?oc=5"
+        },
+        {
           "title": "Jerry Rice Believes the Keenan Allen Trade Puts the 49ers on a Championship Collision Course - Yahoo Sports",
           "source": "Yahoo Sports",
           "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQQ1VNQ2ZWQU8tVF93UlJ2dkdmUVpkMDRUWG51eVYtSU1qRGoxOHp1bXlZYXlkamhSUmpKSi1HbTREcFV1LU1wM2tlZnd1WmRIR3g1VDVOVllpR3R4bDlaQnBNa1hMUUpRYkdVYjYxNjVuX1lMRV9rQzV3dGN0Q3I1bkNPQXZFVXBR?oc=5"
-        },
-        {
-          "title": "Will Deebo Samuel play tonight? Injury update, fantasy advice for 49ers WR in Week 10 - Yahoo Sports",
-          "source": "Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNN01OVlVXSXMtZ0dWa0hzV3dzckx4c2FfZEJwcE8zSmZuWGxsa2RNQXU4TkpKRDBZMV9zQ3JnUGxGV1JGeVNCeWx5UEthYjFjWFF2YTNSSXhGNXUwbGVrRm05T1k4UE9oWm0tOVZYNlgta2RSZUliakdVSmg2Ql9RN2JsR2Y0S3Zu?oc=5"
         }
       ],
       "flags": [],
       "pick": "SF",
-      "homeWinProbability": 0.3457,
-      "winProbability": 0.6543,
+      "homeWinProbability": 0.3463,
+      "winProbability": 0.6537,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-15T19:09:18.432346Z",
-      "marketUpdatedAt": "2026-11-15T19:04:37Z",
+      "marketCapturedAt": "2026-11-15T19:24:38.330080Z",
+      "marketUpdatedAt": "2026-11-15T19:22:54Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.7,
-      "generatedAt": "2026-11-15T19:09:18.432346Z",
-      "crowdHomeShare": 0.0908,
-      "crowdEntries": 637996,
-      "contrarianValue": 0.2554,
+      "marketAgeMinutes": 1.7,
+      "generatedAt": "2026-11-15T19:24:38.330080Z",
+      "crowdHomeShare": 0.0909,
+      "crowdEntries": 638261,
+      "contrarianValue": 0.2559,
       "poolPick": "SF",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -796,7 +796,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -837,13 +837,13 @@
       "winProbability": 0.6309,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-15T19:09:18.432346Z",
-      "marketUpdatedAt": "2026-11-15T19:04:37Z",
+      "marketCapturedAt": "2026-11-15T19:24:38.330080Z",
+      "marketUpdatedAt": "2026-11-15T19:22:54Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.7,
-      "generatedAt": "2026-11-15T19:09:18.432346Z",
+      "marketAgeMinutes": 1.7,
+      "generatedAt": "2026-11-15T19:24:38.330080Z",
       "crowdHomeShare": 0.8189,
-      "crowdEntries": 637220,
+      "crowdEntries": 637482,
       "contrarianValue": -0.1868,
       "poolPick": "CIN",
       "poolPickReason": "accuracy: higher win probability",
@@ -863,7 +863,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     },
     {
@@ -904,14 +904,14 @@
       "winProbability": 0.6688,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-15T19:09:18.432346Z",
-      "marketUpdatedAt": "2026-11-15T19:04:37Z",
+      "marketCapturedAt": "2026-11-15T19:24:38.330080Z",
+      "marketUpdatedAt": "2026-11-15T19:22:54Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 4.7,
-      "generatedAt": "2026-11-15T19:09:18.432346Z",
-      "crowdHomeShare": 0.8172,
-      "crowdEntries": 635986,
-      "contrarianValue": -0.1524,
+      "marketAgeMinutes": 1.7,
+      "generatedAt": "2026-11-15T19:24:38.330080Z",
+      "crowdHomeShare": 0.8171,
+      "crowdEntries": 636246,
+      "contrarianValue": -0.1523,
       "poolPick": "BAL",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -930,13 +930,13 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T19:09:19.637349Z"
+        "checkedAt": "2026-11-15T19:24:39.248883Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-15T19:09:19.637349Z",
+    "checkedAt": "2026-11-15T19:24:39.248883Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
@@ -955,7 +955,7 @@
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-15T19:09:19.637349Z",
+      "checkedAt": "2026-11-15T19:24:39.248883Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
@@ -966,5 +966,5 @@
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-15T19:09:19.637349Z"
+  "resultsUpdatedAt": "2026-11-15T19:24:39.248883Z"
 }
