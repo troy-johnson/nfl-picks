@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 10,
-  "generatedAt": "2026-11-16T22:34:35.352301Z",
+  "generatedAt": "2026-11-16T22:56:22.891219Z",
   "firstGame": "2026-11-12",
   "model": {
     "trainingSeasons": [
@@ -77,7 +77,7 @@
         "submittedPick": "NYG",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -138,7 +138,7 @@
         "submittedPick": "DET",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -205,7 +205,7 @@
         "submittedPick": "BUF",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -266,7 +266,7 @@
         "submittedPick": "NO",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -333,7 +333,7 @@
         "submittedPick": "HOU",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -400,7 +400,7 @@
         "submittedPick": "JAX",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -467,7 +467,7 @@
         "submittedPick": "KC",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -534,7 +534,7 @@
         "submittedPick": "IND",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -601,7 +601,7 @@
         "submittedPick": "GB",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -668,7 +668,7 @@
         "submittedPick": "LA",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -729,7 +729,7 @@
         "submittedPick": "SEA",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -796,7 +796,7 @@
         "submittedPick": "SF",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -863,7 +863,7 @@
         "submittedPick": "CIN",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     },
     {
@@ -880,11 +880,11 @@
       "homeQb": "Tyler Huntley",
       "awayQb": "Justin Herbert",
       "weather": {
-        "summary": "44\u00b0F \u00b7 wind 5 mph",
-        "temperatureF": 44.3,
+        "summary": "45\u00b0F \u00b7 wind 6 mph",
+        "temperatureF": 45.0,
         "precipitationPct": 0,
-        "windMph": 5.4,
-        "gustMph": 10.5
+        "windMph": 5.9,
+        "gustMph": 11.9
       },
       "news": [
         {
@@ -904,14 +904,14 @@
       "winProbability": 0.6662,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-16T22:34:35.352301Z",
-      "marketUpdatedAt": "2026-11-16T22:27:15Z",
+      "marketCapturedAt": "2026-11-16T22:56:22.891219Z",
+      "marketUpdatedAt": "2026-11-16T22:47:02Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 7.3,
-      "generatedAt": "2026-11-16T22:34:35.352301Z",
-      "crowdHomeShare": 0.8159,
-      "crowdEntries": 643455,
-      "contrarianValue": -0.1537,
+      "marketAgeMinutes": 9.3,
+      "generatedAt": "2026-11-16T22:56:22.891219Z",
+      "crowdHomeShare": 0.8158,
+      "crowdEntries": 643539,
+      "contrarianValue": -0.1536,
       "poolPick": "BAL",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -930,13 +930,13 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T22:34:36.256933Z"
+        "checkedAt": "2026-11-16T22:56:23.880962Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-16T22:34:36.256933Z",
+    "checkedAt": "2026-11-16T22:56:23.880962Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
@@ -955,7 +955,7 @@
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-16T22:34:36.256933Z",
+      "checkedAt": "2026-11-16T22:56:23.880962Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
@@ -966,5 +966,5 @@
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-16T22:34:36.256933Z"
+  "resultsUpdatedAt": "2026-11-16T22:56:23.880962Z"
 }
