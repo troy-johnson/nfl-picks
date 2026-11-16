@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 10,
-  "generatedAt": "2026-11-15T19:24:38.330080Z",
+  "generatedAt": "2026-11-16T00:02:00.196387Z",
   "firstGame": "2026-11-12",
   "model": {
     "trainingSeasons": [
@@ -77,7 +77,7 @@
         "submittedPick": "NYG",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -138,7 +138,7 @@
         "submittedPick": "DET",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -205,7 +205,7 @@
         "submittedPick": "BUF",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -266,7 +266,7 @@
         "submittedPick": "NO",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -333,7 +333,7 @@
         "submittedPick": "HOU",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -400,7 +400,7 @@
         "submittedPick": "JAX",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -467,7 +467,7 @@
         "submittedPick": "KC",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -534,7 +534,7 @@
         "submittedPick": "IND",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -601,7 +601,7 @@
         "submittedPick": "GB",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -660,15 +660,15 @@
         "submittedAt": "2026-11-13T00:03:10.833000Z"
       },
       "result": {
-        "status": "in_progress",
-        "detail": "7:06 - 2nd",
-        "awayScore": 3,
+        "status": "final",
+        "detail": "Final",
+        "awayScore": 34,
         "homeScore": 6,
-        "winner": null,
+        "winner": "LA",
         "submittedPick": "LA",
-        "pickResult": "pending",
+        "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -721,15 +721,15 @@
         "submittedAt": "2026-11-13T00:02:32.465000Z"
       },
       "result": {
-        "status": "in_progress",
-        "detail": "4:00 - 2nd",
-        "awayScore": 7,
-        "homeScore": 10,
-        "winner": null,
+        "status": "final",
+        "detail": "Final",
+        "awayScore": 21,
+        "homeScore": 13,
+        "winner": "SEA",
         "submittedPick": "SEA",
-        "pickResult": "pending",
+        "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -789,14 +789,14 @@
       },
       "result": {
         "status": "in_progress",
-        "detail": "0:02 - 1st",
-        "awayScore": 7,
-        "homeScore": 10,
+        "detail": "9:08 - 4th",
+        "awayScore": 38,
+        "homeScore": 25,
         "winner": null,
         "submittedPick": "SF",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -807,44 +807,44 @@
       "gametime": "20:20",
       "stadium": "Paycor Stadium",
       "roof": "outdoors",
-      "statisticalHomeProbability": 0.6092,
-      "marketHomeProbability": 0.6321,
+      "statisticalHomeProbability": 0.6076,
+      "marketHomeProbability": 0.6474,
       "spreadLine": 3.5,
       "homeQb": "Joe Burrow",
       "awayQb": "Aaron Rodgers",
       "weather": {
         "summary": "40\u00b0F \u00b7 wind 4 mph",
-        "temperatureF": 39.6,
+        "temperatureF": 39.7,
         "precipitationPct": 0,
-        "windMph": 4.2,
-        "gustMph": 11.4
+        "windMph": 3.7,
+        "gustMph": 6.5
       },
       "news": [
         {
-          "title": "Bengals Place Key Starter on Injury Report Ahead of Sunday Night's Game vs Steelers - Sports Illustrated",
-          "source": "Sports Illustrated",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQkNZQWRHcFJrNjN1SlBsSkhPYmt3SGx6SWtscTJoeGt6SG92UTlBVkFZNklhV3lScXJzNUlWNGI1bnVWaGVhRjh0UzIzZlFldGVBQ3IzOGh6WEkycE9BdzA1U1JDNTRYWXN1SjhjSzZTLTdETWZlZGlWeFhMUGZDU1luNlBVVUxZMTBHNnYwV2NlSkxlcXk5NTZjUm1Sem5maTdaQUxhN1VUeHJZdG9jTC1ub0tVWXFD?oc=5"
+          "title": "Steelers inactives for Week 10 vs. Bengals - Steelers.com",
+          "source": "Steelers.com",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOV0pTMnZPZ25zN0dEaWpmTDl1bDBPRDRscWhvQ2l0LXgxSEhveTM0c0FnSzQwZ01xdUtERXBRRlh5em9yMFpGWmFCR2twLXYyaDBwZWpNWUhoOFZOT0ZpbmRGQnlnSDVCR25sS3A5OTBpWWp2dTlwejhvMGVIQS0zTlhlbw?oc=5"
         },
         {
-          "title": "Steelers receive huge injury update on two starters - Yahoo Sports",
-          "source": "Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPd0lueVNxcmFiN2NjWGJjVDRNRmhOdmVraXdiWXZ2VHlqNWpsX1hCWXlRcC1hS3ZjblpkTU9peWcyYWlnWmJ0RGFDSElUVVRvV0N4a21hU3EyLVppQVZkSGV6d3FVeGpmTll1WVNyVzJYb2ZXWkJGSG9seVhYVkNTeXQ2NVg5Wm0y?oc=5"
+          "title": "Steelers\u2019 DeShon Elliott Suffers Pregame Injury, Out Against Bengals - Sports Illustrated",
+          "source": "Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPamlPRWhaN0M3SWctdEFuMDZlUE1KVGtvZy1UM0pzMTNDbkU4MlBfNDZObWNyZlhUcVdJN0xRR2hJWEV2cG9OZ2JOZnZ0VUFLczBoamRTb013d20wbjZ2N3FLbWpvR1FOYzZBbFRKYmt3bV8xVmpDVXItT2tMQVFRUnhqdHd1R1dRZWZmTHplMk8tUG9LOU03dHdMYV9LU2c?oc=5"
         }
       ],
       "flags": [],
       "pick": "CIN",
-      "homeWinProbability": 0.6309,
-      "winProbability": 0.6309,
+      "homeWinProbability": 0.6454,
+      "winProbability": 0.6454,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-15T19:24:38.330080Z",
-      "marketUpdatedAt": "2026-11-15T19:22:54Z",
+      "marketCapturedAt": "2026-11-16T00:02:00.196387Z",
+      "marketUpdatedAt": "2026-11-15T23:58:28Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 1.7,
-      "generatedAt": "2026-11-15T19:24:38.330080Z",
-      "crowdHomeShare": 0.8189,
-      "crowdEntries": 637482,
-      "contrarianValue": -0.1868,
+      "marketAgeMinutes": 3.5,
+      "generatedAt": "2026-11-16T00:02:00.196387Z",
+      "crowdHomeShare": 0.8179,
+      "crowdEntries": 640866,
+      "contrarianValue": -0.1705,
       "poolPick": "CIN",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -863,7 +863,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     },
     {
@@ -874,43 +874,43 @@
       "gametime": "20:15",
       "stadium": "M&T Bank Stadium",
       "roof": "outdoors",
-      "statisticalHomeProbability": 0.7448,
+      "statisticalHomeProbability": 0.7427,
       "marketHomeProbability": 0.6648,
       "spreadLine": 4.5,
       "homeQb": "Tyler Huntley",
       "awayQb": "Justin Herbert",
       "weather": {
-        "summary": "40\u00b0F \u00b7 wind 4 mph",
-        "temperatureF": 39.5,
+        "summary": "42\u00b0F \u00b7 wind 5 mph",
+        "temperatureF": 41.9,
         "precipitationPct": 0,
-        "windMph": 4.4,
-        "gustMph": 4.5
+        "windMph": 5.1,
+        "gustMph": 8.3
       },
       "news": [
         {
-          "title": "Chargers Injury Report: Kayode Awosika, David Njoku questionable vs. Ravens - Yahoo Sports",
-          "source": "Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPOUhISlB5dHdyNTJ4LWdoSXRSTEVMRkROd2xBRzFDanpMOXI1M0w0Zlk0aDdjN0tadzIzSkkwaTJoTmhud1lnZFdnWWlhbktjOWtLMUJaVVdfc05xLXpzOU8yZ21XN3owMngzMWNzSER3dTN4WVFqT3FtOGRpX3R4bVlPQUFmV29CYzRvb2lwQQ?oc=5"
+          "title": "Chargers rule out Ladd McConkey for Monday night at Baltimore - NBC Sports",
+          "source": "NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxON0lYLWNLakFZcm5hTEFqRW5TQXFDamhDR3h1S20zSi1IUlJSZXZfenFLSHM4N19zNVB1QWdQQ0hWLUtnOUxaQlA2VTktOTNrT19weGczQnAySWljbGsyeWZoV2lHNTV1bGM1bTF1ekxLTWkwYk1sYUJSRWNRcnUyaHljSkplU21ra01GdDlUZjhXRVg0M3ZpOE5pOEo3WEVGcEtXd1ppNG5pM1diRkQ0UjJTc0plcEo1ZXd0MkxULXo?oc=5"
         },
         {
-          "title": "Ravens seek fast start from Jacoby Brissett vs. winless Chargers - Kansas City Star",
-          "source": "Kansas City Star",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE82WEdrN2RkN0xsd3draHFXYTFuXzZ3TTdBeGdvNmxaendOMkMwRExwdjYxYkgxYkpuTkwyck1IeUlHWlNuVUNfMml3WjdYbng1cUx1bEFORXRYYXFKR2Y4ajdYRVdiTEdkZ2c0?oc=5"
+          "title": "Ladd McConkey downgraded to out vs. Ravens due to back issue - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYzU2Qk1rbi1TWkd1QjhhNUNaRGd2d1BkdHMwR05WR19CMGMzbnZXTjh0Q0tIRHIwZXQxTlY1bGN2RU1xUzRJS3hNZURQMlRaTVE5aFJrQjE5VThJcWlrOTRqcDEwQW1HZUVuY1lNbkZUanFIRnNhamZUa1NNdXo2Z3pPUVBVNl9CZ0RxMV9oSGJnYjFOWnVMV1NHZnl0Q3lMRWc5MUVWaGZQQWVDdE4tLQ?oc=5"
         }
       ],
       "flags": [],
       "pick": "BAL",
-      "homeWinProbability": 0.6688,
-      "winProbability": 0.6688,
+      "homeWinProbability": 0.6687,
+      "winProbability": 0.6687,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-15T19:24:38.330080Z",
-      "marketUpdatedAt": "2026-11-15T19:22:54Z",
+      "marketCapturedAt": "2026-11-16T00:02:00.196387Z",
+      "marketUpdatedAt": "2026-11-15T23:58:28Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 1.7,
-      "generatedAt": "2026-11-15T19:24:38.330080Z",
+      "marketAgeMinutes": 3.5,
+      "generatedAt": "2026-11-16T00:02:00.196387Z",
       "crowdHomeShare": 0.8171,
-      "crowdEntries": 636246,
+      "crowdEntries": 639443,
       "contrarianValue": -0.1523,
       "poolPick": "BAL",
       "poolPickReason": "accuracy: higher win probability",
@@ -930,20 +930,20 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-15T22:03:30.333908Z"
+        "checkedAt": "2026-11-16T00:02:01.194815Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-15T22:03:30.333908Z",
+    "checkedAt": "2026-11-16T00:02:01.194815Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
     "entries": 9,
     "rank": 8,
-    "points": 810,
-    "leaderPoints": 880,
+    "points": 830,
+    "leaderPoints": 900,
     "correctPicksBehind": 7.0,
     "pointsPerPick": 10,
     "dropLowestWeek": true,
@@ -951,11 +951,11 @@
     "droppedWeeks": [
       3
     ],
-    "remainingGames": 127,
+    "remainingGames": 124,
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-15T22:03:30.333908Z",
+      "checkedAt": "2026-11-16T00:02:01.194815Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
@@ -966,5 +966,5 @@
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-15T22:03:30.333908Z"
+  "resultsUpdatedAt": "2026-11-16T00:02:01.194815Z"
 }
