@@ -1,0 +1,168 @@
+{
+  "provider": "The Odds API",
+  "season": 2026,
+  "gameDay": "2026-11-16",
+  "captureWindowOpensAt": "2026-11-16T22:15:00Z",
+  "captureWindowClosesAt": "2026-11-17T00:30:00Z",
+  "capturedAt": "2026-11-16T22:31:50.012352Z",
+  "firstKickoffAt": "2026-11-17T01:15:00Z",
+  "market": "h2h",
+  "region": "us",
+  "games": [
+    {
+      "gameId": "2026_10_LAC_BAL",
+      "kickoffAt": "2026-11-17T01:15:00Z",
+      "homeTeam": "BAL",
+      "awayTeam": "LAC",
+      "oddsEventId": "35e3bdff558b5d1506251e814986f164",
+      "marketHomeProbability": 0.6621782046579701,
+      "published": null,
+      "bookmakers": [
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "lastUpdate": "2026-11-16T22:30:55Z",
+          "homeMoneyline": -225,
+          "awayMoneyline": 185,
+          "homeProbability": 0.6636481241914618
+        },
+        {
+          "key": "betus",
+          "title": "BetUS",
+          "lastUpdate": "2026-11-16T22:30:55Z",
+          "homeMoneyline": -215,
+          "awayMoneyline": 183,
+          "homeProbability": 0.658887866154096
+        },
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "lastUpdate": "2026-11-16T22:31:40Z",
+          "homeMoneyline": -230,
+          "awayMoneyline": 190,
+          "homeProbability": 0.6690070210631895
+        },
+        {
+          "key": "lowvig",
+          "title": "LowVig.ag",
+          "lastUpdate": "2026-11-16T22:31:14Z",
+          "homeMoneyline": -210,
+          "awayMoneyline": 180,
+          "homeProbability": 0.6547884187082406
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "lastUpdate": "2026-11-16T22:30:56Z",
+          "homeMoneyline": -210,
+          "awayMoneyline": 180,
+          "homeProbability": 0.6547884187082406
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "lastUpdate": "2026-11-16T22:31:26Z",
+          "homeMoneyline": -240,
+          "awayMoneyline": 190,
+          "homeProbability": 0.6718146718146719
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "lastUpdate": "2026-11-16T22:29:25Z",
+          "homeMoneyline": -225,
+          "awayMoneyline": 185,
+          "homeProbability": 0.6636481241914618
+        },
+        {
+          "key": "bovada",
+          "title": "Bovada",
+          "lastUpdate": "2026-11-16T22:27:15Z",
+          "homeMoneyline": -220,
+          "awayMoneyline": 180,
+          "homeProbability": 0.6581196581196581
+        },
+        {
+          "key": "mybookieag",
+          "title": "MyBookie.ag",
+          "lastUpdate": "2026-11-16T22:31:26Z",
+          "homeMoneyline": -224,
+          "awayMoneyline": 187,
+          "homeProbability": 0.6649015389707099
+        }
+      ],
+      "week": 10,
+      "baseline": {
+        "probability": 0.7452189163327918,
+        "marketWeight": 0.9500000000000001,
+        "validationSeason": 2025,
+        "trainingSeasons": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "features": {
+          "diff_off_epa": 0.17839049318793315,
+          "diff_off_success": 0.08138872472851588,
+          "diff_pass_epa": 0.21253705454884408,
+          "diff_rush_epa": 0.11000488114941515,
+          "diff_def_epa_allowed": 0.053489304763542855,
+          "diff_def_success_allowed": 0.01109611775420355,
+          "diff_def_pass_epa_allowed": 0.12711662211474498,
+          "diff_def_rush_epa_allowed": -0.041930416292888864,
+          "rest_diff": 3.0,
+          "neutral_site": 0.0
+        },
+        "blendedProbability": 0.6663302402417112
+      },
+      "candidate": {
+        "probability": 0.7222563608870435,
+        "marketWeight": 1.0,
+        "validationSeason": 2025,
+        "trainingSeasons": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "features": {
+          "diff_off_epa": 0.13719945313891257,
+          "diff_off_success": 0.05912392568733599,
+          "diff_pass_epa": 0.11336435757750526,
+          "diff_rush_epa": 0.10309733786311916,
+          "diff_def_epa_allowed": 0.05335449617276339,
+          "diff_def_success_allowed": 0.019543399498415326,
+          "diff_def_pass_epa_allowed": 0.126912944261633,
+          "diff_def_rush_epa_allowed": -0.024017718183923176,
+          "rest_diff": 3.0,
+          "neutral_site": 0.0
+        },
+        "blendedProbability": 0.6621782046579701
+      }
+    }
+  ],
+  "candidate": "baseline_core_exp4",
+  "frozenAt": "2026-10-10T23:28:24.039673-06:00",
+  "specHash": "86086fbf3f7695f68bee48a76bcb7bf1a2e2a7c5b30d4e3a5db9673ff7ecfb24",
+  "sourceHashes": {
+    "forward-pbp-2021.csv.gz": "e8743a568f99667a8bdcd29ba12224ee1782ad2b7916bee78ee335c099383739",
+    "forward-pbp-2022.csv.gz": "0c69a71eb39498956c7b1d5c1ca52ce7fe679934a95d1af249facb5ea9829ea4",
+    "forward-pbp-2023.csv.gz": "4649804ee0f0a40b41e51ec75a1ce921949d7fab5459213488656b92f78560e8",
+    "forward-pbp-2024.csv.gz": "23370d5d10f8104d80d46a1fc5e61f4f6f5a3263fe96fe2dd629913cfcb08c06",
+    "forward-pbp-2025.csv.gz": "2f135887790a013fd004e609e37096bb4816d5cc80b9f19122e1bad478961978",
+    "forward-pbp-2026.csv.gz": "46acccafd61ea4a5dcac028160f0ed75b02f2f3312aacc31f572e6e029858454"
+  },
+  "predictionSourceHashes": {
+    "recency_experiments.py": "7fd8b4d74e9939fa749cd01978b5ca0a0ce4e1b68da1fec75e4344a740cc33fd",
+    "predict.py": "c269ee027b076c0d1db8c197dbf0de0fc7b98e829fbdc7d2ac97ce3940530dd8",
+    "experiments.py": "b302b5df165535d13f1883f5ea284efbd741b2db1771432ac7d1cd413733c50c",
+    "recency_forward.py": "2a9a94de7a9e4e48090fd51550081af1eae89d19d314e013baf2adb089cc4a93"
+  },
+  "scheduleHash": "2bd71276a8f24ef8d65bbb68f04a2d5cdc1f2d88262bcc346fec19fdd09c3c30",
+  "savedAt": "2026-11-16T22:31:50.023697+00:00"
+}

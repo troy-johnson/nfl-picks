@@ -193,7 +193,7 @@
       "espnSpread": 4.5,
       "espnHomeMoneyline": "180",
       "espnAwayMoneyline": "-218",
-      "homeWin": null,
+      "homeWin": false,
       "capturedAt": "2026-11-15T19:24:23.843927Z"
     },
     {
@@ -209,7 +209,7 @@
       "espnSpread": -3.5,
       "espnHomeMoneyline": "-192",
       "espnAwayMoneyline": "160",
-      "homeWin": null,
+      "homeWin": true,
       "capturedAt": "2026-11-16T00:25:22.176737Z"
     },
     {
@@ -219,14 +219,14 @@
       "homeTeam": "BAL",
       "espnEventId": "401873065",
       "lockAt": "2026-11-17T01:15:00Z",
-      "entries": 639657,
-      "homeShare": 0.817100414753532,
-      "awayShare": 0.18289958524646802,
+      "entries": 643439,
+      "homeShare": 0.8159545815531853,
+      "awayShare": 0.18404541844681468,
       "espnSpread": -5.5,
       "espnHomeMoneyline": "-225",
       "espnAwayMoneyline": "185",
       "homeWin": null,
-      "capturedAt": "2026-11-16T00:25:22.176737Z"
+      "capturedAt": "2026-11-16T22:31:40.464546Z"
     }
   ]
 }
