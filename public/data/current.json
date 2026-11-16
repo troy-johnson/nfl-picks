@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 10,
-  "generatedAt": "2026-11-16T00:02:00.196387Z",
+  "generatedAt": "2026-11-16T00:25:37.296623Z",
   "firstGame": "2026-11-12",
   "model": {
     "trainingSeasons": [
@@ -77,7 +77,7 @@
         "submittedPick": "NYG",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -138,7 +138,7 @@
         "submittedPick": "DET",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -205,7 +205,7 @@
         "submittedPick": "BUF",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -266,7 +266,7 @@
         "submittedPick": "NO",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -333,7 +333,7 @@
         "submittedPick": "HOU",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -400,7 +400,7 @@
         "submittedPick": "JAX",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -467,7 +467,7 @@
         "submittedPick": "KC",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -534,7 +534,7 @@
         "submittedPick": "IND",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -601,7 +601,7 @@
         "submittedPick": "GB",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -668,7 +668,7 @@
         "submittedPick": "LA",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -729,7 +729,7 @@
         "submittedPick": "SEA",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -789,14 +789,14 @@
       },
       "result": {
         "status": "in_progress",
-        "detail": "9:08 - 4th",
-        "awayScore": 38,
-        "homeScore": 25,
+        "detail": "3:18 - 4th",
+        "awayScore": 46,
+        "homeScore": 32,
         "winner": null,
         "submittedPick": "SF",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -807,8 +807,8 @@
       "gametime": "20:20",
       "stadium": "Paycor Stadium",
       "roof": "outdoors",
-      "statisticalHomeProbability": 0.6076,
-      "marketHomeProbability": 0.6474,
+      "statisticalHomeProbability": 0.6061,
+      "marketHomeProbability": 0.6476,
       "spreadLine": 3.5,
       "homeQb": "Joe Burrow",
       "awayQb": "Aaron Rodgers",
@@ -826,25 +826,25 @@
           "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOV0pTMnZPZ25zN0dEaWpmTDl1bDBPRDRscWhvQ2l0LXgxSEhveTM0c0FnSzQwZ01xdUtERXBRRlh5em9yMFpGWmFCR2twLXYyaDBwZWpNWUhoOFZOT0ZpbmRGQnlnSDVCR25sS3A5OTBpWWp2dTlwejhvMGVIQS0zTlhlbw?oc=5"
         },
         {
-          "title": "Steelers\u2019 DeShon Elliott Suffers Pregame Injury, Out Against Bengals - Sports Illustrated",
-          "source": "Sports Illustrated",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPamlPRWhaN0M3SWctdEFuMDZlUE1KVGtvZy1UM0pzMTNDbkU4MlBfNDZObWNyZlhUcVdJN0xRR2hJWEV2cG9OZ2JOZnZ0VUFLczBoamRTb013d20wbjZ2N3FLbWpvR1FOYzZBbFRKYmt3bV8xVmpDVXItT2tMQVFRUnhqdHd1R1dRZWZmTHplMk8tUG9LOU03dHdMYV9LU2c?oc=5"
+          "title": "Steelers safety DeShon Elliott suffers pre-game injury, out vs. Bengals - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNd0hPdWN1MXJuTm1ibFprTmhDZVJPcjRuTERzZnZ1dlBHd0tQQXN4MDcwUUxwdWNJUWk2N2ltRFU2cjVIclNhQVR5UWFSOEVtdThUazJBNXdqaTBNRkt3c19ocm56N3VuRmNHOEswb2JXNnBGTV9vdE5kTkU2OVZKUHZnWU80TzZYNjZhTDJvUmg?oc=5"
         }
       ],
       "flags": [],
       "pick": "CIN",
-      "homeWinProbability": 0.6454,
-      "winProbability": 0.6454,
+      "homeWinProbability": 0.6455,
+      "winProbability": 0.6455,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-16T00:02:00.196387Z",
-      "marketUpdatedAt": "2026-11-15T23:58:28Z",
+      "marketCapturedAt": "2026-11-16T00:25:37.296623Z",
+      "marketUpdatedAt": "2026-11-16T00:13:42Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 3.5,
-      "generatedAt": "2026-11-16T00:02:00.196387Z",
-      "crowdHomeShare": 0.8179,
-      "crowdEntries": 640866,
-      "contrarianValue": -0.1705,
+      "marketAgeMinutes": 11.9,
+      "generatedAt": "2026-11-16T00:25:37.296623Z",
+      "crowdHomeShare": 0.8177,
+      "crowdEntries": 641127,
+      "contrarianValue": -0.1701,
       "poolPick": "CIN",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -863,7 +863,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     },
     {
@@ -874,7 +874,7 @@
       "gametime": "20:15",
       "stadium": "M&T Bank Stadium",
       "roof": "outdoors",
-      "statisticalHomeProbability": 0.7427,
+      "statisticalHomeProbability": 0.7421,
       "marketHomeProbability": 0.6648,
       "spreadLine": 4.5,
       "homeQb": "Tyler Huntley",
@@ -904,13 +904,13 @@
       "winProbability": 0.6687,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-16T00:02:00.196387Z",
-      "marketUpdatedAt": "2026-11-15T23:58:28Z",
+      "marketCapturedAt": "2026-11-16T00:25:37.296623Z",
+      "marketUpdatedAt": "2026-11-16T00:13:42Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 3.5,
-      "generatedAt": "2026-11-16T00:02:00.196387Z",
+      "marketAgeMinutes": 11.9,
+      "generatedAt": "2026-11-16T00:25:37.296623Z",
       "crowdHomeShare": 0.8171,
-      "crowdEntries": 639443,
+      "crowdEntries": 639657,
       "contrarianValue": -0.1523,
       "poolPick": "BAL",
       "poolPickReason": "accuracy: higher win probability",
@@ -930,13 +930,13 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-16T00:02:01.194815Z"
+        "checkedAt": "2026-11-16T00:25:38.148193Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-16T00:02:01.194815Z",
+    "checkedAt": "2026-11-16T00:25:38.148193Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
@@ -955,7 +955,7 @@
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-16T00:02:01.194815Z",
+      "checkedAt": "2026-11-16T00:25:38.148193Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
@@ -966,5 +966,5 @@
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-16T00:02:01.194815Z"
+  "resultsUpdatedAt": "2026-11-16T00:25:38.148193Z"
 }
