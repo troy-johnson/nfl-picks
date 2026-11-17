@@ -2,104 +2,104 @@
   "candidate": "baseline_core_exp4",
   "frozenAt": "2026-10-10T23:28:24.039673-06:00",
   "specHash": "86086fbf3f7695f68bee48a76bcb7bf1a2e2a7c5b30d4e3a5db9673ff7ecfb24",
-  "games": 50,
+  "games": 51,
   "minimumCompletedGames": 250,
-  "status": "insufficient games: 50 of 250",
+  "status": "insufficient games: 51 of 250",
   "metrics": {
     "baseline": {
-      "games": 50,
-      "accuracy": 0.6,
-      "brier": 0.21343069191355057,
-      "logLoss": 0.6136562069475994
+      "games": 51,
+      "accuracy": 0.5882352941176471,
+      "brier": 0.22013501625368134,
+      "logLoss": 0.6284345283400907
     },
     "candidate": {
-      "games": 50,
-      "accuracy": 0.6,
-      "brier": 0.22346931626185085,
-      "logLoss": 0.6371490418644007
+      "games": 51,
+      "accuracy": 0.5882352941176471,
+      "brier": 0.22931607968498702,
+      "logLoss": 0.6497746832436897
     },
     "baselineBlend": {
-      "games": 50,
-      "accuracy": 0.72,
-      "brier": 0.20859901993952004,
-      "logLoss": 0.6108694529389572
+      "games": 51,
+      "accuracy": 0.7058823529411765,
+      "brier": 0.21321464678503096,
+      "logLoss": 0.6204132581435489
     },
     "candidateBlend": {
-      "games": 50,
-      "accuracy": 0.72,
-      "brier": 0.20878599215899743,
-      "logLoss": 0.6121351703481787
+      "games": 51,
+      "accuracy": 0.7058823529411765,
+      "brier": 0.21328979573870438,
+      "logLoss": 0.6214116720129407
     },
     "market": {
-      "games": 50,
-      "accuracy": 0.72,
-      "brier": 0.20878599215899743,
-      "logLoss": 0.6121351703481787
+      "games": 51,
+      "accuracy": 0.7058823529411765,
+      "brier": 0.21328979573870438,
+      "logLoss": 0.6214116720129407
     }
   },
   "comparisons": {
     "candidate_vs_baseline": {
-      "games": 50,
+      "games": 51,
       "weekBlocks": 6,
       "repeats": 10000,
       "brier": {
-        "difference": 0.010038624348300275,
+        "difference": 0.009181063431305656,
         "ci95": [
-          -0.00010660562455277233,
-          0.017367324022969022
+          -0.002028827411320788,
+          0.01690742269253244
         ]
       },
       "logLoss": {
-        "difference": 0.02349283491680132,
+        "difference": 0.02134015490359899,
         "ci95": [
-          0.002872618886314447,
-          0.03774362730005631
+          -0.0023037138165630552,
+          0.03653176504307196
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidate_vs_market": {
-      "games": 50,
+      "games": 51,
       "weekBlocks": 6,
       "repeats": 10000,
       "brier": {
-        "difference": 0.014683324102853399,
+        "difference": 0.0160262839462826,
         "ci95": [
-          0.003093429373484559,
-          0.026463314414186718
+          0.0033739759260949208,
+          0.030000343087284564
         ]
       },
       "logLoss": {
-        "difference": 0.025013871516222082,
+        "difference": 0.02836301123074909,
         "ci95": [
-          -0.0011459598845355004,
-          0.05422791068689799
+          0.0005178018697180798,
+          0.062404314692800555
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidateBlend_vs_baselineBlend": {
-      "games": 50,
+      "games": 51,
       "weekBlocks": 6,
       "repeats": 10000,
       "brier": {
-        "difference": 0.00018697221947742052,
+        "difference": 7.514895367347022e-05,
         "ci95": [
-          -0.0004197366688278867,
+          -0.0008444264744692331,
           0.00043312724929635754
         ]
       },
       "logLoss": {
-        "difference": 0.0012657174092213551,
+        "difference": 0.000998413869391824,
         "ci95": [
-          -0.0008127537731794032,
-          0.0024331382903950713
+          -0.001648338668586588,
+          0.002432036687696832
         ]
       },
       "status": "no confirmed improvement"
     },
     "candidateBlend_vs_market": {
-      "games": 50,
+      "games": 51,
       "weekBlocks": 6,
       "repeats": 10000,
       "brier": {
@@ -169,7 +169,8 @@
     "2026_10_LA_ARI",
     "2026_10_SEA_LV",
     "2026_10_SF_DAL",
-    "2026_10_PIT_CIN"
+    "2026_10_PIT_CIN",
+    "2026_10_LAC_BAL"
   ],
-  "generatedAt": "2026-11-16T06:41:42.499566+00:00"
+  "generatedAt": "2026-11-17T04:47:44.466272+00:00"
 }
