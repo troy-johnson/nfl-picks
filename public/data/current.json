@@ -58,15 +58,15 @@
         "submittedAt": "2026-11-20T00:16:40.370000Z"
       },
       "result": {
-        "status": "in_progress",
-        "detail": "3:04 - 4th",
+        "status": "final",
+        "detail": "Final",
         "awayScore": 3,
         "homeScore": 26,
-        "winner": null,
+        "winner": "HOU",
         "submittedPick": "HOU",
-        "pickResult": "pending",
+        "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     },
     {
@@ -116,7 +116,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     },
     {
@@ -166,7 +166,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     },
     {
@@ -218,7 +218,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     },
     {
@@ -268,7 +268,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     },
     {
@@ -318,7 +318,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     },
     {
@@ -368,7 +368,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     },
     {
@@ -418,7 +418,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     },
     {
@@ -468,7 +468,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     },
     {
@@ -518,7 +518,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     },
     {
@@ -570,7 +570,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     },
     {
@@ -620,7 +620,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     },
     {
@@ -670,20 +670,20 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-20T04:03:31.061605Z"
+        "checkedAt": "2026-11-20T07:43:00.507000Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-20T04:03:31.061605Z",
+    "checkedAt": "2026-11-20T07:43:00.507000Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
     "entries": 9,
     "rank": 8,
-    "points": 850,
-    "leaderPoints": 920,
+    "points": 860,
+    "leaderPoints": 930,
     "correctPicksBehind": 7.0,
     "pointsPerPick": 10,
     "dropLowestWeek": true,
@@ -695,7 +695,7 @@
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-20T04:03:31.061605Z",
+      "checkedAt": "2026-11-20T07:43:00.507000Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
@@ -706,5 +706,5 @@
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-20T04:03:31.061605Z"
+  "resultsUpdatedAt": "2026-11-20T07:43:00.507000Z"
 }
