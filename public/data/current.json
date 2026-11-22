@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 11,
-  "generatedAt": "2026-11-18T21:28:35.144014Z",
+  "generatedAt": "2026-11-22T19:41:59.673328Z",
   "firstGame": "2026-11-19",
   "model": {
     "trainingSeasons": [
@@ -66,7 +66,7 @@
         "submittedPick": "HOU",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
+        "checkedAt": "2026-11-22T19:42:00.882671Z"
       }
     },
     {
@@ -102,21 +102,21 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_11_ARI_KC",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "different",
+        "submittedPick": "ARI",
         "recommendedPick": "KC",
-        "submittedAt": null
+        "submittedAt": "2026-11-17T01:41:10.582000Z"
       },
       "result": {
-        "status": "scheduled",
-        "detail": "11/22 - 1:00 PM EST",
-        "awayScore": null,
-        "homeScore": null,
+        "status": "in_progress",
+        "detail": "13:02 - 3rd",
+        "awayScore": 7,
+        "homeScore": 27,
         "winner": null,
-        "submittedPick": null,
+        "submittedPick": "ARI",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
+        "checkedAt": "2026-11-22T19:42:00.882671Z"
       }
     },
     {
@@ -152,73 +152,21 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_11_BAL_CAR",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "matched",
+        "submittedPick": "CAR",
         "recommendedPick": "CAR",
-        "submittedAt": null
+        "submittedAt": "2026-11-17T01:41:18.829000Z"
       },
       "result": {
-        "status": "scheduled",
-        "detail": "11/22 - 1:00 PM EST",
-        "awayScore": null,
-        "homeScore": null,
+        "status": "in_progress",
+        "detail": "Halftime",
+        "awayScore": 26,
+        "homeScore": 22,
         "winner": null,
-        "submittedPick": null,
+        "submittedPick": "CAR",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
-      }
-    },
-    {
-      "gameId": "2026_11_JAX_NYG",
-      "awayTeam": "JAX",
-      "homeTeam": "NYG",
-      "gameday": "2026-11-22",
-      "gametime": "13:00",
-      "stadium": "MetLife Stadium",
-      "roof": "outdoors",
-      "statisticalHomeProbability": 0.3037,
-      "marketHomeProbability": 0.3042,
-      "spreadLine": -6.0,
-      "homeQb": "J.J. McCarthy",
-      "awayQb": "Trevor Lawrence",
-      "weather": null,
-      "news": [],
-      "flags": [
-        "Fresh consensus odds unavailable; fallback odds have unknown age"
-      ],
-      "pick": "JAX",
-      "homeWinProbability": 0.3042,
-      "winProbability": 0.6958,
-      "confidence": "medium",
-      "marketSource": "nflverse fallback",
-      "marketCapturedAt": null,
-      "marketUpdatedAt": null,
-      "marketBookCount": 0,
-      "marketAgeMinutes": null,
-      "generatedAt": "2026-11-18T21:28:35.144014Z",
-      "crowdHomeShare": 0.0961,
-      "crowdEntries": 331098,
-      "contrarianValue": 0.2081,
-      "poolPick": "JAX",
-      "poolPickReason": "accuracy: higher win probability",
-      "entryCheck": {
-        "gameId": "2026_11_JAX_NYG",
-        "status": "unavailable",
-        "submittedPick": null,
-        "recommendedPick": "JAX",
-        "submittedAt": null
-      },
-      "result": {
-        "status": "scheduled",
-        "detail": "11/22 - 4:25 PM EST",
-        "awayScore": null,
-        "homeScore": null,
-        "winner": null,
-        "submittedPick": null,
-        "pickResult": "pending",
-        "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
+        "checkedAt": "2026-11-22T19:42:00.882671Z"
       }
     },
     {
@@ -254,21 +202,21 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_11_MIA_BUF",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "matched",
+        "submittedPick": "BUF",
         "recommendedPick": "BUF",
-        "submittedAt": null
+        "submittedAt": "2026-11-17T01:40:52.705000Z"
       },
       "result": {
-        "status": "scheduled",
-        "detail": "11/22 - 1:00 PM EST",
-        "awayScore": null,
-        "homeScore": null,
+        "status": "in_progress",
+        "detail": "Halftime",
+        "awayScore": 6,
+        "homeScore": 20,
         "winner": null,
-        "submittedPick": null,
+        "submittedPick": "BUF",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
+        "checkedAt": "2026-11-22T19:42:00.882671Z"
       }
     },
     {
@@ -304,21 +252,21 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_11_NO_CHI",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "matched",
+        "submittedPick": "CHI",
         "recommendedPick": "CHI",
-        "submittedAt": null
+        "submittedAt": "2026-11-17T01:41:04.883000Z"
       },
       "result": {
-        "status": "scheduled",
-        "detail": "11/22 - 1:00 PM EST",
-        "awayScore": null,
-        "homeScore": null,
+        "status": "in_progress",
+        "detail": "Halftime",
+        "awayScore": 10,
+        "homeScore": 16,
         "winner": null,
-        "submittedPick": null,
+        "submittedPick": "CHI",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
+        "checkedAt": "2026-11-22T19:42:00.882671Z"
       }
     },
     {
@@ -354,21 +302,21 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_11_TB_DET",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "matched",
+        "submittedPick": "DET",
         "recommendedPick": "DET",
-        "submittedAt": null
+        "submittedAt": "2026-11-17T01:41:13.069000Z"
       },
       "result": {
-        "status": "scheduled",
-        "detail": "11/22 - 1:00 PM EST",
-        "awayScore": null,
-        "homeScore": null,
+        "status": "in_progress",
+        "detail": "13:07 - 3rd",
+        "awayScore": 7,
+        "homeScore": 10,
         "winner": null,
-        "submittedPick": null,
+        "submittedPick": "DET",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
+        "checkedAt": "2026-11-22T19:42:00.882671Z"
       }
     },
     {
@@ -404,21 +352,21 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_11_TEN_DAL",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "different",
+        "submittedPick": "TEN",
         "recommendedPick": "DAL",
-        "submittedAt": null
+        "submittedAt": "2026-11-17T01:41:07.810000Z"
       },
       "result": {
-        "status": "scheduled",
-        "detail": "11/22 - 1:00 PM EST",
-        "awayScore": null,
-        "homeScore": null,
+        "status": "in_progress",
+        "detail": "14:54 - 3rd",
+        "awayScore": 9,
+        "homeScore": 27,
         "winner": null,
-        "submittedPick": null,
+        "submittedPick": "TEN",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
+        "checkedAt": "2026-11-22T19:42:00.882671Z"
       }
     },
     {
@@ -429,27 +377,38 @@
       "gametime": "16:05",
       "stadium": "SoFi Stadium",
       "roof": "dome",
-      "statisticalHomeProbability": 0.3797,
-      "marketHomeProbability": 0.5937,
+      "statisticalHomeProbability": 0.3806,
+      "marketHomeProbability": 0.6132,
       "spreadLine": 3.0,
       "homeQb": "Justin Herbert",
       "awayQb": "Geno Smith",
       "weather": null,
-      "news": [],
+      "news": [
+        {
+          "title": "Jets QB Geno Smith (ankle) cleared to start vs. Chargers - ESPN",
+          "source": "ESPN",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVkJTTjFTTzNPZTQtYUtNckZURXNodi1halVvbGRjYmlLWThxWTJRcEtIRk90UDdMUjdIbUFmWDVtTU5SWFo4cVlvRkhRa1ZwTHZDTTQ4QWJGcDFsVjR2Q3FkM0tLdkpWWU12ZmlIQlFoY0JMZXMxYS02bEJfcU90TldSZ09VUTZrdk4wSWhNaFFoZjRSZEpFaGhQbw?oc=5"
+        },
+        {
+          "title": "Jets fans are split on whether Geno Smith or Cade Klubnik should start at quarterback - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQanRzTjVZbzNsTGp1d1RNOHJkVlZ6MXNpLVU5N0Y0czdhblA0anhWYU9OYXN1Q1hiUWlsajBTbHVEYzVOZkFGeWRMNGU2bFEtVk1Gb2w3TTRsdVlmWEdWRjdhTjY5b09OVlpqck82N19BRG8wb2lmRFF6NWtlY01TYWtXaw?oc=5"
+        }
+      ],
       "flags": [],
       "pick": "LAC",
-      "homeWinProbability": 0.583,
-      "winProbability": 0.583,
+      "homeWinProbability": 0.6016,
+      "winProbability": 0.6016,
       "confidence": "low",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-18T21:28:35.144014Z",
-      "marketUpdatedAt": "2026-11-18T21:26:55Z",
+      "marketCapturedAt": "2026-11-22T19:41:59.673328Z",
+      "marketUpdatedAt": "2026-11-22T19:40:20Z",
       "marketBookCount": 9,
       "marketAgeMinutes": 1.7,
-      "generatedAt": "2026-11-18T21:28:35.144014Z",
-      "crowdHomeShare": 0.6533,
-      "crowdEntries": 330053,
-      "contrarianValue": -0.0596,
+      "generatedAt": "2026-11-22T19:41:59.673328Z",
+      "crowdHomeShare": 0.6705,
+      "crowdEntries": 620324,
+      "contrarianValue": -0.0573,
       "poolPick": "LAC",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -468,7 +427,74 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
+        "checkedAt": "2026-11-22T19:42:00.882671Z"
+      }
+    },
+    {
+      "gameId": "2026_11_JAX_NYG",
+      "awayTeam": "JAX",
+      "homeTeam": "NYG",
+      "gameday": "2026-11-22",
+      "gametime": "16:25",
+      "stadium": "MetLife Stadium",
+      "roof": "outdoors",
+      "statisticalHomeProbability": 0.3036,
+      "marketHomeProbability": 0.294,
+      "spreadLine": -6.0,
+      "homeQb": "J.J. McCarthy",
+      "awayQb": "Trevor Lawrence",
+      "weather": {
+        "summary": "59\u00b0F \u00b7 wind 6 mph",
+        "temperatureF": 59.2,
+        "precipitationPct": 2,
+        "windMph": 6.5,
+        "gustMph": 13.2
+      },
+      "news": [
+        {
+          "title": "Fantasy buzz: Does anything change in Indy with Richardson under center? - ESPN",
+          "source": "ESPN",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNdV9JQlJsRjZXVmNFNVdhT0Zjb0NILWdPTkltT2U0T0kzWkZOdFB2TUJzdDdkOW1jRmxicXhCTTFjamZpT05HMURVWV95RTdiQmt6aktSc1N6dDJQZ3lDbVZHaEc1VlpsS2hoc1VjOEt5NHRPeFdTeFdYSEQ4aWJxczE1QmpoeFIwX0VockFqSVJKSVAyajZjNTNpSWNkemwtcmR6MWVMSHI4bUQ5MGVJZUVNTkhNT0dFX2c?oc=5"
+        },
+        {
+          "title": "Jaguars Coach Sends Strong Message on Backup\u2019s Future - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQWmVTRk96LU13eVFjUUI3YjA0dElKTEpjREFodnIxbEZaUE5sR19YMWRySm04UUlqOV94eDVOOWdBREJrZm9NVGpnSktSeGllcC0ya3kzbXljclZsM0dNUVp4UDBsaGVhOEtFSVA0YkhtV0owQm1ud09sTkRsLTMtelBidVRSM01vSzh3?oc=5"
+        }
+      ],
+      "flags": [],
+      "pick": "JAX",
+      "homeWinProbability": 0.2945,
+      "winProbability": 0.7055,
+      "confidence": "medium",
+      "marketSource": "The Odds API",
+      "marketCapturedAt": "2026-11-22T19:41:59.673328Z",
+      "marketUpdatedAt": "2026-11-22T19:40:20Z",
+      "marketBookCount": 9,
+      "marketAgeMinutes": 1.7,
+      "generatedAt": "2026-11-22T19:41:59.673328Z",
+      "crowdHomeShare": 0.0953,
+      "crowdEntries": 620418,
+      "contrarianValue": 0.1987,
+      "poolPick": "JAX",
+      "poolPickReason": "accuracy: higher win probability",
+      "entryCheck": {
+        "gameId": "2026_11_JAX_NYG",
+        "status": "unavailable",
+        "submittedPick": null,
+        "recommendedPick": "JAX",
+        "submittedAt": null
+      },
+      "result": {
+        "status": "scheduled",
+        "detail": "11/22 - 4:25 PM EST",
+        "awayScore": null,
+        "homeScore": null,
+        "winner": null,
+        "submittedPick": null,
+        "pickResult": "pending",
+        "source": "ESPN",
+        "checkedAt": "2026-11-22T19:42:00.882671Z"
       }
     },
     {
@@ -479,27 +505,44 @@
       "gametime": "16:25",
       "stadium": "Empower Field at Mile High",
       "roof": "outdoors",
-      "statisticalHomeProbability": 0.6908,
-      "marketHomeProbability": 0.8157,
-      "spreadLine": 10.0,
+      "statisticalHomeProbability": 0.6911,
+      "marketHomeProbability": 0.8326,
+      "spreadLine": 10.5,
       "homeQb": "Bo Nix",
       "awayQb": "Fernando Mendoza",
-      "weather": null,
-      "news": [],
+      "weather": {
+        "summary": "43\u00b0F \u00b7 wind 7 mph",
+        "temperatureF": 42.7,
+        "precipitationPct": 0,
+        "windMph": 7.4,
+        "gustMph": 8.9
+      },
+      "news": [
+        {
+          "title": "Fantasy Football Injury Alert: Brock Bowers Unlikely To Play; Sets Up Sleeper Tight End For Big Day - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOMTJkVjdFa2V4bERaNlc1Rmh2MGRHMUtyRzdoVFBvak5pajhQYmRvVkhVX05CWlMwalBYOVR5Y3FZQWhkLWJsb0ZHN05iUnlFZFJhNElHRlY3Vmt1V3hIMEpSQzVUMURRZmUwQU13T29Ca2xQYVU4S1lFeEJHMHRNbUVtTWtPUk1GS0t4ZQ?oc=5"
+        },
+        {
+          "title": "Raiders vs. Broncos live updates, inactives, where to watch: 'Not a lot of optimism' that Brock Bowers plays in Week 11 as Fernando Mendoza makes second start - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNWmFUaXdrNU5xV1dUbEs4QkVuOHJBOEZfWEtJYVcta3hQVTN4QUFTODlsdDV5WVg0dDU4cWU2ZlJKdXpueXlySENpZ1Ewb0NYbWg4YWUxeUtoRTBMWG5lUGE5VGg1SkhEXzFhZWpzeFVzcF9acUhoUC1fU2VNQjBTNTY1eXQxb054Vm9VQ0ZZek4yclpMLXJpd2tNbWM0T1lISjJyMGRuTlZYYkJlQnJTNkhTVFJRMzQ5NEdGNXU4b1FNdGxDY2JWMFdPbmpqQQ?oc=5"
+        }
+      ],
       "flags": [],
       "pick": "DEN",
-      "homeWinProbability": 0.8094,
-      "winProbability": 0.8094,
+      "homeWinProbability": 0.8255,
+      "winProbability": 0.8255,
       "confidence": "high",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-18T21:28:35.144014Z",
-      "marketUpdatedAt": "2026-11-18T21:26:55Z",
+      "marketCapturedAt": "2026-11-22T19:41:59.673328Z",
+      "marketUpdatedAt": "2026-11-22T19:40:20Z",
       "marketBookCount": 9,
       "marketAgeMinutes": 1.7,
-      "generatedAt": "2026-11-18T21:28:35.144014Z",
-      "crowdHomeShare": 0.9447,
-      "crowdEntries": 331025,
-      "contrarianValue": -0.129,
+      "generatedAt": "2026-11-22T19:41:59.673328Z",
+      "crowdHomeShare": 0.9451,
+      "crowdEntries": 620002,
+      "contrarianValue": -0.1125,
       "poolPick": "DEN",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -518,59 +561,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
-      }
-    },
-    {
-      "gameId": "2026_11_PIT_PHI",
-      "awayTeam": "PIT",
-      "homeTeam": "PHI",
-      "gameday": "2026-11-22",
-      "gametime": "16:25",
-      "stadium": "Lincoln Financial Field",
-      "roof": "outdoors",
-      "statisticalHomeProbability": 0.3728,
-      "marketHomeProbability": 0.3425,
-      "spreadLine": -4.5,
-      "homeQb": "Joe Milton III",
-      "awayQb": "Aaron Rodgers",
-      "weather": null,
-      "news": [],
-      "flags": [
-        "Fresh consensus odds unavailable; fallback odds have unknown age"
-      ],
-      "pick": "PIT",
-      "homeWinProbability": 0.344,
-      "winProbability": 0.656,
-      "confidence": "medium",
-      "marketSource": "nflverse fallback",
-      "marketCapturedAt": null,
-      "marketUpdatedAt": null,
-      "marketBookCount": 0,
-      "marketAgeMinutes": null,
-      "generatedAt": "2026-11-18T21:28:35.144014Z",
-      "crowdHomeShare": 0.1152,
-      "crowdEntries": 331666,
-      "contrarianValue": 0.2273,
-      "poolPick": "PIT",
-      "poolPickReason": "accuracy: higher win probability",
-      "entryCheck": {
-        "gameId": "2026_11_PIT_PHI",
-        "status": "unavailable",
-        "submittedPick": null,
-        "recommendedPick": "PIT",
-        "submittedAt": null
-      },
-      "result": {
-        "status": "scheduled",
-        "detail": "11/22 - 1:00 PM EST",
-        "awayScore": null,
-        "homeScore": null,
-        "winner": null,
-        "submittedPick": null,
-        "pickResult": "pending",
-        "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
+        "checkedAt": "2026-11-22T19:42:00.882671Z"
       }
     },
     {
@@ -581,27 +572,44 @@
       "gametime": "20:20",
       "stadium": "Estadio Banorte",
       "roof": "outdoors",
-      "statisticalHomeProbability": 0.7942,
-      "marketHomeProbability": 0.5957,
-      "spreadLine": 3.0,
+      "statisticalHomeProbability": 0.7949,
+      "marketHomeProbability": 0.6234,
+      "spreadLine": 3.5,
       "homeQb": "Brock Purdy",
       "awayQb": "Kirk Cousins",
-      "weather": null,
-      "news": [],
+      "weather": {
+        "summary": "62\u00b0F \u00b7 wind 7 mph \u00b7 58% precip",
+        "temperatureF": 61.9,
+        "precipitationPct": 58,
+        "windMph": 6.6,
+        "gustMph": 20.4
+      },
+      "news": [
+        {
+          "title": "Vikings get healthier to face the 49ers with Cashman, Hockenson among the starters back from injury - kare11.com",
+          "source": "kare11.com",
+          "url": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxOMGk5dVkwQW0teHlRYmhRVnlCUmNJOVBuQXRxQ01yc2pvWmxmVUxHdmJ6S1dWeEZtTFFFV2xHYktqSDJKNWMwSDhaeG82UEp1OHo4emhqTnFVRjIyT0xpcmdmMVJidS1hRmdWcEwta2U0U1ZPUm1zSTJELUprUVkxS3V6VWZNZmU4MlFTcEtLZkh5T2IzSmxLRTlMczd0dG5ITlRleGhkUG9lcGZCcGpjZFZMWENYVVpFMkhvZnVmY2JxNVVNOFlUejlEclRHbVAybmVsVXVEcmdJX0pRb3JyYkFMNFpTbkxUVXV0UlJCalh5a0t2MVg1VTFXZ00tUlVWSkR1MXhFYVhiRjFSaDZCOU9WMVpRNG8tYmxod3IyMHlnZ2lNZ0RITmdR?oc=5"
+        },
+        {
+          "title": "Vikings\u2019 QB carousel between Kirk Cousins shows how badly Minnesota botched the position - USA Today",
+          "source": "USA Today",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPaTVEanlXQmxTWVpsZ0dLbWRCcmZabFBJb3JqNnZCdGlTSk9kaWtVdVFvTzlSWGJET3E3YkVSeGJHcGlOdG5sRkp3Vm5BLXVmZHlhV3RBaFBQU1RoYkMzdmJRS0dtbFRMRC04bGZLRXpFTkRUQzN6UjQ3MkFWMzN5WFp3M1lxMEhIbzE0ejIwaTUxYTRIbFladjhTSjFLUnp1VjVLaTFNN21ZTjdD?oc=5"
+        }
+      ],
       "flags": [],
       "pick": "SF",
-      "homeWinProbability": 0.6056,
-      "winProbability": 0.6056,
-      "confidence": "low",
+      "homeWinProbability": 0.632,
+      "winProbability": 0.632,
+      "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-18T21:28:35.144014Z",
-      "marketUpdatedAt": "2026-11-18T21:26:55Z",
+      "marketCapturedAt": "2026-11-22T19:41:59.673328Z",
+      "marketUpdatedAt": "2026-11-22T19:40:20Z",
       "marketBookCount": 9,
       "marketAgeMinutes": 1.7,
-      "generatedAt": "2026-11-18T21:28:35.144014Z",
-      "crowdHomeShare": 0.7025,
-      "crowdEntries": 330226,
-      "contrarianValue": -0.1068,
+      "generatedAt": "2026-11-22T19:41:59.673328Z",
+      "crowdHomeShare": 0.6903,
+      "crowdEntries": 619726,
+      "contrarianValue": -0.0669,
       "poolPick": "SF",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -620,7 +628,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
+        "checkedAt": "2026-11-22T19:42:00.882671Z"
       }
     },
     {
@@ -631,27 +639,44 @@
       "gametime": "20:15",
       "stadium": "Northwest Stadium",
       "roof": "outdoors",
-      "statisticalHomeProbability": 0.3041,
-      "marketHomeProbability": 0.2864,
-      "spreadLine": -6.5,
+      "statisticalHomeProbability": 0.304,
+      "marketHomeProbability": 0.284,
+      "spreadLine": -6.0,
       "homeQb": "Jayden Daniels",
       "awayQb": "Joe Burrow",
-      "weather": null,
-      "news": [],
+      "weather": {
+        "summary": "49\u00b0F \u00b7 wind 11 mph",
+        "temperatureF": 49.0,
+        "precipitationPct": 1,
+        "windMph": 10.8,
+        "gustMph": 28.4
+      },
+      "news": [
+        {
+          "title": "Bengals provide injury update ahead of MNF matchup with Commanders - WLWT",
+          "source": "WLWT",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQMjMwMlJ0UW9MZ180SUdZdUMwMldpZ3VKdEExWlZVUzR3eTIyQl8tcGU0cm5EWEJGX2stNld5T2trcWFpQmI4VENSMDNQN0FCMEN6X182ckx5a1c3S1V1a0xiVWxrZ1RKeEVVX1NxNUdabHFYNnNSeWlSWVF0NHpXQWZURmNjUS1WZXd1VWd3X0F3X2xqZWJYdTYxWGUzNE1XRnc?oc=5"
+        },
+        {
+          "title": "Bengals vs. Commanders Injury Report: Dax Hill, Dalton Risner get DNP; Kyle Dugger goes full - Cincy Jungle",
+          "source": "Cincy Jungle",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNSjNrZnB6SG12NWlkSmJGblpxYVNidU9UbExHQmRacEhRMmtaWWVDVTk4VVc1NDBZUzYxemJ4NGw4MGFYRW9iY0FYUWVnblE3ZTRNWEdzNDMwZ2llZEV4TVhwMTdQM1BYVEhQOWtVWHhsNjZDRG9SaUh5YWZUMkxKWUF1SDFxMG4zVHdhcFZmNnhhdDlhcUVGZk9LMFJxenV3NEFNS2FidUZ1LUVPNWV4cHZOWUhBOFlvTVljYmtuUTBSV3d2bXZId0tsNkU3UXUzWlE?oc=5"
+        }
+      ],
       "flags": [],
       "pick": "CIN",
-      "homeWinProbability": 0.2872,
-      "winProbability": 0.7128,
+      "homeWinProbability": 0.285,
+      "winProbability": 0.715,
       "confidence": "medium",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-18T21:28:35.144014Z",
-      "marketUpdatedAt": "2026-11-18T21:26:55Z",
+      "marketCapturedAt": "2026-11-22T19:41:59.673328Z",
+      "marketUpdatedAt": "2026-11-22T19:40:20Z",
       "marketBookCount": 9,
       "marketAgeMinutes": 1.7,
-      "generatedAt": "2026-11-18T21:28:35.144014Z",
-      "crowdHomeShare": 0.0481,
-      "crowdEntries": 330235,
-      "contrarianValue": 0.2383,
+      "generatedAt": "2026-11-22T19:41:59.673328Z",
+      "crowdHomeShare": 0.0477,
+      "crowdEntries": 618601,
+      "contrarianValue": 0.2363,
       "poolPick": "CIN",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -670,13 +695,13 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-22T11:56:21.702439Z"
+        "checkedAt": "2026-11-22T19:42:00.882671Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-22T11:56:21.702439Z",
+    "checkedAt": "2026-11-22T19:42:00.882671Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
@@ -691,20 +716,20 @@
     "droppedWeeks": [
       3
     ],
-    "remainingGames": 122,
+    "remainingGames": 114,
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-22T11:56:21.702439Z",
+      "checkedAt": "2026-11-22T19:42:00.882671Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
-        "matched": 1,
-        "different": 0,
+        "matched": 5,
+        "different": 2,
         "missing": 0,
-        "unavailable": 12
+        "unavailable": 5
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-22T11:56:21.702439Z"
+  "resultsUpdatedAt": "2026-11-22T19:42:00.882671Z"
 }
