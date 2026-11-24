@@ -66,7 +66,7 @@
         "submittedPick": "HOU",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-24T01:01:33.576522Z"
+        "checkedAt": "2026-11-24T03:28:07.673959Z"
       }
     },
     {
@@ -116,7 +116,7 @@
         "submittedPick": "ARI",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-24T01:01:33.576522Z"
+        "checkedAt": "2026-11-24T03:28:07.673959Z"
       }
     },
     {
@@ -166,7 +166,7 @@
         "submittedPick": "CAR",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-24T01:01:33.576522Z"
+        "checkedAt": "2026-11-24T03:28:07.673959Z"
       }
     },
     {
@@ -216,7 +216,7 @@
         "submittedPick": "BUF",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-24T01:01:33.576522Z"
+        "checkedAt": "2026-11-24T03:28:07.673959Z"
       }
     },
     {
@@ -266,7 +266,7 @@
         "submittedPick": "CHI",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-24T01:01:33.576522Z"
+        "checkedAt": "2026-11-24T03:28:07.673959Z"
       }
     },
     {
@@ -316,7 +316,7 @@
         "submittedPick": "DET",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-24T01:01:33.576522Z"
+        "checkedAt": "2026-11-24T03:28:07.673959Z"
       }
     },
     {
@@ -366,7 +366,7 @@
         "submittedPick": "TEN",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-24T01:01:33.576522Z"
+        "checkedAt": "2026-11-24T03:28:07.673959Z"
       }
     },
     {
@@ -427,7 +427,7 @@
         "submittedPick": "LAC",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-24T01:01:33.576522Z"
+        "checkedAt": "2026-11-24T03:28:07.673959Z"
       }
     },
     {
@@ -494,7 +494,7 @@
         "submittedPick": "JAX",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-24T01:01:33.576522Z"
+        "checkedAt": "2026-11-24T03:28:07.673959Z"
       }
     },
     {
@@ -561,7 +561,7 @@
         "submittedPick": "DEN",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-24T01:01:33.576522Z"
+        "checkedAt": "2026-11-24T03:28:07.673959Z"
       }
     },
     {
@@ -628,7 +628,7 @@
         "submittedPick": "SF",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-24T01:01:33.576522Z"
+        "checkedAt": "2026-11-24T03:28:07.673959Z"
       }
     },
     {
@@ -681,27 +681,27 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_11_CIN_WAS",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "matched",
+        "submittedPick": "CIN",
         "recommendedPick": "CIN",
-        "submittedAt": null
+        "submittedAt": "2026-11-17T01:41:51.295000Z"
       },
       "result": {
-        "status": "scheduled",
-        "detail": "11/23 - 8:15 PM EST",
-        "awayScore": null,
-        "homeScore": null,
+        "status": "in_progress",
+        "detail": "2:36 - 3rd",
+        "awayScore": 17,
+        "homeScore": 13,
         "winner": null,
-        "submittedPick": null,
+        "submittedPick": "CIN",
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-24T01:01:33.576522Z"
+        "checkedAt": "2026-11-24T03:28:07.673959Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-24T01:01:33.576522Z",
+    "checkedAt": "2026-11-24T03:28:07.673959Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
@@ -720,16 +720,16 @@
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-24T01:01:33.576522Z",
+      "checkedAt": "2026-11-24T03:28:07.673959Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
-        "matched": 9,
+        "matched": 10,
         "different": 2,
         "missing": 0,
-        "unavailable": 1
+        "unavailable": 0
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-24T01:01:33.576522Z"
+  "resultsUpdatedAt": "2026-11-24T03:28:07.673959Z"
 }
