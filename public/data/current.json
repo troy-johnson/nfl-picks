@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 11,
-  "generatedAt": "2026-11-22T19:59:48.204295Z",
+  "generatedAt": "2026-11-24T00:25:53.473960Z",
   "firstGame": "2026-11-19",
   "model": {
     "trainingSeasons": [
@@ -66,7 +66,7 @@
         "submittedPick": "HOU",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-23T15:17:56.691259Z"
+        "checkedAt": "2026-11-24T00:25:54.249715Z"
       }
     },
     {
@@ -116,7 +116,7 @@
         "submittedPick": "ARI",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-23T15:17:56.691259Z"
+        "checkedAt": "2026-11-24T00:25:54.249715Z"
       }
     },
     {
@@ -166,7 +166,7 @@
         "submittedPick": "CAR",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-23T15:17:56.691259Z"
+        "checkedAt": "2026-11-24T00:25:54.249715Z"
       }
     },
     {
@@ -216,7 +216,7 @@
         "submittedPick": "BUF",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-23T15:17:56.691259Z"
+        "checkedAt": "2026-11-24T00:25:54.249715Z"
       }
     },
     {
@@ -266,7 +266,7 @@
         "submittedPick": "CHI",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-23T15:17:56.691259Z"
+        "checkedAt": "2026-11-24T00:25:54.249715Z"
       }
     },
     {
@@ -316,7 +316,7 @@
         "submittedPick": "DET",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-23T15:17:56.691259Z"
+        "checkedAt": "2026-11-24T00:25:54.249715Z"
       }
     },
     {
@@ -366,7 +366,7 @@
         "submittedPick": "TEN",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-23T15:17:56.691259Z"
+        "checkedAt": "2026-11-24T00:25:54.249715Z"
       }
     },
     {
@@ -427,7 +427,7 @@
         "submittedPick": "LAC",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-23T15:17:56.691259Z"
+        "checkedAt": "2026-11-24T00:25:54.249715Z"
       }
     },
     {
@@ -494,7 +494,7 @@
         "submittedPick": "JAX",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-23T15:17:56.691259Z"
+        "checkedAt": "2026-11-24T00:25:54.249715Z"
       }
     },
     {
@@ -561,7 +561,7 @@
         "submittedPick": "DEN",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-23T15:17:56.691259Z"
+        "checkedAt": "2026-11-24T00:25:54.249715Z"
       }
     },
     {
@@ -628,7 +628,7 @@
         "submittedPick": "SF",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-23T15:17:56.691259Z"
+        "checkedAt": "2026-11-24T00:25:54.249715Z"
       }
     },
     {
@@ -639,44 +639,44 @@
       "gametime": "20:15",
       "stadium": "Northwest Stadium",
       "roof": "outdoors",
-      "statisticalHomeProbability": 0.304,
-      "marketHomeProbability": 0.284,
+      "statisticalHomeProbability": 0.299,
+      "marketHomeProbability": 0.2759,
       "spreadLine": -6.0,
       "homeQb": "Jayden Daniels",
       "awayQb": "Joe Burrow",
       "weather": {
-        "summary": "51\u00b0F \u00b7 wind 13 mph",
-        "temperatureF": 50.6,
-        "precipitationPct": 1,
-        "windMph": 13.3,
-        "gustMph": 28.9
+        "summary": "57\u00b0F \u00b7 wind 10 mph",
+        "temperatureF": 56.8,
+        "precipitationPct": 8,
+        "windMph": 10.3,
+        "gustMph": 23.5
       },
       "news": [
         {
-          "title": "Bengals provide injury update ahead of MNF matchup with Commanders - WLWT",
+          "title": "Bengals back in primetime spotlight, take on Commanders Monday night. What to watch - WLWT",
           "source": "WLWT",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQMjMwMlJ0UW9MZ180SUdZdUMwMldpZ3VKdEExWlZVUzR3eTIyQl8tcGU0cm5EWEJGX2stNld5T2trcWFpQmI4VENSMDNQN0FCMEN6X182ckx5a1c3S1V1a0xiVWxrZ1RKeEVVX1NxNUdabHFYNnNSeWlSWVF0NHpXQWZURmNjUS1WZXd1VWd3X0F3X2xqZWJYdTYxWGUzNE1XRnc?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNRVEweWgzMVdOMWs2VVd4dlNHVTh1NDI2U2hlQmNWOVFPV0JObFFkSXlVTUNqLXN6dUF3eEVvMXFhSVFtakZxMXpiLVFiQVlWRUdneURVWEtNMklWNmF5ZkQ4TjRUUUR6YTdkbGxqaFRqUm43V2I2Q2F3aWk1UTM5SkdGa25vUzVzLWc1M2xTUTUtM2d0T2Z2X0NCaw?oc=5"
         },
         {
-          "title": "Bengals vs. Commanders Injury Report: Dax Hill, Dalton Risner get DNP; Kyle Dugger goes full - Cincy Jungle",
-          "source": "Cincy Jungle",
-          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNSjNrZnB6SG12NWlkSmJGblpxYVNidU9UbExHQmRacEhRMmtaWWVDVTk4VVc1NDBZUzYxemJ4NGw4MGFYRW9iY0FYUWVnblE3ZTRNWEdzNDMwZ2llZEV4TVhwMTdQM1BYVEhQOWtVWHhsNjZDRG9SaUh5YWZUMkxKWUF1SDFxMG4zVHdhcFZmNnhhdDlhcUVGZk9LMFJxenV3NEFNS2FidUZ1LUVPNWV4cHZOWUhBOFlvTVljYmtuUTBSV3d2bXZId0tsNkU3UXUzWlE?oc=5"
+          "title": "Cincinnati activates two from Injured Reserve - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdWxOS0tWR0lXU1V1NnFCU3lxM0d6VDdLVHFmSmlaZ1Rxck5ncFlmYWRRMXlnODYzdmZjcDNZeGtuSFJfVW04a3BhSFZoVHljcWlGQTVLOWpYcnZma0hPWFp5NzJiM29WOFhITE5hRG1FSExPQld4RjNWcUJpcEIweXkzWjlwRVpf?oc=5"
         }
       ],
       "flags": [],
       "pick": "CIN",
-      "homeWinProbability": 0.285,
-      "winProbability": 0.715,
-      "confidence": "medium",
+      "homeWinProbability": 0.2771,
+      "winProbability": 0.7229,
+      "confidence": "high",
       "marketSource": "The Odds API",
-      "marketCapturedAt": "2026-11-22T19:59:48.204295Z",
-      "marketUpdatedAt": "2026-11-22T19:58:43Z",
+      "marketCapturedAt": "2026-11-24T00:25:53.473960Z",
+      "marketUpdatedAt": "2026-11-24T00:24:13Z",
       "marketBookCount": 9,
-      "marketAgeMinutes": 1.1,
-      "generatedAt": "2026-11-22T19:59:48.204295Z",
-      "crowdHomeShare": 0.0477,
-      "crowdEntries": 618846,
-      "contrarianValue": 0.2363,
+      "marketAgeMinutes": 1.7,
+      "generatedAt": "2026-11-24T00:25:53.473960Z",
+      "crowdHomeShare": 0.0522,
+      "crowdEntries": 626135,
+      "contrarianValue": 0.2237,
       "poolPick": "CIN",
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
@@ -695,13 +695,13 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-23T15:17:56.691259Z"
+        "checkedAt": "2026-11-24T00:25:54.249715Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-23T15:17:56.691259Z",
+    "checkedAt": "2026-11-24T00:25:54.249715Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
@@ -716,11 +716,11 @@
     "droppedWeeks": [
       3
     ],
-    "remainingGames": 114,
+    "remainingGames": 110,
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-23T15:17:56.691259Z",
+      "checkedAt": "2026-11-24T00:25:54.249715Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
@@ -731,5 +731,5 @@
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-23T15:17:56.691259Z"
+  "resultsUpdatedAt": "2026-11-24T00:25:54.249715Z"
 }
