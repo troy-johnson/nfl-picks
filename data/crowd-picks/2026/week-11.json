@@ -203,14 +203,14 @@
       "homeTeam": "WAS",
       "espnEventId": "401873078",
       "lockAt": "2026-11-24T01:15:00Z",
-      "entries": 626135,
-      "homeShare": 0.052191620018047225,
-      "awayShare": 0.9478083799819528,
+      "entries": 626367,
+      "homeShare": 0.052687960891937155,
+      "awayShare": 0.9473120391080628,
       "espnSpread": 6.5,
-      "espnHomeMoneyline": "246",
-      "espnAwayMoneyline": "-302",
+      "espnHomeMoneyline": "252",
+      "espnAwayMoneyline": "-310",
       "homeWin": null,
-      "capturedAt": "2026-11-24T00:25:40.395003Z"
+      "capturedAt": "2026-11-24T00:58:41.814833Z"
     }
   ]
 }
