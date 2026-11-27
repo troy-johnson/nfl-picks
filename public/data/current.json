@@ -77,7 +77,7 @@
         "submittedPick": "LA",
         "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -138,7 +138,7 @@
         "submittedPick": "DET",
         "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -197,15 +197,15 @@
         "submittedAt": "2026-11-25T19:35:02.936000Z"
       },
       "result": {
-        "status": "in_progress",
-        "detail": "3:23 - 4th",
-        "awayScore": 30,
+        "status": "final",
+        "detail": "Final",
+        "awayScore": 39,
         "homeScore": 38,
-        "winner": null,
+        "winner": "PHI",
         "submittedPick": "DAL",
-        "pickResult": "pending",
+        "pickResult": "loss",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -261,21 +261,21 @@
       "poolPickReason": "accuracy: higher win probability",
       "entryCheck": {
         "gameId": "2026_12_KC_BUF",
-        "status": "unavailable",
-        "submittedPick": null,
+        "status": "matched",
+        "submittedPick": "BUF",
         "recommendedPick": "BUF",
-        "submittedAt": null
+        "submittedAt": "2026-11-25T19:31:41.172000Z"
       },
       "result": {
-        "status": "scheduled",
-        "detail": "11/26 - 8:20 PM EST",
-        "awayScore": null,
-        "homeScore": null,
-        "winner": null,
-        "submittedPick": null,
-        "pickResult": "pending",
+        "status": "final",
+        "detail": "Final",
+        "awayScore": 10,
+        "homeScore": 13,
+        "winner": "BUF",
+        "submittedPick": "BUF",
+        "pickResult": "win",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -344,7 +344,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -405,7 +405,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -472,7 +472,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -542,7 +542,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -611,7 +611,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -678,7 +678,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -745,7 +745,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -806,7 +806,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -875,7 +875,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -942,7 +942,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -1012,7 +1012,7 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     },
     {
@@ -1079,21 +1079,21 @@
         "submittedPick": null,
         "pickResult": "pending",
         "source": "ESPN",
-        "checkedAt": "2026-11-27T01:08:20.126172Z"
+        "checkedAt": "2026-11-27T04:36:13.715250Z"
       }
     }
   ],
   "pool": {
     "status": "available",
-    "checkedAt": "2026-11-27T01:08:20.126172Z",
+    "checkedAt": "2026-11-27T04:36:13.715250Z",
     "name": "Bib\u2019s Sports Ball Pick \u2018Em",
     "url": "https://fantasy.espn.com/games/nfl-pickem-2026/group?id=555708b1-1298-4792-9a60-81112ad03ffe",
     "entryName": "Troy's 1st Entry",
     "entries": 9,
     "rank": 8,
-    "points": 940,
-    "leaderPoints": 1020,
-    "correctPicksBehind": 8.0,
+    "points": 950,
+    "leaderPoints": 1040,
+    "correctPicksBehind": 9.0,
     "pointsPerPick": 10,
     "dropLowestWeek": true,
     "tiebreakers": true,
@@ -1104,16 +1104,16 @@
     "strategy": "accuracy",
     "strategyReason": "Choose the higher win probability to maximize expected correct picks.",
     "pickCheck": {
-      "checkedAt": "2026-11-27T01:08:20.126172Z",
+      "checkedAt": "2026-11-27T04:36:13.715250Z",
       "source": "ESPN public feed",
       "visibilityNote": "ESPN can hide open picks. Unavailable does not mean missing.",
       "counts": {
-        "matched": 2,
+        "matched": 3,
         "different": 1,
         "missing": 0,
-        "unavailable": 13
+        "unavailable": 12
       }
     }
   },
-  "resultsUpdatedAt": "2026-11-27T01:08:20.126172Z"
+  "resultsUpdatedAt": "2026-11-27T04:36:13.715250Z"
 }
